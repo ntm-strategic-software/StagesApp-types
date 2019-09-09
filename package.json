@@ -1,0 +1,26 @@
+{
+  "name": "stagesapp-types",
+  "version": "0.1.0",
+  "description": "stagesapp-types",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "generate-docs": "jsdoc --destination docs ./types"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ntm-strategic-software/StagesApp-types.git"
+  },
+  "author": "Ryan Burgett <ryan@burgettdev.net>",
+  "bugs": {
+    "url": "https://github.com/ntm-strategic-software/StagesApp-types/issues"
+  },
+  "homepage": "https://github.com/ntm-strategic-software/StagesApp-types#readme",
+  "devDependencies": {
+    "babel-eslint": "^10.0.3",
+    "eslint": "^6.3.0",
+    "eslint-plugin-babel": "^5.3.0",
+    "jsdoc": "^3.6.3"
+  },
+  "dependencies": {}
+}
