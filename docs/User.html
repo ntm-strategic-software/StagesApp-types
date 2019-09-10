@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Class: RecordingPhoto</title>
+    <title>JSDoc: Class: User</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Class: RecordingPhoto</h1>
+    <h1 class="page-title">Class: User</h1>
 
     
 
@@ -28,7 +28,9 @@
 
 <header>
     
-        <h2><span class="attribs"><span class="type-signature"></span></span>RecordingPhoto<span class="signature">(data)</span><span class="type-signature"></span></h2>
+        <h2><span class="attribs"><span class="type-signature"></span></span>User<span class="signature">(data)</span><span class="type-signature"></span></h2>
+        
+            <div class="class-description">Class representing a user</div>
         
     
 </header>
@@ -39,9 +41,11 @@
         
 
     
+    <h2>Constructor</h2>
+    
 
     
-    <h4 class="name" id="RecordingPhoto"><span class="type-signature"></span>new RecordingPhoto<span class="signature">(data)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="User"><span class="type-signature"></span>new User<span class="signature">(data)</span><span class="type-signature"></span></h4>
     
 
     
@@ -49,7 +53,7 @@
 
 
 <div class="description">
-    Creates a Recording Photo Object
+    Creates a user object
 </div>
 
 
@@ -142,7 +146,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="recording-photo.js.html">recording-photo.js</a>, <a href="recording-photo.js.html#line35">line 35</a>
+        <a href="user.js.html">user.js</a>, <a href="user.js.html#line54">line 54</a>
     </li></ul></dd>
     
 
@@ -198,7 +202,7 @@
 
 
 <div class="description">
-    Unique ID for the Recording Photo
+    Unique ID for the user
 </div>
 
 
@@ -251,7 +255,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="recording-photo.js.html">recording-photo.js</a>, <a href="recording-photo.js.html#line8">line 8</a>
+        <a href="user.js.html">user.js</a>, <a href="user.js.html#line13">line 13</a>
     </li></ul></dd>
     
 
@@ -269,13 +273,13 @@
 
         
             
-<h4 class="name" id="endTime"><span class="type-signature"></span>endTime<span class="type-signature"> :number</span></h4>
+<h4 class="name" id="claStage"><span class="type-signature"></span>claStage<span class="type-signature"> :<a href="global.html#CLAStage">CLAStage</a>|string</span></h4>
 
 
 
 
 <div class="description">
-    Time of photo end
+    User's current CLA stage
 </div>
 
 
@@ -284,7 +288,10 @@
     <ul>
         <li>
             
-<span class="param-type">number</span>
+<span class="param-type"><a href="global.html#CLAStage">CLAStage</a></span>
+|
+
+<span class="param-type">string</span>
 
 
         </li>
@@ -321,14 +328,14 @@
     
     <dt class="tag-default">Default Value:</dt>
     <dd class="tag-default"><ul class="dummy">
-            <li>0</li>
+            <li>CLAStage.STAGE_1</li>
         </ul></dd>
     
 
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="recording-photo.js.html">recording-photo.js</a>, <a href="recording-photo.js.html#line22">line 22</a>
+        <a href="user.js.html">user.js</a>, <a href="user.js.html#line34">line 34</a>
     </li></ul></dd>
     
 
@@ -346,13 +353,90 @@
 
         
             
-<h4 class="name" id="filename"><span class="type-signature"></span>filename<span class="type-signature"> :string</span></h4>
+<h4 class="name" id="favoritePersonIds"><span class="type-signature"></span>favoritePersonIds<span class="type-signature"> :Array</span></h4>
 
 
 
 
 <div class="description">
-    Filename of photo
+    User's favorite people (they show at the top of the list when selecting helpers)
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Array</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-default">Default Value:</dt>
+    <dd class="tag-default"><ul class="dummy">
+            <li>[]</li>
+        </ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="user.js.html">user.js</a>, <a href="user.js.html#line41">line 41</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="fullName"><span class="type-signature"></span>fullName<span class="type-signature"> :string</span></h4>
+
+
+
+
+<div class="description">
+    User's full name
 </div>
 
 
@@ -405,7 +489,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="recording-photo.js.html">recording-photo.js</a>, <a href="recording-photo.js.html#line29">line 29</a>
+        <a href="user.js.html">user.js</a>, <a href="user.js.html#line27">line 27</a>
     </li></ul></dd>
     
 
@@ -423,13 +507,13 @@
 
         
             
-<h4 class="name" id="startTime"><span class="type-signature"></span>startTime<span class="type-signature"> :number</span></h4>
+<h4 class="name" id="name"><span class="type-signature"></span>name<span class="type-signature"> :string</span></h4>
 
 
 
 
 <div class="description">
-    Time of photo start
+    User's common name
 </div>
 
 
@@ -438,7 +522,7 @@
     <ul>
         <li>
             
-<span class="param-type">number</span>
+<span class="param-type">string</span>
 
 
         </li>
@@ -475,14 +559,91 @@
     
     <dt class="tag-default">Default Value:</dt>
     <dd class="tag-default"><ul class="dummy">
-            <li>0</li>
+            <li>''</li>
         </ul></dd>
     
 
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="recording-photo.js.html">recording-photo.js</a>, <a href="recording-photo.js.html#line15">line 15</a>
+        <a href="user.js.html">user.js</a>, <a href="user.js.html#line20">line 20</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="photoFilename"><span class="type-signature"></span>photoFilename<span class="type-signature"> :string</span></h4>
+
+
+
+
+<div class="description">
+    Filename of a picture of the user
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">string</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-default">Default Value:</dt>
+    <dd class="tag-default"><ul class="dummy">
+            <li>''</li>
+        </ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="user.js.html">user.js</a>, <a href="user.js.html#line48">line 48</a>
     </li></ul></dd>
     
 
@@ -510,7 +671,7 @@
     
 
     
-    <h4 class="name" id="set"><span class="type-signature"></span>set<span class="signature">(data)</span><span class="type-signature"> &rarr; {<a href="RecordingPhoto.html">RecordingPhoto</a>}</span></h4>
+    <h4 class="name" id="set"><span class="type-signature"></span>set<span class="signature">(data)</span><span class="type-signature"> &rarr; {<a href="User.html">User</a>}</span></h4>
     
 
     
@@ -518,7 +679,7 @@
 
 
 <div class="description">
-    Creates an updated Recording Photo Object
+    Creates an updated user object
 </div>
 
 
@@ -611,7 +772,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="recording-photo.js.html">recording-photo.js</a>, <a href="recording-photo.js.html#line46">line 46</a>
+        <a href="user.js.html">user.js</a>, <a href="user.js.html#line65">line 65</a>
     </li></ul></dd>
     
 
@@ -647,7 +808,7 @@
     </dt>
     <dd>
         
-<span class="param-type"><a href="RecordingPhoto.html">RecordingPhoto</a></span>
+<span class="param-type"><a href="User.html">User</a></span>
 
 
     </dd>

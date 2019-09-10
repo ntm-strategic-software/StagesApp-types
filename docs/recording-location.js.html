@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: marker.js</title>
+    <title>JSDoc: Source: recording-location.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: marker.js</h1>
+    <h1 class="page-title">Source: recording-location.js</h1>
 
     
 
@@ -27,44 +27,33 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/**
- * Class representing a recording marker
+ * Class representing a recording location
  */
-class Marker {
+class RecordingLocation {
 
   /**
-   * Unique ID for the recording marker
+   * Unique ID for the recording location
    * @type {string}
    * @default ''
    */
-  _id = '';
+  _id ='';
 
   /**
-   * Time where the marker begins
-   * @type {number}
-   * @default 0
+   * Name of the recording location
+   * @type {string}
+   * @default ''
    */
-  startTime = 0;
+  name = '';
 
   /**
-   * Time where the marker ends
-   * @type {number}
-   * @default 0
-   */
-  endTime = 0;
-
-  /**
-   * Note about the marker
+   * Any notes about the location
    * @type {string}
    * @default ''
    */
   note = '';
 
-  // searchWords = [];
-  // wVOutlineItems = [];
-  // sSOutlineItems = [];
-
   /**
-   * Creates a recording marker
+   * Creates a recording location
    * @param {Object} data
    */
   constructor(data = {}) {
@@ -74,12 +63,12 @@ class Marker {
   }
 
   /**
-   * Creates an updated recording marker
+   * Creates an updated recording location
    * @param {Object} data
-   * @returns {Marker}
+   * @returns {RecordingLocation}
    */
   set(data) {
-    return new Marker({
+    return new RecordingLocation({
       ...this,
       ...data
     });
@@ -87,7 +76,7 @@ class Marker {
 
 }
 
-module.exports = Marker;
+module.exports = RecordingLocation;
 </code></pre>
         </article>
     </section>
