@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Class: CultureEvent</title>
+    <title>JSDoc: Class: Person</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Class: CultureEvent</h1>
+    <h1 class="page-title">Class: Person</h1>
 
     
 
@@ -28,9 +28,9 @@
 
 <header>
     
-        <h2><span class="attribs"><span class="type-signature"></span></span>CultureEvent<span class="signature">(data)</span><span class="type-signature"></span></h2>
+        <h2><span class="attribs"><span class="type-signature"></span></span>Person<span class="signature">(data)</span><span class="type-signature"></span></h2>
         
-            <div class="class-description">Class representing a Culture Event</div>
+            <div class="class-description">Class representing a Person</div>
         
     
 </header>
@@ -45,7 +45,7 @@
     
 
     
-    <h4 class="name" id="CultureEvent"><span class="type-signature"></span>new CultureEvent<span class="signature">(data)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="Person"><span class="type-signature"></span>new Person<span class="signature">(data)</span><span class="type-signature"></span></h4>
     
 
     
@@ -53,7 +53,7 @@
 
 
 <div class="description">
-    Creates a Culture Event Object
+    Creates an person Object
 </div>
 
 
@@ -146,7 +146,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="culture-event.js.html">culture-event.js</a>, <a href="culture-event.js.html#line110">line 110</a>
+        <a href="person.js.html">person.js</a>, <a href="person.js.html#line132">line 132</a>
     </li></ul></dd>
     
 
@@ -202,7 +202,7 @@
 
 
 <div class="description">
-    Unique ID for the Culture Event
+    Unique ID for a person
 </div>
 
 
@@ -255,7 +255,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="culture-event.js.html">culture-event.js</a>, <a href="culture-event.js.html#line13">line 13</a>
+        <a href="person.js.html">person.js</a>, <a href="person.js.html#line13">line 13</a>
     </li></ul></dd>
     
 
@@ -273,13 +273,13 @@
 
         
             
-<h4 class="name" id="audience"><span class="type-signature"></span>audience<span class="type-signature"> :string</span></h4>
+<h4 class="name" id="birthday"><span class="type-signature"></span>birthday<span class="type-signature"> :string</span></h4>
 
 
 
 
 <div class="description">
-    The audience of the event
+    Person's birthday in format MM/DD
 </div>
 
 
@@ -332,7 +332,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="culture-event.js.html">culture-event.js</a>, <a href="culture-event.js.html#line55">line 55</a>
+        <a href="person.js.html">person.js</a>, <a href="person.js.html#line55">line 55</a>
     </li></ul></dd>
     
 
@@ -350,13 +350,13 @@
 
         
             
-<h4 class="name" id="date"><span class="type-signature"></span>date<span class="type-signature"> :string</span></h4>
+<h4 class="name" id="children"><span class="type-signature"></span>children<span class="type-signature"> :string</span></h4>
 
 
 
 
 <div class="description">
-    ISO Date of the event
+    Person's children, separated by commas
 </div>
 
 
@@ -409,7 +409,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="culture-event.js.html">culture-event.js</a>, <a href="culture-event.js.html#line34">line 34</a>
+        <a href="person.js.html">person.js</a>, <a href="person.js.html#line69">line 69</a>
     </li></ul></dd>
     
 
@@ -427,13 +427,13 @@
 
         
             
-<h4 class="name" id="generalRecordings"><span class="type-signature"></span>generalRecordings<span class="type-signature"> :Array.&lt;<a href="GeneralRecording.html">GeneralRecording</a>></span></h4>
+<h4 class="name" id="dateDeceased"><span class="type-signature"></span>dateDeceased<span class="type-signature"> :string</span></h4>
 
 
 
 
 <div class="description">
-    Array of GeneralRecording items
+    ISO date of person's death
 </div>
 
 
@@ -442,7 +442,392 @@
     <ul>
         <li>
             
-<span class="param-type">Array.&lt;<a href="GeneralRecording.html">GeneralRecording</a>></span>
+<span class="param-type">string</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-default">Default Value:</dt>
+    <dd class="tag-default"><ul class="dummy">
+            <li>''</li>
+        </ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="person.js.html">person.js</a>, <a href="person.js.html#line112">line 112</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="description"><span class="type-signature"></span>description<span class="type-signature"> :string</span></h4>
+
+
+
+
+<div class="description">
+    Description of the person
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">string</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-default">Default Value:</dt>
+    <dd class="tag-default"><ul class="dummy">
+            <li>''</li>
+        </ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="person.js.html">person.js</a>, <a href="person.js.html#line41">line 41</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="father"><span class="type-signature"></span>father<span class="type-signature"> :string</span></h4>
+
+
+
+
+<div class="description">
+    Person's father
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">string</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-default">Default Value:</dt>
+    <dd class="tag-default"><ul class="dummy">
+            <li>''</li>
+        </ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="person.js.html">person.js</a>, <a href="person.js.html#line83">line 83</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="fullName"><span class="type-signature"></span>fullName<span class="type-signature"> :string</span></h4>
+
+
+
+
+<div class="description">
+    Person's full name
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">string</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-default">Default Value:</dt>
+    <dd class="tag-default"><ul class="dummy">
+            <li>''</li>
+        </ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="person.js.html">person.js</a>, <a href="person.js.html#line27">line 27</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="group"><span class="type-signature"></span>group<span class="type-signature"> :string</span></h4>
+
+
+
+
+<div class="description">
+    Group that the person is in (clan, caste, or anything other group worth recording)
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">string</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-default">Default Value:</dt>
+    <dd class="tag-default"><ul class="dummy">
+            <li>''</li>
+        </ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="person.js.html">person.js</a>, <a href="person.js.html#line119">line 119</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="homeLocationIds"><span class="type-signature"></span>homeLocationIds<span class="type-signature"> :Array</span></h4>
+
+
+
+
+<div class="description">
+    IDs of person's home locations
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Array</span>
 
 
         </li>
@@ -486,7 +871,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="culture-event.js.html">culture-event.js</a>, <a href="culture-event.js.html#line83">line 83</a>
+        <a href="person.js.html">person.js</a>, <a href="person.js.html#line48">line 48</a>
     </li></ul></dd>
     
 
@@ -504,90 +889,13 @@
 
         
             
-<h4 class="name" id="helpers"><span class="type-signature"></span>helpers<span class="type-signature"> :Array.&lt;string></span></h4>
+<h4 class="name" id="lastUsed"><span class="type-signature"></span>lastUsed<span class="type-signature"> :string</span></h4>
 
 
 
 
 <div class="description">
-    Array of IDs of helpers from the event
-</div>
-
-
-
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">Array.&lt;string></span>
-
-
-        </li>
-    </ul>
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-default">Default Value:</dt>
-    <dd class="tag-default"><ul class="dummy">
-            <li>[]</li>
-        </ul></dd>
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="culture-event.js.html">culture-event.js</a>, <a href="culture-event.js.html#line41">line 41</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-        
-            
-<h4 class="name" id="location"><span class="type-signature"></span>location<span class="type-signature"> :string</span></h4>
-
-
-
-
-<div class="description">
-    Location ID of where the event took place
+    ISO date of last event involving person
 </div>
 
 
@@ -640,7 +948,161 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="culture-event.js.html">culture-event.js</a>, <a href="culture-event.js.html#line48">line 48</a>
+        <a href="person.js.html">person.js</a>, <a href="person.js.html#line105">line 105</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="mother"><span class="type-signature"></span>mother<span class="type-signature"> :string</span></h4>
+
+
+
+
+<div class="description">
+    Person's mother
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">string</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-default">Default Value:</dt>
+    <dd class="tag-default"><ul class="dummy">
+            <li>''</li>
+        </ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="person.js.html">person.js</a>, <a href="person.js.html#line76">line 76</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="name"><span class="type-signature"></span>name<span class="type-signature"> :string</span></h4>
+
+
+
+
+<div class="description">
+    Person's common name
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">string</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-default">Default Value:</dt>
+    <dd class="tag-default"><ul class="dummy">
+            <li>''</li>
+        </ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="person.js.html">person.js</a>, <a href="person.js.html#line20">line 20</a>
     </li></ul></dd>
     
 
@@ -664,7 +1126,7 @@
 
 
 <div class="description">
-    Event notes
+    Note about the person
 </div>
 
 
@@ -717,7 +1179,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="culture-event.js.html">culture-event.js</a>, <a href="culture-event.js.html#line97">line 97</a>
+        <a href="person.js.html">person.js</a>, <a href="person.js.html#line98">line 98</a>
     </li></ul></dd>
     
 
@@ -735,13 +1197,13 @@
 
         
             
-<h4 class="name" id="recordedBy"><span class="type-signature"></span>recordedBy<span class="type-signature"> :string</span></h4>
+<h4 class="name" id="otherNames"><span class="type-signature"></span>otherNames<span class="type-signature"> :string</span></h4>
 
 
 
 
 <div class="description">
-    User ID of who recorded the event
+    Other names the person goes by, separated by commas
 </div>
 
 
@@ -794,7 +1256,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="culture-event.js.html">culture-event.js</a>, <a href="culture-event.js.html#line62">line 62</a>
+        <a href="person.js.html">person.js</a>, <a href="person.js.html#line34">line 34</a>
     </li></ul></dd>
     
 
@@ -812,244 +1274,13 @@
 
         
             
-<h4 class="name" id="recordStatus"><span class="type-signature"></span>recordStatus<span class="type-signature"> :<a href="global.html#RecordStatus">RecordStatus</a></span></h4>
+<h4 class="name" id="photoFilename"><span class="type-signature"></span>photoFilename<span class="type-signature"> :string</span></h4>
 
 
 
 
 <div class="description">
-    Status of the event recording
-</div>
-
-
-
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type"><a href="global.html#RecordStatus">RecordStatus</a></span>
-
-
-        </li>
-    </ul>
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-default">Default Value:</dt>
-    <dd class="tag-default"><ul class="dummy">
-            <li>RecordStatus.RECORDED</li>
-        </ul></dd>
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="culture-event.js.html">culture-event.js</a>, <a href="culture-event.js.html#line90">line 90</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-        
-            
-<h4 class="name" id="searchWords"><span class="type-signature"></span>searchWords<span class="type-signature"> :Array.&lt;string></span></h4>
-
-
-
-
-<div class="description">
-    Array of searchable keywords
-</div>
-
-
-
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">Array.&lt;string></span>
-
-
-        </li>
-    </ul>
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-default">Default Value:</dt>
-    <dd class="tag-default"><ul class="dummy">
-            <li>[]</li>
-        </ul></dd>
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="culture-event.js.html">culture-event.js</a>, <a href="culture-event.js.html#line27">line 27</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-        
-            
-<h4 class="name" id="sSOutlineItems"><span class="type-signature"></span>sSOutlineItems<span class="type-signature"> :Array.&lt;string></span></h4>
-
-
-
-
-<div class="description">
-    Array of social Outline Item IDs
-</div>
-
-
-
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">Array.&lt;string></span>
-
-
-        </li>
-    </ul>
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-default">Default Value:</dt>
-    <dd class="tag-default"><ul class="dummy">
-            <li>[]</li>
-        </ul></dd>
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="culture-event.js.html">culture-event.js</a>, <a href="culture-event.js.html#line76">line 76</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-        
-            
-<h4 class="name" id="title"><span class="type-signature"></span>title<span class="type-signature"> :string</span></h4>
-
-
-
-
-<div class="description">
-    Title of the event
+    Filename of a picture of the person
 </div>
 
 
@@ -1102,7 +1333,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="culture-event.js.html">culture-event.js</a>, <a href="culture-event.js.html#line20">line 20</a>
+        <a href="person.js.html">person.js</a>, <a href="person.js.html#line126">line 126</a>
     </li></ul></dd>
     
 
@@ -1120,13 +1351,90 @@
 
         
             
-<h4 class="name" id="userCLAStage"><span class="type-signature"></span>userCLAStage<span class="type-signature"> :string</span></h4>
+<h4 class="name" id="sex"><span class="type-signature"></span>sex<span class="type-signature"> :<a href="global.html#PersonSex">PersonSex</a></span></h4>
 
 
 
 
 <div class="description">
-    User's CLA stage at the time of the event
+    Person's sex
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type"><a href="global.html#PersonSex">PersonSex</a></span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-default">Default Value:</dt>
+    <dd class="tag-default"><ul class="dummy">
+            <li>PersonSex.MALE</li>
+        </ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="person.js.html">person.js</a>, <a href="person.js.html#line91">line 91</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="spouses"><span class="type-signature"></span>spouses<span class="type-signature"> :string</span></h4>
+
+
+
+
+<div class="description">
+    Person's spouses, separated by commas
 </div>
 
 
@@ -1179,84 +1487,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="culture-event.js.html">culture-event.js</a>, <a href="culture-event.js.html#line104">line 104</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-        
-            
-<h4 class="name" id="wVOutlineItems"><span class="type-signature"></span>wVOutlineItems<span class="type-signature"> :Array.&lt;string></span></h4>
-
-
-
-
-<div class="description">
-    Array of worldview Outline Item IDs
-</div>
-
-
-
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">Array.&lt;string></span>
-
-
-        </li>
-    </ul>
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-default">Default Value:</dt>
-    <dd class="tag-default"><ul class="dummy">
-            <li>[]</li>
-        </ul></dd>
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="culture-event.js.html">culture-event.js</a>, <a href="culture-event.js.html#line69">line 69</a>
+        <a href="person.js.html">person.js</a>, <a href="person.js.html#line62">line 62</a>
     </li></ul></dd>
     
 
@@ -1284,7 +1515,7 @@
     
 
     
-    <h4 class="name" id="set"><span class="type-signature"></span>set<span class="signature">(data)</span><span class="type-signature"> &rarr; {<a href="CultureEvent.html">CultureEvent</a>}</span></h4>
+    <h4 class="name" id="set"><span class="type-signature"></span>set<span class="signature">(data)</span><span class="type-signature"> &rarr; {<a href="OutlineItem.html">OutlineItem</a>}</span></h4>
     
 
     
@@ -1292,7 +1523,7 @@
 
 
 <div class="description">
-    Creates an updated Culture Event Object
+    Creates an updated person Object
 </div>
 
 
@@ -1385,7 +1616,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="culture-event.js.html">culture-event.js</a>, <a href="culture-event.js.html#line121">line 121</a>
+        <a href="person.js.html">person.js</a>, <a href="person.js.html#line143">line 143</a>
     </li></ul></dd>
     
 
@@ -1421,7 +1652,7 @@
     </dt>
     <dd>
         
-<span class="param-type"><a href="CultureEvent.html">CultureEvent</a></span>
+<span class="param-type"><a href="OutlineItem.html">OutlineItem</a></span>
 
 
     </dd>

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: culture-event.js</title>
+    <title>JSDoc: Source: person.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: culture-event.js</h1>
+    <h1 class="page-title">Source: person.js</h1>
 
     
 
@@ -26,113 +26,135 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { RecordStatus } from './constants';
+            <pre class="prettyprint source linenums"><code>import { PersonSex } from './constants';
 
 /**
- * Class representing a Culture Event
+ * Class representing a Person
  */
-class CultureEvent {
+class Person {
 
   /**
-   * Unique ID for the Culture Event
+   * Unique ID for a person
    * @type {string}
    * @default ''
    */
   _id = '';
 
   /**
-   * Title of the event
+   * Person's common name
    * @type {string}
    * @default ''
    */
-  title = '';
+  name = '';
 
   /**
-   * Array of searchable keywords
-   * @type {string[]}
-   * @default []
-   */
-  searchWords = [];
-
-  /**
-   * ISO Date of the event
+   * Person's full name
    * @type {string}
    * @default ''
    */
-  date = '';
+  fullName = '';
 
   /**
-   * Array of IDs of helpers from the event
-   * @type {string[]}
-   * @default []
-   */
-  helpers = [];
-
-  /**
-   * Location ID of where the event took place
+   * Other names the person goes by, separated by commas
    * @type {string}
    * @default ''
    */
-  location = '';
+  otherNames = '';
 
   /**
-   * The audience of the event
+   * Description of the person
    * @type {string}
    * @default ''
    */
-  audience = '';
+  description = '';
 
   /**
-   * User ID of who recorded the event
+   * IDs of person's home locations
+   * @type {Array}
+   * @default []
+   */
+  homeLocationIds = [];
+
+  /**
+   * Person's birthday in format MM/DD
    * @type {string}
    * @default ''
    */
-  recordedBy = '';
+  birthday = '';
 
   /**
-   * Array of worldview Outline Item IDs
-   * @type {string[]}
-   * @default []
+   * Person's spouses, separated by commas
+   * @type {string}
+   * @default ''
    */
-  wVOutlineItems = [];
+  spouses = '';
 
   /**
-   * Array of social Outline Item IDs
-   * @type {string[]}
-   * @default []
+   * Person's children, separated by commas
+   * @type {string}
+   * @default ''
    */
-  sSOutlineItems = [];
+  children = '';
 
   /**
-   * Array of GeneralRecording items
-   * @type {GeneralRecording[]}
-   * @default []
+   * Person's mother
+   * @type {string}
+   * @default ''
    */
-  generalRecordings = [];
+  mother = '';
 
   /**
-   * Status of the event recording
-   * @type {RecordStatus}
-   * @default RecordStatus.RECORDED
+   * Person's father
+   * @type {string}
+   * @default ''
    */
-  recordStatus = RecordStatus.RECORDED;
+  father = '';
+
 
   /**
-   * Event notes
+   * Person's sex
+   * @type {PersonSex}
+   * @default PersonSex.MALE
+   */
+  sex = PersonSex.MALE;
+
+  /**
+   * Note about the person
    * @type {string}
    * @default ''
    */
   note = '';
 
   /**
-   * User's CLA stage at the time of the event
+   * ISO date of last event involving person
    * @type {string}
    * @default ''
    */
-  userCLAStage = '';
+  lastUsed = '';
 
   /**
-   * Creates a Culture Event Object
+   * ISO date of person's death
+   * @type {string}
+   * @default ''
+   */
+  dateDeceased = '';
+
+  /**
+   * Group that the person is in (clan, caste, or anything other group worth recording)
+   * @type {string}
+   * @default ''
+   */
+  group = '';
+
+  /**
+   * Filename of a picture of the person
+   * @type {string}
+   * @default ''
+   */
+  photoFilename = '';
+
+  /**
+   * Creates an person Object
    * @param {Object} data
    */
   constructor(data = {}) {
@@ -142,12 +164,12 @@ class CultureEvent {
   }
 
   /**
-   * Creates an updated Culture Event Object
+   * Creates an updated person Object
    * @param {Object} data
-   * @returns {CultureEvent}
+   * @returns {OutlineItem}
    */
-  set(data = {}) {
-    return new CultureEvent({
+  set(data) {
+    return new Person({
       ...this,
       ...data
     });
@@ -155,7 +177,7 @@ class CultureEvent {
 
 }
 
-module.exports = CultureEvent;
+module.exports = Person;
 </code></pre>
         </article>
     </section>

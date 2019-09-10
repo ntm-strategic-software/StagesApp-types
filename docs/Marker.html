@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Class: GeneralRecording</title>
+    <title>JSDoc: Class: Marker</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Class: GeneralRecording</h1>
+    <h1 class="page-title">Class: Marker</h1>
 
     
 
@@ -28,9 +28,9 @@
 
 <header>
     
-        <h2><span class="attribs"><span class="type-signature"></span></span>GeneralRecording<span class="signature">(data)</span><span class="type-signature"></span></h2>
+        <h2><span class="attribs"><span class="type-signature"></span></span>Marker<span class="signature">(data)</span><span class="type-signature"></span></h2>
         
-            <div class="class-description">Class representing a General Recording</div>
+            <div class="class-description">Class representing a recording marker</div>
         
     
 </header>
@@ -45,7 +45,7 @@
     
 
     
-    <h4 class="name" id="GeneralRecording"><span class="type-signature"></span>new GeneralRecording<span class="signature">(data)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="Marker"><span class="type-signature"></span>new Marker<span class="signature">(data)</span><span class="type-signature"></span></h4>
     
 
     
@@ -53,7 +53,7 @@
 
 
 <div class="description">
-    Creates a General Recording Object
+    Creates a recording marker
 </div>
 
 
@@ -146,7 +146,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="general-recording.js.html">general-recording.js</a>, <a href="general-recording.js.html#line44">line 44</a>
+        <a href="marker.js.html">marker.js</a>, <a href="marker.js.html#line42">line 42</a>
     </li></ul></dd>
     
 
@@ -202,7 +202,7 @@
 
 
 <div class="description">
-    Unique ID for the recording
+    Unique ID for the recording marker
 </div>
 
 
@@ -255,7 +255,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="general-recording.js.html">general-recording.js</a>, <a href="general-recording.js.html#line11">line 11</a>
+        <a href="marker.js.html">marker.js</a>, <a href="marker.js.html#line11">line 11</a>
     </li></ul></dd>
     
 
@@ -273,13 +273,90 @@
 
         
             
-<h4 class="name" id="filename"><span class="type-signature"></span>filename<span class="type-signature"> :string</span></h4>
+<h4 class="name" id="endTime"><span class="type-signature"></span>endTime<span class="type-signature"> :number</span></h4>
 
 
 
 
 <div class="description">
-    Filename of the recording
+    Time where the marker ends
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">number</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-default">Default Value:</dt>
+    <dd class="tag-default"><ul class="dummy">
+            <li>0</li>
+        </ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="marker.js.html">marker.js</a>, <a href="marker.js.html#line25">line 25</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="note"><span class="type-signature"></span>note<span class="type-signature"> :string</span></h4>
+
+
+
+
+<div class="description">
+    Note about the marker
 </div>
 
 
@@ -332,7 +409,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="general-recording.js.html">general-recording.js</a>, <a href="general-recording.js.html#line25">line 25</a>
+        <a href="marker.js.html">marker.js</a>, <a href="marker.js.html#line32">line 32</a>
     </li></ul></dd>
     
 
@@ -350,13 +427,13 @@
 
         
             
-<h4 class="name" id="isVideo"><span class="type-signature"></span>isVideo<span class="type-signature"> :boolean</span></h4>
+<h4 class="name" id="startTime"><span class="type-signature"></span>startTime<span class="type-signature"> :number</span></h4>
 
 
 
 
 <div class="description">
-    Whether or not it is a video recording
+    Time where the marker begins
 </div>
 
 
@@ -365,7 +442,7 @@
     <ul>
         <li>
             
-<span class="param-type">boolean</span>
+<span class="param-type">number</span>
 
 
         </li>
@@ -402,163 +479,14 @@
     
     <dt class="tag-default">Default Value:</dt>
     <dd class="tag-default"><ul class="dummy">
-            <li>false</li>
+            <li>0</li>
         </ul></dd>
     
 
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="general-recording.js.html">general-recording.js</a>, <a href="general-recording.js.html#line18">line 18</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-        
-            
-<h4 class="name" id="markers"><span class="type-signature"></span>markers<span class="type-signature"> :Array.&lt;<a href="Marker.html">Marker</a>></span></h4>
-
-
-
-
-<div class="description">
-    Markers along the playback timeline
-</div>
-
-
-
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">Array.&lt;<a href="Marker.html">Marker</a>></span>
-
-
-        </li>
-    </ul>
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="general-recording.js.html">general-recording.js</a>, <a href="general-recording.js.html#line38">line 38</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-        
-            
-<h4 class="name" id="photos"><span class="type-signature"></span>photos<span class="type-signature"> :Array.&lt;<a href="RecordingPhoto.html">RecordingPhoto</a>></span></h4>
-
-
-
-
-<div class="description">
-    Array of photo objects from the recording
-</div>
-
-
-
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">Array.&lt;<a href="RecordingPhoto.html">RecordingPhoto</a>></span>
-
-
-        </li>
-    </ul>
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-default">Default Value:</dt>
-    <dd class="tag-default"><ul class="dummy">
-            <li>[]</li>
-        </ul></dd>
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="general-recording.js.html">general-recording.js</a>, <a href="general-recording.js.html#line32">line 32</a>
+        <a href="marker.js.html">marker.js</a>, <a href="marker.js.html#line18">line 18</a>
     </li></ul></dd>
     
 
@@ -586,7 +514,7 @@
     
 
     
-    <h4 class="name" id="set"><span class="type-signature"></span>set<span class="signature">(data)</span><span class="type-signature"> &rarr; {<a href="GeneralRecording.html">GeneralRecording</a>}</span></h4>
+    <h4 class="name" id="set"><span class="type-signature"></span>set<span class="signature">(data)</span><span class="type-signature"> &rarr; {<a href="Marker.html">Marker</a>}</span></h4>
     
 
     
@@ -594,7 +522,7 @@
 
 
 <div class="description">
-    Creates an updated GeneralRecording Object
+    Creates an updated recording marker
 </div>
 
 
@@ -687,7 +615,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="general-recording.js.html">general-recording.js</a>, <a href="general-recording.js.html#line55">line 55</a>
+        <a href="marker.js.html">marker.js</a>, <a href="marker.js.html#line53">line 53</a>
     </li></ul></dd>
     
 
@@ -723,7 +651,7 @@
     </dt>
     <dd>
         
-<span class="param-type"><a href="GeneralRecording.html">GeneralRecording</a></span>
+<span class="param-type"><a href="Marker.html">Marker</a></span>
 
 
     </dd>

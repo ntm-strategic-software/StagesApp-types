@@ -25,13 +25,6 @@ class GeneralRecording {
   filename = '';
 
   /**
-   * User ID of who recorded the event
-   * @type {string}
-   * @default ''
-   */
-  recordedBy = '';
-
-  /**
    * Array of photo objects from the recording
    * @type {RecordingPhoto[]}
    * @default []
@@ -39,8 +32,8 @@ class GeneralRecording {
   photos = [];
 
   /**
-   * Times of markers along the playback timeline
-   * @type {number[]}
+   * Markers along the playback timeline
+   * @type {Marker[]}
    */
   markers = [];
 

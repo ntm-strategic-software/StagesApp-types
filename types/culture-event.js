@@ -1,3 +1,5 @@
+import { RecordStatus } from './constants';
+
 /**
  * Class representing a Culture Event
  */
@@ -81,11 +83,11 @@ class CultureEvent {
   generalRecordings = [];
 
   /**
-   * Record Status enum
+   * Status of the event recording
    * @type {RecordStatus}
    * @default RecordStatus.RECORDED
    */
-  recordStatus = '';
+  recordStatus = RecordStatus.RECORDED;
 
   /**
    * Event notes
@@ -93,6 +95,13 @@ class CultureEvent {
    * @default ''
    */
   note = '';
+
+  /**
+   * User's CLA stage at the time of the event
+   * @type {string}
+   * @default ''
+   */
+  userCLAStage = '';
 
   /**
    * Creates a Culture Event Object
