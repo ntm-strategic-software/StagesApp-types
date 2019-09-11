@@ -1,10 +1,9 @@
-export const Project = require('./types/project');
-export const User = require('./types/user');
-export const Person = require('./types/person');
+export const Constants = require('./types/constants');
 export const CultureEvent = require('./types/culture-event');
 export const GeneralRecording = require('./types/general-recording');
-export const TextMarker = require('./types/text-marker');
-export const GeneralPic = require('./types/general-pic');
-export const RecordingLocation = require('./types/recording-location');
+export const Marker = require('./types/marker');
 export const OutlineItem = require('./types/outline-item');
-export const Constants = require('./types/constants');
+export const Person = require('./types/person');
+export const RecordingLocation = require('./types/recording-location');
+export const RecordingPhoto = require('./types/recording-photo');
+export const User = require('./types/user');
