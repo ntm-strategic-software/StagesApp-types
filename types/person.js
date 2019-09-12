@@ -27,13 +27,6 @@ class Person {
   fullName = '';
 
   /**
-   * Other names the person goes by, separated by commas
-   * @type {string}
-   * @default ''
-   */
-  otherNames = '';
-
-  /**
    * Description of the person
    * @type {string}
    * @default ''
@@ -62,28 +55,6 @@ class Person {
   spouses = '';
 
   /**
-   * Person's children, separated by commas
-   * @type {string}
-   * @default ''
-   */
-  children = '';
-
-  /**
-   * Person's mother
-   * @type {string}
-   * @default ''
-   */
-  mother = '';
-
-  /**
-   * Person's father
-   * @type {string}
-   * @default ''
-   */
-  father = '';
-
-
-  /**
    * Person's sex
    * @type {PersonSex}
    * @default PersonSex.MALE
@@ -110,13 +81,6 @@ class Person {
    * @default ''
    */
   dateDeceased = '';
-
-  /**
-   * Group that the person is in (clan, caste, or anything other group worth recording)
-   * @type {string}
-   * @default ''
-   */
-  group = '';
 
   /**
    * Filename of a picture of the person
