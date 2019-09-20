@@ -1,4 +1,4 @@
-import { PersonSex } from './constants';
+const { PersonSex } = require('./constants');
 
 /**
  * Class representing a Person

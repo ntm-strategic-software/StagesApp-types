@@ -1,4 +1,4 @@
-import { RecordStatus } from './constants';
+const { RecordStatus } = require('./constants');
 
 /**
  * Class representing a Culture Event

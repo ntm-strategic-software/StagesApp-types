@@ -1,4 +1,4 @@
-import { CLAStage } from './constants';
+const { CLAStage } = require('./constants');
 
 /**
  * Class representing a user
