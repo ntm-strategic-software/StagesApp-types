@@ -18,7 +18,8 @@ const RecordStatus = {
  */
 const PersonSex = {
   'MALE': 'MALE',
-  'FEMALE': 'FEMALE'
+  'FEMALE': 'FEMALE',
+  'UNKNOWN': 'UNKNOWN'
 };
 
 /**
