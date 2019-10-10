@@ -13,6 +13,13 @@ class User {
   _id ='';
 
   /**
+   * ISO Date of when the user was last selected/created/updated
+   * @type {string}
+   * @default ''
+   */
+  dateLastUsed = '';
+
+  /**
    * User's common name
    * @type {string}
    * @default ''
