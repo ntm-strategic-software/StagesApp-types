@@ -76,8 +76,8 @@ class CultureEvent {
   sSOutlineItems = [];
 
   /**
-   * Array of GeneralRecording items
-   * @type {GeneralRecording[]}
+   * Array of GeneralRecording Item IDs
+   * @type {string[]}
    * @default []
    */
   generalRecordings = [];
