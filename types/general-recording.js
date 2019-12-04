@@ -32,8 +32,9 @@ class GeneralRecording {
   photos = [];
 
   /**
-   * Markers along the playback timeline
-   * @type {Marker[]}
+   * Array of IDs of markers from the recording
+   * @type {string[]}
+   * @default []
    */
   markers = [];
 

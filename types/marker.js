@@ -11,6 +11,13 @@ class Marker {
   _id = '';
 
   /**
+   * ID of culture event
+   * @type {string}
+   * @default ''
+   */
+  cultureEvent = '';
+
+  /**
    * Time where the marker begins
    * @type {number}
    * @default 0
