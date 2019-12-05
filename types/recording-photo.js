@@ -8,6 +8,13 @@ class RecordingPhoto {
   _id = '';
 
   /**
+   * ID of culture event
+   * @type {string}
+   * @default ''
+   */
+  cultureEvent = '';
+
+  /**
    * Time of photo start
    * @type {number}
    * @default 0
@@ -20,6 +27,13 @@ class RecordingPhoto {
    * @default 0
    */
   endTime = 0;
+
+  /**
+   * Note about the marker
+   * @type {string}
+   * @default ''
+   */
+  note = '';
 
   /**
    * Filename of photo
