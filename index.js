@@ -7,3 +7,4 @@ module.exports.Person = require('./types/person');
 module.exports.RecordingLocation = require('./types/recording-location');
 module.exports.RecordingPhoto = require('./types/recording-photo');
 module.exports.User = require('./types/user');
+module.exports.SearchWord = require('./types/search-word');

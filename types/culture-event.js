@@ -20,7 +20,7 @@ class CultureEvent {
   title = '';
 
   /**
-   * Array of searchable keywords
+   * Array of IDs of search words
    * @type {string[]}
    * @default []
    */

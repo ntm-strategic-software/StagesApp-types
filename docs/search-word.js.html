@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: culture-event.js</title>
+    <title>JSDoc: Source: search-word.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: culture-event.js</h1>
+    <h1 class="page-title">Source: search-word.js</h1>
 
     
 
@@ -26,113 +26,26 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>const { RecordStatus } = require('./constants');
-
-/**
- * Class representing a Culture Event
+            <pre class="prettyprint source linenums"><code>/**
+ * Class representing a search word
  */
-class CultureEvent {
+class SearchWord {
 
   /**
-   * Unique ID for the Culture Event
+   * Unique ID for the search word
    * @type {string}
    * @default ''
    */
   _id = '';
 
   /**
-   * Title of the event
+   * Text of the search word
    * @type {string}
-   * @default ''
    */
-  title = '';
+  word = '';
 
   /**
-   * Array of searchable keywords
-   * @type {string[]}
-   * @default []
-   */
-  searchWords = [];
-
-  /**
-   * ISO Date of the event
-   * @type {string}
-   * @default ''
-   */
-  date = '';
-
-  /**
-   * Array of IDs of helpers from the event
-   * @type {string[]}
-   * @default []
-   */
-  helpers = [];
-
-  /**
-   * Location ID of where the event took place
-   * @type {string}
-   * @default ''
-   */
-  location = '';
-
-  /**
-   * The audience of the event
-   * @type {string}
-   * @default ''
-   */
-  audience = '';
-
-  /**
-   * User ID of who recorded the event
-   * @type {string}
-   * @default ''
-   */
-  recordedBy = '';
-
-  /**
-   * Array of worldview Outline Item IDs
-   * @type {string[]}
-   * @default []
-   */
-  wVOutlineItems = [];
-
-  /**
-   * Array of social Outline Item IDs
-   * @type {string[]}
-   * @default []
-   */
-  sSOutlineItems = [];
-
-  /**
-   * Array of GeneralRecording Item IDs
-   * @type {string[]}
-   * @default []
-   */
-  generalRecordings = [];
-
-  /**
-   * Status of the event recording
-   * @type {RecordStatus}
-   * @default RecordStatus.RECORDED
-   */
-  recordStatus = RecordStatus.RECORDED;
-
-  /**
-   * Event notes
-   * @type {string}
-   * @default ''
-   */
-  note = '';
-
-  /**
-   * User's CLA stage at the time of the event
-   * @type {string}
-   * @default ''
-   */
-  userCLAStage = '';
-
-  /**
-   * Creates a Culture Event Object
+   * Creates a search word
    * @param {Object} data
    */
   constructor(data = {}) {
@@ -142,12 +55,12 @@ class CultureEvent {
   }
 
   /**
-   * Creates an updated Culture Event Object
+   * Creates an updated search word
    * @param {Object} data
-   * @returns {CultureEvent}
+   * @returns {SearchWord}
    */
-  set(data = {}) {
-    return new CultureEvent({
+  set(data) {
+    return new SearchWord({
       ...this,
       ...data
     });
@@ -155,7 +68,7 @@ class CultureEvent {
 
 }
 
-module.exports = CultureEvent;
+module.exports = SearchWord;
 </code></pre>
         </article>
     </section>
