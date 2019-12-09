@@ -73,7 +73,7 @@ class Person {
    * @type {string}
    * @default ''
    */
-  lastUsed = '';
+  dateLastUsed = '';
 
   /**
    * ISO date of person's death

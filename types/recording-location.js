@@ -25,6 +25,13 @@ class RecordingLocation {
   note = '';
 
   /**
+   * ISO date of last event involving location
+   * @type {string}
+   * @default ''
+   */
+  dateLastUsed = '';
+
+  /**
    * Creates a recording location
    * @param {Object} data
    */
