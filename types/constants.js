@@ -5,7 +5,7 @@
  */
 const Sex = {
   'MALE': 'MALE',
-  'FEMALE': 'FEMALE',
+  'FEMALE': 'FEMALE'
 };
 
 /**
@@ -18,7 +18,7 @@ const UserRestrictions = {
   'SIMPLE_RECORD_ONLY': 'SIMPLE_RECORD_ONLY',
   'SIMPLE_RECORD_PLAY': 'SIMPLE_RECORD_PLAY',
   'COMPLEX_RECORD_PLAY': 'COMPLEX_RECORD_PLAY',
-  'PLAY_ONLY': 'PLAY_ONLY',
+  'PLAY_ONLY': 'PLAY_ONLY'
 };
 
 /**

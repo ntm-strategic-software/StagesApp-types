@@ -48,9 +48,9 @@ class User {
   claStage = CLAStage.STAGE_1;
 
   /**
-   * what
+   * Stage month number of the user
    * @type {number}
-   * @default ''
+   * @default 1
    */
   stageMonth = 1;
 

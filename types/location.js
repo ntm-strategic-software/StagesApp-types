@@ -1,17 +1,17 @@
 /**
- * Class representing a recording location
+ * Class representing a location
  */
 class Location {
 
   /**
-   * Unique ID for the recording location
+   * Unique ID for the location
    * @type {string}
    * @default ''
    */
   _id ='';
 
   /**
-   * Name of the recording location
+   * Name of the location
    * @type {string}
    * @default ''
    */
@@ -32,7 +32,7 @@ class Location {
   dateLastUsed = '';
 
   /**
-   * Creates a recording location
+   * Creates a location
    * @param {Object} data
    */
   constructor(data = {}) {
@@ -42,7 +42,7 @@ class Location {
   }
 
   /**
-   * Creates an updated recording location
+   * Creates an updated location
    * @param {Object} data
    * @returns {Location}
    */

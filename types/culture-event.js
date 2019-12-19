@@ -78,7 +78,7 @@ class CultureEvent {
   /**
    * Status of the event recording
    * @type {RecordStatus}
-   * @default ''
+   * @default RecordStatus.PLANNED
    */
   recordStatus = RecordStatus.PLANNED;
 
