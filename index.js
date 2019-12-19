@@ -5,6 +5,6 @@ module.exports.Marker = require('./types/marker');
 module.exports.OutlineItem = require('./types/outline-item');
 module.exports.Person = require('./types/person');
 module.exports.RecordingLocation = require('./types/recording-location');
-module.exports.RecordingPhoto = require('./types/recording-photo');
+module.exports.GeneralPhoto = require('./types/general-photo');
 module.exports.User = require('./types/user');
 module.exports.SearchWord = require('./types/search-word');

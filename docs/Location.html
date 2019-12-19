@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Class: OutlineItem</title>
+    <title>JSDoc: Class: Location</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Class: OutlineItem</h1>
+    <h1 class="page-title">Class: Location</h1>
 
     
 
@@ -28,9 +28,9 @@
 
 <header>
     
-        <h2><span class="attribs"><span class="type-signature"></span></span>OutlineItem<span class="signature">(data)</span><span class="type-signature"></span></h2>
+        <h2><span class="attribs"><span class="type-signature"></span></span>Location<span class="signature">(data)</span><span class="type-signature"></span></h2>
         
-            <div class="class-description">Class representing an Outline Item</div>
+            <div class="class-description">Class representing a location</div>
         
     
 </header>
@@ -45,7 +45,7 @@
     
 
     
-    <h4 class="name" id="OutlineItem"><span class="type-signature"></span>new OutlineItem<span class="signature">(data)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="Location"><span class="type-signature"></span>new Location<span class="signature">(data)</span><span class="type-signature"></span></h4>
     
 
     
@@ -53,7 +53,7 @@
 
 
 <div class="description">
-    Creates an Outline Item Object
+    Creates a location
 </div>
 
 
@@ -146,7 +146,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="outline-item.js.html">outline-item.js</a>, <a href="outline-item.js.html#line38">line 38</a>
+        <a href="location.js.html">location.js</a>, <a href="location.js.html#line38">line 38</a>
     </li></ul></dd>
     
 
@@ -202,7 +202,7 @@
 
 
 <div class="description">
-    Unique ID for the Outline Item
+    Unique ID for the location
 </div>
 
 
@@ -255,7 +255,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="outline-item.js.html">outline-item.js</a>, <a href="outline-item.js.html#line11">line 11</a>
+        <a href="location.js.html">location.js</a>, <a href="location.js.html#line11">line 11</a>
     </li></ul></dd>
     
 
@@ -273,13 +273,13 @@
 
         
             
-<h4 class="name" id="code"><span class="type-signature"></span>code<span class="type-signature"> :string</span></h4>
+<h4 class="name" id="dateLastUsed"><span class="type-signature"></span>dateLastUsed<span class="type-signature"> :string</span></h4>
 
 
 
 
 <div class="description">
-    Outline Item code
+    ISO date of last event involving location
 </div>
 
 
@@ -332,7 +332,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="outline-item.js.html">outline-item.js</a>, <a href="outline-item.js.html#line25">line 25</a>
+        <a href="location.js.html">location.js</a>, <a href="location.js.html#line32">line 32</a>
     </li></ul></dd>
     
 
@@ -350,90 +350,13 @@
 
         
             
-<h4 class="name" id="number"><span class="type-signature"></span>number<span class="type-signature"> :number</span></h4>
+<h4 class="name" id="name"><span class="type-signature"></span>name<span class="type-signature"> :string</span></h4>
 
 
 
 
 <div class="description">
-    Number for sorting
-</div>
-
-
-
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">number</span>
-
-
-        </li>
-    </ul>
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-default">Default Value:</dt>
-    <dd class="tag-default"><ul class="dummy">
-            <li>0</li>
-        </ul></dd>
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="outline-item.js.html">outline-item.js</a>, <a href="outline-item.js.html#line18">line 18</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-        
-            
-<h4 class="name" id="text"><span class="type-signature"></span>text<span class="type-signature"> :string</span></h4>
-
-
-
-
-<div class="description">
-    Outline Item text
+    Name of the location
 </div>
 
 
@@ -486,7 +409,84 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="outline-item.js.html">outline-item.js</a>, <a href="outline-item.js.html#line32">line 32</a>
+        <a href="location.js.html">location.js</a>, <a href="location.js.html#line18">line 18</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="note"><span class="type-signature"></span>note<span class="type-signature"> :string</span></h4>
+
+
+
+
+<div class="description">
+    Any notes about the location
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">string</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-default">Default Value:</dt>
+    <dd class="tag-default"><ul class="dummy">
+            <li>''</li>
+        </ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="location.js.html">location.js</a>, <a href="location.js.html#line25">line 25</a>
     </li></ul></dd>
     
 
@@ -514,7 +514,7 @@
     
 
     
-    <h4 class="name" id="set"><span class="type-signature"></span>set<span class="signature">(data)</span><span class="type-signature"> &rarr; {<a href="OutlineItem.html">OutlineItem</a>}</span></h4>
+    <h4 class="name" id="set"><span class="type-signature"></span>set<span class="signature">(data)</span><span class="type-signature"> &rarr; {<a href="Location.html">Location</a>}</span></h4>
     
 
     
@@ -522,7 +522,7 @@
 
 
 <div class="description">
-    Creates an updated OutlineItem Object
+    Creates an updated location
 </div>
 
 
@@ -615,7 +615,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="outline-item.js.html">outline-item.js</a>, <a href="outline-item.js.html#line49">line 49</a>
+        <a href="location.js.html">location.js</a>, <a href="location.js.html#line49">line 49</a>
     </li></ul></dd>
     
 
@@ -651,7 +651,7 @@
     </dt>
     <dd>
         
-<span class="param-type"><a href="OutlineItem.html">OutlineItem</a></span>
+<span class="param-type"><a href="Location.html">Location</a></span>
 
 
     </dd>

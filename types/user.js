@@ -1,4 +1,4 @@
-const { CLAStage } = require('./constants');
+const { CLAStage, UserRestrictions } = require('./constants');
 
 /**
  * Class representing a user
@@ -10,7 +10,7 @@ class User {
    * @type {string}
    * @default ''
    */
-  _id ='';
+  _id = '';
 
   /**
    * ISO Date of when the user was last selected/created/updated
@@ -34,6 +34,13 @@ class User {
   fullName = '';
 
   /**
+   * UserRestrictions value that determines what the user can do
+   * @type {UserRestrictions|string}
+   * @default ''
+   */
+  restrictions = '';
+
+  /**
    * User's current CLA stage
    * @type {CLAStage|string}
    * @default CLAStage.STAGE_1
@@ -41,11 +48,11 @@ class User {
   claStage = CLAStage.STAGE_1;
 
   /**
-   * User's favorite people (they show at the top of the list when selecting helpers)
-   * @type {Array}
-   * @default []
+   * Stage month number of the user
+   * @type {number}
+   * @default 1
    */
-  favoritePersonIds = [];
+  stageMonth = 1;
 
   /**
    * Filename of a picture of the user

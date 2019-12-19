@@ -1,7 +1,7 @@
-class RecordingPhoto {
+class GeneralPhoto {
 
   /**
-   * Unique ID for the Recording Photo
+   * Unique ID for the General Photo
    * @type {string}
    * @default ''
    */
@@ -29,13 +29,6 @@ class RecordingPhoto {
   endTime = 0;
 
   /**
-   * Note about the marker
-   * @type {string}
-   * @default ''
-   */
-  note = '';
-
-  /**
    * Filename of photo
    * @type {string}
    * @default ''
@@ -43,7 +36,7 @@ class RecordingPhoto {
   filename = '';
 
   /**
-   * Creates a Recording Photo Object
+   * Creates a General Photo Object
    * @param {Object} data
    */
   constructor(data = {}) {
@@ -53,12 +46,12 @@ class RecordingPhoto {
   }
 
   /**
-   * Creates an updated Recording Photo Object
+   * Creates an updated General Photo Object
    * @param {Object} data
-   * @returns {RecordingPhoto}
+   * @returns {GeneralPhoto}
    */
   set(data = {}) {
-    return new RecordingPhoto({
+    return new GeneralPhoto({
       ...this,
       ...data
     });
@@ -66,4 +59,4 @@ class RecordingPhoto {
 
 }
 
-module.exports = RecordingPhoto;
+module.exports = GeneralPhoto;

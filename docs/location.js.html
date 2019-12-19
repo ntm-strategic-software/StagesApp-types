@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: person.js</title>
+    <title>JSDoc: Source: location.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: person.js</h1>
+    <h1 class="page-title">Source: location.js</h1>
 
     
 
@@ -26,85 +26,41 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>const { Sex } = require('./constants');
-
-/**
- * Class representing a Person
+            <pre class="prettyprint source linenums"><code>/**
+ * Class representing a location
  */
-class Person {
+class Location {
 
   /**
-   * Unique ID for a person
+   * Unique ID for the location
    * @type {string}
    * @default ''
    */
-  _id = '';
+  _id ='';
 
   /**
-   * Person's common name
+   * Name of the location
    * @type {string}
    * @default ''
    */
   name = '';
 
   /**
-   * Person's full name
-   * @type {string}
-   * @default ''
-   */
-  fullName = '';
-
-  /**
-   * Description of the person
-   * @type {string}
-   * @default ''
-   */
-  description = '';
-
-  /**
-   * Person's birthday in format MM/DD
-   * @type {string}
-   * @default ''
-   */
-  birthday = '';
-
-  /**
-   * Person's sex
-   * @type {Sex}
-   * @default Sex.MALE
-   */
-  sex = Sex.MALE;
-
-  /**
-   * Note about the person
+   * Any notes about the location
    * @type {string}
    * @default ''
    */
   note = '';
 
   /**
-   * ISO date of last event involving person
+   * ISO date of last event involving location
    * @type {string}
    * @default ''
    */
   dateLastUsed = '';
 
   /**
-   * ISO date of person's death
-   * @type {string}
-   * @default ''
-   */
-  dateDeceased = '';
-
-  /**
-   * Filename of a picture of the person
-   * @type {string}
-   * @default ''
-   */
-  photoFilename = '';
-
-  /**
-   * Creates an person Object
+   * Creates a location
    * @param {Object} data
    */
   constructor(data = {}) {
@@ -114,12 +70,12 @@ class Person {
   }
 
   /**
-   * Creates an updated person Object
+   * Creates an updated location
    * @param {Object} data
-   * @returns {Person}
+   * @returns {Location}
    */
   set(data) {
-    return new Person({
+    return new Location({
       ...this,
       ...data
     });
@@ -127,7 +83,7 @@ class Person {
 
 }
 
-module.exports = Person;
+module.exports = Location;
 </code></pre>
         </article>
     </section>

@@ -1,10 +1,10 @@
 /**
- * Class representing a recording marker
+ * Class representing a marker
  */
 class Marker {
 
   /**
-   * Unique ID for the recording marker
+   * Unique ID for the marker
    * @type {string}
    * @default ''
    */
@@ -38,12 +38,22 @@ class Marker {
    */
   note = '';
 
-  // searchWords = [];
-  // wVOutlineItems = [];
-  // sSOutlineItems = [];
+  /**
+   * Array of IDs of search words
+   * @type {string[]}
+   * @default []
+   */
+  searchWords = [];
 
   /**
-   * Creates a recording marker
+   * Array of Outline Item IDs
+   * @type {string[]}
+   * @default []
+   */
+  outlineItems = [];
+
+  /**
+   * Creates a marker
    * @param {Object} data
    */
   constructor(data = {}) {
@@ -53,7 +63,7 @@ class Marker {
   }
 
   /**
-   * Creates an updated recording marker
+   * Creates an updated marker
    * @param {Object} data
    * @returns {Marker}
    */

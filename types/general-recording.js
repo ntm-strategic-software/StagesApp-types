@@ -25,18 +25,32 @@ class GeneralRecording {
   filename = '';
 
   /**
-   * Array of photo objects from the recording
-   * @type {RecordingPhoto[]}
-   * @default []
-   */
-  photos = [];
-
-  /**
    * Array of IDs of markers from the recording
    * @type {string[]}
    * @default []
    */
   markers = [];
+
+  /**
+   * Array of points in time during this recording when the user marked questions
+   * @type {number[]}
+   * @default []
+   */
+  questionTimes = []
+
+  /**
+   * Array of GeneralPhoto IDs from the recording
+   * @type {string[]}
+   * @default []
+   */
+  photos = [];
+
+  /**
+   * Array of IDs of SubRecording objects
+   * @type {string[]}
+   * @default []
+   */
+  subRecordings = [];
 
   /**
    * Creates a General Recording Object
