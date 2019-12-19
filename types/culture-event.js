@@ -34,7 +34,7 @@ class CultureEvent {
   date = '';
 
   /**
-   * Array of IDs of helpers from the event
+   * Array of Person IDs of helpers from the event
    * @type {string[]}
    * @default []
    */
@@ -62,18 +62,11 @@ class CultureEvent {
   recordedBy = '';
 
   /**
-   * Array of worldview Outline Item IDs
+   * Array of Outline Item IDs
    * @type {string[]}
    * @default []
    */
-  wVOutlineItems = [];
-
-  /**
-   * Array of social Outline Item IDs
-   * @type {string[]}
-   * @default []
-   */
-  sSOutlineItems = [];
+  outlineItems = [];
 
   /**
    * Array of GeneralRecording Item IDs
@@ -85,9 +78,23 @@ class CultureEvent {
   /**
    * Status of the event recording
    * @type {RecordStatus}
-   * @default RecordStatus.RECORDED
+   * @default ''
    */
-  recordStatus = RecordStatus.RECORDED;
+  recordStatus = RecordStatus.PLANNED;
+
+  /**
+   * CLAStage ID of User's CLA stage at the time of the event
+   * @type {string}
+   * @default ''
+   */
+  userCLAStage = '';
+
+  /**
+   * What month is this user in for his current stage?
+   * @type {number}
+   * @default 1
+   */
+  userStageMonth = 1;
 
   /**
    * Event notes
@@ -97,11 +104,11 @@ class CultureEvent {
   note = '';
 
   /**
-   * User's CLA stage at the time of the event
-   * @type {string}
-   * @default ''
+   * CultureEvent ID's of related culture events
+   * @type {string[]}
+   * @default []
    */
-  userCLAStage = '';
+  relatedRecordsLinks = [];
 
   /**
    * Creates a Culture Event Object

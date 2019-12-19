@@ -1,7 +1,7 @@
 /**
  * Class representing a recording location
  */
-class RecordingLocation {
+class Location {
 
   /**
    * Unique ID for the recording location
@@ -44,10 +44,10 @@ class RecordingLocation {
   /**
    * Creates an updated recording location
    * @param {Object} data
-   * @returns {RecordingLocation}
+   * @returns {Location}
    */
   set(data) {
-    return new RecordingLocation({
+    return new Location({
       ...this,
       ...data
     });
@@ -55,4 +55,4 @@ class RecordingLocation {
 
 }
 
-module.exports = RecordingLocation;
+module.exports = Location;

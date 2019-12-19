@@ -1,4 +1,4 @@
-const { PersonSex } = require('./constants');
+const { Sex } = require('./constants');
 
 /**
  * Class representing a Person
@@ -34,13 +34,6 @@ class Person {
   description = '';
 
   /**
-   * IDs of person's home locations
-   * @type {Array}
-   * @default []
-   */
-  homeLocationIds = [];
-
-  /**
    * Person's birthday in format MM/DD
    * @type {string}
    * @default ''
@@ -48,18 +41,11 @@ class Person {
   birthday = '';
 
   /**
-   * Person's spouses, separated by commas
-   * @type {string}
-   * @default ''
-   */
-  spouses = '';
-
-  /**
    * Person's sex
-   * @type {PersonSex}
-   * @default PersonSex.MALE
+   * @type {Sex}
+   * @default Sex.MALE
    */
-  sex = PersonSex.MALE;
+  sex = Sex.MALE;
 
   /**
    * Note about the person
@@ -102,7 +88,7 @@ class Person {
   /**
    * Creates an updated person Object
    * @param {Object} data
-   * @returns {OutlineItem}
+   * @returns {Person}
    */
   set(data) {
     return new Person({

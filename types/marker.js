@@ -38,9 +38,19 @@ class Marker {
    */
   note = '';
 
-  // searchWords = [];
-  // wVOutlineItems = [];
-  // sSOutlineItems = [];
+  /**
+   * Array of IDs of search words
+   * @type {string[]}
+   * @default []
+   */
+  searchWords = [];
+
+  /**
+   * Array of Outline Item IDs
+   * @type {string[]}
+   * @default []
+   */
+  outlineItems = [];
 
   /**
    * Creates a recording marker
