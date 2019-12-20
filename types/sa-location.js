@@ -1,7 +1,7 @@
 /**
- * Class representing a location
+ * Class representing a StagesApp location (not to be confused with the `Location` global object in browsers and Electron)
  */
-class Location {
+class SALocation {
 
   /**
    * Unique ID for the location
@@ -44,10 +44,10 @@ class Location {
   /**
    * Creates an updated location
    * @param {Object} data
-   * @returns {Location}
+   * @returns {SALocation}
    */
   set(data) {
-    return new Location({
+    return new SALocation({
       ...this,
       ...data
     });
@@ -55,4 +55,4 @@ class Location {
 
 }
 
-module.exports = Location;
+module.exports = SALocation;
