@@ -46,7 +46,25 @@ const RecordStatus = {
   'REVIEWED': 'REVIEWED'
 };
 
+/**
+ * Enum for table names
+ * @readonly
+ * @enum {string}
+ */
+const TableNames = {
+  'USERS': 'Users',
+  'CULTURE_EVENTS': 'CultureEvents',
+  'GENERAL_RECORDINGS': 'GeneralRecordings',
+  'MARKERS': 'Markers',
+  'PEOPLE': 'People',
+  'LOCATIONS': 'Locations',
+  'GENERAL_PHOTOS': 'GeneralPhotos',
+  'SEARCH_WORDS': 'SearchWords',
+  'TRUSTED_MACHINES': 'TrustedMachines'
+};
+
 module.exports.Sex = Sex;
 module.exports.UserRestrictions = UserRestrictions;
 module.exports.RecordStatus = RecordStatus;
 module.exports.CLAStage = CLAStage;
+module.exports.TableNames = TableNames;
