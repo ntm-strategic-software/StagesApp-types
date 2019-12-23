@@ -60,7 +60,8 @@ const TableNames = {
   'LOCATIONS': 'Locations',
   'GENERAL_PHOTOS': 'GeneralPhotos',
   'SEARCH_WORDS': 'SearchWords',
-  'TRUSTED_MACHINES': 'TrustedMachines'
+  'TRUSTED_MACHINES': 'TrustedMachines',
+  'MOBILE_DEVICES': 'MobileDevices'
 };
 
 module.exports.Sex = Sex;
