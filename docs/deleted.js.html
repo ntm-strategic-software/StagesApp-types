@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Home</title>
+    <title>JSDoc: Source: deleted.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,32 +17,69 @@
 
 <div id="main">
 
-    <h1 class="page-title">Home</h1>
+    <h1 class="page-title">Source: deleted.js</h1>
 
     
 
 
 
     
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * Class representing a deleted item
+ */
+class Deleted {
 
+  /**
+   * ID of the deleted item
+   * @type {string}
+   * @default ''
+   */
+  _id = '';
 
-    <h3> </h3>
+  /**
+   * Name of the table the item was deleted from
+   * @type {string}
+   * @default ''
+   */
+  table = '';
 
+  /**
+   * Date the item was deleted
+   * @type {string}
+   * @default ''
+   */
+  date = '';
 
+  /**
+   * Creates a deleted instance
+   * @param {Object} data
+   */
+  constructor(data = {}) {
+    for(const key of Object.keys(data)) {
+      this[key] = data[key];
+    }
+  }
 
+  /**
+   * Creates an updated deleted instance
+   * @param {Object} data
+   * @returns {Marker}
+   */
+  set(data) {
+    return new Deleted({
+      ...this,
+      ...data
+    });
+  }
 
+}
 
-
-
-
-
-
-    
-
-
-
-
-
+module.exports = Deleted;
+</code></pre>
+        </article>
+    </section>
 
 
 
