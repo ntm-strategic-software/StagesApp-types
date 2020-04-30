@@ -8,3 +8,4 @@ module.exports.SALocation = require('./types/sa-location');
 module.exports.GeneralPhoto = require('./types/general-photo');
 module.exports.User = require('./types/user');
 module.exports.SearchWord = require('./types/search-word');
+module.exports.Deleted = require('./types/deleted');
