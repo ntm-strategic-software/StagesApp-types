@@ -104,6 +104,20 @@ class CultureEvent {
   note = '';
 
   /**
+   * Phonetic Transcriptions encoded in HTML
+   * @type {string}
+   * @default ''
+   */
+  phoneticTranscriptionsEncoded = '';
+
+  /**
+   * Phonetic Transcriptions in plain text
+   * @type {string}
+   * @default ''
+   */
+  phoneticTranscriptions = '';
+
+  /**
    * CultureEvent ID's of related culture events
    * @type {string[]}
    * @default []
