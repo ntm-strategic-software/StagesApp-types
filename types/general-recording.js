@@ -32,11 +32,11 @@ class GeneralRecording {
   markers = [];
 
   /**
-   * Array of points in time during this recording when the user marked questions
-   * @type {number[]}
+   * Array of questions from the recording
+   * @type {Question[]}
    * @default []
    */
-  questionTimes = []
+  questions = []
 
   /**
    * Array of GeneralPhoto IDs from the recording

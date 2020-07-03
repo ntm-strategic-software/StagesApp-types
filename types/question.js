@@ -1,10 +1,7 @@
-/**
- * Class representing a marker
- */
-class Marker {
+class Question {
 
   /**
-   * Unique ID for the marker
+   * Unique ID for the Question
    * @type {string}
    * @default ''
    */
@@ -18,42 +15,28 @@ class Marker {
   cultureEvent = '';
 
   /**
-   * Time where the marker begins
+   * Time of question start
    * @type {number}
    * @default 0
    */
   startTime = 0;
 
   /**
-   * Time where the marker ends
+   * Time of question end
    * @type {number}
    * @default 0
    */
   endTime = 0;
 
   /**
-   * Note about the marker
+   * Filename
    * @type {string}
    * @default ''
    */
-  note = '';
+  filename = '';
 
   /**
-   * Array of IDs of search words
-   * @type {string[]}
-   * @default []
-   */
-  searchWords = [];
-
-  /**
-   * Array of Outline Item IDs
-   * @type {string[]}
-   * @default []
-   */
-  outlineItems = [];
-
-  /**
-   * Creates a marker
+   * Creates a Question Object
    * @param {Object} data
    */
   constructor(data = {}) {
@@ -63,12 +46,12 @@ class Marker {
   }
 
   /**
-   * Creates an updated marker
+   * Creates an updated Question Object
    * @param {Object} data
-   * @returns {Marker}
+   * @returns {Question}
    */
-  set(data) {
-    return new Marker({
+  set(data = {}) {
+    return new Question({
       ...this,
       ...data
     });
@@ -76,4 +59,4 @@ class Marker {
 
 }
 
-module.exports = Marker;
+module.exports = Question;

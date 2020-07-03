@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: culture-event.js</title>
+    <title>JSDoc: Source: question.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: culture-event.js</h1>
+    <h1 class="page-title">Source: question.js</h1>
 
     
 
@@ -26,134 +26,45 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>const { RecordStatus } = require('./constants');
-
-/**
- * Class representing a Culture Event
- */
-class CultureEvent {
+            <pre class="prettyprint source linenums"><code>class Question {
 
   /**
-   * Unique ID for the Culture Event
+   * Unique ID for the Question
    * @type {string}
    * @default ''
    */
   _id = '';
 
   /**
-   * Title of the event
+   * ID of culture event
    * @type {string}
    * @default ''
    */
-  title = '';
+  cultureEvent = '';
 
   /**
-   * Array of IDs of search words
-   * @type {string[]}
-   * @default []
-   */
-  searchWords = [];
-
-  /**
-   * ISO Date of the event
-   * @type {string}
-   * @default ''
-   */
-  date = '';
-
-  /**
-   * Array of Person IDs of helpers from the event
-   * @type {string[]}
-   * @default []
-   */
-  helpers = [];
-
-  /**
-   * Location ID of where the event took place
-   * @type {string}
-   * @default ''
-   */
-  location = '';
-
-  /**
-   * The audience of the event
-   * @type {string}
-   * @default ''
-   */
-  audience = '';
-
-  /**
-   * User ID of who recorded the event
-   * @type {string}
-   * @default ''
-   */
-  recordedBy = '';
-
-  /**
-   * Array of Outline Item IDs
-   * @type {string[]}
-   * @default []
-   */
-  outlineItems = [];
-
-  /**
-   * Array of GeneralRecording Item IDs
-   * @type {string[]}
-   * @default []
-   */
-  generalRecordings = [];
-
-  /**
-   * Status of the event recording
-   * @type {RecordStatus}
-   * @default RecordStatus.PLANNED
-   */
-  recordStatus = RecordStatus.PLANNED;
-
-  /**
-   * CLAStage ID of User's CLA stage at the time of the event
-   * @type {string}
-   * @default ''
-   */
-  userCLAStage = '';
-
-  /**
-   * What month is this user in for his current stage?
+   * Time of question start
    * @type {number}
-   * @default 1
+   * @default 0
    */
-  userStageMonth = 1;
+  startTime = 0;
 
   /**
-   * Event notes
+   * Time of question end
+   * @type {number}
+   * @default 0
+   */
+  endTime = 0;
+
+  /**
+   * Filename
    * @type {string}
    * @default ''
    */
-  note = '';
+  filename = '';
 
   /**
-   * Phonetic Transcriptions encoded in HTML
-   * @type {string}
-   * @default ''
-   */
-  phoneticTranscriptionsEncoded = '';
-
-  /**
-   * Phonetic Transcriptions in plain text
-   * @type {string}
-   * @default ''
-   */
-  phoneticTranscriptions = '';
-
-  /**
-   * CultureEvent ID's of related culture events
-   * @type {string[]}
-   * @default []
-   */
-  relatedRecordsLinks = [];
-
-  /**
-   * Creates a Culture Event Object
+   * Creates a Question Object
    * @param {Object} data
    */
   constructor(data = {}) {
@@ -163,12 +74,12 @@ class CultureEvent {
   }
 
   /**
-   * Creates an updated Culture Event Object
+   * Creates an updated Question Object
    * @param {Object} data
-   * @returns {CultureEvent}
+   * @returns {Question}
    */
   set(data = {}) {
-    return new CultureEvent({
+    return new Question({
       ...this,
       ...data
     });
@@ -176,7 +87,7 @@ class CultureEvent {
 
 }
 
-module.exports = CultureEvent;
+module.exports = Question;
 </code></pre>
         </article>
     </section>
