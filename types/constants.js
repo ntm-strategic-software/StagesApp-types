@@ -47,6 +47,15 @@ const RecordStatus = {
 };
 
 /**
+ * Enum for marker type
+ * @readonly
+ * @enum {string}
+ */
+const MarkerType = {
+  'QUESTION': 'QUESTION'
+};
+
+/**
  * Enum for table names
  * @readonly
  * @enum {string}
@@ -68,5 +77,6 @@ const TableNames = {
 module.exports.Sex = Sex;
 module.exports.UserRestrictions = UserRestrictions;
 module.exports.RecordStatus = RecordStatus;
+module.exports.MarkerType = MarkerType;
 module.exports.CLAStage = CLAStage;
 module.exports.TableNames = TableNames;

@@ -39,6 +39,13 @@ class Marker {
   note = '';
 
   /**
+   * Type of the marker
+   * @type {MarkerType}
+   * @default ''
+   */
+  type = '';
+
+  /**
    * Array of IDs of search words
    * @type {string[]}
    * @default []
