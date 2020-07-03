@@ -52,6 +52,7 @@ const RecordStatus = {
  * @enum {string}
  */
 const MarkerType = {
+  'PHOTO': 'PHOTO',
   'QUESTION': 'QUESTION'
 };
 
