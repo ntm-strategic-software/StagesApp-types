@@ -59,6 +59,7 @@ const TableNames = {
   'PEOPLE': 'People',
   'LOCATIONS': 'Locations',
   'GENERAL_PHOTOS': 'GeneralPhotos',
+  'QUESTIONS': 'QUESTIONS',
   'SEARCH_WORDS': 'SearchWords',
   'TRUSTED_MACHINES': 'TrustedMachines',
   'MOBILE_DEVICES': 'MobileDevices',
