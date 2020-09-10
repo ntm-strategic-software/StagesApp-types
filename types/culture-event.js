@@ -118,6 +118,26 @@ class CultureEvent {
   phoneticTranscriptions = '';
 
   /**
+   * Orthographic Transcriptions encoded in HTML
+   * @type {string}
+   * @default ''
+   */
+  orthographicTranscriptionsEncoded = '';
+
+  /**
+   * Orthographic Transcriptions in plain text
+   * @type {string}
+   * @default ''
+   */
+  orthographicTranscriptions = '';
+
+  /**
+   * @type {boolean}
+   * @default false
+   */
+  orthographicTranscriptionsDone = false;
+
+  /**
    * CultureEvent ID's of related culture events
    * @type {string[]}
    * @default []
