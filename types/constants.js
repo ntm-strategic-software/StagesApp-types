@@ -63,7 +63,8 @@ const TableNames = {
   'SEARCH_WORDS': 'SearchWords',
   'TRUSTED_MACHINES': 'TrustedMachines',
   'MOBILE_DEVICES': 'MobileDevices',
-  'DELETED': 'Deleted'
+  'DELETED': 'Deleted',
+  'TEXT_MARKERS': 'TEXT_MARKERS'
 };
 
 module.exports.Sex = Sex;
