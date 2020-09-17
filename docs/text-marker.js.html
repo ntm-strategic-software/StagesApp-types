@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: question.js</title>
+    <title>JSDoc: Source: text-marker.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: question.js</h1>
+    <h1 class="page-title">Source: text-marker.js</h1>
 
     
 
@@ -26,45 +26,46 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>class Question {
+            <pre class="prettyprint source linenums"><code>/**
+ * Class representing a text marker
+ */
+class TextMarker {
 
   /**
-   * Unique ID for the Question
+   * Unique ID for the marker
    * @type {string}
    * @default ''
    */
   _id = '';
 
   /**
-   * ID of culture event
    * @type {string}
-   * @default ''
    */
-  cultureEvent = '';
+  date = '';
 
   /**
-   * Time of question start
-   * @type {number}
-   * @default 0
-   */
-  startTime = 0;
-
-  /**
-   * Time of question end
-   * @type {number}
-   * @default 0
-   */
-  endTime = 0;
-
-  /**
-   * Filename
    * @type {string}
-   * @default ''
    */
-  filename = '';
+  title = '';
 
   /**
-   * Creates a Question Object
+   * @type {string[]}
+   */
+  searchWords = [];
+
+  /**
+   * The transcribed text associate with the marker
+   * @type {string}
+   */
+  text = '';
+
+  /**
+   * @type {string}
+   */
+  note = '';
+
+  /**
+   * Constructs a text marker
    * @param {Object} data
    */
   constructor(data = {}) {
@@ -74,12 +75,12 @@
   }
 
   /**
-   * Creates an updated Question Object
+   * Creates an updated text marker
    * @param {Object} data
-   * @returns {Question}
+   * @returns {SearchWord}
    */
-  set(data = {}) {
-    return new Question({
+  set(data) {
+    return new TextMarker({
       ...this,
       ...data
     });
@@ -87,7 +88,7 @@
 
 }
 
-module.exports = Question;
+module.exports = TextMarker;
 </code></pre>
         </article>
     </section>

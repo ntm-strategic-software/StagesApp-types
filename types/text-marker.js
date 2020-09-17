@@ -21,7 +21,7 @@ class TextMarker {
   title = '';
 
   /**
-   * @type {[string]}
+   * @type {string[]}
    */
   searchWords = [];
 
