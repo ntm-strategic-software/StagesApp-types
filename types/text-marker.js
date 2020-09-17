@@ -37,6 +37,11 @@ class TextMarker {
   note = '';
 
   /**
+   * @type {string}
+   */
+  cultureEvent = '';
+
+  /**
    * Constructs a text marker
    * @param {Object} data
    */
