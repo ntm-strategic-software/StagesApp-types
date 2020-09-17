@@ -13,7 +13,12 @@ class TextMarker {
   /**
    * @type {string}
    */
-  date = '';
+  createdAt = '';
+
+  /**
+   * @type {string}
+   */
+  updatedAt = '';
 
   /**
    * @type {string}
