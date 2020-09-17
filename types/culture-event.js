@@ -138,6 +138,11 @@ class CultureEvent {
   orthographicTranscriptionsDone = false;
 
   /**
+   * @type {string}
+   */
+  taggedOrthographicTranscriptions = '';
+
+  /**
    * CultureEvent ID's of related culture events
    * @type {string[]}
    * @default []
