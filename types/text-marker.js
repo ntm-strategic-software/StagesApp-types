@@ -31,6 +31,11 @@ class TextMarker {
   searchWords = [];
 
   /**
+   * @type {string[]}
+   */
+  outlineItems = [];
+
+  /**
    * The transcribed text associate with the marker
    * @type {string}
    */
