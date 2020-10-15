@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: person.js</title>
+    <title>JSDoc: Source: smc.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: person.js</h1>
+    <h1 class="page-title">Source: smc.js</h1>
 
     
 
@@ -26,85 +26,94 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>const { Sex } = require('./constants');
-
-/**
- * Class representing a Person
+            <pre class="prettyprint source linenums"><code>/**
+ * Class representing an SMC Event
  */
-class Person {
+class SMC {
 
   /**
-   * Unique ID for a person
+   * Unique ID for the SMC Event
    * @type {string}
    * @default ''
    */
   _id = '';
 
   /**
-   * Person's common name
+   * Title of the event
    * @type {string}
    * @default ''
    */
-  name = '';
+  title = '';
 
   /**
-   * Person's full name
+   * User ID of who recorded the event
    * @type {string}
    * @default ''
    */
-  fullName = '';
+  recordedBy = '';
 
   /**
-   * Description of the person
-   * @type {string}
-   * @default ''
-   */
-  description = '';
-
-  /**
-   * Person's birthday in format MM/DD
-   * @type {string}
-   * @default ''
-   */
-  birthday = '';
-
-  /**
-   * Person's sex
-   * @type {Sex}
-   * @default Sex.MALE
-   */
-  sex = Sex.MALE;
-
-  /**
-   * Note about the person
+   * Event notes
    * @type {string}
    * @default ''
    */
   note = '';
 
   /**
-   * ISO date of last event involving person
+   * Transcription observations
    * @type {string}
    * @default ''
    */
-  dateLastUsed = '';
+  observations = '';
 
   /**
-   * ISO date of person's death
+   * Recording 1 file name
    * @type {string}
-   * @default ''
    */
-  dateDeceased = '';
+  recording1 = '';
 
   /**
-   * Filename of a picture of the person
+   * Recording 2 file name
    * @type {string}
-   * @default ''
    */
-  photoFilename = '';
+  recording2 = '';
 
   /**
-   * Creates an person Object
+   * Transcrition 1 plain text
+   * @type {string}
+   */
+  transcription1 = '';
+
+  /**
+   * Transcription 2 plain text
+   * @type {string}
+   */
+  transcription2 = '';
+
+  /**
+   * Transcription 1 encoded in html
+   * @type {string}
+   */
+  transcription1Encoded = '';
+
+  /**
+   * Transcription 2 encoded in html
+   * @type {string}
+   */
+  transcription2Encoded = '';
+
+  /**
+   * @type {string[]}
+   */
+  splitText1 = [];
+
+  /**
+   * @type {string[]}
+   */
+  splitText2 = [];
+
+  /**
+   * Creates an SMC Event Object
    * @param {Object} data
    */
   constructor(data = {}) {
@@ -114,12 +123,12 @@ class Person {
   }
 
   /**
-   * Creates an updated person Object
+   * Creates an updated SMC Event Object
    * @param {Object} data
-   * @returns {Person}
+   * @returns {SMC}
    */
-  set(data) {
-    return new Person({
+  set(data = {}) {
+    return new SMC({
       ...this,
       ...data
     });
@@ -127,7 +136,7 @@ class Person {
 
 }
 
-module.exports = Person;
+module.exports = SMC;
 </code></pre>
         </article>
     </section>

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Class: TextMarker</title>
+    <title>JSDoc: Class: SMC</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Class: TextMarker</h1>
+    <h1 class="page-title">Class: SMC</h1>
 
     
 
@@ -28,9 +28,9 @@
 
 <header>
     
-        <h2><span class="attribs"><span class="type-signature"></span></span>TextMarker<span class="signature">(data)</span><span class="type-signature"></span></h2>
+        <h2><span class="attribs"><span class="type-signature"></span></span>SMC<span class="signature">(data)</span><span class="type-signature"></span></h2>
         
-            <div class="class-description">Class representing a text marker</div>
+            <div class="class-description">Class representing an SMC Event</div>
         
     
 </header>
@@ -45,7 +45,7 @@
     
 
     
-    <h4 class="name" id="TextMarker"><span class="type-signature"></span>new TextMarker<span class="signature">(data)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="SMC"><span class="type-signature"></span>new SMC<span class="signature">(data)</span><span class="type-signature"></span></h4>
     
 
     
@@ -53,7 +53,7 @@
 
 
 <div class="description">
-    Constructs a text marker
+    Creates an SMC Event Object
 </div>
 
 
@@ -146,7 +146,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="text-marker.js.html">text-marker.js</a>, <a href="text-marker.js.html#line58">line 58</a>
+        <a href="smc.js.html">smc.js</a>, <a href="smc.js.html#line91">line 91</a>
     </li></ul></dd>
     
 
@@ -202,7 +202,7 @@
 
 
 <div class="description">
-    Unique ID for the marker
+    Unique ID for the SMC Event
 </div>
 
 
@@ -255,143 +255,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="text-marker.js.html">text-marker.js</a>, <a href="text-marker.js.html#line11">line 11</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-        
-            
-<h4 class="name" id="createdAt"><span class="type-signature"></span>createdAt<span class="type-signature"> :string</span></h4>
-
-
-
-
-
-
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">string</span>
-
-
-        </li>
-    </ul>
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="text-marker.js.html">text-marker.js</a>, <a href="text-marker.js.html#line16">line 16</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-        
-            
-<h4 class="name" id="cultureEvent"><span class="type-signature"></span>cultureEvent<span class="type-signature"> :string</span></h4>
-
-
-
-
-
-
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">string</span>
-
-
-        </li>
-    </ul>
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="text-marker.js.html">text-marker.js</a>, <a href="text-marker.js.html#line52">line 52</a>
+        <a href="smc.js.html">smc.js</a>, <a href="smc.js.html#line11">line 11</a>
     </li></ul></dd>
     
 
@@ -414,6 +278,10 @@
 
 
 
+<div class="description">
+    Event notes
+</div>
+
 
 
     <h5>Type:</h5>
@@ -455,11 +323,16 @@
     
 
     
+    <dt class="tag-default">Default Value:</dt>
+    <dd class="tag-default"><ul class="dummy">
+            <li>''</li>
+        </ul></dd>
+    
 
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="text-marker.js.html">text-marker.js</a>, <a href="text-marker.js.html#line47">line 47</a>
+        <a href="smc.js.html">smc.js</a>, <a href="smc.js.html#line32">line 32</a>
     </li></ul></dd>
     
 
@@ -477,149 +350,167 @@
 
         
             
-<h4 class="name" id="outlineItems"><span class="type-signature"></span>outlineItems<span class="type-signature"> :Array.&lt;string></span></h4>
-
-
-
-
-
-
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">Array.&lt;string></span>
-
-
-        </li>
-    </ul>
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="text-marker.js.html">text-marker.js</a>, <a href="text-marker.js.html#line36">line 36</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-        
-            
-<h4 class="name" id="searchWords"><span class="type-signature"></span>searchWords<span class="type-signature"> :Array.&lt;string></span></h4>
-
-
-
-
-
-
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">Array.&lt;string></span>
-
-
-        </li>
-    </ul>
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="text-marker.js.html">text-marker.js</a>, <a href="text-marker.js.html#line31">line 31</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-        
-            
-<h4 class="name" id="text"><span class="type-signature"></span>text<span class="type-signature"> :string</span></h4>
+<h4 class="name" id="observations"><span class="type-signature"></span>observations<span class="type-signature"> :string</span></h4>
 
 
 
 
 <div class="description">
-    The transcribed text associate with the marker
+    Transcription observations
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">string</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-default">Default Value:</dt>
+    <dd class="tag-default"><ul class="dummy">
+            <li>''</li>
+        </ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="smc.js.html">smc.js</a>, <a href="smc.js.html#line39">line 39</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="recordedBy"><span class="type-signature"></span>recordedBy<span class="type-signature"> :string</span></h4>
+
+
+
+
+<div class="description">
+    User ID of who recorded the event
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">string</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-default">Default Value:</dt>
+    <dd class="tag-default"><ul class="dummy">
+            <li>''</li>
+        </ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="smc.js.html">smc.js</a>, <a href="smc.js.html#line25">line 25</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="recording1"><span class="type-signature"></span>recording1<span class="type-signature"> :string</span></h4>
+
+
+
+
+<div class="description">
+    Recording 1 file name
 </div>
 
 
@@ -667,7 +558,215 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="text-marker.js.html">text-marker.js</a>, <a href="text-marker.js.html#line42">line 42</a>
+        <a href="smc.js.html">smc.js</a>, <a href="smc.js.html#line45">line 45</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="recording2"><span class="type-signature"></span>recording2<span class="type-signature"> :string</span></h4>
+
+
+
+
+<div class="description">
+    Recording 2 file name
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">string</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="smc.js.html">smc.js</a>, <a href="smc.js.html#line51">line 51</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="splitText1"><span class="type-signature"></span>splitText1<span class="type-signature"> :Array.&lt;string></span></h4>
+
+
+
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Array.&lt;string></span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="smc.js.html">smc.js</a>, <a href="smc.js.html#line80">line 80</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="splitText2"><span class="type-signature"></span>splitText2<span class="type-signature"> :Array.&lt;string></span></h4>
+
+
+
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Array.&lt;string></span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="smc.js.html">smc.js</a>, <a href="smc.js.html#line85">line 85</a>
     </li></ul></dd>
     
 
@@ -690,6 +789,10 @@
 
 
 
+<div class="description">
+    Title of the event
+</div>
+
 
 
     <h5>Type:</h5>
@@ -731,11 +834,16 @@
     
 
     
+    <dt class="tag-default">Default Value:</dt>
+    <dd class="tag-default"><ul class="dummy">
+            <li>''</li>
+        </ul></dd>
+    
 
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="text-marker.js.html">text-marker.js</a>, <a href="text-marker.js.html#line26">line 26</a>
+        <a href="smc.js.html">smc.js</a>, <a href="smc.js.html#line18">line 18</a>
     </li></ul></dd>
     
 
@@ -753,10 +861,14 @@
 
         
             
-<h4 class="name" id="updatedAt"><span class="type-signature"></span>updatedAt<span class="type-signature"> :string</span></h4>
+<h4 class="name" id="transcription1"><span class="type-signature"></span>transcription1<span class="type-signature"> :string</span></h4>
 
 
 
+
+<div class="description">
+    Transcrition 1 plain text
+</div>
 
 
 
@@ -803,7 +915,223 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="text-marker.js.html">text-marker.js</a>, <a href="text-marker.js.html#line21">line 21</a>
+        <a href="smc.js.html">smc.js</a>, <a href="smc.js.html#line57">line 57</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="transcription1Encoded"><span class="type-signature"></span>transcription1Encoded<span class="type-signature"> :string</span></h4>
+
+
+
+
+<div class="description">
+    Transcription 1 encoded in html
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">string</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="smc.js.html">smc.js</a>, <a href="smc.js.html#line69">line 69</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="transcription2"><span class="type-signature"></span>transcription2<span class="type-signature"> :string</span></h4>
+
+
+
+
+<div class="description">
+    Transcription 2 plain text
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">string</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="smc.js.html">smc.js</a>, <a href="smc.js.html#line63">line 63</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="transcription2Encoded"><span class="type-signature"></span>transcription2Encoded<span class="type-signature"> :string</span></h4>
+
+
+
+
+<div class="description">
+    Transcription 2 encoded in html
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">string</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="smc.js.html">smc.js</a>, <a href="smc.js.html#line75">line 75</a>
     </li></ul></dd>
     
 
@@ -831,7 +1159,7 @@
     
 
     
-    <h4 class="name" id="set"><span class="type-signature"></span>set<span class="signature">(data)</span><span class="type-signature"> &rarr; {<a href="SearchWord.html">SearchWord</a>}</span></h4>
+    <h4 class="name" id="set"><span class="type-signature"></span>set<span class="signature">(data)</span><span class="type-signature"> &rarr; {<a href="SMC.html">SMC</a>}</span></h4>
     
 
     
@@ -839,7 +1167,7 @@
 
 
 <div class="description">
-    Creates an updated text marker
+    Creates an updated SMC Event Object
 </div>
 
 
@@ -932,7 +1260,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="text-marker.js.html">text-marker.js</a>, <a href="text-marker.js.html#line69">line 69</a>
+        <a href="smc.js.html">smc.js</a>, <a href="smc.js.html#line102">line 102</a>
     </li></ul></dd>
     
 
@@ -968,7 +1296,7 @@
     </dt>
     <dd>
         
-<span class="param-type"><a href="SearchWord.html">SearchWord</a></span>
+<span class="param-type"><a href="SMC.html">SMC</a></span>
 
 
     </dd>
