@@ -11,3 +11,4 @@ module.exports.User = require('./types/user');
 module.exports.SearchWord = require('./types/search-word');
 module.exports.TextMarker = require('./types/text-marker');
 module.exports.Deleted = require('./types/deleted');
+module.exports.SMC = require('./types/smc');
