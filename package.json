@@ -1,6 +1,6 @@
 {
   "name": "stagesapp-types",
-  "version": "1.20.0",
+  "version": "1.20.1",
   "description": "stagesapp-types",
   "main": "index.js",
   "private": true,
