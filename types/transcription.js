@@ -52,6 +52,21 @@ class Transcription {
   cultureEvent = '';
 
   /**
+   * @type {number}
+   */
+  idx = 0;
+
+  /**
+   * @type {number}
+   */
+  startTime = 0;
+
+  /**
+   * @type {number}
+   */
+  endTime = 0;
+
+  /**
    * Constructs a text transcription
    * @param {Object} data
    */
