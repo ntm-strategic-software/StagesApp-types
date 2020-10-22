@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Class: OutlineItem</title>
+    <title>JSDoc: Class: Transcription</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Class: OutlineItem</h1>
+    <h1 class="page-title">Class: Transcription</h1>
 
     
 
@@ -28,9 +28,9 @@
 
 <header>
     
-        <h2><span class="attribs"><span class="type-signature"></span></span>OutlineItem<span class="signature">(data)</span><span class="type-signature"></span></h2>
+        <h2><span class="attribs"><span class="type-signature"></span></span>Transcription<span class="signature">(data)</span><span class="type-signature"></span></h2>
         
-            <div class="class-description">Class representing an Outline Item</div>
+            <div class="class-description">Class representing a text transcription</div>
         
     
 </header>
@@ -45,7 +45,7 @@
     
 
     
-    <h4 class="name" id="OutlineItem"><span class="type-signature"></span>new OutlineItem<span class="signature">(data)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="Transcription"><span class="type-signature"></span>new Transcription<span class="signature">(data)</span><span class="type-signature"></span></h4>
     
 
     
@@ -53,7 +53,7 @@
 
 
 <div class="description">
-    Creates an Outline Item Object
+    Constructs a text transcription
 </div>
 
 
@@ -146,7 +146,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="outline-item.js.html">outline-item.js</a>, <a href="outline-item.js.html#line38">line 38</a>
+        <a href="transcription.js.html">transcription.js</a>, <a href="transcription.js.html#line58">line 58</a>
     </li></ul></dd>
     
 
@@ -202,7 +202,7 @@
 
 
 <div class="description">
-    Unique ID for the Outline Item
+    Unique ID for the transcription
 </div>
 
 
@@ -255,7 +255,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="outline-item.js.html">outline-item.js</a>, <a href="outline-item.js.html#line11">line 11</a>
+        <a href="transcription.js.html">transcription.js</a>, <a href="transcription.js.html#line11">line 11</a>
     </li></ul></dd>
     
 
@@ -273,14 +273,10 @@
 
         
             
-<h4 class="name" id="code"><span class="type-signature"></span>code<span class="type-signature"> :string</span></h4>
+<h4 class="name" id="createdAt"><span class="type-signature"></span>createdAt<span class="type-signature"> :string</span></h4>
 
 
 
-
-<div class="description">
-    Outline Item code
-</div>
 
 
 
@@ -323,16 +319,11 @@
     
 
     
-    <dt class="tag-default">Default Value:</dt>
-    <dd class="tag-default"><ul class="dummy">
-            <li>''</li>
-        </ul></dd>
-    
 
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="outline-item.js.html">outline-item.js</a>, <a href="outline-item.js.html#line25">line 25</a>
+        <a href="transcription.js.html">transcription.js</a>, <a href="transcription.js.html#line16">line 16</a>
     </li></ul></dd>
     
 
@@ -350,14 +341,10 @@
 
         
             
-<h4 class="name" id="number"><span class="type-signature"></span>number<span class="type-signature"> :number</span></h4>
+<h4 class="name" id="cultureEvent"><span class="type-signature"></span>cultureEvent<span class="type-signature"> :string</span></h4>
 
 
 
-
-<div class="description">
-    Number for sorting
-</div>
 
 
 
@@ -365,7 +352,7 @@
     <ul>
         <li>
             
-<span class="param-type">number</span>
+<span class="param-type">string</span>
 
 
         </li>
@@ -400,16 +387,215 @@
     
 
     
-    <dt class="tag-default">Default Value:</dt>
-    <dd class="tag-default"><ul class="dummy">
-            <li>0</li>
-        </ul></dd>
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="transcription.js.html">transcription.js</a>, <a href="transcription.js.html#line52">line 52</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="note"><span class="type-signature"></span>note<span class="type-signature"> :string</span></h4>
+
+
+
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">string</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
     
 
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="outline-item.js.html">outline-item.js</a>, <a href="outline-item.js.html#line18">line 18</a>
+        <a href="transcription.js.html">transcription.js</a>, <a href="transcription.js.html#line47">line 47</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="outlineItems"><span class="type-signature"></span>outlineItems<span class="type-signature"> :Array.&lt;string></span></h4>
+
+
+
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Array.&lt;string></span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="transcription.js.html">transcription.js</a>, <a href="transcription.js.html#line36">line 36</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="searchWords"><span class="type-signature"></span>searchWords<span class="type-signature"> :Array.&lt;string></span></h4>
+
+
+
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Array.&lt;string></span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="transcription.js.html">transcription.js</a>, <a href="transcription.js.html#line31">line 31</a>
     </li></ul></dd>
     
 
@@ -433,7 +619,7 @@
 
 
 <div class="description">
-    Outline Item text
+    The transcribed text associate with the transcription
 </div>
 
 
@@ -477,16 +663,147 @@
     
 
     
-    <dt class="tag-default">Default Value:</dt>
-    <dd class="tag-default"><ul class="dummy">
-            <li>''</li>
-        </ul></dd>
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="transcription.js.html">transcription.js</a>, <a href="transcription.js.html#line42">line 42</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="title"><span class="type-signature"></span>title<span class="type-signature"> :string</span></h4>
+
+
+
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">string</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
     
 
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="outline-item.js.html">outline-item.js</a>, <a href="outline-item.js.html#line32">line 32</a>
+        <a href="transcription.js.html">transcription.js</a>, <a href="transcription.js.html#line26">line 26</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="updatedAt"><span class="type-signature"></span>updatedAt<span class="type-signature"> :string</span></h4>
+
+
+
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">string</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="transcription.js.html">transcription.js</a>, <a href="transcription.js.html#line21">line 21</a>
     </li></ul></dd>
     
 
@@ -514,7 +831,7 @@
     
 
     
-    <h4 class="name" id="set"><span class="type-signature"></span>set<span class="signature">(data)</span><span class="type-signature"> &rarr; {<a href="OutlineItem.html">OutlineItem</a>}</span></h4>
+    <h4 class="name" id="set"><span class="type-signature"></span>set<span class="signature">(data)</span><span class="type-signature"> &rarr; {<a href="SearchWord.html">SearchWord</a>}</span></h4>
     
 
     
@@ -522,7 +839,7 @@
 
 
 <div class="description">
-    Creates an updated OutlineItem Object
+    Creates an updated text transcription
 </div>
 
 
@@ -615,7 +932,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="outline-item.js.html">outline-item.js</a>, <a href="outline-item.js.html#line49">line 49</a>
+        <a href="transcription.js.html">transcription.js</a>, <a href="transcription.js.html#line69">line 69</a>
     </li></ul></dd>
     
 
@@ -651,7 +968,7 @@
     </dt>
     <dd>
         
-<span class="param-type"><a href="OutlineItem.html">OutlineItem</a></span>
+<span class="param-type"><a href="SearchWord.html">SearchWord</a></span>
 
 
     </dd>
@@ -685,7 +1002,7 @@
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.3</a> on Thu Oct 22 2020 10:06:32 GMT-0400 (Eastern Daylight Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.3</a> on Thu Oct 22 2020 10:06:33 GMT-0400 (Eastern Daylight Time)
 </footer>
 
 <script> prettyPrint(); </script>

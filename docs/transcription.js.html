@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: marker.js</title>
+    <title>JSDoc: Source: transcription.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: marker.js</h1>
+    <h1 class="page-title">Source: transcription.js</h1>
 
     
 
@@ -27,61 +27,60 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/**
- * Class representing a marker
+ * Class representing a text transcription
  */
-class Marker {
+class Transcription {
 
   /**
-   * Unique ID for the marker
+   * Unique ID for the transcription
    * @type {string}
    * @default ''
    */
   _id = '';
 
   /**
-   * ID of culture event
    * @type {string}
-   * @default ''
    */
-  cultureEvent = '';
+  createdAt = '';
 
   /**
-   * Time where the marker begins
-   * @type {number}
-   * @default 0
-   */
-  startTime = 0;
-
-  /**
-   * Time where the marker ends
-   * @type {number}
-   * @default 0
-   */
-  endTime = 0;
-
-  /**
-   * Note about the marker
    * @type {string}
-   * @default ''
    */
-  note = '';
+  updatedAt = '';
 
   /**
-   * Array of IDs of search words
+   * @type {string}
+   */
+  title = '';
+
+  /**
    * @type {string[]}
-   * @default []
    */
   searchWords = [];
 
   /**
-   * Array of Outline Item IDs
    * @type {string[]}
-   * @default []
    */
   outlineItems = [];
 
   /**
-   * Creates a marker
+   * The transcribed text associate with the transcription
+   * @type {string}
+   */
+  text = '';
+
+  /**
+   * @type {string}
+   */
+  note = '';
+
+  /**
+   * @type {string}
+   */
+  cultureEvent = '';
+
+  /**
+   * Constructs a text transcription
    * @param {Object} data
    */
   constructor(data = {}) {
@@ -91,12 +90,12 @@ class Marker {
   }
 
   /**
-   * Creates an updated marker
+   * Creates an updated text transcription
    * @param {Object} data
-   * @returns {Marker}
+   * @returns {SearchWord}
    */
   set(data) {
-    return new Marker({
+    return new Transcription({
       ...this,
       ...data
     });
@@ -104,7 +103,7 @@ class Marker {
 
 }
 
-module.exports = Marker;
+module.exports = Transcription;
 </code></pre>
         </article>
     </section>
