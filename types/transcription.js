@@ -1,10 +1,10 @@
 /**
- * Class representing a text marker
+ * Class representing a text transcription
  */
-class TextMarker {
+class Transcription {
 
   /**
-   * Unique ID for the marker
+   * Unique ID for the transcription
    * @type {string}
    * @default ''
    */
@@ -36,7 +36,7 @@ class TextMarker {
   outlineItems = [];
 
   /**
-   * The transcribed text associate with the marker
+   * The transcribed text associate with the transcription
    * @type {string}
    */
   text = '';
@@ -52,7 +52,7 @@ class TextMarker {
   cultureEvent = '';
 
   /**
-   * Constructs a text marker
+   * Constructs a text transcription
    * @param {Object} data
    */
   constructor(data = {}) {
@@ -62,12 +62,12 @@ class TextMarker {
   }
 
   /**
-   * Creates an updated text marker
+   * Creates an updated text transcription
    * @param {Object} data
    * @returns {SearchWord}
    */
   set(data) {
-    return new TextMarker({
+    return new Transcription({
       ...this,
       ...data
     });
@@ -75,4 +75,4 @@ class TextMarker {
 
 }
 
-module.exports = TextMarker;
+module.exports = Transcription;

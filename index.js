@@ -9,6 +9,6 @@ module.exports.SALocation = require('./types/sa-location');
 module.exports.GeneralPhoto = require('./types/general-photo');
 module.exports.User = require('./types/user');
 module.exports.SearchWord = require('./types/search-word');
-module.exports.TextMarker = require('./types/text-marker');
+module.exports.Transcription = require('./types/transcription');
 module.exports.Deleted = require('./types/deleted');
 module.exports.SMC = require('./types/smc');
