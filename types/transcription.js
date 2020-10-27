@@ -42,6 +42,12 @@ class Transcription {
   text = '';
 
   /**
+   * The translated transcription text
+   * @type {string}
+   */
+  translation = '';
+
+  /**
    * @type {string}
    */
   note = '';
