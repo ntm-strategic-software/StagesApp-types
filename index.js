@@ -11,4 +11,4 @@ module.exports.User = require('./types/user');
 module.exports.SearchWord = require('./types/search-word');
 module.exports.Transcription = require('./types/transcription');
 module.exports.Deleted = require('./types/deleted');
-module.exports.SMC = require('./types/smc');
+module.exports.DRE = require('./types/dre');

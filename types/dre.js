@@ -1,10 +1,10 @@
 /**
- * Class representing an SMC Event
+ * Class representing an DRE Event
  */
-class SMC {
+class DRE {
 
   /**
-   * Unique ID for the SMC Event
+   * Unique ID for the DRE Event
    * @type {string}
    * @default ''
    */
@@ -85,7 +85,7 @@ class SMC {
   splitText2 = [];
 
   /**
-   * Creates an SMC Event Object
+   * Creates an DRE Event Object
    * @param {Object} data
    */
   constructor(data = {}) {
@@ -95,12 +95,12 @@ class SMC {
   }
 
   /**
-   * Creates an updated SMC Event Object
+   * Creates an updated DRE Event Object
    * @param {Object} data
-   * @returns {SMC}
+   * @returns {DRE}
    */
   set(data = {}) {
-    return new SMC({
+    return new DRE({
       ...this,
       ...data
     });
@@ -108,4 +108,4 @@ class SMC {
 
 }
 
-module.exports = SMC;
+module.exports = DRE;
