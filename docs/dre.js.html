@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: constants.js</title>
+    <title>JSDoc: Source: dre.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: constants.js</h1>
+    <h1 class="page-title">Source: dre.js</h1>
 
     
 
@@ -27,80 +27,116 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/**
- * Enum for a person's sex
- * @readonly
- * @enum {string}
+ * Class representing an DRE Event
  */
-const Sex = {
-  'MALE': 'MALE',
-  'FEMALE': 'FEMALE'
-};
+class DRE {
 
-/**
- * Enum for what a user is allowed to do
- * @readonly
- * @enum {string}
- */
-const UserRestrictions = {
-  'NORMAL_USER': 'NORMAL_USER',
-  'SIMPLE_RECORD_ONLY': 'SIMPLE_RECORD_ONLY',
-  'SIMPLE_RECORD_PLAY': 'SIMPLE_RECORD_PLAY',
-  'COMPLEX_RECORD_PLAY': 'COMPLEX_RECORD_PLAY',
-  'PLAY_ONLY': 'PLAY_ONLY'
-};
+  /**
+   * Unique ID for the DRE Event
+   * @type {string}
+   * @default ''
+   */
+  _id = '';
 
-/**
- * Enum for the CLA Stage that the user is in
- * @readonly
- * @enum {string}
- */
-const CLAStage = {
-  'STAGE_1': 'STAGE_1',
-  'STAGE_2': 'STAGE_2',
-  'STAGE_3': 'STAGE_3',
-  'STAGE_4': 'STAGE_4'
-};
+  /**
+   * Title of the event
+   * @type {string}
+   * @default ''
+   */
+  title = '';
 
-/**
- * Enum for record status
- * @readonly
- * @enum {string}
- */
-const RecordStatus = {
-  'PLANNED': 'PLANNED',
-  'RECORDED': 'RECORDED',
-  'PROCESSED': 'PROCESSED',
-  'IN_REVIEW': 'IN_REVIEW',
-  'REVIEWED': 'REVIEWED'
-};
+  /**
+   * User ID of who recorded the event
+   * @type {string}
+   * @default ''
+   */
+  recordedBy = '';
 
-/**
- * Enum for table names
- * @readonly
- * @enum {string}
- */
-const TableNames = {
-  'USERS': 'Users',
-  'CULTURE_EVENTS': 'CultureEvents',
-  'GENERAL_RECORDINGS': 'GeneralRecordings',
-  'MARKERS': 'Markers',
-  'PEOPLE': 'People',
-  'LOCATIONS': 'Locations',
-  'GENERAL_PHOTOS': 'GeneralPhotos',
-  'QUESTIONS': 'QUESTIONS',
-  'SEARCH_WORDS': 'SearchWords',
-  'TRUSTED_MACHINES': 'TrustedMachines',
-  'MOBILE_DEVICES': 'MobileDevices',
-  'DELETED': 'Deleted',
-  'TRANSCRIPTIONS': 'TRANSCRIPTIONS',
-  'DRE': 'DRE'
-};
+  /**
+   * Event notes
+   * @type {string}
+   * @default ''
+   */
+  note = '';
 
-module.exports.Sex = Sex;
-module.exports.UserRestrictions = UserRestrictions;
-module.exports.RecordStatus = RecordStatus;
-module.exports.CLAStage = CLAStage;
-module.exports.TableNames = TableNames;
+  /**
+   * Transcription observations
+   * @type {string}
+   * @default ''
+   */
+  observations = '';
+
+  /**
+   * Recording 1 file name
+   * @type {string}
+   */
+  recording1 = '';
+
+  /**
+   * Recording 2 file name
+   * @type {string}
+   */
+  recording2 = '';
+
+  /**
+   * Transcrition 1 plain text
+   * @type {string}
+   */
+  transcription1 = '';
+
+  /**
+   * Transcription 2 plain text
+   * @type {string}
+   */
+  transcription2 = '';
+
+  /**
+   * Transcription 1 encoded in html
+   * @type {string}
+   */
+  transcription1Encoded = '';
+
+  /**
+   * Transcription 2 encoded in html
+   * @type {string}
+   */
+  transcription2Encoded = '';
+
+  /**
+   * @type {string[]}
+   */
+  splitText1 = [];
+
+  /**
+   * @type {string[]}
+   */
+  splitText2 = [];
+
+  /**
+   * Creates an DRE Event Object
+   * @param {Object} data
+   */
+  constructor(data = {}) {
+    for(const key of Object.keys(data)) {
+      this[key] = data[key];
+    }
+  }
+
+  /**
+   * Creates an updated DRE Event Object
+   * @param {Object} data
+   * @returns {DRE}
+   */
+  set(data = {}) {
+    return new DRE({
+      ...this,
+      ...data
+    });
+  }
+
+}
+
+module.exports = DRE;
 </code></pre>
         </article>
     </section>
