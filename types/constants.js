@@ -65,7 +65,8 @@ const TableNames = {
   'MOBILE_DEVICES': 'MobileDevices',
   'DELETED': 'Deleted',
   'TRANSCRIPTIONS': 'TRANSCRIPTIONS',
-  'DRE': 'DRE'
+  'DRE': 'DRE',
+  'ADVANCED_FILTERS': 'ADVANCED_FILTERS'
 };
 
 module.exports.Sex = Sex;
