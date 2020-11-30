@@ -37,7 +37,7 @@ class Deleted {
   /**
    * Creates an updated deleted instance
    * @param {Object} data
-   * @returns {Marker}
+   * @returns {Deleted}
    */
   set(data) {
     return new Deleted({

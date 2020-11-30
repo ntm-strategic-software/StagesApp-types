@@ -85,7 +85,7 @@ class Transcription {
   /**
    * Creates an updated text transcription
    * @param {Object} data
-   * @returns {SearchWord}
+   * @returns {Transcription}
    */
   set(data) {
     return new Transcription({
