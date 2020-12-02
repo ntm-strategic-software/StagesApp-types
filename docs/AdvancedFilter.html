@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Class: GeneralRecording</title>
+    <title>JSDoc: Class: AdvancedFilter</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Class: GeneralRecording</h1>
+    <h1 class="page-title">Class: AdvancedFilter</h1>
 
     
 
@@ -28,9 +28,9 @@
 
 <header>
     
-        <h2><span class="attribs"><span class="type-signature"></span></span>GeneralRecording<span class="signature">(data)</span><span class="type-signature"></span></h2>
+        <h2><span class="attribs"><span class="type-signature"></span></span>AdvancedFilter<span class="signature">(data)</span><span class="type-signature"></span></h2>
         
-            <div class="class-description">Class representing a General Recording</div>
+            <div class="class-description">Class representing an Advanced Filter</div>
         
     
 </header>
@@ -45,7 +45,7 @@
     
 
     
-    <h4 class="name" id="GeneralRecording"><span class="type-signature"></span>new GeneralRecording<span class="signature">(data)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="AdvancedFilter"><span class="type-signature"></span>new AdvancedFilter<span class="signature">(data)</span><span class="type-signature"></span></h4>
     
 
     
@@ -53,7 +53,7 @@
 
 
 <div class="description">
-    Creates a General Recording Object
+    Constructs an Advanced Filter
 </div>
 
 
@@ -146,7 +146,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="general-recording.js.html">general-recording.js</a>, <a href="general-recording.js.html#line59">line 59</a>
+        <a href="advanced-filter.js.html">advanced-filter.js</a>, <a href="advanced-filter.js.html#line40">line 40</a>
     </li></ul></dd>
     
 
@@ -202,7 +202,7 @@
 
 
 <div class="description">
-    Unique ID for the recording
+    Unique ID for the Advanced Filter
 </div>
 
 
@@ -255,7 +255,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="general-recording.js.html">general-recording.js</a>, <a href="general-recording.js.html#line11">line 11</a>
+        <a href="advanced-filter.js.html">advanced-filter.js</a>, <a href="advanced-filter.js.html#line11">line 11</a>
     </li></ul></dd>
     
 
@@ -273,13 +273,221 @@
 
         
             
-<h4 class="name" id="filename"><span class="type-signature"></span>filename<span class="type-signature"> :string</span></h4>
+<h4 class="name" id="createdAt"><span class="type-signature"></span>createdAt<span class="type-signature"> :string</span></h4>
+
+
+
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">string</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="advanced-filter.js.html">advanced-filter.js</a>, <a href="advanced-filter.js.html#line16">line 16</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="filter"><span class="type-signature"></span>filter<span class="type-signature"> :string</span></h4>
 
 
 
 
 <div class="description">
-    Filename of the recording
+    Serialized advanced filter object
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">string</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="advanced-filter.js.html">advanced-filter.js</a>, <a href="advanced-filter.js.html#line34">line 34</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="updatedAt"><span class="type-signature"></span>updatedAt<span class="type-signature"> :string</span></h4>
+
+
+
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">string</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="advanced-filter.js.html">advanced-filter.js</a>, <a href="advanced-filter.js.html#line21">line 21</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="user"><span class="type-signature"></span>user<span class="type-signature"> :string</span></h4>
+
+
+
+
+<div class="description">
+    User ID of who created this Advanced Filter
 </div>
 
 
@@ -332,392 +540,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="general-recording.js.html">general-recording.js</a>, <a href="general-recording.js.html#line25">line 25</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-        
-            
-<h4 class="name" id="isVideo"><span class="type-signature"></span>isVideo<span class="type-signature"> :boolean</span></h4>
-
-
-
-
-<div class="description">
-    Whether or not it is a video recording
-</div>
-
-
-
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">boolean</span>
-
-
-        </li>
-    </ul>
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-default">Default Value:</dt>
-    <dd class="tag-default"><ul class="dummy">
-            <li>false</li>
-        </ul></dd>
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="general-recording.js.html">general-recording.js</a>, <a href="general-recording.js.html#line18">line 18</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-        
-            
-<h4 class="name" id="markers"><span class="type-signature"></span>markers<span class="type-signature"> :Array.&lt;string></span></h4>
-
-
-
-
-<div class="description">
-    Array of IDs of markers from the recording
-</div>
-
-
-
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">Array.&lt;string></span>
-
-
-        </li>
-    </ul>
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-default">Default Value:</dt>
-    <dd class="tag-default"><ul class="dummy">
-            <li>[]</li>
-        </ul></dd>
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="general-recording.js.html">general-recording.js</a>, <a href="general-recording.js.html#line32">line 32</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-        
-            
-<h4 class="name" id="photos"><span class="type-signature"></span>photos<span class="type-signature"> :Array.&lt;string></span></h4>
-
-
-
-
-<div class="description">
-    Array of GeneralPhoto IDs from the recording
-</div>
-
-
-
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">Array.&lt;string></span>
-
-
-        </li>
-    </ul>
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-default">Default Value:</dt>
-    <dd class="tag-default"><ul class="dummy">
-            <li>[]</li>
-        </ul></dd>
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="general-recording.js.html">general-recording.js</a>, <a href="general-recording.js.html#line46">line 46</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-        
-            
-<h4 class="name" id="questions"><span class="type-signature"></span>questions<span class="type-signature"> :Array.&lt;<a href="Question.html">Question</a>></span></h4>
-
-
-
-
-<div class="description">
-    Array of questions from the recording
-</div>
-
-
-
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">Array.&lt;<a href="Question.html">Question</a>></span>
-
-
-        </li>
-    </ul>
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-default">Default Value:</dt>
-    <dd class="tag-default"><ul class="dummy">
-            <li>[]</li>
-        </ul></dd>
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="general-recording.js.html">general-recording.js</a>, <a href="general-recording.js.html#line39">line 39</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-        
-            
-<h4 class="name" id="subRecordings"><span class="type-signature"></span>subRecordings<span class="type-signature"> :Array.&lt;string></span></h4>
-
-
-
-
-<div class="description">
-    Array of IDs of SubRecording objects
-</div>
-
-
-
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">Array.&lt;string></span>
-
-
-        </li>
-    </ul>
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-default">Default Value:</dt>
-    <dd class="tag-default"><ul class="dummy">
-            <li>[]</li>
-        </ul></dd>
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="general-recording.js.html">general-recording.js</a>, <a href="general-recording.js.html#line53">line 53</a>
+        <a href="advanced-filter.js.html">advanced-filter.js</a>, <a href="advanced-filter.js.html#line28">line 28</a>
     </li></ul></dd>
     
 
@@ -745,7 +568,7 @@
     
 
     
-    <h4 class="name" id="set"><span class="type-signature"></span>set<span class="signature">(data)</span><span class="type-signature"> &rarr; {<a href="GeneralRecording.html">GeneralRecording</a>}</span></h4>
+    <h4 class="name" id="set"><span class="type-signature"></span>set<span class="signature">(data)</span><span class="type-signature"> &rarr; {<a href="AdvancedFilter.html">AdvancedFilter</a>}</span></h4>
     
 
     
@@ -753,7 +576,7 @@
 
 
 <div class="description">
-    Creates an updated GeneralRecording Object
+    Creates an updated Advanced Filter
 </div>
 
 
@@ -846,7 +669,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="general-recording.js.html">general-recording.js</a>, <a href="general-recording.js.html#line70">line 70</a>
+        <a href="advanced-filter.js.html">advanced-filter.js</a>, <a href="advanced-filter.js.html#line51">line 51</a>
     </li></ul></dd>
     
 
@@ -882,7 +705,7 @@
     </dt>
     <dd>
         
-<span class="param-type"><a href="GeneralRecording.html">GeneralRecording</a></span>
+<span class="param-type"><a href="AdvancedFilter.html">AdvancedFilter</a></span>
 
 
     </dd>

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: general-recording.js</title>
+    <title>JSDoc: Source: advanced-filter.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: general-recording.js</h1>
+    <h1 class="page-title">Source: advanced-filter.js</h1>
 
     
 
@@ -27,61 +27,42 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/**
- * Class representing a General Recording
+ * Class representing an Advanced Filter
  */
-class GeneralRecording {
+class AdvancedFilter {
 
   /**
-   * Unique ID for the recording
+   * Unique ID for the Advanced Filter
    * @type {string}
    * @default ''
    */
   _id = '';
 
   /**
-   * Whether or not it is a video recording
-   * @type {boolean}
-   * @default false
+   * @type {string}
    */
-  isVideo = false;
+  createdAt = '';
 
   /**
-   * Filename of the recording
+   * @type {string}
+   */
+  updatedAt = '';
+
+  /**
+   * User ID of who created this Advanced Filter
    * @type {string}
    * @default ''
    */
-  filename = '';
+  user = '';
 
   /**
-   * Array of IDs of markers from the recording
-   * @type {string[]}
-   * @default []
+   * Serialized advanced filter object
+   * @type {string}
    */
-  markers = [];
+  filter = '';
 
   /**
-   * Array of questions from the recording
-   * @type {Question[]}
-   * @default []
-   */
-  questions = []
-
-  /**
-   * Array of GeneralPhoto IDs from the recording
-   * @type {string[]}
-   * @default []
-   */
-  photos = [];
-
-  /**
-   * Array of IDs of SubRecording objects
-   * @type {string[]}
-   * @default []
-   */
-  subRecordings = [];
-
-  /**
-   * Creates a General Recording Object
+   * Constructs an Advanced Filter
    * @param {Object} data
    */
   constructor(data = {}) {
@@ -91,12 +72,12 @@ class GeneralRecording {
   }
 
   /**
-   * Creates an updated GeneralRecording Object
+   * Creates an updated Advanced Filter
    * @param {Object} data
-   * @returns {GeneralRecording}
+   * @returns {AdvancedFilter}
    */
   set(data) {
-    return new GeneralRecording({
+    return new AdvancedFilter({
       ...this,
       ...data
     });
@@ -104,7 +85,7 @@ class GeneralRecording {
 
 }
 
-module.exports = GeneralRecording;
+module.exports = AdvancedFilter;
 </code></pre>
         </article>
     </section>
