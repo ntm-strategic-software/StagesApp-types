@@ -34,6 +34,12 @@ class AdvancedFilter {
   filter = '';
 
   /**
+   * Id of the culture event most recently selected while this advanced filter is active.
+   * @type {string}
+   */
+  selectedCultureEventId = '';
+
+  /**
    * Constructs an Advanced Filter
    * @param {Object} data
    */
