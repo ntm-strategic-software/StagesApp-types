@@ -62,8 +62,8 @@ class User {
   photoFilename = '';
 
   /**
-   * Date last logged in on desktop
-   * @type {string} iso date
+   * ISO date last logged in on desktop
+   * @type {string}
    */
   lastLoginDate = '';
 
