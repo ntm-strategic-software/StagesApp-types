@@ -62,6 +62,12 @@ class User {
   photoFilename = '';
 
   /**
+   * Date last logged in on desktop
+   * @type {string} iso date
+   */
+  lastLoginDate = '';
+
+  /**
    * Creates a user object
    * @param {Object} data
    */
