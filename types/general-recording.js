@@ -32,8 +32,8 @@ class GeneralRecording {
   markers = [];
 
   /**
-   * Array of questions from the recording
-   * @type {Question[]}
+   * Array of questions ids from the recording
+   * @type {string[]}
    * @default []
    */
   questions = []
