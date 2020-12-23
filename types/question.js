@@ -36,6 +36,13 @@ class Question {
   filename = '';
 
   /**
+   * Question text
+   * @type {string}
+   * @default ''
+   */
+  text = '';
+
+  /**
    * Creates a Question Object
    * @param {Object} data
    */
