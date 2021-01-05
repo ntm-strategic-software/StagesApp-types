@@ -171,6 +171,14 @@ class CultureEvent {
     });
   }
 
+  isCE() {
+    return true;
+  }
+
+  isDRE() {
+    return false;
+  }
+
 }
 
 module.exports = CultureEvent;

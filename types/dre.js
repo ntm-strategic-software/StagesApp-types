@@ -106,6 +106,14 @@ class DRE {
     });
   }
 
+  isDRE() {
+    return true;
+  }
+
+  isCE() {
+    return false;
+  }
+
 }
 
 module.exports = DRE;
