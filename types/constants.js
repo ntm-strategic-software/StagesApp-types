@@ -83,4 +83,5 @@ module.exports.Sex = Sex;
 module.exports.UserRestrictions = UserRestrictions;
 module.exports.RecordStatus = RecordStatus;
 module.exports.CLAStage = CLAStage;
+module.exports.AdvancedFilterType = AdvancedFilterType;
 module.exports.TableNames = TableNames;

@@ -43,10 +43,10 @@ class AdvancedFilter {
   filterType = AdvancedFilterType.NORMAL_FILTER;
 
   /**
-   * Id of the culture event most recently selected while this advanced filter is active.
+   * Id of the item (culture event, transcription) most recently selected while this advanced filter is active.
    * @type {string}
    */
-  selectedCultureEventId = '';
+  selectedItemId = '';
 
   /**
    * Constructs an Advanced Filter
