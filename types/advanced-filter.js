@@ -1,3 +1,5 @@
+const { AdvancedFilterType } = require('./constants');
+
 /**
  * Class representing an Advanced Filter
  */
@@ -32,6 +34,13 @@ class AdvancedFilter {
    * @type {string}
    */
   filter = '';
+
+  /**
+   * type of filter
+   * @type {AdvancedFilterType|string}
+   * @default AdvancedFilterType.NORMAL_FILTER
+   */
+  filterType = AdvancedFilterType.NORMAL_FILTER;
 
   /**
    * Id of the culture event most recently selected while this advanced filter is active.

@@ -47,6 +47,16 @@ const RecordStatus = {
 };
 
 /**
+ * Enum for advanced filter type
+ * @readonly
+ * @enum {string}
+ */
+const AdvancedFilterType = {
+  NORMAL_FILTER: 'NORMAL_FILTER',
+  TRANSCRIPTION_FILTER: 'TRANSCRIPTION_FILTER'
+};
+
+/**
  * Enum for table names
  * @readonly
  * @enum {string}
