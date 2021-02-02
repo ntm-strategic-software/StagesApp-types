@@ -85,6 +85,16 @@ class DRE {
   splitText2 = [];
 
   /**
+   * @type {string[]}
+   */
+  splitCompareText1 = [];
+
+  /**
+   * @type {string[]}
+   */
+  splitCompareText2 = [];
+
+  /**
    * Creates an DRE Event Object
    * @param {Object} data
    */
