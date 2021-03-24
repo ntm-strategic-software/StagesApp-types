@@ -13,6 +13,13 @@ class CultureEvent {
   _id = '';
 
   /**
+   * File number
+   * @type {number}
+   * @default 0
+   */
+  number = 0;
+
+  /**
    * Title of the event
    * @type {string}
    * @default ''
