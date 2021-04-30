@@ -8,7 +8,7 @@ class ListeningCollectionItem {
 
   /**
    * ISO dates of when listened to previously
-   * @type {[string]}
+   * @type {string[]}
    */
   listenedToPrev = [];
 
@@ -26,7 +26,7 @@ class ListeningCollectionItem {
 
   /**
    * Creates a Listening Collection Item Object
-   * @param {{_id: string, listenedToPrev: [string], order: number, title: string}} data
+   * @param {{_id: string, listenedToPrev: string[], order: number, title: string}} data
    */
   constructor(data = {}) {
     for(const key of Object.keys(data)) {
@@ -36,7 +36,7 @@ class ListeningCollectionItem {
 
   /**
    * Creates an updated Listening Collection Item Object
-   * @param {{_id: string, listenedToPrev: [string], order: number, title: string}} data
+   * @param {{_id: string, listenedToPrev: string[], order: number, title: string}} data
    * @returns {ListeningCollectionItem}
    */
   set(data) {

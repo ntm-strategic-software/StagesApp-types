@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Class: SearchWord</title>
+    <title>JSDoc: Class: ListeningCollectionItem</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Class: SearchWord</h1>
+    <h1 class="page-title">Class: ListeningCollectionItem</h1>
 
     
 
@@ -28,9 +28,7 @@
 
 <header>
     
-        <h2><span class="attribs"><span class="type-signature"></span></span>SearchWord<span class="signature">(data)</span><span class="type-signature"></span></h2>
-        
-            <div class="class-description">Class representing a search word</div>
+        <h2><span class="attribs"><span class="type-signature"></span></span>ListeningCollectionItem<span class="signature">(data)</span><span class="type-signature"></span></h2>
         
     
 </header>
@@ -41,11 +39,9 @@
         
 
     
-    <h2>Constructor</h2>
-    
 
     
-    <h4 class="name" id="SearchWord"><span class="type-signature"></span>new SearchWord<span class="signature">(data)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="ListeningCollectionItem"><span class="type-signature"></span>new ListeningCollectionItem<span class="signature">(data)</span><span class="type-signature"></span></h4>
     
 
     
@@ -53,7 +49,7 @@
 
 
 <div class="description">
-    Creates a search word
+    Creates a Listening Collection Item Object
 </div>
 
 
@@ -146,7 +142,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="search-word.js.html">search-word.js</a>, <a href="search-word.js.html#line4">line 4</a>
+        <a href="listening-collection-item.js.html">listening-collection-item.js</a>, <a href="listening-collection-item.js.html#line31">line 31</a>
     </li></ul></dd>
     
 
@@ -202,7 +198,7 @@
 
 
 <div class="description">
-    Unique ID for the search word
+    ID of the item; matches a CE's ID
 </div>
 
 
@@ -246,16 +242,11 @@
     
 
     
-    <dt class="tag-default">Default Value:</dt>
-    <dd class="tag-default"><ul class="dummy">
-            <li>''</li>
-        </ul></dd>
-    
 
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="search-word.js.html">search-word.js</a>, <a href="search-word.js.html#line11">line 11</a>
+        <a href="listening-collection-item.js.html">listening-collection-item.js</a>, <a href="listening-collection-item.js.html#line7">line 7</a>
     </li></ul></dd>
     
 
@@ -273,13 +264,157 @@
 
         
             
-<h4 class="name" id="word"><span class="type-signature"></span>word<span class="type-signature"> :string</span></h4>
+<h4 class="name" id="listenedToPrev"><span class="type-signature"></span>listenedToPrev<span class="type-signature"> :Array.&lt;string></span></h4>
 
 
 
 
 <div class="description">
-    Text of the search word
+    ISO dates of when listened to previously
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Array.&lt;string></span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="listening-collection-item.js.html">listening-collection-item.js</a>, <a href="listening-collection-item.js.html#line13">line 13</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="order"><span class="type-signature"></span>order<span class="type-signature"> :number</span></h4>
+
+
+
+
+<div class="description">
+    Play order
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">number</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="listening-collection-item.js.html">listening-collection-item.js</a>, <a href="listening-collection-item.js.html#line19">line 19</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="title"><span class="type-signature"></span>title<span class="type-signature"> :string</span></h4>
+
+
+
+
+<div class="description">
+    Title of the item; matches a CE's title
 </div>
 
 
@@ -327,7 +462,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="search-word.js.html">search-word.js</a>, <a href="search-word.js.html#line17">line 17</a>
+        <a href="listening-collection-item.js.html">listening-collection-item.js</a>, <a href="listening-collection-item.js.html#line25">line 25</a>
     </li></ul></dd>
     
 
@@ -355,7 +490,7 @@
     
 
     
-    <h4 class="name" id="set"><span class="type-signature"></span>set<span class="signature">(data)</span><span class="type-signature"> &rarr; {<a href="SearchWord.html">SearchWord</a>}</span></h4>
+    <h4 class="name" id="set"><span class="type-signature"></span>set<span class="signature">(data)</span><span class="type-signature"> &rarr; {<a href="ListeningCollectionItem.html">ListeningCollectionItem</a>}</span></h4>
     
 
     
@@ -363,7 +498,7 @@
 
 
 <div class="description">
-    Creates an updated search word
+    Creates an updated Listening Collection Item Object
 </div>
 
 
@@ -456,7 +591,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="search-word.js.html">search-word.js</a>, <a href="search-word.js.html#line34">line 34</a>
+        <a href="listening-collection-item.js.html">listening-collection-item.js</a>, <a href="listening-collection-item.js.html#line42">line 42</a>
     </li></ul></dd>
     
 
@@ -492,7 +627,7 @@
     </dt>
     <dd>
         
-<span class="param-type"><a href="SearchWord.html">SearchWord</a></span>
+<span class="param-type"><a href="ListeningCollectionItem.html">ListeningCollectionItem</a></span>
 
 
     </dd>

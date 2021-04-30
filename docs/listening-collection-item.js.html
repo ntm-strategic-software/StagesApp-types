@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: general-photo.js</title>
+    <title>JSDoc: Source: listening-collection-item.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: general-photo.js</h1>
+    <h1 class="page-title">Source: listening-collection-item.js</h1>
 
     
 
@@ -26,46 +26,35 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>class GeneralPhoto {
+            <pre class="prettyprint source linenums"><code>class ListeningCollectionItem {
 
   /**
-   * Unique ID for the General Photo
+   * ID of the item; matches a CE's ID
    * @type {string}
-   * @default ''
    */
   _id = '';
 
   /**
-   * ID of culture event
-   * @type {string}
-   * @default ''
+   * ISO dates of when listened to previously
+   * @type {string[]}
    */
-  cultureEvent = '';
+  listenedToPrev = [];
 
   /**
-   * Time of photo start
+   * Play order
    * @type {number}
-   * @default 0
    */
-  startTime = 0;
+  order = 0;
 
   /**
-   * Time of photo end
-   * @type {number}
-   * @default 0
-   */
-  endTime = 0;
-
-  /**
-   * Filename of photo
+   * Title of the item; matches a CE's title
    * @type {string}
-   * @default ''
    */
-  filename = '';
+  title = '';
 
   /**
-   * Creates a General Photo Object
-   * @param {Object} data
+   * Creates a Listening Collection Item Object
+   * @param {{_id: string, listenedToPrev: string[], order: number, title: string}} data
    */
   constructor(data = {}) {
     for(const key of Object.keys(data)) {
@@ -74,12 +63,12 @@
   }
 
   /**
-   * Creates an updated General Photo Object
-   * @param {Object} data
-   * @returns {GeneralPhoto}
+   * Creates an updated Listening Collection Item Object
+   * @param {{_id: string, listenedToPrev: string[], order: number, title: string}} data
+   * @returns {ListeningCollectionItem}
    */
-  set(data = {}) {
-    return new GeneralPhoto({
+  set(data) {
+    return new ListeningCollectionItem({
       ...this,
       ...data
     });
@@ -87,7 +76,7 @@
 
 }
 
-module.exports = GeneralPhoto;
+module.exports = ListeningCollectionItem;
 </code></pre>
         </article>
     </section>
