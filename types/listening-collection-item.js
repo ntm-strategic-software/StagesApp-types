@@ -49,8 +49,14 @@ class ListeningCollectionItem {
   user = '';
 
   /**
+   * ISO date string
+   * @type {string}
+   */
+  dateRecorded = '';
+
+  /**
    * Creates a Listening Collection Item Object
-   * @param {{_id: string, listenedToPrev: string[], order: number, recordingsAudio: string[], recordingsVideo: string[], recordingsOrder: string[], title: string, user: string}} data
+   * @param {{_id: string, listenedToPrev: string[], order: number, recordingsAudio: string[], recordingsVideo: string[], recordingsOrder: string[], title: string, user: string, dateRecorded: string}} data
    */
   constructor(data = {}) {
     for(const key of Object.keys(data)) {
@@ -60,7 +66,7 @@ class ListeningCollectionItem {
 
   /**
    * Creates an updated Listening Collection Item Object
-   * @param {{_id: string, listenedToPrev: string[], order: number, recordingsAudio: string[], recordingsVideo: string[], recordingsOrder: string[], title: string, user: string}} data
+   * @param {{_id: string, listenedToPrev: string[], order: number, recordingsAudio: string[], recordingsVideo: string[], recordingsOrder: string[], title: string, user: string, dateRecorded: string}} data
    * @returns {ListeningCollectionItem}
    */
   set(data) {
