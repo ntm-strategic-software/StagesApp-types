@@ -1,3 +1,5 @@
+const moment = require('moment');
+
 class ListeningCollectionItem {
 
   /**
@@ -74,6 +76,44 @@ class ListeningCollectionItem {
       ...this,
       ...data
     });
+  }
+
+  /**
+   * Returns ISO strings of times listened to before today
+   * @returns {string[]}
+   */
+  getPrev() {
+    const now = moment();
+    const today = moment(`${now.format('YYYY')}-${now.format('MM')}-${now.format('DD')}`, 'YYYY-MM-DD');
+    return this.listenedToPrev
+      .filter(isoDate => moment(isoDate).isBefore(today));
+  }
+
+  /**
+   * Returns ISO strings of times listened to today
+   * @returns {string[]}
+   */
+  getToday() {
+    const now = moment();
+    const today = moment(`${now.format('YYYY')}-${now.format('MM')}-${now.format('DD')}`, 'YYYY-MM-DD');
+    return this.listenedToPrev
+      .filter(isoDate => !moment(isoDate).isBefore(today));
+  }
+
+  /**
+   * Returns if listened to before today
+   * @returns {boolean}
+   */
+  prev() {
+    return this.getPrev().length > 0;
+  }
+
+  /**
+   * Returns if listened to today
+   * @returns {boolean}
+   */
+  today() {
+    return this.getToday().length > 0;
   }
 
 }
