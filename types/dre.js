@@ -1,3 +1,5 @@
+const { ClaFile } = require('./constants');
+
 /**
  * Class representing an DRE Event
  */
@@ -93,6 +95,12 @@ class DRE {
    * @type {string[]}
    */
   splitCompareText2 = [];
+
+  /**
+   * Properties that are common for all types of CLA Files
+   * @default {{...ClaFile}}
+   */
+  claFile = { ...ClaFile };
 
   /**
    * Creates an DRE Event Object

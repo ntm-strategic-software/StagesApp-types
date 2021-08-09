@@ -57,6 +57,17 @@ const AdvancedFilterType = {
 };
 
 /**
+ * Object for common properties of CultureEvents and DREs (and if we add any other items in the Stages Desktop left sidebar)
+ */
+const ClaFile = {
+  fileNumber: 0,
+  imported: false,
+  readOnly: false,
+
+  isReadOnly: () => this.imported || this.readOnly,
+};
+
+/**
  * Enum for table names
  * @readonly
  * @enum {string}
@@ -85,4 +96,5 @@ module.exports.UserRestrictions = UserRestrictions;
 module.exports.RecordStatus = RecordStatus;
 module.exports.CLAStage = CLAStage;
 module.exports.AdvancedFilterType = AdvancedFilterType;
+module.exports.ClaFile = ClaFile;
 module.exports.TableNames = TableNames;
