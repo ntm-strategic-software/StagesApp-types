@@ -1,4 +1,4 @@
-const { RecordStatus } = require('./constants');
+const { RecordStatus, ClaFile } = require('./constants');
 
 /**
  * Class representing a Culture Event
@@ -155,6 +155,12 @@ class CultureEvent {
    * @default []
    */
   relatedRecordsLinks = [];
+
+  /**
+   * Properties that are common for all types of CLA Files
+   * @default {{...ClaFile}}
+   */
+  claFile = { ...ClaFile };
 
   /**
    * Creates a Culture Event Object
