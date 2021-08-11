@@ -63,8 +63,6 @@ const ClaFile = {
   fileNumber: 0,
   imported: false,
   readOnly: false,
-
-  isReadOnly: () => this.imported || this.readOnly,
 };
 
 /**
