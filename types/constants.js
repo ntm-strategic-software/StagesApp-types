@@ -57,15 +57,6 @@ const AdvancedFilterType = {
 };
 
 /**
- * Object for common properties of CultureEvents and DREs (and if we add any other items in the Stages Desktop left sidebar)
- */
-const ClaFile = {
-  fileNumber: 0,
-  imported: false,
-  readOnly: false,
-};
-
-/**
  * Enum for table names
  * @readonly
  * @enum {string}

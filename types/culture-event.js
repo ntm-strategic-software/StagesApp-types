@@ -1,9 +1,10 @@
-const { RecordStatus, ClaFile } = require('./constants');
+const { RecordStatus } = require('./constants');
+const CLAFile = require('./cla-file');
 
 /**
  * Class representing a Culture Event
  */
-class CultureEvent {
+class CultureEvent extends CLAFile {
 
   /**
    * Unique ID for the Culture Event
@@ -11,13 +12,6 @@ class CultureEvent {
    * @default ''
    */
   _id = '';
-
-  /**
-   * File number
-   * @type {number}
-   * @default 0
-   */
-  number = 0;
 
   /**
    * Title of the event
@@ -157,16 +151,11 @@ class CultureEvent {
   relatedRecordsLinks = [];
 
   /**
-   * Properties that are common for all types of CLA Files
-   * @default {{...ClaFile}}
-   */
-  claFile = { ...ClaFile };
-
-  /**
    * Creates a Culture Event Object
    * @param {Object} data
    */
   constructor(data = {}) {
+    super(data);
     for(const key of Object.keys(data)) {
       this[key] = data[key];
     }

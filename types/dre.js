@@ -1,9 +1,9 @@
-const { ClaFile } = require('./constants');
+const CLAFile = require('./cla-file');
 
 /**
  * Class representing an DRE Event
  */
-class DRE {
+class DRE extends CLAFile {
 
   /**
    * Unique ID for the DRE Event
@@ -97,16 +97,11 @@ class DRE {
   splitCompareText2 = [];
 
   /**
-   * Properties that are common for all types of CLA Files
-   * @default {{...ClaFile}}
-   */
-  claFile = { ...ClaFile };
-
-  /**
    * Creates an DRE Event Object
    * @param {Object} data
    */
   constructor(data = {}) {
+    super(data);
     for(const key of Object.keys(data)) {
       this[key] = data[key];
     }
