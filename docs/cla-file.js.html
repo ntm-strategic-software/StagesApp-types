@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: transcription.js</title>
+    <title>JSDoc: Source: cla-file.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: transcription.js</h1>
+    <h1 class="page-title">Source: cla-file.js</h1>
 
     
 
@@ -27,104 +27,44 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/**
- * Class representing a text transcription
+ * Class representing a CLA File
  */
-class Transcription {
+class CLAFile {
 
   /**
-   * Unique ID for the transcription
-   * @type {string}
-   * @default ''
-   */
-  _id = '';
-
-  /**
-   * @type {string}
-   */
-  createdAt = '';
-
-  /**
-   * @type {string}
-   */
-  updatedAt = '';
-
-  /**
-   * @type {string}
-   */
-  title = '';
-
-  /**
-   * @type {string[]}
-   */
-  searchWords = [];
-
-  /**
-   * @type {string[]}
-   */
-  outlineItems = [];
-
-  /**
-   * The transcribed text associate with the transcription
-   * @type {string}
-   */
-  text = '';
-
-  /**
-   * The translated transcription text
-   * @type {string}
-   */
-  translation = '';
-
-  /**
-   * @type {string}
-   */
-  note = '';
-
-  /**
-   * @type {string}
-   */
-  cultureEvent = '';
-
-  /**
+   * file number
    * @type {number}
    */
-  idx = 0;
+  fileNumber = 0;
 
   /**
-   * @type {number}
+   * for if the file was imported from a previous export
+   * @type {boolean}
    */
-  startTime = 0;
+  imported = false;
 
   /**
-   * @type {number}
+   * for if the file is read only
+   * @type {boolean}
    */
-  endTime = 0;
+  readOnly = false;
 
   /**
-   * Constructs a text transcription
+   * constructs a CLAFile instance
    * @param {Object} data
+   * @param {number} data.fileNumber
+   * @param {boolean} data.imported
+   * @param {boolean} data.readOnly
    */
-  constructor(data = {}) {
-    for(const key of Object.keys(data)) {
-      this[key] = data[key];
-    }
-  }
-
-  /**
-   * Creates an updated text transcription
-   * @param {Object} data
-   * @returns {Transcription}
-   */
-  set(data) {
-    return new Transcription({
-      ...this,
-      ...data
-    });
+  constructor(data) {
+    this.fileNumber = data.fileNumber || this.fileNumber;
+    this.imported = data.imported || this.imported;
+    this.readOnly = data.readOnly || this.readOnly;
   }
 
 }
 
-module.exports = Transcription;
+module.exports = CLAFile;
 </code></pre>
         </article>
     </section>
