@@ -85,5 +85,4 @@ module.exports.UserRestrictions = UserRestrictions;
 module.exports.RecordStatus = RecordStatus;
 module.exports.CLAStage = CLAStage;
 module.exports.AdvancedFilterType = AdvancedFilterType;
-module.exports.ClaFile = ClaFile;
 module.exports.TableNames = TableNames;

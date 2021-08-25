@@ -3,6 +3,7 @@ const CLAFile = require('./cla-file');
 
 /**
  * Class representing a Culture Event
+ * @extends CLAFile
  */
 class CultureEvent extends CLAFile {
 
