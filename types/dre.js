@@ -2,6 +2,7 @@ const CLAFile = require('./cla-file');
 
 /**
  * Class representing an DRE Event
+ * @extends CLAFile
  */
 class DRE extends CLAFile {
 
