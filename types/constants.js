@@ -80,9 +80,29 @@ const TableNames = {
   'LISTENING_COLLECTION_ITEMS': 'LISTENING_COLLECTION_ITEMS',
 };
 
+/**
+ * Enum for table names to sync between mobile and desktop
+ * @readonly
+ * @enum {string}
+ */
+const TablesToSync = {
+  'USERS': 'Users',
+  'CULTURE_EVENTS': 'CultureEvents',
+  'GENERAL_RECORDINGS': 'GeneralRecordings',
+  'MARKERS': 'Markers',
+  'PEOPLE': 'People',
+  'LOCATIONS': 'Locations',
+  'GENERAL_PHOTOS': 'GeneralPhotos',
+  'QUESTIONS': 'QUESTIONS',
+  'SEARCH_WORDS': 'SearchWords',
+  'DRE': 'DRE',
+  'LISTENING_COLLECTION_ITEMS': 'LISTENING_COLLECTION_ITEMS',
+};
+
 module.exports.Sex = Sex;
 module.exports.UserRestrictions = UserRestrictions;
 module.exports.RecordStatus = RecordStatus;
 module.exports.CLAStage = CLAStage;
 module.exports.AdvancedFilterType = AdvancedFilterType;
 module.exports.TableNames = TableNames;
+module.exports.TableNames = TablesToSync;
