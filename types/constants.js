@@ -105,4 +105,4 @@ module.exports.RecordStatus = RecordStatus;
 module.exports.CLAStage = CLAStage;
 module.exports.AdvancedFilterType = AdvancedFilterType;
 module.exports.TableNames = TableNames;
-module.exports.TableNames = TablesToSync;
+module.exports.TablesToSync = TablesToSync;
