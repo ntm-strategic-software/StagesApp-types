@@ -85,19 +85,19 @@ const TableNames = {
  * @readonly
  * @enum {string}
  */
-const TablesToSync = {
-  'USERS': 'Users',
-  'CULTURE_EVENTS': 'CultureEvents',
-  'GENERAL_RECORDINGS': 'GeneralRecordings',
-  'MARKERS': 'Markers',
-  'PEOPLE': 'People',
-  'LOCATIONS': 'Locations',
-  'GENERAL_PHOTOS': 'GeneralPhotos',
-  'QUESTIONS': 'QUESTIONS',
-  'SEARCH_WORDS': 'SearchWords',
-  'DRE': 'DRE',
-  'LISTENING_COLLECTION_ITEMS': 'LISTENING_COLLECTION_ITEMS',
-};
+const TablesToSync = [
+  TableNames.USERS,
+  TableNames.CULTURE_EVENTS,
+  TableNames.GENERAL_RECORDINGS,
+  TableNames.MARKERS,
+  TableNames.PEOPLE,
+  TableNames.LOCATIONS,
+  TableNames.GENERAL_PHOTOS,
+  TableNames.QUESTIONS,
+  TableNames.SEARCH_WORDS,
+  TableNames.DRE,
+  TableNames.LISTENING_COLLECTION_ITEMS,
+];
 
 module.exports.Sex = Sex;
 module.exports.UserRestrictions = UserRestrictions;
