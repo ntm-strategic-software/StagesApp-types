@@ -10,6 +10,13 @@ class CLAFile {
   fileNumber = 0;
 
   /**
+   * Array of file numbers
+   * @type {string[]}
+   * @default []
+   */
+  linkedFiles = [];
+
+  /**
    * for if the file was imported from a previous export
    * @type {boolean}
    */
