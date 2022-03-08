@@ -34,11 +34,13 @@ class CLAFile {
    * @param {number} data.fileNumber
    * @param {boolean} data.imported
    * @param {boolean} data.readOnly
+   * @param {string[]} data.linkedFiles
    */
   constructor(data) {
     this.fileNumber = data.fileNumber || this.fileNumber;
     this.imported = data.imported || this.imported;
     this.readOnly = data.readOnly || this.readOnly;
+    this.linkedFiles = data.linkedFiles || this.linkedFiles;
   }
 
 }
