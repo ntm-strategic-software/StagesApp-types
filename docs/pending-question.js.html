@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: question.js</title>
+    <title>JSDoc: Source: pending-question.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: question.js</h1>
+    <h1 class="page-title">Source: pending-question.js</h1>
 
     
 
@@ -26,42 +26,14 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>class Question {
+            <pre class="prettyprint source linenums"><code>class PendingQuestion {
 
   /**
-   * Unique ID for the Question
+   * Unique ID for the PendingQuestion
    * @type {string}
    * @default ''
    */
   _id = '';
-
-  /**
-   * ID of culture event
-   * @type {string}
-   * @default ''
-   */
-  cultureEvent = '';
-
-  /**
-   * Time of question start
-   * @type {number}
-   * @default 0
-   */
-  startTime = 0;
-
-  /**
-   * Time of question end
-   * @type {number}
-   * @default 0
-   */
-  endTime = 0;
-
-  /**
-   * Filename
-   * @type {string}
-   * @default ''
-   */
-  filename = '';
 
   /**
    * Question text
@@ -71,7 +43,14 @@
   text = '';
 
   /**
-   * Creates a Question Object
+   * ID of linked culture event/dre
+   * @type {string}
+   * @default ''
+   */
+  linkedFile = '';
+
+  /**
+   * Creates a PendingQuestion Object
    * @param {Object} data
    */
   constructor(data = {}) {
@@ -81,20 +60,20 @@
   }
 
   /**
-   * Creates an updated Question Object
+   * Creates an updated PendingQuestion Object
    * @param {Object} data
-   * @returns {Question}
+   * @returns {PendingQuestion}
    */
   set(data = {}) {
-    return new Question({
+    return new PendingQuestion({
       ...this,
-      ...data
+      ...data,
     });
   }
 
 }
 
-module.exports = Question;
+module.exports = PendingQuestion;
 </code></pre>
         </article>
     </section>
