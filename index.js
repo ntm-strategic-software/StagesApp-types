@@ -14,3 +14,4 @@ module.exports.Deleted = require('./types/deleted');
 module.exports.DRE = require('./types/dre');
 module.exports.AdvancedFilter = require('./types/advanced-filter');
 module.exports.ListeningCollectionItem = require('./types/listening-collection-item');
+module.exports.PendingQuestion = require('./types/pending-question');

@@ -5,7 +5,7 @@
  */
 const Sex = {
   'MALE': 'MALE',
-  'FEMALE': 'FEMALE'
+  'FEMALE': 'FEMALE',
 };
 
 /**
@@ -18,7 +18,7 @@ const UserRestrictions = {
   'SIMPLE_RECORD_ONLY': 'SIMPLE_RECORD_ONLY',
   'SIMPLE_RECORD_PLAY': 'SIMPLE_RECORD_PLAY',
   'COMPLEX_RECORD_PLAY': 'COMPLEX_RECORD_PLAY',
-  'PLAY_ONLY': 'PLAY_ONLY'
+  'PLAY_ONLY': 'PLAY_ONLY',
 };
 
 /**
@@ -30,7 +30,7 @@ const CLAStage = {
   'STAGE_1': 'STAGE_1',
   'STAGE_2': 'STAGE_2',
   'STAGE_3': 'STAGE_3',
-  'STAGE_4': 'STAGE_4'
+  'STAGE_4': 'STAGE_4',
 };
 
 /**
@@ -43,7 +43,7 @@ const RecordStatus = {
   'RECORDED': 'RECORDED',
   'PROCESSED': 'PROCESSED',
   'IN_REVIEW': 'IN_REVIEW',
-  'REVIEWED': 'REVIEWED'
+  'REVIEWED': 'REVIEWED',
 };
 
 /**
@@ -53,7 +53,7 @@ const RecordStatus = {
  */
 const AdvancedFilterType = {
   NORMAL_FILTER: 'NORMAL_FILTER',
-  TRANSCRIPTION_FILTER: 'TRANSCRIPTION_FILTER'
+  TRANSCRIPTION_FILTER: 'TRANSCRIPTION_FILTER',
 };
 
 /**
@@ -78,6 +78,7 @@ const TableNames = {
   'DRE': 'DRE',
   'ADVANCED_FILTERS': 'ADVANCED_FILTERS',
   'LISTENING_COLLECTION_ITEMS': 'LISTENING_COLLECTION_ITEMS',
+  'PENDING_QUESTIONS': 'PENDING_QUESTIONS',
 };
 
 /**
