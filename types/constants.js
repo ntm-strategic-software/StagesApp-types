@@ -82,11 +82,12 @@ const TableNames = {
 };
 
 /**
- * Enum for table names to sync between mobile and desktop
+ * Enum for table names to sync from mobile to desktop.
+ * Tables that are synced from desktop to mobile are listed in StagesApp-desktop dbSchema.js desktopTablesToSendToMobile
  * @readonly
  * @enum {string}
  */
-const TablesToSync = [
+const mobileTablesToSendToDesktop = [
   TableNames.USERS,
   TableNames.CULTURE_EVENTS,
   TableNames.GENERAL_RECORDINGS,
@@ -106,4 +107,4 @@ module.exports.RecordStatus = RecordStatus;
 module.exports.CLAStage = CLAStage;
 module.exports.AdvancedFilterType = AdvancedFilterType;
 module.exports.TableNames = TableNames;
-module.exports.TablesToSync = TablesToSync;
+module.exports.mobileTablesToSendToDesktop = mobileTablesToSendToDesktop;
