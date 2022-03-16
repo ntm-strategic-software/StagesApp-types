@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Class: Marker</title>
+    <title>JSDoc: Class: Observation</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Class: Marker</h1>
+    <h1 class="page-title">Class: Observation</h1>
 
     
 
@@ -28,9 +28,7 @@
 
 <header>
     
-        <h2><span class="attribs"><span class="type-signature"></span></span>Marker<span class="signature">(data)</span><span class="type-signature"></span></h2>
-        
-            <div class="class-description">Class representing a marker</div>
+        <h2><span class="attribs"><span class="type-signature"></span></span>Observation<span class="signature">(data)</span><span class="type-signature"></span></h2>
         
     
 </header>
@@ -41,11 +39,9 @@
         
 
     
-    <h2>Constructor</h2>
-    
 
     
-    <h4 class="name" id="Marker"><span class="type-signature"></span>new Marker<span class="signature">(data)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="Observation"><span class="type-signature"></span>new Observation<span class="signature">(data)</span><span class="type-signature"></span></h4>
     
 
     
@@ -53,7 +49,7 @@
 
 
 <div class="description">
-    Creates a marker
+    Creates an Observation Object
 </div>
 
 
@@ -146,7 +142,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="marker.js.html">marker.js</a>, <a href="marker.js.html#line4">line 4</a>
+        <a href="observation.js.html">observation.js</a>, <a href="observation.js.html#line42">line 42</a>
     </li></ul></dd>
     
 
@@ -202,7 +198,7 @@
 
 
 <div class="description">
-    Unique ID for the marker
+    Unique ID for the Observation
 </div>
 
 
@@ -255,7 +251,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="marker.js.html">marker.js</a>, <a href="marker.js.html#line11">line 11</a>
+        <a href="observation.js.html">observation.js</a>, <a href="observation.js.html#line8">line 8</a>
     </li></ul></dd>
     
 
@@ -273,13 +269,13 @@
 
         
             
-<h4 class="name" id="cultureEvent"><span class="type-signature"></span>cultureEvent<span class="type-signature"> :string</span></h4>
+<h4 class="name" id="claStage"><span class="type-signature"></span>claStage<span class="type-signature"> :string</span></h4>
 
 
 
 
 <div class="description">
-    ID of culture event
+    CLAStage ID of User's CLA stage at the time of the observation
 </div>
 
 
@@ -332,7 +328,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="marker.js.html">marker.js</a>, <a href="marker.js.html#line18">line 18</a>
+        <a href="observation.js.html">observation.js</a>, <a href="observation.js.html#line22">line 22</a>
     </li></ul></dd>
     
 
@@ -350,90 +346,13 @@
 
         
             
-<h4 class="name" id="endTime"><span class="type-signature"></span>endTime<span class="type-signature"> :number</span></h4>
+<h4 class="name" id="date"><span class="type-signature"></span>date<span class="type-signature"> :string</span></h4>
 
 
 
 
 <div class="description">
-    Time where the marker ends
-</div>
-
-
-
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">number</span>
-
-
-        </li>
-    </ul>
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-default">Default Value:</dt>
-    <dd class="tag-default"><ul class="dummy">
-            <li>0</li>
-        </ul></dd>
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="marker.js.html">marker.js</a>, <a href="marker.js.html#line32">line 32</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-        
-            
-<h4 class="name" id="note"><span class="type-signature"></span>note<span class="type-signature"> :string</span></h4>
-
-
-
-
-<div class="description">
-    Note about the marker
+    Date/time the Observation was created, as an ISO String
 </div>
 
 
@@ -486,7 +405,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="marker.js.html">marker.js</a>, <a href="marker.js.html#line39">line 39</a>
+        <a href="observation.js.html">observation.js</a>, <a href="observation.js.html#line29">line 29</a>
     </li></ul></dd>
     
 
@@ -504,13 +423,13 @@
 
         
             
-<h4 class="name" id="outlineItems"><span class="type-signature"></span>outlineItems<span class="type-signature"> :Array.&lt;string></span></h4>
+<h4 class="name" id="text"><span class="type-signature"></span>text<span class="type-signature"> :string</span></h4>
 
 
 
 
 <div class="description">
-    Array of Outline Item IDs
+    Text of the Observation
 </div>
 
 
@@ -519,7 +438,7 @@
     <ul>
         <li>
             
-<span class="param-type">Array.&lt;string></span>
+<span class="param-type">string</span>
 
 
         </li>
@@ -556,14 +475,14 @@
     
     <dt class="tag-default">Default Value:</dt>
     <dd class="tag-default"><ul class="dummy">
-            <li>[]</li>
+            <li>''</li>
         </ul></dd>
     
 
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="marker.js.html">marker.js</a>, <a href="marker.js.html#line53">line 53</a>
+        <a href="observation.js.html">observation.js</a>, <a href="observation.js.html#line36">line 36</a>
     </li></ul></dd>
     
 
@@ -581,13 +500,13 @@
 
         
             
-<h4 class="name" id="searchWords"><span class="type-signature"></span>searchWords<span class="type-signature"> :Array.&lt;string></span></h4>
+<h4 class="name" id="title"><span class="type-signature"></span>title<span class="type-signature"> :string</span></h4>
 
 
 
 
 <div class="description">
-    Array of IDs of search words
+    Title of the Observation
 </div>
 
 
@@ -596,7 +515,7 @@
     <ul>
         <li>
             
-<span class="param-type">Array.&lt;string></span>
+<span class="param-type">string</span>
 
 
         </li>
@@ -633,91 +552,14 @@
     
     <dt class="tag-default">Default Value:</dt>
     <dd class="tag-default"><ul class="dummy">
-            <li>[]</li>
+            <li>''</li>
         </ul></dd>
     
 
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="marker.js.html">marker.js</a>, <a href="marker.js.html#line46">line 46</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-        
-            
-<h4 class="name" id="startTime"><span class="type-signature"></span>startTime<span class="type-signature"> :number</span></h4>
-
-
-
-
-<div class="description">
-    Time where the marker begins
-</div>
-
-
-
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">number</span>
-
-
-        </li>
-    </ul>
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-default">Default Value:</dt>
-    <dd class="tag-default"><ul class="dummy">
-            <li>0</li>
-        </ul></dd>
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="marker.js.html">marker.js</a>, <a href="marker.js.html#line25">line 25</a>
+        <a href="observation.js.html">observation.js</a>, <a href="observation.js.html#line15">line 15</a>
     </li></ul></dd>
     
 
@@ -745,7 +587,7 @@
     
 
     
-    <h4 class="name" id="set"><span class="type-signature"></span>set<span class="signature">(data)</span><span class="type-signature"> &rarr; {<a href="Marker.html">Marker</a>}</span></h4>
+    <h4 class="name" id="set"><span class="type-signature"></span>set<span class="signature">(data)</span><span class="type-signature"> &rarr; {<a href="Observation.html">Observation</a>}</span></h4>
     
 
     
@@ -753,7 +595,7 @@
 
 
 <div class="description">
-    Creates an updated marker
+    Creates an updated Observation Object
 </div>
 
 
@@ -846,7 +688,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="marker.js.html">marker.js</a>, <a href="marker.js.html#line70">line 70</a>
+        <a href="observation.js.html">observation.js</a>, <a href="observation.js.html#line53">line 53</a>
     </li></ul></dd>
     
 
@@ -882,7 +724,7 @@
     </dt>
     <dd>
         
-<span class="param-type"><a href="Marker.html">Marker</a></span>
+<span class="param-type"><a href="Observation.html">Observation</a></span>
 
 
     </dd>
