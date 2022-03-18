@@ -62,11 +62,11 @@ class Person {
   dateLastUsed = '';
 
   /**
-   * ISO date of person's death
-   * @type {string}
+   * True if the person is deceased
+   * @type {boolean}
    * @default ''
    */
-  dateDeceased = '';
+  deceased = false;
 
   /**
    * Filename of a picture of the person
