@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: search-word.js</title>
+    <title>JSDoc: Source: tag.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: search-word.js</h1>
+    <h1 class="page-title">Source: tag.js</h1>
 
     
 
@@ -27,25 +27,25 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/**
- * Class representing a search word
+ * Class representing a tag
  */
-class SearchWord {
+class Tag {
 
   /**
-   * Unique ID for the search word
+   * Unique ID for the tag
    * @type {string}
    * @default ''
    */
   _id = '';
 
   /**
-   * Text of the search word
+   * Text of the tag
    * @type {string}
    */
-  word = '';
+  tag = '';
 
   /**
-   * Creates a search word
+   * Creates a tag
    * @param {Object} data
    */
   constructor(data = {}) {
@@ -55,12 +55,12 @@ class SearchWord {
   }
 
   /**
-   * Creates an updated search word
+   * Creates an updated tag
    * @param {Object} data
-   * @returns {SearchWord}
+   * @returns {Tag}
    */
   set(data) {
-    return new SearchWord({
+    return new Tag({
       ...this,
       ...data
     });
@@ -68,7 +68,7 @@ class SearchWord {
 
 }
 
-module.exports = SearchWord;
+module.exports = Tag;
 </code></pre>
         </article>
     </section>
