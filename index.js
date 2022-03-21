@@ -16,3 +16,5 @@ module.exports.AdvancedFilter = require('./types/advanced-filter');
 module.exports.ListeningCollectionItem = require('./types/listening-collection-item');
 module.exports.PendingQuestion = require('./types/pending-question');
 module.exports.Observation = require('./types/observation');
+module.exports.Tag = require('./types/tag');
+
