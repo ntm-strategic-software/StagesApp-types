@@ -26,11 +26,19 @@ class Transcription {
   title = '';
 
   /**
+   * Array of SearchWord._id's
    * @type {string[]}
    */
   searchWords = [];
 
   /**
+   * Array of Tag._id's
+   * @type {string[]}
+   */
+  tags = [];
+
+  /**
+   * Array of OutlineItem._id's
    * @type {string[]}
    */
   outlineItems = [];
@@ -53,6 +61,7 @@ class Transcription {
   note = '';
 
   /**
+   * a CultureEvent._id
    * @type {string}
    */
   cultureEvent = '';
