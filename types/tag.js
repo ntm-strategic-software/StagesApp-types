@@ -14,7 +14,7 @@ class Tag {
    * Text of the tag
    * @type {string}
    */
-  tag = '';
+  tagText = '';
 
   /**
    * Creates a tag
