@@ -4,13 +4,6 @@
 class Tag {
 
   /**
-   * Unique ID for the tag
-   * @type {string}
-   * @default ''
-   */
-  _id = '';
-
-  /**
    * Text of the tag
    * @type {string}
    */

@@ -32,7 +32,7 @@ class Transcription {
   searchWords = [];
 
   /**
-   * Array of Tag._id's
+   * Array of strings from Tag.tagText
    * @type {string[]}
    */
   tags = [];
