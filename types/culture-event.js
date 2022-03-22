@@ -71,6 +71,12 @@ class CultureEvent extends CLAFile {
   outlineItems = [];
 
   /**
+   * Array of strings from Tag.tagText
+   * @type {string[]}
+   */
+  tags = [];
+
+  /**
    * Array of GeneralRecording Item IDs
    * @type {string[]}
    * @default []
