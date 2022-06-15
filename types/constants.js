@@ -110,3 +110,8 @@ module.exports.CLAStage = CLAStage;
 module.exports.AdvancedFilterType = AdvancedFilterType;
 module.exports.TableNames = TableNames;
 module.exports.mobileTablesToSendToDesktop = mobileTablesToSendToDesktop;
+
+module.exports.DataTransferType = {
+  SYNC: 'SYNC',
+  IMPORT_USER: 'IMPORT_USER',
+};
