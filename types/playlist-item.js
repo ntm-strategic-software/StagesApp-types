@@ -1,6 +1,6 @@
 const moment = require('moment');
 
-class ListeningCollectionItem {
+class PlaylistItem {
 
   /**
    * ID of the item; matches a CE's ID
@@ -57,7 +57,7 @@ class ListeningCollectionItem {
   dateRecorded = '';
 
   /**
-   * Creates a Listening Collection Item Object
+   * Creates a Playlist Item Object
    * @param {{_id: string, listenedToPrev: string[], order: number, recordingsAudio: string[], recordingsVideo: string[], recordingsOrder: string[], title: string, user: string, dateRecorded: string}} data
    */
   constructor(data = {}) {
@@ -67,12 +67,12 @@ class ListeningCollectionItem {
   }
 
   /**
-   * Creates an updated Listening Collection Item Object
+   * Creates an updated Playlist Item Object
    * @param {{_id: string, listenedToPrev: string[], order: number, recordingsAudio: string[], recordingsVideo: string[], recordingsOrder: string[], title: string, user: string, dateRecorded: string}} data
-   * @returns {ListeningCollectionItem}
+   * @returns {PlaylistItem}
    */
   set(data) {
-    return new ListeningCollectionItem({
+    return new PlaylistItem({
       ...this,
       ...data
     });
@@ -118,4 +118,4 @@ class ListeningCollectionItem {
 
 }
 
-module.exports = ListeningCollectionItem;
+module.exports = PlaylistItem;
