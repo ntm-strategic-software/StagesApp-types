@@ -1,7 +1,14 @@
+const { ClaFileType } = require('./constants');
+
 /**
- * Class representing a CLA File
+ * Class representing a CLA File.  This class is only used as a base class (super class).
  */
 class CLAFile {
+  /**
+   * The type of CLA File this is (e.g., CultureEvent, DRE)
+   * This method must be overridden in any class that extends CLAFile
+   */
+  claFileType() {}
 
   /**
    * file number
@@ -10,20 +17,20 @@ class CLAFile {
   fileNumber = 0;
 
   /**
-   * Array of file numbers
+   * Array of file numbers (not _id's)
    * @type {string[]}
    * @default []
    */
   linkedFiles = [];
 
   /**
-   * for if the file was imported from a previous export
+   * true if the file was imported from a previous export
    * @type {boolean}
    */
   imported = false;
 
   /**
-   * for if the file is read only
+   * true if we should prevent editing the file
    * @type {boolean}
    */
   readOnly = false;
@@ -43,6 +50,21 @@ class CLAFile {
     this.linkedFiles = data.linkedFiles || this.linkedFiles;
   }
 
+  /**
+   * returns true if this CLAFile is a CultureEvent
+   * @returns {boolean}
+   */
+  isCE() {
+    return this.claFileType() === ClaFileType.CultureEvent;
+  }
+
+  /**
+   * returns true if this CLAFile is a DRE
+   * @returns {boolean}
+   */
+  isDRE() {
+    return this.claFileType() === ClaFileType.DRE;
+  }
 }
 
 module.exports = CLAFile;

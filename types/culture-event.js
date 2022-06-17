@@ -1,11 +1,24 @@
-const { RecordStatus } = require('./constants');
 const CLAFile = require('./cla-file');
+const { ClaFileType } = require('./constants');
 
 /**
- * Class representing a Culture Event
+ * Class representing a Culture Event (our internal term in the software.  In the UI and in Engage, this is called a General Recorder file.)
+ *
+ * When the user records something with the General Recorder, multiple GeneralRecording objects will be created
+ * as the user switches between audio and video modes, or takes pictures while recording is paused.  When the user
+ * is done recording, he enters metadata, and saves.
+ * At that point one of these CultureEvent objects is created.
+ *
+ * So a CultureEvent is a creation of the General Recorder, and includes:
+ *   - potentially multiple GeneralRecordings
+ *   - metadata about the setting, etc.
+ *   - the results of the user processing the recording (transcribing, tagging, etc.)
  * @extends CLAFile
  */
 class CultureEvent extends CLAFile {
+  claFileType() {
+    return ClaFileType.CultureEvent;
+  }
 
   /**
    * Unique ID for the Culture Event
@@ -82,13 +95,6 @@ class CultureEvent extends CLAFile {
    * @default []
    */
   generalRecordings = [];
-
-  /**
-   * Status of the event recording
-   * @type {RecordStatus}
-   * @default RecordStatus.PLANNED
-   */
-  recordStatus = RecordStatus.PLANNED;
 
   /**
    * CLAStage ID of User's CLA stage at the time of the event
@@ -176,18 +182,9 @@ class CultureEvent extends CLAFile {
   set(data = {}) {
     return new CultureEvent({
       ...this,
-      ...data
+      ...data,
     });
   }
-
-  isCE() {
-    return true;
-  }
-
-  isDRE() {
-    return false;
-  }
-
 }
 
 module.exports = CultureEvent;

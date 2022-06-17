@@ -1,4 +1,4 @@
-const { CLAStage, UserRestrictions } = require('./constants');
+const { CLAStage } = require('./constants');
 
 /**
  * Class representing a user
@@ -32,13 +32,6 @@ class User {
    * @default ''
    */
   fullName = '';
-
-  /**
-   * UserRestrictions value that determines what the user can do
-   * @type {UserRestrictions|string}
-   * @default ''
-   */
-  restrictions = '';
 
   /**
    * User's current CLA stage
