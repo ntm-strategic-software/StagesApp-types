@@ -1,5 +1,3 @@
-const { Sex } = require('./constants');
-
 /**
  * Class representing a Person
  */
@@ -42,10 +40,10 @@ class Person {
 
   /**
    * Person's sex
-   * @type {Sex}
-   * @default Sex.MALE
+   * @type {string}
+   * @default ''
    */
-  sex = Sex.MALE;
+  sex = '';
 
   /**
    * Note about the person

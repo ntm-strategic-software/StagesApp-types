@@ -1,10 +1,18 @@
 const CLAFile = require('./cla-file');
+const { ClaFileType } = require('./constants');
 
 /**
- * Class representing an DRE Event
+ * Class representing a Dual Recorder Event (our internal name.  In the UI and Engage, a Dual Recorder file.)
+ *
+ * The user records a native, then records himself telling the same story.  The desktop Stages app has tools
+ * to enable the user to transcribe and compare the two texts, to aid in higher-level language learning.
+ *
  * @extends CLAFile
  */
 class DRE extends CLAFile {
+  claFileType() {
+    return ClaFileType.DRE;
+  }
 
   /**
    * Unique ID for the DRE Event
@@ -116,18 +124,9 @@ class DRE extends CLAFile {
   set(data = {}) {
     return new DRE({
       ...this,
-      ...data
+      ...data,
     });
   }
-
-  isDRE() {
-    return true;
-  }
-
-  isCE() {
-    return false;
-  }
-
 }
 
 module.exports = DRE;

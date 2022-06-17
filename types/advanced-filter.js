@@ -66,7 +66,7 @@ class AdvancedFilter {
   set(data) {
     return new AdvancedFilter({
       ...this,
-      ...data
+      ...data,
     });
   }
 
