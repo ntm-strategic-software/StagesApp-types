@@ -1,7 +1,7 @@
 /**
- * Class representing a deleted item
+ * Class representing a deleted item, so when mobile and desktop sync the right thing will happen.
  */
-class Deleted {
+class DeletedItems {
 
   /**
    * ID of the deleted item
@@ -25,7 +25,7 @@ class Deleted {
   date = '';
 
   /**
-   * Creates a deleted instance
+   * Creates a deleted item instance
    * @param {Object} data
    */
   constructor(data = {}) {
@@ -35,17 +35,17 @@ class Deleted {
   }
 
   /**
-   * Creates an updated deleted instance
+   * Creates an updated deleted item instance
    * @param {Object} data
-   * @returns {Deleted}
+   * @returns {DeletedItems}
    */
   set(data) {
-    return new Deleted({
+    return new DeletedItems({
       ...this,
-      ...data
+      ...data,
     });
   }
 
 }
 
-module.exports = Deleted;
+module.exports = DeletedItems;
