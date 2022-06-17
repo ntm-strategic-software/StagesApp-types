@@ -42,7 +42,7 @@ class CultureEvent extends CLAFile {
   searchWords = [];
 
   /**
-   * ISO Date of the event
+   * ISO Date/Time of the event
    * @type {string}
    * @default ''
    */
@@ -70,13 +70,6 @@ class CultureEvent extends CLAFile {
   audience = '';
 
   /**
-   * User ID of who recorded the event
-   * @type {string}
-   * @default ''
-   */
-  recordedBy = '';
-
-  /**
    * Array of Outline Item IDs
    * @type {string[]}
    * @default []
@@ -90,7 +83,11 @@ class CultureEvent extends CLAFile {
   tags = [];
 
   /**
-   * Array of GeneralRecording Item IDs
+   * Array of GeneralRecording Item IDs for all GeneralRecordings that make up this CultureEvent.
+   *
+   * The General Recorder in the mobile app creates a new GeneralRecording item when the user switches between audio,
+   * video, or takes a picture while recording is paused.
+   *
    * @type {string[]}
    * @default []
    */
@@ -104,11 +101,11 @@ class CultureEvent extends CLAFile {
   userCLAStage = '';
 
   /**
-   * What month is this user in for his current stage?
+   * What unit is this user in for his current stage?  This number starts over at 1 when a user moves to the next stage.
    * @type {number}
    * @default 1
    */
-  userStageMonth = 1;
+  userStageUnit = 1;
 
   /**
    * Event notes
@@ -118,50 +115,19 @@ class CultureEvent extends CLAFile {
   note = '';
 
   /**
-   * Phonetic Transcriptions encoded in HTML
+   * Phonetic Transcription in plain text.  Per Bill, we do not support splitting the phonetic text into sections
+   * like we do with the orthographic text.  Phonetic text for a CultureEvent is stored all in one simple string.
+   *
    * @type {string}
    * @default ''
    */
-  phoneticTranscriptionsEncoded = '';
-
-  /**
-   * Phonetic Transcriptions in plain text
-   * @type {string}
-   * @default ''
-   */
-  phoneticTranscriptions = '';
-
-  /**
-   * Orthographic Transcriptions encoded in HTML
-   * @type {string}
-   * @default ''
-   */
-  orthographicTranscriptionsEncoded = '';
-
-  /**
-   * Orthographic Transcriptions in plain text
-   * @type {string}
-   * @default ''
-   */
-  orthographicTranscriptions = '';
+  phoneticTranscription = '';
 
   /**
    * @type {boolean}
    * @default false
    */
   orthographicTranscriptionsDone = false;
-
-  /**
-   * @type {string}
-   */
-  taggedOrthographicTranscriptions = '';
-
-  /**
-   * CultureEvent ID's of related culture events
-   * @type {string[]}
-   * @default []
-   */
-  relatedRecordsLinks = [];
 
   /**
    * Creates a Culture Event Object
