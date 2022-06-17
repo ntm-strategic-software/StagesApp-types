@@ -26,14 +26,27 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>const { RecordStatus } = require('./constants');
-const CLAFile = require('./cla-file');
+            <pre class="prettyprint source linenums"><code>const CLAFile = require('./cla-file');
+const { ClaFileType } = require('./constants');
 
 /**
- * Class representing a Culture Event
+ * Class representing a Culture Event (our internal term in the software.  In the UI and in Engage, this is called a General Recorder file.)
+ *
+ * When the user records something with the General Recorder, multiple GeneralRecording objects will be created
+ * as the user switches between audio and video modes, or takes pictures while recording is paused.  When the user
+ * is done recording, he enters metadata, and saves.
+ * At that point one of these CultureEvent objects is created.
+ *
+ * So a CultureEvent is a creation of the General Recorder, and includes:
+ *   - potentially multiple GeneralRecordings
+ *   - metadata about the setting, etc.
+ *   - the results of the user processing the recording (transcribing, tagging, etc.)
  * @extends CLAFile
  */
 class CultureEvent extends CLAFile {
+  claFileType() {
+    return ClaFileType.CultureEvent;
+  }
 
   /**
    * Unique ID for the Culture Event
@@ -57,7 +70,7 @@ class CultureEvent extends CLAFile {
   searchWords = [];
 
   /**
-   * ISO Date of the event
+   * ISO Date/Time of the event
    * @type {string}
    * @default ''
    */
@@ -85,13 +98,6 @@ class CultureEvent extends CLAFile {
   audience = '';
 
   /**
-   * User ID of who recorded the event
-   * @type {string}
-   * @default ''
-   */
-  recordedBy = '';
-
-  /**
    * Array of Outline Item IDs
    * @type {string[]}
    * @default []
@@ -105,18 +111,15 @@ class CultureEvent extends CLAFile {
   tags = [];
 
   /**
-   * Array of GeneralRecording Item IDs
+   * Array of GeneralRecording Item IDs for all GeneralRecordings that make up this CultureEvent.
+   *
+   * The General Recorder in the mobile app creates a new GeneralRecording item when the user switches between audio,
+   * video, or takes a picture while recording is paused.
+   *
    * @type {string[]}
    * @default []
    */
   generalRecordings = [];
-
-  /**
-   * Status of the event recording
-   * @type {RecordStatus}
-   * @default RecordStatus.PLANNED
-   */
-  recordStatus = RecordStatus.PLANNED;
 
   /**
    * CLAStage ID of User's CLA stage at the time of the event
@@ -126,11 +129,11 @@ class CultureEvent extends CLAFile {
   userCLAStage = '';
 
   /**
-   * What month is this user in for his current stage?
+   * What unit is this user in for his current stage?  This number starts over at 1 when a user moves to the next stage.
    * @type {number}
    * @default 1
    */
-  userStageMonth = 1;
+  userStageUnit = 1;
 
   /**
    * Event notes
@@ -140,50 +143,19 @@ class CultureEvent extends CLAFile {
   note = '';
 
   /**
-   * Phonetic Transcriptions encoded in HTML
+   * Phonetic Transcription in plain text.  Per Bill, we do not support splitting the phonetic text into sections
+   * like we do with the orthographic text.  Phonetic text for a CultureEvent is stored all in one simple string.
+   *
    * @type {string}
    * @default ''
    */
-  phoneticTranscriptionsEncoded = '';
-
-  /**
-   * Phonetic Transcriptions in plain text
-   * @type {string}
-   * @default ''
-   */
-  phoneticTranscriptions = '';
-
-  /**
-   * Orthographic Transcriptions encoded in HTML
-   * @type {string}
-   * @default ''
-   */
-  orthographicTranscriptionsEncoded = '';
-
-  /**
-   * Orthographic Transcriptions in plain text
-   * @type {string}
-   * @default ''
-   */
-  orthographicTranscriptions = '';
+  phoneticTranscription = '';
 
   /**
    * @type {boolean}
    * @default false
    */
   orthographicTranscriptionsDone = false;
-
-  /**
-   * @type {string}
-   */
-  taggedOrthographicTranscriptions = '';
-
-  /**
-   * CultureEvent ID's of related culture events
-   * @type {string[]}
-   * @default []
-   */
-  relatedRecordsLinks = [];
 
   /**
    * Creates a Culture Event Object
@@ -204,18 +176,9 @@ class CultureEvent extends CLAFile {
   set(data = {}) {
     return new CultureEvent({
       ...this,
-      ...data
+      ...data,
     });
   }
-
-  isCE() {
-    return true;
-  }
-
-  isDRE() {
-    return false;
-  }
-
 }
 
 module.exports = CultureEvent;
@@ -229,13 +192,13 @@ module.exports = CultureEvent;
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="AdvancedFilter.html">AdvancedFilter</a></li><li><a href="CLAFile.html">CLAFile</a></li><li><a href="CultureEvent.html">CultureEvent</a></li><li><a href="Deleted.html">Deleted</a></li><li><a href="DRE.html">DRE</a></li><li><a href="GeneralPhoto.html">GeneralPhoto</a></li><li><a href="GeneralRecording.html">GeneralRecording</a></li><li><a href="Marker.html">Marker</a></li><li><a href="Observation.html">Observation</a></li><li><a href="OutlineItem.html">OutlineItem</a></li><li><a href="PendingQuestion.html">PendingQuestion</a></li><li><a href="Person.html">Person</a></li><li><a href="PlaylistItem.html">PlaylistItem</a></li><li><a href="Question.html">Question</a></li><li><a href="SALocation.html">SALocation</a></li><li><a href="SearchWord.html">SearchWord</a></li><li><a href="Tag.html">Tag</a></li><li><a href="Transcription.html">Transcription</a></li><li><a href="User.html">User</a></li></ul><h3>Global</h3><ul><li><a href="global.html#AdvancedFilterType">AdvancedFilterType</a></li><li><a href="global.html#CLAStage">CLAStage</a></li><li><a href="global.html#mobileTablesToSendToDesktop">mobileTablesToSendToDesktop</a></li><li><a href="global.html#RecordStatus">RecordStatus</a></li><li><a href="global.html#Sex">Sex</a></li><li><a href="global.html#TableNames">TableNames</a></li><li><a href="global.html#UserRestrictions">UserRestrictions</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="AdvancedFilter.html">AdvancedFilter</a></li><li><a href="CLAFile.html">CLAFile</a></li><li><a href="CultureEvent.html">CultureEvent</a></li><li><a href="Deleted.html">Deleted</a></li><li><a href="DRE.html">DRE</a></li><li><a href="GeneralPhoto.html">GeneralPhoto</a></li><li><a href="GeneralRecording.html">GeneralRecording</a></li><li><a href="Marker.html">Marker</a></li><li><a href="Observation.html">Observation</a></li><li><a href="OutlineItem.html">OutlineItem</a></li><li><a href="PendingQuestion.html">PendingQuestion</a></li><li><a href="Person.html">Person</a></li><li><a href="PlaylistItem.html">PlaylistItem</a></li><li><a href="Question.html">Question</a></li><li><a href="SALocation.html">SALocation</a></li><li><a href="SearchWord.html">SearchWord</a></li><li><a href="Tag.html">Tag</a></li><li><a href="Transcription.html">Transcription</a></li><li><a href="User.html">User</a></li></ul><h3>Global</h3><ul><li><a href="global.html#AdvancedFilterType">AdvancedFilterType</a></li><li><a href="global.html#ClaFileType">ClaFileType</a></li><li><a href="global.html#CLAStage">CLAStage</a></li><li><a href="global.html#DataTransferType">DataTransferType</a></li><li><a href="global.html#mobileTablesToSendToDesktop">mobileTablesToSendToDesktop</a></li><li><a href="global.html#TableNames">TableNames</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.10</a> on Thu Jun 16 2022 11:24:51 GMT-0400 (Eastern Daylight Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.10</a> on Fri Jun 17 2022 14:57:40 GMT-0400 (Eastern Daylight Time)
 </footer>
 
 <script> prettyPrint(); </script>
