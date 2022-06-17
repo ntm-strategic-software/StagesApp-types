@@ -30,7 +30,7 @@
     
         <h2><span class="attribs"><span class="type-signature"></span></span>CLAFile<span class="signature">(data)</span><span class="type-signature"></span></h2>
         
-            <div class="class-description">Class representing a CLA File</div>
+            <div class="class-description">Class representing a CLA File.  This class is only used as a base class (super class).</div>
         
     
 </header>
@@ -264,7 +264,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="cla-file.js.html">cla-file.js</a>, <a href="cla-file.js.html#line4">line 4</a>
+        <a href="cla-file.js.html">cla-file.js</a>, <a href="cla-file.js.html#line6">line 6</a>
     </li></ul></dd>
     
 
@@ -368,7 +368,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="cla-file.js.html">cla-file.js</a>, <a href="cla-file.js.html#line10">line 10</a>
+        <a href="cla-file.js.html">cla-file.js</a>, <a href="cla-file.js.html#line17">line 17</a>
     </li></ul></dd>
     
 
@@ -392,7 +392,7 @@
 
 
 <div class="description">
-    for if the file was imported from a previous export
+    true if the file was imported from a previous export
 </div>
 
 
@@ -440,7 +440,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="cla-file.js.html">cla-file.js</a>, <a href="cla-file.js.html#line23">line 23</a>
+        <a href="cla-file.js.html">cla-file.js</a>, <a href="cla-file.js.html#line30">line 30</a>
     </li></ul></dd>
     
 
@@ -464,7 +464,7 @@
 
 
 <div class="description">
-    Array of file numbers
+    Array of file numbers (not _id's)
 </div>
 
 
@@ -517,7 +517,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="cla-file.js.html">cla-file.js</a>, <a href="cla-file.js.html#line17">line 17</a>
+        <a href="cla-file.js.html">cla-file.js</a>, <a href="cla-file.js.html#line24">line 24</a>
     </li></ul></dd>
     
 
@@ -541,7 +541,7 @@
 
 
 <div class="description">
-    for if the file is read only
+    true if we should prevent editing the file
 </div>
 
 
@@ -589,7 +589,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="cla-file.js.html">cla-file.js</a>, <a href="cla-file.js.html#line29">line 29</a>
+        <a href="cla-file.js.html">cla-file.js</a>, <a href="cla-file.js.html#line36">line 36</a>
     </li></ul></dd>
     
 
@@ -609,6 +609,310 @@
     
 
     
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="claFileType"><span class="type-signature"></span>claFileType<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    The type of CLA File this is (e.g., CultureEvent, DRE)This method must be overridden in any class that extends CLAFile
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="cla-file.js.html">cla-file.js</a>, <a href="cla-file.js.html#line11">line 11</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="isCE"><span class="type-signature"></span>isCE<span class="signature">()</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    returns true if this CLAFile is a CultureEvent
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="cla-file.js.html">cla-file.js</a>, <a href="cla-file.js.html#line57">line 57</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="isDRE"><span class="type-signature"></span>isDRE<span class="signature">()</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    returns true if this CLAFile is a DRE
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="cla-file.js.html">cla-file.js</a>, <a href="cla-file.js.html#line65">line 65</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+    
 
     
 
@@ -623,13 +927,13 @@
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="AdvancedFilter.html">AdvancedFilter</a></li><li><a href="CLAFile.html">CLAFile</a></li><li><a href="CultureEvent.html">CultureEvent</a></li><li><a href="Deleted.html">Deleted</a></li><li><a href="DRE.html">DRE</a></li><li><a href="GeneralPhoto.html">GeneralPhoto</a></li><li><a href="GeneralRecording.html">GeneralRecording</a></li><li><a href="Marker.html">Marker</a></li><li><a href="Observation.html">Observation</a></li><li><a href="OutlineItem.html">OutlineItem</a></li><li><a href="PendingQuestion.html">PendingQuestion</a></li><li><a href="Person.html">Person</a></li><li><a href="PlaylistItem.html">PlaylistItem</a></li><li><a href="Question.html">Question</a></li><li><a href="SALocation.html">SALocation</a></li><li><a href="SearchWord.html">SearchWord</a></li><li><a href="Tag.html">Tag</a></li><li><a href="Transcription.html">Transcription</a></li><li><a href="User.html">User</a></li></ul><h3>Global</h3><ul><li><a href="global.html#AdvancedFilterType">AdvancedFilterType</a></li><li><a href="global.html#CLAStage">CLAStage</a></li><li><a href="global.html#mobileTablesToSendToDesktop">mobileTablesToSendToDesktop</a></li><li><a href="global.html#RecordStatus">RecordStatus</a></li><li><a href="global.html#Sex">Sex</a></li><li><a href="global.html#TableNames">TableNames</a></li><li><a href="global.html#UserRestrictions">UserRestrictions</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="AdvancedFilter.html">AdvancedFilter</a></li><li><a href="CLAFile.html">CLAFile</a></li><li><a href="CultureEvent.html">CultureEvent</a></li><li><a href="Deleted.html">Deleted</a></li><li><a href="DRE.html">DRE</a></li><li><a href="GeneralPhoto.html">GeneralPhoto</a></li><li><a href="GeneralRecording.html">GeneralRecording</a></li><li><a href="Marker.html">Marker</a></li><li><a href="Observation.html">Observation</a></li><li><a href="OutlineItem.html">OutlineItem</a></li><li><a href="PendingQuestion.html">PendingQuestion</a></li><li><a href="Person.html">Person</a></li><li><a href="PlaylistItem.html">PlaylistItem</a></li><li><a href="Question.html">Question</a></li><li><a href="SALocation.html">SALocation</a></li><li><a href="SearchWord.html">SearchWord</a></li><li><a href="Tag.html">Tag</a></li><li><a href="Transcription.html">Transcription</a></li><li><a href="User.html">User</a></li></ul><h3>Global</h3><ul><li><a href="global.html#AdvancedFilterType">AdvancedFilterType</a></li><li><a href="global.html#ClaFileType">ClaFileType</a></li><li><a href="global.html#CLAStage">CLAStage</a></li><li><a href="global.html#DataTransferType">DataTransferType</a></li><li><a href="global.html#mobileTablesToSendToDesktop">mobileTablesToSendToDesktop</a></li><li><a href="global.html#TableNames">TableNames</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.10</a> on Thu Jun 16 2022 11:24:51 GMT-0400 (Eastern Daylight Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.10</a> on Fri Jun 17 2022 14:57:40 GMT-0400 (Eastern Daylight Time)
 </footer>
 
 <script> prettyPrint(); </script>

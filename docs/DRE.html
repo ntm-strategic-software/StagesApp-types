@@ -30,7 +30,10 @@
     
         <h2><span class="attribs"><span class="type-signature"></span></span>DRE<span class="signature">(data)</span><span class="type-signature"></span></h2>
         
-            <div class="class-description">Class representing an DRE Event</div>
+            <div class="class-description">Class representing a Dual Recorder Event (our internal name.  In the UI and Engage, a Dual Recorder file.)
+
+The user records a native, then records himself telling the same story.  The desktop Stages app has tools
+to enable the user to transcribe and compare the two texts, to aid in higher-level language learning.</div>
         
     
 </header>
@@ -53,7 +56,7 @@
 
 
 <div class="description">
-    Creates an DRE Event Object
+    Creates a DRE Object
 </div>
 
 
@@ -146,7 +149,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="dre.js.html">dre.js</a>, <a href="dre.js.html#line7">line 7</a>
+        <a href="dre.js.html">dre.js</a>, <a href="dre.js.html#line12">line 12</a>
     </li></ul></dd>
     
 
@@ -213,7 +216,7 @@
 
 
 <div class="description">
-    Unique ID for the DRE Event
+    Unique ID for the DRE
 </div>
 
 
@@ -266,7 +269,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="dre.js.html">dre.js</a>, <a href="dre.js.html#line14">line 14</a>
+        <a href="dre.js.html">dre.js</a>, <a href="dre.js.html#line22">line 22</a>
     </li></ul></dd>
     
 
@@ -343,7 +346,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="cla-file.js.html">cla-file.js</a>, <a href="cla-file.js.html#line10">line 10</a>
+        <a href="cla-file.js.html">cla-file.js</a>, <a href="cla-file.js.html#line17">line 17</a>
     </li></ul></dd>
     
 
@@ -367,7 +370,7 @@
 
 
 <div class="description">
-    for if the file was imported from a previous export
+    true if the file was imported from a previous export
 </div>
 
 
@@ -420,7 +423,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="cla-file.js.html">cla-file.js</a>, <a href="cla-file.js.html#line23">line 23</a>
+        <a href="cla-file.js.html">cla-file.js</a>, <a href="cla-file.js.html#line30">line 30</a>
     </li></ul></dd>
     
 
@@ -444,7 +447,7 @@
 
 
 <div class="description">
-    Array of file numbers
+    Array of file numbers (not _id's)
 </div>
 
 
@@ -502,7 +505,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="cla-file.js.html">cla-file.js</a>, <a href="cla-file.js.html#line17">line 17</a>
+        <a href="cla-file.js.html">cla-file.js</a>, <a href="cla-file.js.html#line24">line 24</a>
     </li></ul></dd>
     
 
@@ -526,7 +529,7 @@
 
 
 <div class="description">
-    Event notes
+    Any notes the user wants to make about the DRE
 </div>
 
 
@@ -579,7 +582,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="dre.js.html">dre.js</a>, <a href="dre.js.html#line35">line 35</a>
+        <a href="dre.js.html">dre.js</a>, <a href="dre.js.html#line36">line 36</a>
     </li></ul></dd>
     
 
@@ -603,7 +606,7 @@
 
 
 <div class="description">
-    Transcription observations
+    Observations the user makes as they compare transcriptions
 </div>
 
 
@@ -656,7 +659,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="dre.js.html">dre.js</a>, <a href="dre.js.html#line42">line 42</a>
+        <a href="dre.js.html">dre.js</a>, <a href="dre.js.html#line43">line 43</a>
     </li></ul></dd>
     
 
@@ -680,7 +683,7 @@
 
 
 <div class="description">
-    for if the file is read only
+    true if we should prevent editing the file
 </div>
 
 
@@ -733,84 +736,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="cla-file.js.html">cla-file.js</a>, <a href="cla-file.js.html#line29">line 29</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-        
-            
-<h4 class="name" id="recordedBy"><span class="type-signature"></span>recordedBy<span class="type-signature"> :string</span></h4>
-
-
-
-
-<div class="description">
-    User ID of who recorded the event
-</div>
-
-
-
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">string</span>
-
-
-        </li>
-    </ul>
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-default">Default Value:</dt>
-    <dd class="tag-default"><ul class="dummy">
-            <li>''</li>
-        </ul></dd>
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="dre.js.html">dre.js</a>, <a href="dre.js.html#line28">line 28</a>
+        <a href="cla-file.js.html">cla-file.js</a>, <a href="cla-file.js.html#line36">line 36</a>
     </li></ul></dd>
     
 
@@ -834,7 +760,7 @@
 
 
 <div class="description">
-    Recording 1 file name
+    Recording 1 file name (no path, but does include the extension)
 </div>
 
 
@@ -882,7 +808,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="dre.js.html">dre.js</a>, <a href="dre.js.html#line48">line 48</a>
+        <a href="dre.js.html">dre.js</a>, <a href="dre.js.html#line49">line 49</a>
     </li></ul></dd>
     
 
@@ -906,7 +832,7 @@
 
 
 <div class="description">
-    Recording 2 file name
+    Recording 2 file name (no path, but does include the extension)
 </div>
 
 
@@ -954,7 +880,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="dre.js.html">dre.js</a>, <a href="dre.js.html#line54">line 54</a>
+        <a href="dre.js.html">dre.js</a>, <a href="dre.js.html#line55">line 55</a>
     </li></ul></dd>
     
 
@@ -972,10 +898,19 @@
 
         
             
-<h4 class="name" id="splitCompareText1"><span class="type-signature"></span>splitCompareText1<span class="type-signature"> :Array.&lt;string></span></h4>
+<h4 class="name" id="splitCompareText1"><span class="type-signature"></span>splitCompareText1<span class="type-signature"> :Array.&lt;Array.&lt;object>></span></h4>
 
 
 
+
+<div class="description">
+    Array of array of objects.  Each string in splitText1 is here broken into an array of objects of shape:
+{ text: string, className: string }
+Example (except the text will be orthographic):  { text: 'The story begins like this', className: 'text-highlight-6' }
+
+If the text has been highlighted by the user on the Compare Transcriptions tab, className will be set to the highlight number, which corresponds to a color in the desktop app.
+If the text has not been highlighted, className will be an empty string.
+</div>
 
 
 
@@ -983,7 +918,7 @@
     <ul>
         <li>
             
-<span class="param-type">Array.&lt;string></span>
+<span class="param-type">Array.&lt;Array.&lt;object>></span>
 
 
         </li>
@@ -1022,7 +957,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="dre.js.html">dre.js</a>, <a href="dre.js.html#line93">line 93</a>
+        <a href="dre.js.html">dre.js</a>, <a href="dre.js.html#line91">line 91</a>
     </li></ul></dd>
     
 
@@ -1045,6 +980,15 @@
 
 
 
+<div class="description">
+    Array of array of objects.  Each string in splitText2 is here broken into an array of objects of shape:
+{ text: string, className: string }
+Example (except the text will be orthographic):  { text: 'Here is how the story begins', className: 'text-highlight-6' }
+
+If the text has been highlighted by the user on the Compare Transcriptions tab, className will be set to the highlight number, which corresponds to a color in the desktop app.
+If the text has not been highlighted, className will be an empty string.
+</div>
+
 
 
     <h5>Type:</h5>
@@ -1090,7 +1034,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="dre.js.html">dre.js</a>, <a href="dre.js.html#line98">line 98</a>
+        <a href="dre.js.html">dre.js</a>, <a href="dre.js.html#line103">line 103</a>
     </li></ul></dd>
     
 
@@ -1113,6 +1057,10 @@
 
 
 
+<div class="description">
+    transcription1, broken into sections by the user to match equivalent sections of transcription2
+</div>
+
 
 
     <h5>Type:</h5>
@@ -1158,7 +1106,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="dre.js.html">dre.js</a>, <a href="dre.js.html#line83">line 83</a>
+        <a href="dre.js.html">dre.js</a>, <a href="dre.js.html#line73">line 73</a>
     </li></ul></dd>
     
 
@@ -1181,6 +1129,10 @@
 
 
 
+<div class="description">
+    transcription2, broken into sections by the user to match equivalent sections of transcription1
+</div>
+
 
 
     <h5>Type:</h5>
@@ -1226,7 +1178,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="dre.js.html">dre.js</a>, <a href="dre.js.html#line88">line 88</a>
+        <a href="dre.js.html">dre.js</a>, <a href="dre.js.html#line79">line 79</a>
     </li></ul></dd>
     
 
@@ -1250,7 +1202,7 @@
 
 
 <div class="description">
-    Title of the event
+    Title of the DRE
 </div>
 
 
@@ -1303,7 +1255,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="dre.js.html">dre.js</a>, <a href="dre.js.html#line21">line 21</a>
+        <a href="dre.js.html">dre.js</a>, <a href="dre.js.html#line29">line 29</a>
     </li></ul></dd>
     
 
@@ -1327,7 +1279,7 @@
 
 
 <div class="description">
-    Transcrition 1 plain text
+    Transcription 1 plain text
 </div>
 
 
@@ -1375,79 +1327,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="dre.js.html">dre.js</a>, <a href="dre.js.html#line60">line 60</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-        
-            
-<h4 class="name" id="transcription1Encoded"><span class="type-signature"></span>transcription1Encoded<span class="type-signature"> :string</span></h4>
-
-
-
-
-<div class="description">
-    Transcription 1 encoded in html
-</div>
-
-
-
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">string</span>
-
-
-        </li>
-    </ul>
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="dre.js.html">dre.js</a>, <a href="dre.js.html#line72">line 72</a>
+        <a href="dre.js.html">dre.js</a>, <a href="dre.js.html#line61">line 61</a>
     </li></ul></dd>
     
 
@@ -1519,79 +1399,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="dre.js.html">dre.js</a>, <a href="dre.js.html#line66">line 66</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-        
-            
-<h4 class="name" id="transcription2Encoded"><span class="type-signature"></span>transcription2Encoded<span class="type-signature"> :string</span></h4>
-
-
-
-
-<div class="description">
-    Transcription 2 encoded in html
-</div>
-
-
-
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">string</span>
-
-
-        </li>
-    </ul>
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="dre.js.html">dre.js</a>, <a href="dre.js.html#line78">line 78</a>
+        <a href="dre.js.html">dre.js</a>, <a href="dre.js.html#line67">line 67</a>
     </li></ul></dd>
     
 
@@ -1619,6 +1427,321 @@
     
 
     
+    <h4 class="name" id="claFileType"><span class="type-signature"></span>claFileType<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    The type of CLA File this is (e.g., CultureEvent, DRE)This method must be overridden in any class that extends CLAFile
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="CLAFile.html#claFileType">CLAFile#claFileType</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="cla-file.js.html">cla-file.js</a>, <a href="cla-file.js.html#line11">line 11</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="isCE"><span class="type-signature"></span>isCE<span class="signature">()</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    returns true if this CLAFile is a CultureEvent
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="CLAFile.html#isCE">CLAFile#isCE</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="cla-file.js.html">cla-file.js</a>, <a href="cla-file.js.html#line57">line 57</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="isDRE"><span class="type-signature"></span>isDRE<span class="signature">()</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    returns true if this CLAFile is a DRE
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="CLAFile.html#isDRE">CLAFile#isDRE</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="cla-file.js.html">cla-file.js</a>, <a href="cla-file.js.html#line65">line 65</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
     <h4 class="name" id="set"><span class="type-signature"></span>set<span class="signature">(data)</span><span class="type-signature"> &rarr; {<a href="DRE.html">DRE</a>}</span></h4>
     
 
@@ -1627,7 +1750,7 @@
 
 
 <div class="description">
-    Creates an updated DRE Event Object
+    Creates an updated DRE Object
 </div>
 
 
@@ -1720,7 +1843,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="dre.js.html">dre.js</a>, <a href="dre.js.html#line116">line 116</a>
+        <a href="dre.js.html">dre.js</a>, <a href="dre.js.html#line121">line 121</a>
     </li></ul></dd>
     
 
@@ -1784,13 +1907,13 @@
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="AdvancedFilter.html">AdvancedFilter</a></li><li><a href="CLAFile.html">CLAFile</a></li><li><a href="CultureEvent.html">CultureEvent</a></li><li><a href="Deleted.html">Deleted</a></li><li><a href="DRE.html">DRE</a></li><li><a href="GeneralPhoto.html">GeneralPhoto</a></li><li><a href="GeneralRecording.html">GeneralRecording</a></li><li><a href="Marker.html">Marker</a></li><li><a href="Observation.html">Observation</a></li><li><a href="OutlineItem.html">OutlineItem</a></li><li><a href="PendingQuestion.html">PendingQuestion</a></li><li><a href="Person.html">Person</a></li><li><a href="PlaylistItem.html">PlaylistItem</a></li><li><a href="Question.html">Question</a></li><li><a href="SALocation.html">SALocation</a></li><li><a href="SearchWord.html">SearchWord</a></li><li><a href="Tag.html">Tag</a></li><li><a href="Transcription.html">Transcription</a></li><li><a href="User.html">User</a></li></ul><h3>Global</h3><ul><li><a href="global.html#AdvancedFilterType">AdvancedFilterType</a></li><li><a href="global.html#CLAStage">CLAStage</a></li><li><a href="global.html#mobileTablesToSendToDesktop">mobileTablesToSendToDesktop</a></li><li><a href="global.html#RecordStatus">RecordStatus</a></li><li><a href="global.html#Sex">Sex</a></li><li><a href="global.html#TableNames">TableNames</a></li><li><a href="global.html#UserRestrictions">UserRestrictions</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="AdvancedFilter.html">AdvancedFilter</a></li><li><a href="CLAFile.html">CLAFile</a></li><li><a href="CultureEvent.html">CultureEvent</a></li><li><a href="Deleted.html">Deleted</a></li><li><a href="DRE.html">DRE</a></li><li><a href="GeneralPhoto.html">GeneralPhoto</a></li><li><a href="GeneralRecording.html">GeneralRecording</a></li><li><a href="Marker.html">Marker</a></li><li><a href="Observation.html">Observation</a></li><li><a href="OutlineItem.html">OutlineItem</a></li><li><a href="PendingQuestion.html">PendingQuestion</a></li><li><a href="Person.html">Person</a></li><li><a href="PlaylistItem.html">PlaylistItem</a></li><li><a href="Question.html">Question</a></li><li><a href="SALocation.html">SALocation</a></li><li><a href="SearchWord.html">SearchWord</a></li><li><a href="Tag.html">Tag</a></li><li><a href="Transcription.html">Transcription</a></li><li><a href="User.html">User</a></li></ul><h3>Global</h3><ul><li><a href="global.html#AdvancedFilterType">AdvancedFilterType</a></li><li><a href="global.html#ClaFileType">ClaFileType</a></li><li><a href="global.html#CLAStage">CLAStage</a></li><li><a href="global.html#DataTransferType">DataTransferType</a></li><li><a href="global.html#mobileTablesToSendToDesktop">mobileTablesToSendToDesktop</a></li><li><a href="global.html#TableNames">TableNames</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.10</a> on Thu Jun 16 2022 11:24:51 GMT-0400 (Eastern Daylight Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.10</a> on Fri Jun 17 2022 14:57:40 GMT-0400 (Eastern Daylight Time)
 </footer>
 
 <script> prettyPrint(); </script>
