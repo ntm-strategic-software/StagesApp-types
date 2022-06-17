@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: outline-item.js</title>
+    <title>JSDoc: Source: deleted-items.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: outline-item.js</h1>
+    <h1 class="page-title">Source: deleted-items.js</h1>
 
     
 
@@ -27,40 +27,33 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/**
- * Class representing an Outline Item
+ * Class representing a deleted item, so when mobile and desktop sync the right thing will happen.
  */
-class OutlineItem {
+class DeletedItems {
 
   /**
-   * Unique ID for the Outline Item
+   * ID of the deleted item
    * @type {string}
    * @default ''
    */
   _id = '';
 
   /**
-   * Number for sorting
-   * @type {number}
-   * @default 0
-   */
-  number = 0;
-
-  /**
-   * Outline Item code
+   * Name of the table the item was deleted from
    * @type {string}
    * @default ''
    */
-  code = '';
+  table = '';
 
   /**
-   * Outline Item text
+   * Date the item was deleted
    * @type {string}
    * @default ''
    */
-  text = '';
+  date = '';
 
   /**
-   * Creates an Outline Item Object
+   * Creates a deleted item instance
    * @param {Object} data
    */
   constructor(data = {}) {
@@ -70,20 +63,20 @@ class OutlineItem {
   }
 
   /**
-   * Creates an updated OutlineItem Object
+   * Creates an updated deleted item instance
    * @param {Object} data
-   * @returns {OutlineItem}
+   * @returns {DeletedItems}
    */
   set(data) {
-    return new OutlineItem({
+    return new DeletedItems({
       ...this,
-      ...data
+      ...data,
     });
   }
 
 }
 
-module.exports = OutlineItem;
+module.exports = DeletedItems;
 </code></pre>
         </article>
     </section>
