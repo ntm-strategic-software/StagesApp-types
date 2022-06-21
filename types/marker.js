@@ -1,5 +1,8 @@
 /**
- * Class representing a marker
+ * Class representing a point in time in a GeneralRecording, with metadata that applies to the audio/video beginning at that point.
+ *
+ * The code is commented out for full Marker support, but we can add it in again whenever we want.  The current use is
+ * just to mark the beginning of a GeneralRecording.  Markers are displayed visually, and clicking one jumps to that point in the recording.
  */
 class Marker {
 
@@ -11,49 +14,35 @@ class Marker {
   _id = '';
 
   /**
-   * ID of culture event
+   * ID of the CultureEvent that the GeneralRecording belongs to, that this Marker is in (see GeneralRecording.markers)
    * @type {string}
    * @default ''
    */
   cultureEvent = '';
 
   /**
-   * Time where the marker begins
+   * The time (in seconds) in the GeneralRecording where the marker is
    * @type {number}
    * @default 0
    */
   startTime = 0;
 
   /**
-   * Time where the marker ends
-   * @type {number}
-   * @default 0
-   */
-  endTime = 0;
-
-  /**
-   * Note about the marker
+   * Note that pertains to the part of the audio/video in the GeneralRecording that begins at startTime
    * @type {string}
    * @default ''
    */
   note = '';
 
   /**
-   * Array of IDs of search words
+   * Array of IDs of search words that pertain to the part of the audio/video in the GeneralRecording that begins at startTime
    * @type {string[]}
    * @default []
    */
   searchWords = [];
 
   /**
-   * Array of Outline Item IDs
-   * @type {string[]}
-   * @default []
-   */
-  outlineItems = [];
-
-  /**
-   * Creates a marker
+   * Creates a Marker object
    * @param {Object} data
    */
   constructor(data = {}) {
@@ -63,14 +52,14 @@ class Marker {
   }
 
   /**
-   * Creates an updated marker
+   * Creates an updated Marker object
    * @param {Object} data
    * @returns {Marker}
    */
   set(data) {
     return new Marker({
       ...this,
-      ...data
+      ...data,
     });
   }
 

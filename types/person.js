@@ -1,5 +1,5 @@
 /**
- * Class representing a Person
+ * Class representing a Person.  This has no connection to the Users table.
  */
 class Person {
 
@@ -53,28 +53,28 @@ class Person {
   note = '';
 
   /**
-   * ISO date of last event involving person
+   * ISO date (e.g., '2022-06-20T15:50:40.055Z'), when user on Mobile last edited this person or added this person to a CultureEvent
    * @type {string}
    * @default ''
    */
   dateLastUsed = '';
 
   /**
-   * True if the person is deceased
+   * True if the person is dead
    * @type {boolean}
    * @default ''
    */
   deceased = false;
 
   /**
-   * Filename of a picture of the person
+   * Filename of a picture of the person (no path, but does include extension)
    * @type {string}
    * @default ''
    */
   photoFilename = '';
 
   /**
-   * Creates an person Object
+   * Creates a Person object
    * @param {Object} data
    */
   constructor(data = {}) {
@@ -84,14 +84,14 @@ class Person {
   }
 
   /**
-   * Creates an updated person Object
+   * Creates an updated Person object
    * @param {Object} data
    * @returns {Person}
    */
   set(data) {
     return new Person({
       ...this,
-      ...data
+      ...data,
     });
   }
 

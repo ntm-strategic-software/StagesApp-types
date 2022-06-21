@@ -25,14 +25,14 @@ class SALocation {
   note = '';
 
   /**
-   * ISO date of last event involving location
+   * ISO date string (e.g., '2022-06-20T15:50:40.055Z'), when user on Mobile last edited this location or added this location to a CultureEvent
    * @type {string}
    * @default ''
    */
   dateLastUsed = '';
 
   /**
-   * Creates a location
+   * Creates an SALocation object
    * @param {Object} data
    */
   constructor(data = {}) {
@@ -42,14 +42,14 @@ class SALocation {
   }
 
   /**
-   * Creates an updated location
+   * Creates an updated SALocation object
    * @param {Object} data
    * @returns {SALocation}
    */
   set(data) {
     return new SALocation({
       ...this,
-      ...data
+      ...data,
     });
   }
 

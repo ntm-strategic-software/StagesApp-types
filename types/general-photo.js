@@ -1,3 +1,10 @@
+/**
+ * Class representing a photo taken as part of a General Recorder session.  The GeneralRecording that the photo
+ * is attached to will have the GeneralPhoto's _id in its photos array.
+ *
+ * For convenience, the id of the CultureEvent that the GeneralRecording is associated with is included in the GeneralPhoto,
+ * so we don't have to trace back through the GeneralRecording to get to the CultureEvent.
+ */
 class GeneralPhoto {
 
   /**
@@ -8,35 +15,28 @@ class GeneralPhoto {
   _id = '';
 
   /**
-   * ID of culture event
+   * ID of the culture event that this photo is associated with, for convenience
    * @type {string}
    * @default ''
    */
   cultureEvent = '';
 
   /**
-   * Time of photo start
+   * Time in the GeneralRecording when this photo was taken
    * @type {number}
    * @default 0
    */
   startTime = 0;
 
   /**
-   * Time of photo end
-   * @type {number}
-   * @default 0
-   */
-  endTime = 0;
-
-  /**
-   * Filename of photo
+   * Filename of photo (no path, but does include extension)
    * @type {string}
    * @default ''
    */
   filename = '';
 
   /**
-   * Creates a General Photo Object
+   * Creates a GeneralPhoto object
    * @param {Object} data
    */
   constructor(data = {}) {
@@ -46,17 +46,16 @@ class GeneralPhoto {
   }
 
   /**
-   * Creates an updated General Photo Object
+   * Creates an updated GeneralPhoto object
    * @param {Object} data
    * @returns {GeneralPhoto}
    */
   set(data = {}) {
     return new GeneralPhoto({
       ...this,
-      ...data
+      ...data,
     });
   }
-
 }
 
 module.exports = GeneralPhoto;

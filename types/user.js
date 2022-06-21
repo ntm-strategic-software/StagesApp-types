@@ -1,7 +1,7 @@
 const { CLAStage } = require('./constants');
 
 /**
- * Class representing a user
+ * Class representing a user.  This is unrelated to the People table.
  */
 class User {
 
@@ -13,7 +13,7 @@ class User {
   _id = '';
 
   /**
-   * ISO Date of when the user was last selected/created/updated
+   * ISO Date of when the user was last selected/created/updated on Mobile???
    * @type {string}
    * @default ''
    */
@@ -41,11 +41,11 @@ class User {
   claStage = CLAStage.STAGE_1;
 
   /**
-   * Stage month number of the user
+   * The unit this user is in for the claStage he is in.  This number resets to 1 when a user moves to a new stage.
    * @type {number}
    * @default 1
    */
-  stageMonth = 1;
+  stageUnit = 1;
 
   /**
    * Filename of a picture of the user
@@ -53,12 +53,6 @@ class User {
    * @default ''
    */
   photoFilename = '';
-
-  /**
-   * ISO date last logged in on desktop
-   * @type {string}
-   */
-  lastLoginDate = '';
 
   /**
    * Creates a user object
@@ -78,7 +72,7 @@ class User {
   set(data) {
     return new User({
       ...this,
-      ...data
+      ...data,
     });
   }
 }
