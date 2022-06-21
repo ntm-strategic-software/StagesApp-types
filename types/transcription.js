@@ -1,26 +1,18 @@
 /**
- * Class representing a text transcription
+ * Class representing the transcription of a section of a CultureEvent.  A single Transcription may cross GeneralRecording boundaries.
+ * Translation and metadata can be associated with the transcription.
  */
 class Transcription {
 
   /**
-   * Unique ID for the transcription
+   * Unique ID for the Transcription
    * @type {string}
    * @default ''
    */
   _id = '';
 
   /**
-   * @type {string}
-   */
-  createdAt = '';
-
-  /**
-   * @type {string}
-   */
-  updatedAt = '';
-
-  /**
+   * Optional title the user may give to this Transcription
    * @type {string}
    */
   title = '';
@@ -38,51 +30,55 @@ class Transcription {
   tags = [];
 
   /**
-   * Array of OutlineItem._id's
+   * Array of gridItem keys from CultureGrid on Desktop, in the form or row key, hyphen, column key.  Example:  causeEffect–kinship
    * @type {string[]}
    */
-  outlineItems = [];
+  gridItems = [];
 
   /**
-   * The transcribed text associate with the transcription
+   * The transcribed text.  This is expected to be in the orthography of the target language.
    * @type {string}
    */
   text = '';
 
   /**
-   * The translated transcription text
+   * A translation of Transcription.text into the user's language
    * @type {string}
    */
   translation = '';
 
   /**
+   * Any note the user wants to make about this Transcription
    * @type {string}
    */
   note = '';
 
   /**
-   * a CultureEvent._id
+   * _id of the CultureEvent this Transcription is a part of
    * @type {string}
    */
   cultureEvent = '';
 
   /**
+   * The order of this Transcription in relation to all other Transcriptions for this CultureEvent
    * @type {number}
    */
   idx = 0;
 
   /**
+   * Not sure we use this
    * @type {number}
    */
   startTime = 0;
 
   /**
+   * Not sure we use this
    * @type {number}
    */
   endTime = 0;
 
   /**
-   * Constructs a text transcription
+   * Constructs a Transcription object
    * @param {Object} data
    */
   constructor(data = {}) {
@@ -92,14 +88,14 @@ class Transcription {
   }
 
   /**
-   * Creates an updated text transcription
+   * Creates an updated Transcription object
    * @param {Object} data
    * @returns {Transcription}
    */
   set(data) {
     return new Transcription({
       ...this,
-      ...data
+      ...data,
     });
   }
 

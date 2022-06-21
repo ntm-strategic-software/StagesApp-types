@@ -103,7 +103,7 @@ class DRE extends CLAFile {
   splitCompareText2 = [];
 
   /**
-   * Creates a DRE Object
+   * Creates a DRE object
    * @param {Object} data
    */
   constructor(data = {}) {
@@ -114,7 +114,7 @@ class DRE extends CLAFile {
   }
 
   /**
-   * Creates an updated DRE Object
+   * Creates an updated DRE object
    * @param {Object} data
    * @returns {DRE}
    */

@@ -42,7 +42,7 @@ class CultureEvent extends CLAFile {
   searchWords = [];
 
   /**
-   * ISO Date/Time of the event
+   * ISO Date (e.g., '2022-06-20T15:50:40.055Z'), when the CultureEvent was initially saved
    * @type {string}
    * @default ''
    */
@@ -68,13 +68,6 @@ class CultureEvent extends CLAFile {
    * @default ''
    */
   audience = '';
-
-  /**
-   * Array of Outline Item IDs
-   * @type {string[]}
-   * @default []
-   */
-  outlineItems = [];
 
   /**
    * Array of strings from Tag.tagText
@@ -130,7 +123,7 @@ class CultureEvent extends CLAFile {
   orthographicTranscriptionsDone = false;
 
   /**
-   * Creates a Culture Event Object
+   * Creates a CultureEvent object
    * @param {Object} data
    */
   constructor(data = {}) {
@@ -141,7 +134,7 @@ class CultureEvent extends CLAFile {
   }
 
   /**
-   * Creates an updated Culture Event Object
+   * Creates an updated CultureEvent object
    * @param {Object} data
    * @returns {CultureEvent}
    */

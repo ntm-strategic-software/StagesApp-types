@@ -1,28 +1,31 @@
-class PendingQuestion {
+/**
+ * An idea or question the user has, optionally associated with a CLAFile
+ */
+class PendingInvestigation {
 
   /**
-   * Unique ID for the PendingQuestion
+   * Unique ID for the PendingInvestigation
    * @type {string}
    * @default ''
    */
   _id = '';
 
   /**
-   * Question text
+   * Idea/Question plain text
    * @type {string}
    * @default ''
    */
   text = '';
 
   /**
-   * ID of linked culture event/dre
+   * ID of linked CLAFile
    * @type {string}
    * @default ''
    */
   linkedFile = '';
 
   /**
-   * Creates a PendingQuestion Object
+   * Creates a PendingInvestigation object
    * @param {Object} data
    */
   constructor(data = {}) {
@@ -32,12 +35,12 @@ class PendingQuestion {
   }
 
   /**
-   * Creates an updated PendingQuestion Object
+   * Creates an updated PendingInvestigation object
    * @param {Object} data
-   * @returns {PendingQuestion}
+   * @returns {PendingInvestigation}
    */
   set(data = {}) {
-    return new PendingQuestion({
+    return new PendingInvestigation({
       ...this,
       ...data,
     });
@@ -45,4 +48,4 @@ class PendingQuestion {
 
 }
 
-module.exports = PendingQuestion;
+module.exports = PendingInvestigation;

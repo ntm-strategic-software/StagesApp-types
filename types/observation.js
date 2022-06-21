@@ -1,3 +1,6 @@
+/**
+ * Plain text notes that a user wants to make about anything.  These are not connected to anything else in the app.
+ */
 class Observation {
 
   /**
@@ -15,14 +18,14 @@ class Observation {
   title = '';
 
   /**
-   * CLAStage ID of User's CLA stage at the time of the observation
+   * User's CLA stage at the time of the observation (we store the key of the appropriate CLAStage enum)
    * @type {string}
    * @default ''
    */
   claStage = '';
 
   /**
-   * Date/time the Observation was created, as an ISO String
+   * Date/time the Observation was created, as an ISO Date string (e.g., '2022-06-20T15:50:40.055Z')
    * @type {string}
    * @default ''
    */
@@ -36,7 +39,7 @@ class Observation {
   text = '';
 
   /**
-   * Creates an Observation Object
+   * Creates an Observation object
    * @param {Object} data
    */
   constructor(data = {}) {
@@ -46,7 +49,7 @@ class Observation {
   }
 
   /**
-   * Creates an updated Observation Object
+   * Creates an updated Observation object
    * @param {Object} data
    * @returns {Observation}
    */

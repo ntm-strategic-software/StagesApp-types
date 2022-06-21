@@ -13,23 +13,6 @@ class AdvancedFilter {
   _id = '';
 
   /**
-   * @type {string}
-   */
-  createdAt = '';
-
-  /**
-   * @type {string}
-   */
-  updatedAt = '';
-
-  /**
-   * User ID of who created this Advanced Filter
-   * @type {string}
-   * @default ''
-   */
-  user = '';
-
-  /**
    * Serialized advanced filter object
    * @type {string}
    */
@@ -49,7 +32,7 @@ class AdvancedFilter {
   selectedItemId = '';
 
   /**
-   * Constructs an Advanced Filter
+   * Constructs an AdvancedFilter object
    * @param {Object} data
    */
   constructor(data = {}) {
@@ -59,7 +42,7 @@ class AdvancedFilter {
   }
 
   /**
-   * Creates an updated Advanced Filter
+   * Creates an updated AdvancedFilter object
    * @param {Object} data
    * @returns {AdvancedFilter}
    */

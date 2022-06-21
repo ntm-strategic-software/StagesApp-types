@@ -31,6 +31,9 @@ const AdvancedFilterType = {
 
 /**
  * Enum for table names
+ *
+ * NOTE:  all tables include properties createdAt and updatedAt, which are ISO date strings (e.g., '2022-06-20T15:50:40.055Z')
+ *
  * @readonly
  * @enum {string}
  */
@@ -38,11 +41,11 @@ const TableNames = {
   USERS: 'Users',
   CULTURE_EVENTS: 'CultureEvents',
   GENERAL_RECORDINGS: 'GeneralRecordings',
+  GENERAL_PHOTOS: 'GeneralPhotos',
+  GENERAL_QUESTIONS: 'GeneralQuestions',
   MARKERS: 'Markers',
   PEOPLE: 'People',
   LOCATIONS: 'Locations',
-  GENERAL_PHOTOS: 'GeneralPhotos',
-  QUESTIONS: 'Questions',
   SEARCH_WORDS: 'SearchWords',
   TRUSTED_MACHINES: 'TrustedMachines',
   MOBILE_DEVICES: 'MobileDevices',
@@ -51,7 +54,7 @@ const TableNames = {
   DRE: 'DRE',
   ADVANCED_FILTERS: 'AdvancedFilters',
   PLAYLIST_ITEMS: 'PlaylistItems',
-  PENDING_QUESTIONS: 'PendingQuestions',
+  PENDING_INVESTIGATIONS: 'PendingInvestigations',
   OBSERVATIONS: 'Observations',
   TAGS: 'Tags',
 };

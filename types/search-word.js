@@ -1,5 +1,6 @@
 /**
- * Class representing a search word
+ * Class representing a search word, which is a word or phrase the user enters and links to something they want to find
+ * by using that word or phrase
  */
 class SearchWord {
 
@@ -17,7 +18,7 @@ class SearchWord {
   word = '';
 
   /**
-   * Creates a search word
+   * Creates a SearchWord object
    * @param {Object} data
    */
   constructor(data = {}) {
@@ -27,14 +28,14 @@ class SearchWord {
   }
 
   /**
-   * Creates an updated search word
+   * Creates an updated SearchWord object
    * @param {Object} data
    * @returns {SearchWord}
    */
   set(data) {
     return new SearchWord({
       ...this,
-      ...data
+      ...data,
     });
   }
 

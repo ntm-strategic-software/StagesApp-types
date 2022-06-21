@@ -1,5 +1,9 @@
 /**
- * Class representing a tag
+ * Class representing a tag.  Tags are a plain text filing system the user can create if they want.
+ * Users may prefix sets of tags with special characters, so groups of tags will appear together
+ * when all tags are listed alphabetically.
+ *
+ * We may ship with some default tags, for example, a set of grammar tags
  */
 class Tag {
 
@@ -10,7 +14,7 @@ class Tag {
   tagText = '';
 
   /**
-   * Creates a tag
+   * Creates a Tag object
    * @param {Object} data
    */
   constructor(data = {}) {
@@ -20,14 +24,14 @@ class Tag {
   }
 
   /**
-   * Creates an updated tag
+   * Creates an updated Tag object
    * @param {Object} data
    * @returns {Tag}
    */
   set(data) {
     return new Tag({
       ...this,
-      ...data
+      ...data,
     });
   }
 
