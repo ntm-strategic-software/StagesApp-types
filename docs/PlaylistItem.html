@@ -30,6 +30,8 @@
     
         <h2><span class="attribs"><span class="type-signature"></span></span>PlaylistItem<span class="signature">(data)</span><span class="type-signature"></span></h2>
         
+            <div class="class-description">Class representing a PlaylistItem.When the user flags a CultureEvent for the Playlist, a PlaylistItem is created for that CultureEvent.In our database design, these properties and methods could have been added to CultureEvent.But since not all CultureEvents are in the Playlist, it's cleaner and more convenient to maintain a separate table for the Playlist.</div>
+        
     
 </header>
 
@@ -38,6 +40,8 @@
     
         
 
+    
+    <h2>Constructor</h2>
     
 
     
@@ -49,7 +53,7 @@
 
 
 <div class="description">
-    Creates a Playlist Item Object
+    Creates a PlaylistItem object
 </div>
 
 
@@ -142,7 +146,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="playlist-item.js.html">playlist-item.js</a>, <a href="playlist-item.js.html#line63">line 63</a>
+        <a href="playlist-item.js.html">playlist-item.js</a>, <a href="playlist-item.js.html#line11">line 11</a>
     </li></ul></dd>
     
 
@@ -198,7 +202,7 @@
 
 
 <div class="description">
-    ID of the item; matches a CE's ID
+    ID of the item; matches a CultureEvent's ID
 </div>
 
 
@@ -246,7 +250,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="playlist-item.js.html">playlist-item.js</a>, <a href="playlist-item.js.html#line9">line 9</a>
+        <a href="playlist-item.js.html">playlist-item.js</a>, <a href="playlist-item.js.html#line17">line 17</a>
     </li></ul></dd>
     
 
@@ -270,7 +274,7 @@
 
 
 <div class="description">
-    ISO date string
+    ISO date string (e.g., '2022-06-20T15:50:40.055Z'), copied from CultureEvent.date
 </div>
 
 
@@ -318,7 +322,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="playlist-item.js.html">playlist-item.js</a>, <a href="playlist-item.js.html#line57">line 57</a>
+        <a href="playlist-item.js.html">playlist-item.js</a>, <a href="playlist-item.js.html#line61">line 61</a>
     </li></ul></dd>
     
 
@@ -342,7 +346,7 @@
 
 
 <div class="description">
-    ISO dates of when listened to previously
+    ISO dates of when listened to previously (e.g., '2022-06-20T15:50:40.055Z')
 </div>
 
 
@@ -390,7 +394,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="playlist-item.js.html">playlist-item.js</a>, <a href="playlist-item.js.html#line15">line 15</a>
+        <a href="playlist-item.js.html">playlist-item.js</a>, <a href="playlist-item.js.html#line23">line 23</a>
     </li></ul></dd>
     
 
@@ -414,7 +418,7 @@
 
 
 <div class="description">
-    Play order
+    0-based order of this item in the playlist (the order in which items are displayed and played in the playlist)
 </div>
 
 
@@ -462,7 +466,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="playlist-item.js.html">playlist-item.js</a>, <a href="playlist-item.js.html#line21">line 21</a>
+        <a href="playlist-item.js.html">playlist-item.js</a>, <a href="playlist-item.js.html#line29">line 29</a>
     </li></ul></dd>
     
 
@@ -486,7 +490,7 @@
 
 
 <div class="description">
-    Audio recording file names
+    Audio recording file names (no path, but does include extension).  These are the filenames of all GeneralRecordingsfor this CultureEvent that have isVideo===false
 </div>
 
 
@@ -534,7 +538,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="playlist-item.js.html">playlist-item.js</a>, <a href="playlist-item.js.html#line27">line 27</a>
+        <a href="playlist-item.js.html">playlist-item.js</a>, <a href="playlist-item.js.html#line36">line 36</a>
     </li></ul></dd>
     
 
@@ -558,7 +562,7 @@
 
 
 <div class="description">
-    Order of recordings by file name
+    each item in recordingsAudio and recordingsVideo is listed here, in the order they should be played.
 </div>
 
 
@@ -606,7 +610,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="playlist-item.js.html">playlist-item.js</a>, <a href="playlist-item.js.html#line39">line 39</a>
+        <a href="playlist-item.js.html">playlist-item.js</a>, <a href="playlist-item.js.html#line49">line 49</a>
     </li></ul></dd>
     
 
@@ -630,7 +634,7 @@
 
 
 <div class="description">
-    Video recording file names
+    Video recording file names (no path, but does include extension).  These are the filenames of all GeneralRecordingsfor this CultureEvent that have isVideo===true
 </div>
 
 
@@ -678,7 +682,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="playlist-item.js.html">playlist-item.js</a>, <a href="playlist-item.js.html#line33">line 33</a>
+        <a href="playlist-item.js.html">playlist-item.js</a>, <a href="playlist-item.js.html#line43">line 43</a>
     </li></ul></dd>
     
 
@@ -702,7 +706,7 @@
 
 
 <div class="description">
-    Title of the item; matches a CE's title
+    Title of the item; matches a CultureEvent's title.  We duplicate it from the CultureEvent for convenience.
 </div>
 
 
@@ -750,79 +754,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="playlist-item.js.html">playlist-item.js</a>, <a href="playlist-item.js.html#line45">line 45</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-        
-            
-<h4 class="name" id="user"><span class="type-signature"></span>user<span class="type-signature"> :string</span></h4>
-
-
-
-
-<div class="description">
-    User ID
-</div>
-
-
-
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">string</span>
-
-
-        </li>
-    </ul>
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="playlist-item.js.html">playlist-item.js</a>, <a href="playlist-item.js.html#line51">line 51</a>
+        <a href="playlist-item.js.html">playlist-item.js</a>, <a href="playlist-item.js.html#line55">line 55</a>
     </li></ul></dd>
     
 
@@ -902,7 +834,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="playlist-item.js.html">playlist-item.js</a>, <a href="playlist-item.js.html#line85">line 85</a>
+        <a href="playlist-item.js.html">playlist-item.js</a>, <a href="playlist-item.js.html#line89">line 89</a>
     </li></ul></dd>
     
 
@@ -1008,7 +940,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="playlist-item.js.html">playlist-item.js</a>, <a href="playlist-item.js.html#line96">line 96</a>
+        <a href="playlist-item.js.html">playlist-item.js</a>, <a href="playlist-item.js.html#line100">line 100</a>
     </li></ul></dd>
     
 
@@ -1114,7 +1046,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="playlist-item.js.html">playlist-item.js</a>, <a href="playlist-item.js.html#line107">line 107</a>
+        <a href="playlist-item.js.html">playlist-item.js</a>, <a href="playlist-item.js.html#line111">line 111</a>
     </li></ul></dd>
     
 
@@ -1176,7 +1108,7 @@
 
 
 <div class="description">
-    Creates an updated Playlist Item Object
+    Creates an updated PlaylistItem object
 </div>
 
 
@@ -1269,7 +1201,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="playlist-item.js.html">playlist-item.js</a>, <a href="playlist-item.js.html#line74">line 74</a>
+        <a href="playlist-item.js.html">playlist-item.js</a>, <a href="playlist-item.js.html#line78">line 78</a>
     </li></ul></dd>
     
 
@@ -1375,7 +1307,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="playlist-item.js.html">playlist-item.js</a>, <a href="playlist-item.js.html#line115">line 115</a>
+        <a href="playlist-item.js.html">playlist-item.js</a>, <a href="playlist-item.js.html#line119">line 119</a>
     </li></ul></dd>
     
 
@@ -1439,13 +1371,13 @@
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="AdvancedFilter.html">AdvancedFilter</a></li><li><a href="CLAFile.html">CLAFile</a></li><li><a href="CultureEvent.html">CultureEvent</a></li><li><a href="DeletedItems.html">DeletedItems</a></li><li><a href="DRE.html">DRE</a></li><li><a href="GeneralPhoto.html">GeneralPhoto</a></li><li><a href="GeneralRecording.html">GeneralRecording</a></li><li><a href="Marker.html">Marker</a></li><li><a href="Observation.html">Observation</a></li><li><a href="OutlineItem.html">OutlineItem</a></li><li><a href="PendingQuestion.html">PendingQuestion</a></li><li><a href="Person.html">Person</a></li><li><a href="PlaylistItem.html">PlaylistItem</a></li><li><a href="Question.html">Question</a></li><li><a href="SALocation.html">SALocation</a></li><li><a href="SearchWord.html">SearchWord</a></li><li><a href="Tag.html">Tag</a></li><li><a href="Transcription.html">Transcription</a></li><li><a href="User.html">User</a></li></ul><h3>Global</h3><ul><li><a href="global.html#AdvancedFilterType">AdvancedFilterType</a></li><li><a href="global.html#ClaFileType">ClaFileType</a></li><li><a href="global.html#CLAStage">CLAStage</a></li><li><a href="global.html#DataTransferType">DataTransferType</a></li><li><a href="global.html#mobileTablesToSendToDesktop">mobileTablesToSendToDesktop</a></li><li><a href="global.html#TableNames">TableNames</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="AdvancedFilter.html">AdvancedFilter</a></li><li><a href="CLAFile.html">CLAFile</a></li><li><a href="CultureEvent.html">CultureEvent</a></li><li><a href="DeletedItem.html">DeletedItem</a></li><li><a href="DRE.html">DRE</a></li><li><a href="GeneralPhoto.html">GeneralPhoto</a></li><li><a href="GeneralQuestion.html">GeneralQuestion</a></li><li><a href="GeneralRecording.html">GeneralRecording</a></li><li><a href="Marker.html">Marker</a></li><li><a href="Observation.html">Observation</a></li><li><a href="PendingInvestigation.html">PendingInvestigation</a></li><li><a href="Person.html">Person</a></li><li><a href="PlaylistItem.html">PlaylistItem</a></li><li><a href="SALocation.html">SALocation</a></li><li><a href="SearchWord.html">SearchWord</a></li><li><a href="Tag.html">Tag</a></li><li><a href="Transcription.html">Transcription</a></li><li><a href="User.html">User</a></li></ul><h3>Global</h3><ul><li><a href="global.html#AdvancedFilterType">AdvancedFilterType</a></li><li><a href="global.html#ClaFileType">ClaFileType</a></li><li><a href="global.html#CLAStage">CLAStage</a></li><li><a href="global.html#DataTransferType">DataTransferType</a></li><li><a href="global.html#mobileTablesToSendToDesktop">mobileTablesToSendToDesktop</a></li><li><a href="global.html#TableNames">TableNames</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.10</a> on Fri Jun 17 2022 15:20:43 GMT-0400 (Eastern Daylight Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.10</a> on Tue Jun 21 2022 17:54:13 GMT-0400 (Eastern Daylight Time)
 </footer>
 
 <script> prettyPrint(); </script>

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: advanced-filter.js</title>
+    <title>JSDoc: Source: general-question.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: advanced-filter.js</h1>
+    <h1 class="page-title">Source: general-question.js</h1>
 
     
 
@@ -26,41 +26,54 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>const { AdvancedFilterType } = require('./constants');
-
-/**
- * Class representing an Advanced Filter
+            <pre class="prettyprint source linenums"><code>/**
+ * A GeneralQuestion is associated with a GeneralRecording, and is created when the user:
+ * - Mobile:  taps the GeneralQuestion button while recording a GeneralRecording
+ * - Desktop:  right-clicks and adds a question on the recording
+ *
+ * For convenience, the id of the CultureEvent that the GeneralRecording is associated with is included in the GeneralQuestion,
+ * so we don't have to trace back through the GeneralRecording to get to the CultureEvent.
  */
-class AdvancedFilter {
+class GeneralQuestion {
 
   /**
-   * Unique ID for the Advanced Filter
+   * Unique ID for the GeneralQuestion
    * @type {string}
    * @default ''
    */
   _id = '';
 
   /**
-   * Serialized advanced filter object
+   * ID of the CultureEvent this question is associated with, for convenience
    * @type {string}
+   * @default ''
    */
-  filter = '';
+  cultureEvent = '';
 
   /**
-   * type of filter
-   * @type {AdvancedFilterType|string}
-   * @default AdvancedFilterType.NORMAL_FILTER
+   * Time of question start, in seconds, from the beginning of the GeneralRecording this question is on (see GeneralRecording.questions)
+   * @type {number}
+   * @default 0
    */
-  filterType = AdvancedFilterType.NORMAL_FILTER;
+  startTime = 0;
 
   /**
-   * Id of the item (culture event, transcription) most recently selected while this advanced filter is active.
+   * On Mobile, user can tap a Question marker when reviewing a CultureEvent to record a question.
+   * filename does not include a path, but does include extension.
    * @type {string}
+   * @default ''
    */
-  selectedItemId = '';
+  filename = '';
 
   /**
-   * Constructs an AdvancedFilter object
+   * On Desktop, user can click a Question marker when reviewing a CultureEvent and type their question
+   * @type {string}
+   * @default ''
+   */
+  text = '';
+
+  /**
+   * Creates a GeneralQuestion object
    * @param {Object} data
    */
   constructor(data = {}) {
@@ -70,12 +83,12 @@ class AdvancedFilter {
   }
 
   /**
-   * Creates an updated AdvancedFilter object
+   * Creates an updated GeneralQuestion object
    * @param {Object} data
-   * @returns {AdvancedFilter}
+   * @returns {GeneralQuestion}
    */
-  set(data) {
-    return new AdvancedFilter({
+  set(data = {}) {
+    return new GeneralQuestion({
       ...this,
       ...data,
     });
@@ -83,7 +96,7 @@ class AdvancedFilter {
 
 }
 
-module.exports = AdvancedFilter;
+module.exports = GeneralQuestion;
 </code></pre>
         </article>
     </section>

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: advanced-filter.js</title>
+    <title>JSDoc: Source: deleted-item.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: advanced-filter.js</h1>
+    <h1 class="page-title">Source: deleted-item.js</h1>
 
     
 
@@ -26,41 +26,34 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>const { AdvancedFilterType } = require('./constants');
-
-/**
- * Class representing an Advanced Filter
+            <pre class="prettyprint source linenums"><code>/**
+ * Class representing a deleted item, so when mobile and desktop sync the right thing will happen.
  */
-class AdvancedFilter {
+class DeletedItem {
 
   /**
-   * Unique ID for the Advanced Filter
+   * ID of the deleted item
    * @type {string}
    * @default ''
    */
   _id = '';
 
   /**
-   * Serialized advanced filter object
+   * Name of the table the item was deleted from
    * @type {string}
+   * @default ''
    */
-  filter = '';
+  table = '';
 
   /**
-   * type of filter
-   * @type {AdvancedFilterType|string}
-   * @default AdvancedFilterType.NORMAL_FILTER
-   */
-  filterType = AdvancedFilterType.NORMAL_FILTER;
-
-  /**
-   * Id of the item (culture event, transcription) most recently selected while this advanced filter is active.
+   * Date the item was deleted
    * @type {string}
+   * @default ''
    */
-  selectedItemId = '';
+  date = '';
 
   /**
-   * Constructs an AdvancedFilter object
+   * Creates a DeletedItem object
    * @param {Object} data
    */
   constructor(data = {}) {
@@ -70,12 +63,12 @@ class AdvancedFilter {
   }
 
   /**
-   * Creates an updated AdvancedFilter object
+   * Creates an updated DeletedItem object
    * @param {Object} data
-   * @returns {AdvancedFilter}
+   * @returns {DeletedItem}
    */
   set(data) {
-    return new AdvancedFilter({
+    return new DeletedItem({
       ...this,
       ...data,
     });
@@ -83,7 +76,7 @@ class AdvancedFilter {
 
 }
 
-module.exports = AdvancedFilter;
+module.exports = DeletedItem;
 </code></pre>
         </article>
     </section>

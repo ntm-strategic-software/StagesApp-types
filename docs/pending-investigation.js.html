@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: advanced-filter.js</title>
+    <title>JSDoc: Source: pending-investigation.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: advanced-filter.js</h1>
+    <h1 class="page-title">Source: pending-investigation.js</h1>
 
     
 
@@ -26,41 +26,34 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>const { AdvancedFilterType } = require('./constants');
-
-/**
- * Class representing an Advanced Filter
+            <pre class="prettyprint source linenums"><code>/**
+ * An idea or question the user has, optionally associated with a CLAFile
  */
-class AdvancedFilter {
+class PendingInvestigation {
 
   /**
-   * Unique ID for the Advanced Filter
+   * Unique ID for the PendingInvestigation
    * @type {string}
    * @default ''
    */
   _id = '';
 
   /**
-   * Serialized advanced filter object
+   * Idea/Question plain text
    * @type {string}
+   * @default ''
    */
-  filter = '';
+  text = '';
 
   /**
-   * type of filter
-   * @type {AdvancedFilterType|string}
-   * @default AdvancedFilterType.NORMAL_FILTER
-   */
-  filterType = AdvancedFilterType.NORMAL_FILTER;
-
-  /**
-   * Id of the item (culture event, transcription) most recently selected while this advanced filter is active.
+   * ID of linked CLAFile
    * @type {string}
+   * @default ''
    */
-  selectedItemId = '';
+  linkedFile = '';
 
   /**
-   * Constructs an AdvancedFilter object
+   * Creates a PendingInvestigation object
    * @param {Object} data
    */
   constructor(data = {}) {
@@ -70,12 +63,12 @@ class AdvancedFilter {
   }
 
   /**
-   * Creates an updated AdvancedFilter object
+   * Creates an updated PendingInvestigation object
    * @param {Object} data
-   * @returns {AdvancedFilter}
+   * @returns {PendingInvestigation}
    */
-  set(data) {
-    return new AdvancedFilter({
+  set(data = {}) {
+    return new PendingInvestigation({
       ...this,
       ...data,
     });
@@ -83,7 +76,7 @@ class AdvancedFilter {
 
 }
 
-module.exports = AdvancedFilter;
+module.exports = PendingInvestigation;
 </code></pre>
         </article>
     </section>

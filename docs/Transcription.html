@@ -30,7 +30,7 @@
     
         <h2><span class="attribs"><span class="type-signature"></span></span>Transcription<span class="signature">(data)</span><span class="type-signature"></span></h2>
         
-            <div class="class-description">Class representing a text transcription</div>
+            <div class="class-description">Class representing the transcription of a section of a CultureEvent.  A single Transcription may cross GeneralRecording boundaries.Translation and metadata can be associated with the transcription.</div>
         
     
 </header>
@@ -53,7 +53,7 @@
 
 
 <div class="description">
-    Constructs a text transcription
+    Constructs a Transcription object
 </div>
 
 
@@ -146,7 +146,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="transcription.js.html">transcription.js</a>, <a href="transcription.js.html#line4">line 4</a>
+        <a href="transcription.js.html">transcription.js</a>, <a href="transcription.js.html#line5">line 5</a>
     </li></ul></dd>
     
 
@@ -202,7 +202,7 @@
 
 
 <div class="description">
-    Unique ID for the transcription
+    Unique ID for the Transcription
 </div>
 
 
@@ -255,75 +255,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="transcription.js.html">transcription.js</a>, <a href="transcription.js.html#line11">line 11</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-        
-            
-<h4 class="name" id="createdAt"><span class="type-signature"></span>createdAt<span class="type-signature"> :string</span></h4>
-
-
-
-
-
-
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">string</span>
-
-
-        </li>
-    </ul>
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="transcription.js.html">transcription.js</a>, <a href="transcription.js.html#line16">line 16</a>
+        <a href="transcription.js.html">transcription.js</a>, <a href="transcription.js.html#line12">line 12</a>
     </li></ul></dd>
     
 
@@ -347,7 +279,7 @@
 
 
 <div class="description">
-    a CultureEvent._id
+    _id of the CultureEvent this Transcription is a part of
 </div>
 
 
@@ -395,7 +327,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="transcription.js.html">transcription.js</a>, <a href="transcription.js.html#line67">line 67</a>
+        <a href="transcription.js.html">transcription.js</a>, <a href="transcription.js.html#line60">line 60</a>
     </li></ul></dd>
     
 
@@ -418,73 +350,9 @@
 
 
 
-
-
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">number</span>
-
-
-        </li>
-    </ul>
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="transcription.js.html">transcription.js</a>, <a href="transcription.js.html#line82">line 82</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-        
-            
-<h4 class="name" id="idx"><span class="type-signature"></span>idx<span class="type-signature"> :number</span></h4>
-
-
-
+<div class="description">
+    Not sure we use this
+</div>
 
 
 
@@ -531,7 +399,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="transcription.js.html">transcription.js</a>, <a href="transcription.js.html#line72">line 72</a>
+        <a href="transcription.js.html">transcription.js</a>, <a href="transcription.js.html#line78">line 78</a>
     </li></ul></dd>
     
 
@@ -549,81 +417,13 @@
 
         
             
-<h4 class="name" id="note"><span class="type-signature"></span>note<span class="type-signature"> :string</span></h4>
-
-
-
-
-
-
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">string</span>
-
-
-        </li>
-    </ul>
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="transcription.js.html">transcription.js</a>, <a href="transcription.js.html#line61">line 61</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-        
-            
-<h4 class="name" id="outlineItems"><span class="type-signature"></span>outlineItems<span class="type-signature"> :Array.&lt;string></span></h4>
+<h4 class="name" id="gridItems"><span class="type-signature"></span>gridItems<span class="type-signature"> :Array.&lt;string></span></h4>
 
 
 
 
 <div class="description">
-    Array of OutlineItem._id's
+    Array of gridItem keys from CultureGrid on Desktop, in the form or row key, hyphen, column key.  Example:  causeEffect–kinship
 </div>
 
 
@@ -671,7 +471,151 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="transcription.js.html">transcription.js</a>, <a href="transcription.js.html#line44">line 44</a>
+        <a href="transcription.js.html">transcription.js</a>, <a href="transcription.js.html#line36">line 36</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="idx"><span class="type-signature"></span>idx<span class="type-signature"> :number</span></h4>
+
+
+
+
+<div class="description">
+    The order of this Transcription in relation to all other Transcriptions for this CultureEvent
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">number</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="transcription.js.html">transcription.js</a>, <a href="transcription.js.html#line66">line 66</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="note"><span class="type-signature"></span>note<span class="type-signature"> :string</span></h4>
+
+
+
+
+<div class="description">
+    Any note the user wants to make about this Transcription
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">string</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="transcription.js.html">transcription.js</a>, <a href="transcription.js.html#line54">line 54</a>
     </li></ul></dd>
     
 
@@ -743,7 +687,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="transcription.js.html">transcription.js</a>, <a href="transcription.js.html#line32">line 32</a>
+        <a href="transcription.js.html">transcription.js</a>, <a href="transcription.js.html#line24">line 24</a>
     </li></ul></dd>
     
 
@@ -765,6 +709,10 @@
 
 
 
+
+<div class="description">
+    Not sure we use this
+</div>
 
 
 
@@ -811,7 +759,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="transcription.js.html">transcription.js</a>, <a href="transcription.js.html#line77">line 77</a>
+        <a href="transcription.js.html">transcription.js</a>, <a href="transcription.js.html#line72">line 72</a>
     </li></ul></dd>
     
 
@@ -883,7 +831,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="transcription.js.html">transcription.js</a>, <a href="transcription.js.html#line38">line 38</a>
+        <a href="transcription.js.html">transcription.js</a>, <a href="transcription.js.html#line30">line 30</a>
     </li></ul></dd>
     
 
@@ -907,7 +855,7 @@
 
 
 <div class="description">
-    The transcribed text associate with the transcription
+    The transcribed text.  This is expected to be in the orthography of the target language.
 </div>
 
 
@@ -955,7 +903,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="transcription.js.html">transcription.js</a>, <a href="transcription.js.html#line50">line 50</a>
+        <a href="transcription.js.html">transcription.js</a>, <a href="transcription.js.html#line42">line 42</a>
     </li></ul></dd>
     
 
@@ -977,6 +925,10 @@
 
 
 
+
+<div class="description">
+    Optional title the user may give to this Transcription
+</div>
 
 
 
@@ -1023,7 +975,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="transcription.js.html">transcription.js</a>, <a href="transcription.js.html#line26">line 26</a>
+        <a href="transcription.js.html">transcription.js</a>, <a href="transcription.js.html#line18">line 18</a>
     </li></ul></dd>
     
 
@@ -1047,7 +999,7 @@
 
 
 <div class="description">
-    The translated transcription text
+    A translation of Transcription.text into the user's language
 </div>
 
 
@@ -1095,75 +1047,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="transcription.js.html">transcription.js</a>, <a href="transcription.js.html#line56">line 56</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-        
-            
-<h4 class="name" id="updatedAt"><span class="type-signature"></span>updatedAt<span class="type-signature"> :string</span></h4>
-
-
-
-
-
-
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">string</span>
-
-
-        </li>
-    </ul>
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="transcription.js.html">transcription.js</a>, <a href="transcription.js.html#line21">line 21</a>
+        <a href="transcription.js.html">transcription.js</a>, <a href="transcription.js.html#line48">line 48</a>
     </li></ul></dd>
     
 
@@ -1199,7 +1083,7 @@
 
 
 <div class="description">
-    Creates an updated text transcription
+    Creates an updated Transcription object
 </div>
 
 
@@ -1292,7 +1176,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="transcription.js.html">transcription.js</a>, <a href="transcription.js.html#line99">line 99</a>
+        <a href="transcription.js.html">transcription.js</a>, <a href="transcription.js.html#line95">line 95</a>
     </li></ul></dd>
     
 
@@ -1356,13 +1240,13 @@
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="AdvancedFilter.html">AdvancedFilter</a></li><li><a href="CLAFile.html">CLAFile</a></li><li><a href="CultureEvent.html">CultureEvent</a></li><li><a href="DeletedItems.html">DeletedItems</a></li><li><a href="DRE.html">DRE</a></li><li><a href="GeneralPhoto.html">GeneralPhoto</a></li><li><a href="GeneralRecording.html">GeneralRecording</a></li><li><a href="Marker.html">Marker</a></li><li><a href="Observation.html">Observation</a></li><li><a href="OutlineItem.html">OutlineItem</a></li><li><a href="PendingQuestion.html">PendingQuestion</a></li><li><a href="Person.html">Person</a></li><li><a href="PlaylistItem.html">PlaylistItem</a></li><li><a href="Question.html">Question</a></li><li><a href="SALocation.html">SALocation</a></li><li><a href="SearchWord.html">SearchWord</a></li><li><a href="Tag.html">Tag</a></li><li><a href="Transcription.html">Transcription</a></li><li><a href="User.html">User</a></li></ul><h3>Global</h3><ul><li><a href="global.html#AdvancedFilterType">AdvancedFilterType</a></li><li><a href="global.html#ClaFileType">ClaFileType</a></li><li><a href="global.html#CLAStage">CLAStage</a></li><li><a href="global.html#DataTransferType">DataTransferType</a></li><li><a href="global.html#mobileTablesToSendToDesktop">mobileTablesToSendToDesktop</a></li><li><a href="global.html#TableNames">TableNames</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="AdvancedFilter.html">AdvancedFilter</a></li><li><a href="CLAFile.html">CLAFile</a></li><li><a href="CultureEvent.html">CultureEvent</a></li><li><a href="DeletedItem.html">DeletedItem</a></li><li><a href="DRE.html">DRE</a></li><li><a href="GeneralPhoto.html">GeneralPhoto</a></li><li><a href="GeneralQuestion.html">GeneralQuestion</a></li><li><a href="GeneralRecording.html">GeneralRecording</a></li><li><a href="Marker.html">Marker</a></li><li><a href="Observation.html">Observation</a></li><li><a href="PendingInvestigation.html">PendingInvestigation</a></li><li><a href="Person.html">Person</a></li><li><a href="PlaylistItem.html">PlaylistItem</a></li><li><a href="SALocation.html">SALocation</a></li><li><a href="SearchWord.html">SearchWord</a></li><li><a href="Tag.html">Tag</a></li><li><a href="Transcription.html">Transcription</a></li><li><a href="User.html">User</a></li></ul><h3>Global</h3><ul><li><a href="global.html#AdvancedFilterType">AdvancedFilterType</a></li><li><a href="global.html#ClaFileType">ClaFileType</a></li><li><a href="global.html#CLAStage">CLAStage</a></li><li><a href="global.html#DataTransferType">DataTransferType</a></li><li><a href="global.html#mobileTablesToSendToDesktop">mobileTablesToSendToDesktop</a></li><li><a href="global.html#TableNames">TableNames</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.10</a> on Fri Jun 17 2022 15:20:43 GMT-0400 (Eastern Daylight Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.10</a> on Tue Jun 21 2022 17:54:13 GMT-0400 (Eastern Daylight Time)
 </footer>
 
 <script> prettyPrint(); </script>

@@ -27,7 +27,10 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/**
- * Class representing a marker
+ * Class representing a point in time in a GeneralRecording, with metadata that applies to the audio/video beginning at that point.
+ *
+ * The code is commented out for full Marker support, but we can add it in again whenever we want.  The current use is
+ * just to mark the beginning of a GeneralRecording.  Markers are displayed visually, and clicking one jumps to that point in the recording.
  */
 class Marker {
 
@@ -39,49 +42,35 @@ class Marker {
   _id = '';
 
   /**
-   * ID of culture event
+   * ID of the CultureEvent that the GeneralRecording belongs to, that this Marker is in (see GeneralRecording.markers)
    * @type {string}
    * @default ''
    */
   cultureEvent = '';
 
   /**
-   * Time where the marker begins
+   * The time (in seconds) in the GeneralRecording where the marker is
    * @type {number}
    * @default 0
    */
   startTime = 0;
 
   /**
-   * Time where the marker ends
-   * @type {number}
-   * @default 0
-   */
-  endTime = 0;
-
-  /**
-   * Note about the marker
+   * Note that pertains to the part of the audio/video in the GeneralRecording that begins at startTime
    * @type {string}
    * @default ''
    */
   note = '';
 
   /**
-   * Array of IDs of search words
+   * Array of IDs of search words that pertain to the part of the audio/video in the GeneralRecording that begins at startTime
    * @type {string[]}
    * @default []
    */
   searchWords = [];
 
   /**
-   * Array of Outline Item IDs
-   * @type {string[]}
-   * @default []
-   */
-  outlineItems = [];
-
-  /**
-   * Creates a marker
+   * Creates a Marker object
    * @param {Object} data
    */
   constructor(data = {}) {
@@ -91,14 +80,14 @@ class Marker {
   }
 
   /**
-   * Creates an updated marker
+   * Creates an updated Marker object
    * @param {Object} data
    * @returns {Marker}
    */
   set(data) {
     return new Marker({
       ...this,
-      ...data
+      ...data,
     });
   }
 
@@ -115,13 +104,13 @@ module.exports = Marker;
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="AdvancedFilter.html">AdvancedFilter</a></li><li><a href="CLAFile.html">CLAFile</a></li><li><a href="CultureEvent.html">CultureEvent</a></li><li><a href="DeletedItems.html">DeletedItems</a></li><li><a href="DRE.html">DRE</a></li><li><a href="GeneralPhoto.html">GeneralPhoto</a></li><li><a href="GeneralRecording.html">GeneralRecording</a></li><li><a href="Marker.html">Marker</a></li><li><a href="Observation.html">Observation</a></li><li><a href="OutlineItem.html">OutlineItem</a></li><li><a href="PendingQuestion.html">PendingQuestion</a></li><li><a href="Person.html">Person</a></li><li><a href="PlaylistItem.html">PlaylistItem</a></li><li><a href="Question.html">Question</a></li><li><a href="SALocation.html">SALocation</a></li><li><a href="SearchWord.html">SearchWord</a></li><li><a href="Tag.html">Tag</a></li><li><a href="Transcription.html">Transcription</a></li><li><a href="User.html">User</a></li></ul><h3>Global</h3><ul><li><a href="global.html#AdvancedFilterType">AdvancedFilterType</a></li><li><a href="global.html#ClaFileType">ClaFileType</a></li><li><a href="global.html#CLAStage">CLAStage</a></li><li><a href="global.html#DataTransferType">DataTransferType</a></li><li><a href="global.html#mobileTablesToSendToDesktop">mobileTablesToSendToDesktop</a></li><li><a href="global.html#TableNames">TableNames</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="AdvancedFilter.html">AdvancedFilter</a></li><li><a href="CLAFile.html">CLAFile</a></li><li><a href="CultureEvent.html">CultureEvent</a></li><li><a href="DeletedItem.html">DeletedItem</a></li><li><a href="DRE.html">DRE</a></li><li><a href="GeneralPhoto.html">GeneralPhoto</a></li><li><a href="GeneralQuestion.html">GeneralQuestion</a></li><li><a href="GeneralRecording.html">GeneralRecording</a></li><li><a href="Marker.html">Marker</a></li><li><a href="Observation.html">Observation</a></li><li><a href="PendingInvestigation.html">PendingInvestigation</a></li><li><a href="Person.html">Person</a></li><li><a href="PlaylistItem.html">PlaylistItem</a></li><li><a href="SALocation.html">SALocation</a></li><li><a href="SearchWord.html">SearchWord</a></li><li><a href="Tag.html">Tag</a></li><li><a href="Transcription.html">Transcription</a></li><li><a href="User.html">User</a></li></ul><h3>Global</h3><ul><li><a href="global.html#AdvancedFilterType">AdvancedFilterType</a></li><li><a href="global.html#ClaFileType">ClaFileType</a></li><li><a href="global.html#CLAStage">CLAStage</a></li><li><a href="global.html#DataTransferType">DataTransferType</a></li><li><a href="global.html#mobileTablesToSendToDesktop">mobileTablesToSendToDesktop</a></li><li><a href="global.html#TableNames">TableNames</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.10</a> on Fri Jun 17 2022 15:20:43 GMT-0400 (Eastern Daylight Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.10</a> on Tue Jun 21 2022 17:54:13 GMT-0400 (Eastern Daylight Time)
 </footer>
 
 <script> prettyPrint(); </script>

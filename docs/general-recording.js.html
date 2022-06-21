@@ -27,7 +27,14 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/**
- * Class representing a General Recording
+ * Class representing a General Recording.
+ *
+ * The General Recorder in the mobile app creates a new GeneralRecording item when the user switches between audio,
+ * video, or takes a picture while recording is paused.  All of these GeneralRecordings are then associated with
+ * a single CultureEvent object when the user taps Done in the General Recorder, enters metadata, and saves.
+ *
+ * Note:  If a picture is taken while recording is paused, a few-second silent audio GeneralRecording is created that
+ * the photo is linked to.
  */
 class GeneralRecording {
 
@@ -39,49 +46,44 @@ class GeneralRecording {
   _id = '';
 
   /**
-   * Whether or not it is a video recording
+   * true if it is a video recording; false if it is an audio recording.
    * @type {boolean}
    * @default false
    */
   isVideo = false;
 
   /**
-   * Filename of the recording
+   * Filename of the recording (no path, but does include extension)
    * @type {string}
    * @default ''
    */
   filename = '';
 
   /**
-   * Array of IDs of markers from the recording
+   * Array of IDs of markers from the recording.
+   * Currently, our mobile code is commented out for full Marker support, but we still create a marker at the
+   * beginning of a GeneralRecording.  The functionality is very similar to GeneralQuestions.
    * @type {string[]}
    * @default []
    */
   markers = [];
 
   /**
-   * Array of questions ids from the recording
+   * Array of GeneralQuestions ids from the recording
    * @type {string[]}
    * @default []
    */
   questions = []
 
   /**
-   * Array of GeneralPhoto IDs from the recording
+   * Array of GeneralPhotos IDs from the recording
    * @type {string[]}
    * @default []
    */
   photos = [];
 
   /**
-   * Array of IDs of SubRecording objects
-   * @type {string[]}
-   * @default []
-   */
-  subRecordings = [];
-
-  /**
-   * Creates a General Recording Object
+   * Creates a GeneralRecording object
    * @param {Object} data
    */
   constructor(data = {}) {
@@ -91,14 +93,14 @@ class GeneralRecording {
   }
 
   /**
-   * Creates an updated GeneralRecording Object
+   * Creates an updated GeneralRecording object
    * @param {Object} data
    * @returns {GeneralRecording}
    */
   set(data) {
     return new GeneralRecording({
       ...this,
-      ...data
+      ...data,
     });
   }
 
@@ -115,13 +117,13 @@ module.exports = GeneralRecording;
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="AdvancedFilter.html">AdvancedFilter</a></li><li><a href="CLAFile.html">CLAFile</a></li><li><a href="CultureEvent.html">CultureEvent</a></li><li><a href="DeletedItems.html">DeletedItems</a></li><li><a href="DRE.html">DRE</a></li><li><a href="GeneralPhoto.html">GeneralPhoto</a></li><li><a href="GeneralRecording.html">GeneralRecording</a></li><li><a href="Marker.html">Marker</a></li><li><a href="Observation.html">Observation</a></li><li><a href="OutlineItem.html">OutlineItem</a></li><li><a href="PendingQuestion.html">PendingQuestion</a></li><li><a href="Person.html">Person</a></li><li><a href="PlaylistItem.html">PlaylistItem</a></li><li><a href="Question.html">Question</a></li><li><a href="SALocation.html">SALocation</a></li><li><a href="SearchWord.html">SearchWord</a></li><li><a href="Tag.html">Tag</a></li><li><a href="Transcription.html">Transcription</a></li><li><a href="User.html">User</a></li></ul><h3>Global</h3><ul><li><a href="global.html#AdvancedFilterType">AdvancedFilterType</a></li><li><a href="global.html#ClaFileType">ClaFileType</a></li><li><a href="global.html#CLAStage">CLAStage</a></li><li><a href="global.html#DataTransferType">DataTransferType</a></li><li><a href="global.html#mobileTablesToSendToDesktop">mobileTablesToSendToDesktop</a></li><li><a href="global.html#TableNames">TableNames</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="AdvancedFilter.html">AdvancedFilter</a></li><li><a href="CLAFile.html">CLAFile</a></li><li><a href="CultureEvent.html">CultureEvent</a></li><li><a href="DeletedItem.html">DeletedItem</a></li><li><a href="DRE.html">DRE</a></li><li><a href="GeneralPhoto.html">GeneralPhoto</a></li><li><a href="GeneralQuestion.html">GeneralQuestion</a></li><li><a href="GeneralRecording.html">GeneralRecording</a></li><li><a href="Marker.html">Marker</a></li><li><a href="Observation.html">Observation</a></li><li><a href="PendingInvestigation.html">PendingInvestigation</a></li><li><a href="Person.html">Person</a></li><li><a href="PlaylistItem.html">PlaylistItem</a></li><li><a href="SALocation.html">SALocation</a></li><li><a href="SearchWord.html">SearchWord</a></li><li><a href="Tag.html">Tag</a></li><li><a href="Transcription.html">Transcription</a></li><li><a href="User.html">User</a></li></ul><h3>Global</h3><ul><li><a href="global.html#AdvancedFilterType">AdvancedFilterType</a></li><li><a href="global.html#ClaFileType">ClaFileType</a></li><li><a href="global.html#CLAStage">CLAStage</a></li><li><a href="global.html#DataTransferType">DataTransferType</a></li><li><a href="global.html#mobileTablesToSendToDesktop">mobileTablesToSendToDesktop</a></li><li><a href="global.html#TableNames">TableNames</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.10</a> on Fri Jun 17 2022 15:20:43 GMT-0400 (Eastern Daylight Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.10</a> on Tue Jun 21 2022 17:54:13 GMT-0400 (Eastern Daylight Time)
 </footer>
 
 <script> prettyPrint(); </script>
