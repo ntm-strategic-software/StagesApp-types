@@ -22,7 +22,7 @@ class GeneralPhoto {
   cultureEvent = '';
 
   /**
-   * Time in the GeneralRecording when this photo was taken
+   * Time (in seconds with decimals) from the beginning of the GeneralRecording, when this photo was taken
    * @type {number}
    * @default 0
    */

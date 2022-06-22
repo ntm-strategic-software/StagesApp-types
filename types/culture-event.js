@@ -49,11 +49,11 @@ class CultureEvent extends CLAFile {
   date = '';
 
   /**
-   * Array of Person IDs of helpers from the event
+   * Array of Person IDs of those who spoke in the generalRecordings of this CultureEvent
    * @type {string[]}
    * @default []
    */
-  helpers = [];
+  speakers = [];
 
   /**
    * Location ID of where the event took place
@@ -115,12 +115,6 @@ class CultureEvent extends CLAFile {
    * @default ''
    */
   phoneticTranscription = '';
-
-  /**
-   * @type {boolean}
-   * @default false
-   */
-  orthographicTranscriptionsDone = false;
 
   /**
    * Creates a CultureEvent object

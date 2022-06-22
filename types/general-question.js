@@ -23,7 +23,7 @@ class GeneralQuestion {
   cultureEvent = '';
 
   /**
-   * Time of question start, in seconds, from the beginning of the GeneralRecording this question is on (see GeneralRecording.questions)
+   * Time of the question marker, in seconds (with decimals), from the beginning of the GeneralRecording that this question is on (see GeneralRecording.questions)
    * @type {number}
    * @default 0
    */

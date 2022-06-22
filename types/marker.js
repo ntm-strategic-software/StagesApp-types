@@ -21,7 +21,7 @@ class Marker {
   cultureEvent = '';
 
   /**
-   * The time (in seconds) in the GeneralRecording where the marker is
+   * The time (in seconds with decimals) from the beginning of the GeneralRecording, where the marker is
    * @type {number}
    * @default 0
    */
