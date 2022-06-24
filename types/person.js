@@ -57,7 +57,7 @@ class Person {
    * @type {string}
    * @default ''
    */
-  dateLastUsed = '';
+  dateLastUsedOnMobile = '';
 
   /**
    * True if the person is dead
