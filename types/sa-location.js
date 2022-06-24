@@ -29,7 +29,7 @@ class SALocation {
    * @type {string}
    * @default ''
    */
-  dateLastUsed = '';
+  dateLastUsedOnMobile = '';
 
   /**
    * Creates an SALocation object
