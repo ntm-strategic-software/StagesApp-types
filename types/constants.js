@@ -73,7 +73,7 @@ const mobileTablesToSendToDesktop = [
   TableNames.PEOPLE,
   TableNames.LOCATIONS,
   TableNames.GENERAL_PHOTOS,
-  TableNames.QUESTIONS,
+  TableNames.GENERAL_QUESTIONS,
   TableNames.SEARCH_WORDS,
   TableNames.DRE,
   TableNames.PLAYLIST_ITEMS,

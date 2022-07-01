@@ -29,20 +29,6 @@ class DRE extends CLAFile {
   title = '';
 
   /**
-   * Any notes the user wants to make about the DRE
-   * @type {string}
-   * @default ''
-   */
-  note = '';
-
-  /**
-   * Observations the user makes as they compare transcriptions
-   * @type {string}
-   * @default ''
-   */
-  observations = '';
-
-  /**
    * Recording 1 file name (no path, but does include the extension)
    * @type {string}
    */
@@ -77,6 +63,21 @@ class DRE extends CLAFile {
    * @type {string[]}
    */
   splitText2 = [];
+
+  /**
+   * Observations and Notes by color, for each row of this DRE.
+   * [{ [className]: { observations: string, notes: string }, ... }, ...]
+   * For className, see StagesApp-Desktop 'highlights' constant main.scss $text-highlights
+   *
+   * Example where the DRE text has been aligned into 4 rows (splitText1 and splitText2 have lengths of 4),
+   * and the second and third rows have some highlighting:
+   * [ {},
+   *   { 'text-highlight-7': { observations: 'I used the full name, he used a pronoun. Why?', notes: '' }, { 'text-highlight-3': { observations: '', notes: '' } },
+   *   { 'text-highlight-3': { observations: 'why did he add -em?', notes: 'I think this may be a word-level grammar issue' } },
+   *   {},
+   * ]
+   */
+  splitTextColorDetails = [];
 
   /**
    * Array of array of objects.  Each string in splitText1 is here broken into an array of objects of shape:
