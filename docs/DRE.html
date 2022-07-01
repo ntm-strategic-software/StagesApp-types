@@ -30,7 +30,10 @@
     
         <h2><span class="attribs"><span class="type-signature"></span></span>DRE<span class="signature">(data)</span><span class="type-signature"></span></h2>
         
-            <div class="class-description">Class representing a Dual Recorder Event (our internal name.  In the UI and Engage, a Dual Recorder file.)The user records a native, then records himself telling the same story.  The desktop Stages app has toolsto enable the user to transcribe and compare the two texts, to aid in higher-level language learning.</div>
+            <div class="class-description">Class representing a Dual Recorder Event (our internal name.  In the UI and Engage, a Dual Recorder file.)
+
+The user records a native, then records himself telling the same story.  The desktop Stages app has tools
+to enable the user to transcribe and compare the two texts, to aid in higher-level language learning.</div>
         
     
 </header>
@@ -520,160 +523,6 @@
 
         
             
-<h4 class="name" id="note"><span class="type-signature"></span>note<span class="type-signature"> :string</span></h4>
-
-
-
-
-<div class="description">
-    Any notes the user wants to make about the DRE
-</div>
-
-
-
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">string</span>
-
-
-        </li>
-    </ul>
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-default">Default Value:</dt>
-    <dd class="tag-default"><ul class="dummy">
-            <li>''</li>
-        </ul></dd>
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="dre.js.html">dre.js</a>, <a href="dre.js.html#line36">line 36</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-        
-            
-<h4 class="name" id="observations"><span class="type-signature"></span>observations<span class="type-signature"> :string</span></h4>
-
-
-
-
-<div class="description">
-    Observations the user makes as they compare transcriptions
-</div>
-
-
-
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">string</span>
-
-
-        </li>
-    </ul>
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-default">Default Value:</dt>
-    <dd class="tag-default"><ul class="dummy">
-            <li>''</li>
-        </ul></dd>
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="dre.js.html">dre.js</a>, <a href="dre.js.html#line43">line 43</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-        
-            
 <h4 class="name" id="readOnly"><span class="type-signature"></span>readOnly<span class="type-signature"> :boolean</span></h4>
 
 
@@ -805,7 +654,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="dre.js.html">dre.js</a>, <a href="dre.js.html#line49">line 49</a>
+        <a href="dre.js.html">dre.js</a>, <a href="dre.js.html#line35">line 35</a>
     </li></ul></dd>
     
 
@@ -877,7 +726,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="dre.js.html">dre.js</a>, <a href="dre.js.html#line55">line 55</a>
+        <a href="dre.js.html">dre.js</a>, <a href="dre.js.html#line41">line 41</a>
     </li></ul></dd>
     
 
@@ -901,7 +750,12 @@
 
 
 <div class="description">
-    Array of array of objects.  Each string in splitText1 is here broken into an array of objects of shape:{ text: string, className: string }Example (except the text will be orthographic):  { text: 'The story begins like this', className: 'text-highlight-6' }If the text has been highlighted by the user on the Compare Transcriptions tab, className will be set to the highlight number, which corresponds to a color in the desktop app.If the text has not been highlighted, className will be an empty string.
+    Array of array of objects.  Each string in splitText1 is here broken into an array of objects of shape:
+{ text: string, className: string }
+Example (except the text will be orthographic):  { text: 'The story begins like this', className: 'text-highlight-6' }
+
+If the text has been highlighted by the user on the Compare Transcriptions tab, className will be set to the highlight number, which corresponds to a color in the desktop app.
+If the text has not been highlighted, className will be an empty string.
 </div>
 
 
@@ -949,7 +803,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="dre.js.html">dre.js</a>, <a href="dre.js.html#line91">line 91</a>
+        <a href="dre.js.html">dre.js</a>, <a href="dre.js.html#line92">line 92</a>
     </li></ul></dd>
     
 
@@ -973,7 +827,12 @@
 
 
 <div class="description">
-    Array of array of objects.  Each string in splitText2 is here broken into an array of objects of shape:{ text: string, className: string }Example (except the text will be orthographic):  { text: 'Here is how the story begins', className: 'text-highlight-6' }If the text has been highlighted by the user on the Compare Transcriptions tab, className will be set to the highlight number, which corresponds to a color in the desktop app.If the text has not been highlighted, className will be an empty string.
+    Array of array of objects.  Each string in splitText2 is here broken into an array of objects of shape:
+{ text: string, className: string }
+Example (except the text will be orthographic):  { text: 'Here is how the story begins', className: 'text-highlight-6' }
+
+If the text has been highlighted by the user on the Compare Transcriptions tab, className will be set to the highlight number, which corresponds to a color in the desktop app.
+If the text has not been highlighted, className will be an empty string.
 </div>
 
 
@@ -1021,7 +880,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="dre.js.html">dre.js</a>, <a href="dre.js.html#line103">line 103</a>
+        <a href="dre.js.html">dre.js</a>, <a href="dre.js.html#line104">line 104</a>
     </li></ul></dd>
     
 
@@ -1093,7 +952,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="dre.js.html">dre.js</a>, <a href="dre.js.html#line73">line 73</a>
+        <a href="dre.js.html">dre.js</a>, <a href="dre.js.html#line59">line 59</a>
     </li></ul></dd>
     
 
@@ -1165,7 +1024,79 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="dre.js.html">dre.js</a>, <a href="dre.js.html#line79">line 79</a>
+        <a href="dre.js.html">dre.js</a>, <a href="dre.js.html#line65">line 65</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="splitTextColorDetails"><span class="type-signature"></span>splitTextColorDetails<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Observations and Notes by color, for each row of this DRE.
+[{ [className]: { observations: string, notes: string }, ... }, ...]
+For className, see StagesApp-Desktop 'highlights' constant main.scss $text-highlights
+
+Example where the DRE text has been aligned into 4 rows (splitText1 and splitText2 have lengths of 4),
+and the second and third rows have some highlighting:
+[ {},
+  { 'text-highlight-7': { observations: 'I used the full name, he used a pronoun. Why?', notes: '' }, { 'text-highlight-3': { observations: '', notes: '' } },
+  { 'text-highlight-3': { observations: 'why did he add -em?', notes: 'I think this may be a word-level grammar issue' } },
+  {},
+]
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="dre.js.html">dre.js</a>, <a href="dre.js.html#line80">line 80</a>
     </li></ul></dd>
     
 
@@ -1314,7 +1245,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="dre.js.html">dre.js</a>, <a href="dre.js.html#line61">line 61</a>
+        <a href="dre.js.html">dre.js</a>, <a href="dre.js.html#line47">line 47</a>
     </li></ul></dd>
     
 
@@ -1386,7 +1317,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="dre.js.html">dre.js</a>, <a href="dre.js.html#line67">line 67</a>
+        <a href="dre.js.html">dre.js</a>, <a href="dre.js.html#line53">line 53</a>
     </li></ul></dd>
     
 
@@ -1830,7 +1761,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="dre.js.html">dre.js</a>, <a href="dre.js.html#line121">line 121</a>
+        <a href="dre.js.html">dre.js</a>, <a href="dre.js.html#line122">line 122</a>
     </li></ul></dd>
     
 
@@ -1900,7 +1831,7 @@
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.10</a> on Sat Jun 25 2022 15:17:02 GMT-0400 (Eastern Daylight Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.10</a> on Thu Jun 30 2022 20:06:01 GMT-0400 (Eastern Daylight Time)
 </footer>
 
 <script> prettyPrint(); </script>
