@@ -828,14 +828,6 @@ to enable the user to transcribe and compare the two texts, to aid in higher-lev
 
 <div class="description">
     Array of array of objects.  Each string in splitText1 is here broken into an array of objects of shape:
-
-{ text: string, className: string }
-
-Example (except the text will be orthographic):  { text: 'The story begins like this', className: 'text-highlight-6' }
-
-If the text has been highlighted by the user on the Compare Transcriptions tab, className will be set to the highlight number, which corresponds to a color in the desktop app.
-
-If the text has not been highlighted, className will be an empty string.
 </div>
 
 
@@ -883,7 +875,7 @@ If the text has not been highlighted, className will be an empty string.
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="dre.js.html">dre.js</a>, <a href="dre.js.html#line109">line 109</a>
+        <a href="dre.js.html">dre.js</a>, <a href="dre.js.html#line111">line 111</a>
     </li></ul></dd>
     
 
@@ -898,6 +890,19 @@ If the text has not been highlighted, className will be an empty string.
 
 
 
+    <h5>Examples</h5>
+    
+    <pre class="prettyprint"><code>{ text: string, className: string }
+
+Example (except the text will be orthographic):</code></pre>
+
+    <pre class="prettyprint"><code>{ text: 'The story begins like this', className: 'text-highlight-6' }
+
+If the text has been highlighted by the user on the Compare Transcriptions tab, className will be set to the highlight number, which corresponds to a color in the desktop app.
+
+If the text has not been highlighted, className will be an empty string.</code></pre>
+
+
 
         
             
@@ -908,14 +913,6 @@ If the text has not been highlighted, className will be an empty string.
 
 <div class="description">
     Array of array of objects.  Each string in splitText2 is here broken into an array of objects of shape:
-
-{ text: string, className: string }
-
-Example (except the text will be orthographic):  { text: 'Here is how the story begins', className: 'text-highlight-6' }
-
-If the text has been highlighted by the user on the Compare Transcriptions tab, className will be set to the highlight number, which corresponds to a color in the desktop app.
-
-If the text has not been highlighted, className will be an empty string.
 </div>
 
 
@@ -963,7 +960,7 @@ If the text has not been highlighted, className will be an empty string.
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="dre.js.html">dre.js</a>, <a href="dre.js.html#line124">line 124</a>
+        <a href="dre.js.html">dre.js</a>, <a href="dre.js.html#line128">line 128</a>
     </li></ul></dd>
     
 
@@ -976,6 +973,19 @@ If the text has not been highlighted, className will be an empty string.
 
 
 
+
+
+    <h5>Examples</h5>
+    
+    <pre class="prettyprint"><code>{ text: string, className: string }
+
+Example (except the text will be orthographic):</code></pre>
+
+    <pre class="prettyprint"><code>{ text: 'Here is how the story begins', className: 'text-highlight-6' }
+
+If the text has been highlighted by the user on the Compare Transcriptions tab, className will be set to the highlight number, which corresponds to a color in the desktop app.
+
+If the text has not been highlighted, className will be an empty string.</code></pre>
 
 
 
@@ -1132,23 +1142,6 @@ If the text has not been highlighted, className will be an empty string.
 
 <div class="description">
     Observations and Notes by color, for each row of this DRE.
-
-[{ [className]: { observations: string, notes: string }, ... }, ...]
-
-For className, see StagesApp-Desktop 'highlights' constant main.scss $text-highlights
-
-Observations are intended to be entered while comparing texts.
-
-Notes are intended to be entered after discussing Observations with the helper.
-
-Example where the DRE text has been aligned into 4 rows (splitText1 and splitText2 have lengths of 4),
-and the second and third rows have some highlighting:
-
-[ {},
-  { 'text-highlight-7': { observations: 'I used na before every paragraph, but he used na, da, dyadi, and tebes.', notes: '' }, { 'text-highlight-3': { observations: '', notes: '' } },
-  { 'text-highlight-3': { observations: 'why did he add -em?', notes: 'he said that suffix is used on verbs when children perform the action' } },
-  {},
-]
 </div>
 
 
@@ -1199,6 +1192,26 @@ and the second and third rows have some highlighting:
 
 
 
+
+
+    <h5>Examples</h5>
+    
+    <pre class="prettyprint"><code>[{ [className]: { observations: string, notes: string }, ... }, ...]
+
+For className, see StagesApp-Desktop 'highlights' constant main.scss $text-highlights
+
+Observations are intended to be entered while comparing texts.
+
+Notes are intended to be entered after discussing Observations with the helper.
+
+Example where the DRE text has been aligned into 4 rows (splitText1 and splitText2 have lengths of 4),
+and the second and third rows have some highlighting:</code></pre>
+
+    <pre class="prettyprint"><code>[ {},
+  { 'text-highlight-7': { observations: 'I used na before every paragraph, but he used na, da, dyadi, and tebes.', notes: '' }, { 'text-highlight-3': { observations: '', notes: '' } },
+  { 'text-highlight-3': { observations: 'why did he add -em?', notes: 'he said that suffix is used on verbs when children perform the action' } },
+  {},
+]</code></pre>
 
 
 
@@ -1851,7 +1864,7 @@ and the second and third rows have some highlighting:
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="dre.js.html">dre.js</a>, <a href="dre.js.html#line142">line 142</a>
+        <a href="dre.js.html">dre.js</a>, <a href="dre.js.html#line146">line 146</a>
     </li></ul></dd>
     
 
@@ -1921,7 +1934,7 @@ and the second and third rows have some highlighting:
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.10</a> on Fri Jul 01 2022 17:02:52 GMT-0400 (Eastern Daylight Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.10</a> on Tue Jul 05 2022 19:57:40 GMT-0400 (Eastern Daylight Time)
 </footer>
 
 <script> prettyPrint(); </script>

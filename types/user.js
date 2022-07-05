@@ -27,6 +27,13 @@ class User {
   fullName = '';
 
   /**
+   * Filename of a picture of the user
+   * @type {string}
+   * @default ''
+   */
+  photoFilename = '';
+
+  /**
    * User's current CLA stage
    * @type {CLAStage|string}
    * @default CLAStage.STAGE_1
@@ -34,18 +41,23 @@ class User {
   claStage = CLAStage.STAGE_1;
 
   /**
-   * The unit this user is in for the claStage he is in.  This number resets to 1 when a user moves to a new stage.
+   * User's current overall unit in CLA.  There are 25 total units.
    * @type {number}
    * @default 1
    */
-  stageUnit = 1;
+  claUnit = 1;
 
   /**
-   * Filename of a picture of the user
-   * @type {string}
-   * @default ''
+   * Computes the unit this user is in for the claStage he is in.  This number resets to 1 when a user moves to a new stage.
+   * @returns {number}
    */
-  photoFilename = '';
+  stageUnit() {
+    const { claUnit } = this;
+    const lastUnits = [0, 1, 5, 10, 17, 25];  // first item is 0, then the last claUnit for each stage from warmup through the end of cla
+
+    const currentStage = lastUnits.findIndex(u => u >= claUnit);
+    return claUnit - lastUnits[currentStage - 1];
+  }
 
   /**
    * Creates a user object

@@ -73,7 +73,7 @@ class DRE extends CLAFile {
 
   /**
    * Observations and Notes by color, for each row of this DRE.
-   *
+   * @example
    * [{ [className]: { observations: string, notes: string }, ... }, ...]
    *
    * For className, see StagesApp-Desktop 'highlights' constant main.scss $text-highlights
@@ -84,7 +84,7 @@ class DRE extends CLAFile {
    *
    * Example where the DRE text has been aligned into 4 rows (splitText1 and splitText2 have lengths of 4),
    * and the second and third rows have some highlighting:
-   *
+   * @example
    * [ {},
    *   { 'text-highlight-7': { observations: 'I used na before every paragraph, but he used na, da, dyadi, and tebes.', notes: '' }, { 'text-highlight-3': { observations: '', notes: '' } },
    *   { 'text-highlight-3': { observations: 'why did he add -em?', notes: 'he said that suffix is used on verbs when children perform the action' } },
@@ -95,10 +95,12 @@ class DRE extends CLAFile {
 
   /**
    * Array of array of objects.  Each string in splitText1 is here broken into an array of objects of shape:
-   *
+   * @example
    * { text: string, className: string }
    *
-   * Example (except the text will be orthographic):  { text: 'The story begins like this', className: 'text-highlight-6' }
+   * Example (except the text will be orthographic):
+   * @example
+   * { text: 'The story begins like this', className: 'text-highlight-6' }
    *
    * If the text has been highlighted by the user on the Compare Transcriptions tab, className will be set to the highlight number, which corresponds to a color in the desktop app.
    *
@@ -110,10 +112,12 @@ class DRE extends CLAFile {
 
   /**
    * Array of array of objects.  Each string in splitText2 is here broken into an array of objects of shape:
-   *
+   * @example
    * { text: string, className: string }
    *
-   * Example (except the text will be orthographic):  { text: 'Here is how the story begins', className: 'text-highlight-6' }
+   * Example (except the text will be orthographic):
+   * @example
+   * { text: 'Here is how the story begins', className: 'text-highlight-6' }
    *
    * If the text has been highlighted by the user on the Compare Transcriptions tab, className will be set to the highlight number, which corresponds to a color in the desktop app.
    *
