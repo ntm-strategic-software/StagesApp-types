@@ -30,10 +30,7 @@
     
         <h2><span class="attribs"><span class="type-signature"></span></span>DRE<span class="signature">(data)</span><span class="type-signature"></span></h2>
         
-            <div class="class-description">Class representing a Dual Recorder Event (our internal name.  In the UI and Engage, a Dual Recorder file.)
-
-The user records a native, then records himself telling the same story.  The desktop Stages app has tools
-to enable the user to transcribe and compare the two texts, to aid in higher-level language learning.</div>
+            <div class="class-description">Class representing a Dual Recorder Event (our internal name.  In the UI and Engage, a Dual Recorder file.)The user records a native, then records himself telling the same story.  The desktop Stages app has toolsto enable the user to transcribe and compare the two texts, to aid in higher-level language learning.</div>
         
     
 </header>
@@ -892,15 +889,9 @@ to enable the user to transcribe and compare the two texts, to aid in higher-lev
 
     <h5>Examples</h5>
     
-    <pre class="prettyprint"><code>{ text: string, className: string }
+    <pre class="prettyprint"><code>{ text: string, className: string }Example (except the text will be orthographic):</code></pre>
 
-Example (except the text will be orthographic):</code></pre>
-
-    <pre class="prettyprint"><code>{ text: 'The story begins like this', className: 'text-highlight-6' }
-
-If the text has been highlighted by the user on the Compare Transcriptions tab, className will be set to the highlight number, which corresponds to a color in the desktop app.
-
-If the text has not been highlighted, className will be an empty string.</code></pre>
+    <pre class="prettyprint"><code>{ text: 'The story begins like this', className: 'text-highlight-6' }If the text has been highlighted by the user on the Compare Transcriptions tab, className will be set to the highlight number, which corresponds to a color in the desktop app.If the text has not been highlighted, className will be an empty string.</code></pre>
 
 
 
@@ -977,15 +968,9 @@ If the text has not been highlighted, className will be an empty string.</code><
 
     <h5>Examples</h5>
     
-    <pre class="prettyprint"><code>{ text: string, className: string }
+    <pre class="prettyprint"><code>{ text: string, className: string }Example (except the text will be orthographic):</code></pre>
 
-Example (except the text will be orthographic):</code></pre>
-
-    <pre class="prettyprint"><code>{ text: 'Here is how the story begins', className: 'text-highlight-6' }
-
-If the text has been highlighted by the user on the Compare Transcriptions tab, className will be set to the highlight number, which corresponds to a color in the desktop app.
-
-If the text has not been highlighted, className will be an empty string.</code></pre>
+    <pre class="prettyprint"><code>{ text: 'Here is how the story begins', className: 'text-highlight-6' }If the text has been highlighted by the user on the Compare Transcriptions tab, className will be set to the highlight number, which corresponds to a color in the desktop app.If the text has not been highlighted, className will be an empty string.</code></pre>
 
 
 
@@ -1196,22 +1181,9 @@ If the text has not been highlighted, className will be an empty string.</code><
 
     <h5>Examples</h5>
     
-    <pre class="prettyprint"><code>[{ [className]: { observations: string, notes: string }, ... }, ...]
+    <pre class="prettyprint"><code>[{ [className]: { observations: string, notes: string }, ... }, ...]For className, see StagesApp-Desktop 'highlights' constant main.scss $text-highlightsObservations are intended to be entered while comparing texts.Notes are intended to be entered after discussing Observations with the helper.Example where the DRE text has been aligned into 4 rows (splitText1 and splitText2 have lengths of 4),and the second and third rows have some highlighting:</code></pre>
 
-For className, see StagesApp-Desktop 'highlights' constant main.scss $text-highlights
-
-Observations are intended to be entered while comparing texts.
-
-Notes are intended to be entered after discussing Observations with the helper.
-
-Example where the DRE text has been aligned into 4 rows (splitText1 and splitText2 have lengths of 4),
-and the second and third rows have some highlighting:</code></pre>
-
-    <pre class="prettyprint"><code>[ {},
-  { 'text-highlight-7': { observations: 'I used na before every paragraph, but he used na, da, dyadi, and tebes.', notes: '' }, { 'text-highlight-3': { observations: '', notes: '' } },
-  { 'text-highlight-3': { observations: 'why did he add -em?', notes: 'he said that suffix is used on verbs when children perform the action' } },
-  {},
-]</code></pre>
+    <pre class="prettyprint"><code>[ {},  { 'text-highlight-7': { observations: 'I used na before every paragraph, but he used na, da, dyadi, and tebes.', notes: '' }, { 'text-highlight-3': { observations: '', notes: '' } },  { 'text-highlight-3': { observations: 'why did he add -em?', notes: 'he said that suffix is used on verbs when children perform the action' } },  {},]</code></pre>
 
 
 
@@ -1934,7 +1906,7 @@ and the second and third rows have some highlighting:</code></pre>
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.10</a> on Tue Jul 05 2022 19:57:40 GMT-0400 (Eastern Daylight Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.10</a> on Tue Jul 05 2022 20:14:29 GMT-0400 (Eastern Daylight Time)
 </footer>
 
 <script> prettyPrint(); </script>
