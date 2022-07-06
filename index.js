@@ -16,4 +16,4 @@ module.exports.PlaylistItem = require('./types/playlist-item');
 module.exports.PendingInvestigation = require('./types/pending-investigation');
 module.exports.Observation = require('./types/observation');
 module.exports.Tag = require('./types/tag');
-
+module.exports.ActivityPlan = require('./types/activity-plan');
