@@ -48,11 +48,10 @@ class User {
   claUnit = 1;
 
   /**
-   * Computes the unit this user is in for the claStage he is in.  This number resets to 1 when a user moves to a new stage.
+   * Given a claUnit (overall unit number), computes the unit within the stage.  This number resets to 1 when a user moves to a new stage.
    * @returns {number}
    */
-  unitInStage() {
-    const { claUnit } = this;
+  static unitInStage(claUnit) {
     const lastUnits = [0, 1, 5, 10, 17, 25];  // first item is 0, then the last claUnit for each stage from warmup through the end of cla
 
     const currentStage = lastUnits.findIndex(u => u >= claUnit);
