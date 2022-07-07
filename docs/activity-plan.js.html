@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: search-word.js</title>
+    <title>JSDoc: Source: activity-plan.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: search-word.js</h1>
+    <h1 class="page-title">Source: activity-plan.js</h1>
 
     
 
@@ -27,26 +27,58 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/**
- * Class representing a search word, which is a word or phrase the user enters and links to something they want to find
- * by using that word or phrase
+ * Class representing doing an Activity:  a plan for executing an Activity to do something specific.
  */
-class SearchWord {
-
+class ActivityPlan {
   /**
-   * Unique ID for the search word
+   * Unique ID for the Activity Plan
    * @type {string}
    * @default ''
    */
   _id = '';
 
   /**
-   * Text of the search word
-   * @type {string}
+   * Number of this Activity Plan.  This number is unique for all users on a desktop installation.
+   * @type {number}
    */
-  word = '';
+  activityPlanNumber = 0;
 
   /**
-   * Creates a SearchWord object
+   * Title of the Activity Plan
+   * @type {string}
+   * @default ''
+   */
+  activityPlanTitle = '';
+
+  /**
+   * Notes for this Activity Plan
+   * @type {string}
+   * @default ''
+   */
+  notes = '';
+
+  /**
+   * Key of the Activity that this Activity Plan is a plan for
+   * @type {ActivityKey|string}
+   * @default ''
+   */
+  activityKey = '';
+
+  /**
+   * The sequence of steps to follow to complete this Activity Plan.  Initially, these tasks will be created from
+   * the Activity corresponding to activityKey.  The user may add, delete, or edit this list of tasks for this Activity Plan.
+   * @type {Array}
+   */
+  tasks = [];
+
+  /**
+   * index into this Activity Plan's 'tasks' array of the next task waiting to be done
+   * @type {number}
+   */
+  nextTaskIndex = 0;
+
+  /**
+   * Constructs an ActivityPlan object
    * @param {Object} data
    */
   constructor(data = {}) {
@@ -56,12 +88,12 @@ class SearchWord {
   }
 
   /**
-   * Creates an updated SearchWord object
+   * Creates an updated ActivityPlan object
    * @param {Object} data
-   * @returns {SearchWord}
+   * @returns {ActivityPlan}
    */
   set(data) {
-    return new SearchWord({
+    return new ActivityPlan({
       ...this,
       ...data,
     });
@@ -69,7 +101,7 @@ class SearchWord {
 
 }
 
-module.exports = SearchWord;
+module.exports = ActivityPlan;
 </code></pre>
         </article>
     </section>

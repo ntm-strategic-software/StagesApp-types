@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Class: GeneralPhoto</title>
+    <title>JSDoc: Class: PendingMedia</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Class: GeneralPhoto</h1>
+    <h1 class="page-title">Class: PendingMedia</h1>
 
     
 
@@ -28,9 +28,10 @@
 
 <header>
     
-        <h2><span class="attribs"><span class="type-signature"></span></span>GeneralPhoto<span class="signature">(data)</span><span class="type-signature"></span></h2>
+        <h2><span class="attribs"><span class="type-signature"></span></span>PendingMedia<span class="signature">(data)</span><span class="type-signature"></span></h2>
         
-            <div class="class-description">Class representing a photo taken as part of a General Recorder session.  The GeneralRecording that the photois attached to will have the GeneralPhoto's _id in its photos array.For convenience, the id of the CultureEvent that the GeneralRecording is associated with is included in the GeneralPhoto,so we don't have to trace back through the GeneralRecording to get to the CultureEvent.</div>
+            <div class="class-description">Class representing an item of type PendingFileType.  This is a file created on Mobile but not through a Task, so the file is not linked to an ActivityPlan.
+I.e., a quick photo, a voice note, or a CE or DRE created by the user going straight to the recorder instead of through a Task.</div>
         
     
 </header>
@@ -45,7 +46,7 @@
     
 
     
-    <h4 class="name" id="GeneralPhoto"><span class="type-signature"></span>new GeneralPhoto<span class="signature">(data)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="PendingMedia"><span class="type-signature"></span>new PendingMedia<span class="signature">(data)</span><span class="type-signature"></span></h4>
     
 
     
@@ -53,7 +54,7 @@
 
 
 <div class="description">
-    Creates a GeneralPhoto object
+    Constructs an PendingMedia object
 </div>
 
 
@@ -146,7 +147,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="general-photo.js.html">general-photo.js</a>, <a href="general-photo.js.html#line8">line 8</a>
+        <a href="pending-media.js.html">pending-media.js</a>, <a href="pending-media.js.html#line5">line 5</a>
     </li></ul></dd>
     
 
@@ -202,7 +203,7 @@
 
 
 <div class="description">
-    Unique ID for the General Photo
+    Unique ID for the PendingMedia
 </div>
 
 
@@ -255,84 +256,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="general-photo.js.html">general-photo.js</a>, <a href="general-photo.js.html#line15">line 15</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-        
-            
-<h4 class="name" id="cultureEvent"><span class="type-signature"></span>cultureEvent<span class="type-signature"> :string</span></h4>
-
-
-
-
-<div class="description">
-    ID of the culture event that this photo is associated with, for convenience
-</div>
-
-
-
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">string</span>
-
-
-        </li>
-    </ul>
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-default">Default Value:</dt>
-    <dd class="tag-default"><ul class="dummy">
-            <li>''</li>
-        </ul></dd>
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="general-photo.js.html">general-photo.js</a>, <a href="general-photo.js.html#line22">line 22</a>
+        <a href="pending-media.js.html">pending-media.js</a>, <a href="pending-media.js.html#line11">line 11</a>
     </li></ul></dd>
     
 
@@ -356,7 +280,7 @@
 
 
 <div class="description">
-    Filename of photo (no path, but does include extension)
+    Filename of this Pending Media (no path, but does include extension).  Empty string for CEs and DREs.
 </div>
 
 
@@ -409,7 +333,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="general-photo.js.html">general-photo.js</a>, <a href="general-photo.js.html#line36">line 36</a>
+        <a href="pending-media.js.html">pending-media.js</a>, <a href="pending-media.js.html#line32">line 32</a>
     </li></ul></dd>
     
 
@@ -427,13 +351,13 @@
 
         
             
-<h4 class="name" id="startTime"><span class="type-signature"></span>startTime<span class="type-signature"> :number</span></h4>
+<h4 class="name" id="fileType"><span class="type-signature"></span>fileType<span class="type-signature"> :PendingFileType|string</span></h4>
 
 
 
 
 <div class="description">
-    Time (in seconds with decimals) from the beginning of the GeneralRecording, when this photo was taken
+    Type of Pending Media
 </div>
 
 
@@ -442,7 +366,10 @@
     <ul>
         <li>
             
-<span class="param-type">number</span>
+<span class="param-type">PendingFileType</span>
+|
+
+<span class="param-type">string</span>
 
 
         </li>
@@ -479,14 +406,91 @@
     
     <dt class="tag-default">Default Value:</dt>
     <dd class="tag-default"><ul class="dummy">
-            <li>0</li>
+            <li>''</li>
         </ul></dd>
     
 
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="general-photo.js.html">general-photo.js</a>, <a href="general-photo.js.html#line29">line 29</a>
+        <a href="pending-media.js.html">pending-media.js</a>, <a href="pending-media.js.html#line18">line 18</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="title"><span class="type-signature"></span>title<span class="type-signature"> :string</span></h4>
+
+
+
+
+<div class="description">
+    Title of the PendingMedia file.  Empty string for CEs and DREs:  we get their titles from the CE or DRE record itself.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">string</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-default">Default Value:</dt>
+    <dd class="tag-default"><ul class="dummy">
+            <li>''</li>
+        </ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="pending-media.js.html">pending-media.js</a>, <a href="pending-media.js.html#line25">line 25</a>
     </li></ul></dd>
     
 
@@ -514,7 +518,7 @@
     
 
     
-    <h4 class="name" id="set"><span class="type-signature"></span>set<span class="signature">(data)</span><span class="type-signature"> &rarr; {<a href="GeneralPhoto.html">GeneralPhoto</a>}</span></h4>
+    <h4 class="name" id="set"><span class="type-signature"></span>set<span class="signature">(data)</span><span class="type-signature"> &rarr; {<a href="PendingMedia.html">PendingMedia</a>}</span></h4>
     
 
     
@@ -522,7 +526,7 @@
 
 
 <div class="description">
-    Creates an updated GeneralPhoto object
+    Creates an updated PendingMedia object
 </div>
 
 
@@ -615,7 +619,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="general-photo.js.html">general-photo.js</a>, <a href="general-photo.js.html#line53">line 53</a>
+        <a href="pending-media.js.html">pending-media.js</a>, <a href="pending-media.js.html#line49">line 49</a>
     </li></ul></dd>
     
 
@@ -651,7 +655,7 @@
     </dt>
     <dd>
         
-<span class="param-type"><a href="GeneralPhoto.html">GeneralPhoto</a></span>
+<span class="param-type"><a href="PendingMedia.html">PendingMedia</a></span>
 
 
     </dd>
