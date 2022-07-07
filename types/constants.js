@@ -54,6 +54,13 @@ const ActivityKey = {
   InteractAboutScene: 'InteractAboutScene',
 };
 
+const PendingFileType = {
+  GeneralRecorder: 'GeneralRecorder',
+  DualRecorder: 'DualRecorder',
+  QuickPhoto: 'QuickPhoto',
+  VoiceNote: 'VoiceNote',
+};
+
 /**
  * Enum for table names
  *
@@ -82,7 +89,8 @@ const TableNames = {
   PENDING_INVESTIGATIONS: 'PendingInvestigations',
   OBSERVATIONS: 'Observations',
   TAGS: 'Tags',
-  ACTIVITY_PLANS: 'ACTIVITY_PLANS',
+  ACTIVITY_PLANS: 'ActivityPlans',
+  PENDING_MEDIA: 'PendingMedia',
 };
 
 /**
@@ -103,12 +111,14 @@ const mobileTablesToSendToDesktop = [
   TableNames.SEARCH_WORDS,
   TableNames.DRE,
   TableNames.PLAYLIST_ITEMS,
+  TableNames.ACTIVITY_PLANS,
 ];
 
 module.exports.CLAStage = CLAStage;
 module.exports.ClaFileType = ClaFileType;
 module.exports.AdvancedFilterType = AdvancedFilterType;
 module.exports.ActivityKey = ActivityKey;
+module.exports.PendingFileType = PendingFileType;
 module.exports.TableNames = TableNames;
 module.exports.mobileTablesToSendToDesktop = mobileTablesToSendToDesktop;
 
