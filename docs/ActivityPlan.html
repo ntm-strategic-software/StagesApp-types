@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Class: GeneralPhoto</title>
+    <title>JSDoc: Class: ActivityPlan</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Class: GeneralPhoto</h1>
+    <h1 class="page-title">Class: ActivityPlan</h1>
 
     
 
@@ -28,9 +28,9 @@
 
 <header>
     
-        <h2><span class="attribs"><span class="type-signature"></span></span>GeneralPhoto<span class="signature">(data)</span><span class="type-signature"></span></h2>
+        <h2><span class="attribs"><span class="type-signature"></span></span>ActivityPlan<span class="signature">(data)</span><span class="type-signature"></span></h2>
         
-            <div class="class-description">Class representing a photo taken as part of a General Recorder session.  The GeneralRecording that the photois attached to will have the GeneralPhoto's _id in its photos array.For convenience, the id of the CultureEvent that the GeneralRecording is associated with is included in the GeneralPhoto,so we don't have to trace back through the GeneralRecording to get to the CultureEvent.</div>
+            <div class="class-description">Class representing doing an Activity:  a plan for executing an Activity to do something specific.</div>
         
     
 </header>
@@ -45,7 +45,7 @@
     
 
     
-    <h4 class="name" id="GeneralPhoto"><span class="type-signature"></span>new GeneralPhoto<span class="signature">(data)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="ActivityPlan"><span class="type-signature"></span>new ActivityPlan<span class="signature">(data)</span><span class="type-signature"></span></h4>
     
 
     
@@ -53,7 +53,7 @@
 
 
 <div class="description">
-    Creates a GeneralPhoto object
+    Constructs an ActivityPlan object
 </div>
 
 
@@ -146,7 +146,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="general-photo.js.html">general-photo.js</a>, <a href="general-photo.js.html#line8">line 8</a>
+        <a href="activity-plan.js.html">activity-plan.js</a>, <a href="activity-plan.js.html#line4">line 4</a>
     </li></ul></dd>
     
 
@@ -202,7 +202,7 @@
 
 
 <div class="description">
-    Unique ID for the General Photo
+    Unique ID for the Activity Plan
 </div>
 
 
@@ -255,7 +255,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="general-photo.js.html">general-photo.js</a>, <a href="general-photo.js.html#line15">line 15</a>
+        <a href="activity-plan.js.html">activity-plan.js</a>, <a href="activity-plan.js.html#line10">line 10</a>
     </li></ul></dd>
     
 
@@ -273,13 +273,13 @@
 
         
             
-<h4 class="name" id="cultureEvent"><span class="type-signature"></span>cultureEvent<span class="type-signature"> :string</span></h4>
+<h4 class="name" id="activityKey"><span class="type-signature"></span>activityKey<span class="type-signature"> :<a href="global.html#ActivityKey">ActivityKey</a>|string</span></h4>
 
 
 
 
 <div class="description">
-    ID of the culture event that this photo is associated with, for convenience
+    Key of the Activity that this Activity Plan is a plan for
 </div>
 
 
@@ -288,6 +288,9 @@
     <ul>
         <li>
             
+<span class="param-type"><a href="global.html#ActivityKey">ActivityKey</a></span>
+|
+
 <span class="param-type">string</span>
 
 
@@ -332,7 +335,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="general-photo.js.html">general-photo.js</a>, <a href="general-photo.js.html#line22">line 22</a>
+        <a href="activity-plan.js.html">activity-plan.js</a>, <a href="activity-plan.js.html#line37">line 37</a>
     </li></ul></dd>
     
 
@@ -350,90 +353,13 @@
 
         
             
-<h4 class="name" id="filename"><span class="type-signature"></span>filename<span class="type-signature"> :string</span></h4>
+<h4 class="name" id="activityPlanNumber"><span class="type-signature"></span>activityPlanNumber<span class="type-signature"> :number</span></h4>
 
 
 
 
 <div class="description">
-    Filename of photo (no path, but does include extension)
-</div>
-
-
-
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">string</span>
-
-
-        </li>
-    </ul>
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-default">Default Value:</dt>
-    <dd class="tag-default"><ul class="dummy">
-            <li>''</li>
-        </ul></dd>
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="general-photo.js.html">general-photo.js</a>, <a href="general-photo.js.html#line36">line 36</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-        
-            
-<h4 class="name" id="startTime"><span class="type-signature"></span>startTime<span class="type-signature"> :number</span></h4>
-
-
-
-
-<div class="description">
-    Time (in seconds with decimals) from the beginning of the GeneralRecording, when this photo was taken
+    Number of this Activity Plan.  This number is unique for all users on a desktop installation.
 </div>
 
 
@@ -477,16 +403,310 @@
     
 
     
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="activity-plan.js.html">activity-plan.js</a>, <a href="activity-plan.js.html#line16">line 16</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="activityPlanTitle"><span class="type-signature"></span>activityPlanTitle<span class="type-signature"> :string</span></h4>
+
+
+
+
+<div class="description">
+    Title of the Activity Plan
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">string</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
     <dt class="tag-default">Default Value:</dt>
     <dd class="tag-default"><ul class="dummy">
-            <li>0</li>
+            <li>''</li>
         </ul></dd>
     
 
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="general-photo.js.html">general-photo.js</a>, <a href="general-photo.js.html#line29">line 29</a>
+        <a href="activity-plan.js.html">activity-plan.js</a>, <a href="activity-plan.js.html#line23">line 23</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="nextTaskIndex"><span class="type-signature"></span>nextTaskIndex<span class="type-signature"> :number</span></h4>
+
+
+
+
+<div class="description">
+    index into this Activity Plan's 'tasks' array of the next task waiting to be done
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">number</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="activity-plan.js.html">activity-plan.js</a>, <a href="activity-plan.js.html#line50">line 50</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="notes"><span class="type-signature"></span>notes<span class="type-signature"> :string</span></h4>
+
+
+
+
+<div class="description">
+    Notes for this Activity Plan
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">string</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-default">Default Value:</dt>
+    <dd class="tag-default"><ul class="dummy">
+            <li>''</li>
+        </ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="activity-plan.js.html">activity-plan.js</a>, <a href="activity-plan.js.html#line30">line 30</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="tasks"><span class="type-signature"></span>tasks<span class="type-signature"> :Array</span></h4>
+
+
+
+
+<div class="description">
+    The sequence of steps to follow to complete this Activity Plan.  Initially, these tasks will be created from
+the Activity corresponding to activityKey.  The user may add, delete, or edit this list of tasks for this Activity Plan.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Array</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="activity-plan.js.html">activity-plan.js</a>, <a href="activity-plan.js.html#line44">line 44</a>
     </li></ul></dd>
     
 
@@ -514,7 +734,7 @@
     
 
     
-    <h4 class="name" id="set"><span class="type-signature"></span>set<span class="signature">(data)</span><span class="type-signature"> &rarr; {<a href="GeneralPhoto.html">GeneralPhoto</a>}</span></h4>
+    <h4 class="name" id="set"><span class="type-signature"></span>set<span class="signature">(data)</span><span class="type-signature"> &rarr; {<a href="ActivityPlan.html">ActivityPlan</a>}</span></h4>
     
 
     
@@ -522,7 +742,7 @@
 
 
 <div class="description">
-    Creates an updated GeneralPhoto object
+    Creates an updated ActivityPlan object
 </div>
 
 
@@ -615,7 +835,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="general-photo.js.html">general-photo.js</a>, <a href="general-photo.js.html#line53">line 53</a>
+        <a href="activity-plan.js.html">activity-plan.js</a>, <a href="activity-plan.js.html#line67">line 67</a>
     </li></ul></dd>
     
 
@@ -651,7 +871,7 @@
     </dt>
     <dd>
         
-<span class="param-type"><a href="GeneralPhoto.html">GeneralPhoto</a></span>
+<span class="param-type"><a href="ActivityPlan.html">ActivityPlan</a></span>
 
 
     </dd>

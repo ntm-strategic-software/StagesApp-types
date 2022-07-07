@@ -30,6 +30,38 @@ const AdvancedFilterType = {
 };
 
 /**
+ * Enum for Activities
+ * @readonly
+ * @enum {string}
+ */
+const ActivityKey = {
+  // Community Experience Activities
+  GetAcquainted: 'GetAcquainted',
+  ExperienceCultureEvents: 'ExperienceCultureEvents',
+
+  // BASIC LEARNING ACTIVITIES
+  // Listen and Do Activities
+  ListenAndDoSilent: 'ListenAndDoSilent',
+  ListenDoAndSpeak: 'ListenDoAndSpeak',
+
+  // Focused Content Activities
+  PracticeDifficultGrammarFeatures: 'PracticeDifficultGrammarFeatures',
+
+
+
+  ListenModelCompare: 'ListenModelCompare',
+  RecordClarifyExpand: 'RecordClarifyExpand',
+  InteractAboutScene: 'InteractAboutScene',
+};
+
+const PendingFileType = {
+  GeneralRecorder: 'GeneralRecorder',
+  DualRecorder: 'DualRecorder',
+  QuickPhoto: 'QuickPhoto',
+  VoiceNote: 'VoiceNote',
+};
+
+/**
  * Enum for table names
  *
  * NOTE:  all tables include properties createdAt and updatedAt, which are ISO date strings (e.g., '2022-06-20T15:50:40.055Z')
@@ -57,6 +89,8 @@ const TableNames = {
   PENDING_INVESTIGATIONS: 'PendingInvestigations',
   OBSERVATIONS: 'Observations',
   TAGS: 'Tags',
+  ACTIVITY_PLANS: 'ActivityPlans',
+  PENDING_MEDIA: 'PendingMedia',
 };
 
 /**
@@ -77,11 +111,14 @@ const mobileTablesToSendToDesktop = [
   TableNames.SEARCH_WORDS,
   TableNames.DRE,
   TableNames.PLAYLIST_ITEMS,
+  TableNames.ACTIVITY_PLANS,
 ];
 
 module.exports.CLAStage = CLAStage;
 module.exports.ClaFileType = ClaFileType;
 module.exports.AdvancedFilterType = AdvancedFilterType;
+module.exports.ActivityKey = ActivityKey;
+module.exports.PendingFileType = PendingFileType;
 module.exports.TableNames = TableNames;
 module.exports.mobileTablesToSendToDesktop = mobileTablesToSendToDesktop;
 

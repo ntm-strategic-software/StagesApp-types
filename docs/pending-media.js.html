@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: search-word.js</title>
+    <title>JSDoc: Source: pending-media.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: search-word.js</h1>
+    <h1 class="page-title">Source: pending-media.js</h1>
 
     
 
@@ -27,26 +27,40 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/**
- * Class representing a search word, which is a word or phrase the user enters and links to something they want to find
- * by using that word or phrase
+ * Class representing an item of type PendingFileType.  This is a file created on Mobile but not through a Task, so the file is not linked to an ActivityPlan.
+ * I.e., a quick photo, a voice note, or a CE or DRE created by the user going straight to the recorder instead of through a Task.
  */
-class SearchWord {
-
+class PendingMedia {
   /**
-   * Unique ID for the search word
+   * Unique ID for the PendingMedia
    * @type {string}
    * @default ''
    */
   _id = '';
 
   /**
-   * Text of the search word
-   * @type {string}
+   * Type of Pending Media
+   * @type {PendingFileType|string}
+   * @default ''
    */
-  word = '';
+  fileType = '';
 
   /**
-   * Creates a SearchWord object
+   * Title of the PendingMedia file.  Empty string for CEs and DREs:  we get their titles from the CE or DRE record itself.
+   * @type {string}
+   * @default ''
+   */
+  title = '';
+
+  /**
+   * Filename of this Pending Media (no path, but does include extension).  Empty string for CEs and DREs.
+   * @type {string}
+   * @default ''
+   */
+  filename = '';
+
+  /**
+   * Constructs an PendingMedia object
    * @param {Object} data
    */
   constructor(data = {}) {
@@ -56,12 +70,12 @@ class SearchWord {
   }
 
   /**
-   * Creates an updated SearchWord object
+   * Creates an updated PendingMedia object
    * @param {Object} data
-   * @returns {SearchWord}
+   * @returns {PendingMedia}
    */
   set(data) {
-    return new SearchWord({
+    return new PendingMedia({
       ...this,
       ...data,
     });
@@ -69,7 +83,7 @@ class SearchWord {
 
 }
 
-module.exports = SearchWord;
+module.exports = PendingMedia;
 </code></pre>
         </article>
     </section>
