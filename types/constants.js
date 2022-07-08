@@ -1,4 +1,48 @@
 /**
+ * Enum of TaskBoxes
+ * @readonly
+ * @enum {string}
+ */
+const TaskBox = {
+  PLAN: 'PLAN',
+  PROCESS: 'PROCESS',
+  COMMUNITY: 'COMMUNITY',
+  HELPER: 'HELPER',
+  PLAYlIST: 'PLAYLIST',
+};
+
+/**
+ * Enum of Draggable type
+ * @readonly
+ * @enum {string}
+ */const Draggable = {
+  PI_DRAGGABLE: 'PI_DRAGGABLE', // Pending Investigation
+  PHOTO_DRAGGABLE: 'PHOTO_DRAGGABLE',
+  CE_DRAGGABLE: 'CE_DRAGGABLE',
+  DRE_DRAGGABLE: 'DRE_DRAGGABLE',
+  NOT_DRAGGABLE: 'NOT_DRAGGABLE', // Dragging not allowed
+};
+
+/**
+ * Enum of recorder types
+ * @readonly
+ * @enum {string}
+ */
+const RecorderType = {
+  GENERAL_RECORDER: 'GENERAL_RECORDER',
+  DUAL_RECORDER: 'DUAL_RECORDER',
+};
+
+/**
+ * Enum of player types
+ * @readonly
+ * @enum {string}
+ */
+const PlayerType = {
+  GENERAL_RECORDING_PLAYER: 'GENERAL_RECORDING_PLAYER',
+};
+
+/**
  * Enum for the CLA Stage that the user is in
  * @readonly
  * @enum {string}
@@ -15,7 +59,7 @@ const CLAStage = {
  * @enum {string}
  */
 const ClaFileType = {
-  CultureEvent: 'CultureEvent',
+  CULTURE_EVENT: 'CULTURE_EVENT',
   DRE: 'DRE',
 };
 
@@ -36,29 +80,29 @@ const AdvancedFilterType = {
  */
 const ActivityKey = {
   // Community Experience Activities
-  GetAcquainted: 'GetAcquainted',
-  ExperienceCultureEvents: 'ExperienceCultureEvents',
+  GET_ACQUAINTED: 'GET_ACQUAINTED',
+  EXPERIENCE_CULTURE_EVENTS: 'EXPERIENCE_CULTURE_EVENTS',
 
   // BASIC LEARNING ACTIVITIES
   // Listen and Do Activities
-  ListenAndDoSilent: 'ListenAndDoSilent',
-  ListenDoAndSpeak: 'ListenDoAndSpeak',
+  LISTEN_AND_DO_SILENT: 'LISTEN_AND_DO_SILENT',
+  LISTEN_DO_AND_SPEAK: 'LISTEN_DO_AND_SPEAK',
 
   // Focused Content Activities
-  PracticeDifficultGrammarFeatures: 'PracticeDifficultGrammarFeatures',
+  PRACTICE_DIFFICULT_GRAMMAR_FEATURES: 'PRACTICE_DIFFICULT_GRAMMAR_FEATURES',
 
 
 
-  ListenModelCompare: 'ListenModelCompare',
-  RecordClarifyExpand: 'RecordClarifyExpand',
-  InteractAboutScene: 'InteractAboutScene',
+  LISTEN_MODEL_COMPARE: 'LISTEN_MODEL_COMPARE',
+  RECORD_CLARIFY_EXPAND: 'RECORD_CLARIFY_EXPAND',
+  INTERACT_ABOUT_SCENE: 'INTERACT_ABOUT_SCENE',
 };
 
 const PendingFileType = {
-  GeneralRecorder: 'GeneralRecorder',
-  DualRecorder: 'DualRecorder',
-  QuickPhoto: 'QuickPhoto',
-  VoiceNote: 'VoiceNote',
+  GENERAL_RECORDER: 'GENERAL_RECORDER',
+  DUAL_RECORDER: 'DUAL_RECORDER',
+  QUICK_PHOTO: 'QUICK_PHOTO',
+  VOICE_NOTE: 'VOICE_NOTE',
 };
 
 /**
@@ -116,6 +160,10 @@ const mobileTablesToSendToDesktop = [
   TableNames.TASK_BOX_SORT_ORDER,
 ];
 
+module.exports.TaskBox = TaskBox;
+module.exports.Draggable = Draggable;
+module.exports.RecorderType = RecorderType;
+module.exports.PlayerType = PlayerType;
 module.exports.CLAStage = CLAStage;
 module.exports.ClaFileType = ClaFileType;
 module.exports.AdvancedFilterType = AdvancedFilterType;
