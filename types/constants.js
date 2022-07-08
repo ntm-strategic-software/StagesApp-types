@@ -91,6 +91,7 @@ const TableNames = {
   TAGS: 'Tags',
   ACTIVITY_PLANS: 'ActivityPlans',
   PENDING_MEDIA: 'PendingMedia',
+  TASK_BOX_SORT_ORDER: 'TaskBoxSortOrder',
 };
 
 /**
@@ -112,6 +113,7 @@ const mobileTablesToSendToDesktop = [
   TableNames.DRE,
   TableNames.PLAYLIST_ITEMS,
   TableNames.ACTIVITY_PLANS,
+  TableNames.TASK_BOX_SORT_ORDER,
 ];
 
 module.exports.CLAStage = CLAStage;
