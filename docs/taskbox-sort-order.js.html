@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: search-word.js</title>
+    <title>JSDoc: Source: taskbox-sort-order.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: search-word.js</h1>
+    <h1 class="page-title">Source: taskbox-sort-order.js</h1>
 
     
 
@@ -27,26 +27,26 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/**
- * Class representing a search word, which is a word or phrase the user enters and links to something they want to find
- * by using that word or phrase
+ * Class representing the order tasks should be displayed in a TaskBox
  */
-class SearchWord {
-
+class TaskBoxSortOrder {
   /**
-   * Unique ID for the search word
+   * Key of the taskBox.  E.g, 'Plan', 'Process', 'Community', or 'Helper'.  (Playlist sort order is handled differently.)
    * @type {string}
    * @default ''
    */
-  _id = '';
+  taskBoxKey = '';
 
   /**
-   * Text of the search word
-   * @type {string}
+   * Array of IDs of ActivityPlans, in the sorted order.
+   * For each ActivityPlanId, show that ActivityPlan's next task (the task indicated by activityPlan.nextTaskIndex).
+   * @type {string[]}
+   * @default []
    */
-  word = '';
+  activityPlanIds = [];
 
   /**
-   * Creates a SearchWord object
+   * Creates a TaskBoxSortOrder object
    * @param {Object} data
    */
   constructor(data = {}) {
@@ -56,12 +56,12 @@ class SearchWord {
   }
 
   /**
-   * Creates an updated SearchWord object
+   * Creates an updated TaskBoxSortOrder object
    * @param {Object} data
-   * @returns {SearchWord}
+   * @returns {TaskBoxSortOrder}
    */
   set(data) {
-    return new SearchWord({
+    return new TaskBoxSortOrder({
       ...this,
       ...data,
     });
@@ -69,7 +69,7 @@ class SearchWord {
 
 }
 
-module.exports = SearchWord;
+module.exports = TaskBoxSortOrder;
 </code></pre>
         </article>
     </section>
