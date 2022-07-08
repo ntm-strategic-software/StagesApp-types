@@ -4,7 +4,7 @@ const { Draggable } = require('./constants');
  * This represents a Task in an Activity or ActivityPlan.  We do not have a Tasks table.  Instead, a table (or
  * other data structure) has an array of Tasks.
  */
-export class Task {
+class Task {
 
   /**
    * @type {string}
