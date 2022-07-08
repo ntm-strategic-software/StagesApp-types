@@ -19,3 +19,4 @@ module.exports.Tag = require('./types/tag');
 module.exports.ActivityPlan = require('./types/activity-plan');
 module.exports.PendingMedia = require('./types/pending-media');
 module.exports.TaskBoxSortOrder = require('./types/taskbox-sort-order');
+module.exports.Task = require('./types/task');
