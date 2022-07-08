@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: person.js</title>
+    <title>JSDoc: Source: task.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: person.js</h1>
+    <h1 class="page-title">Source: task.js</h1>
 
     
 
@@ -27,97 +27,75 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/**
- * Class representing a Person.  This has no connection to the Users table.
+ * This represents a Task in an Activity or ActivityPlan.  We do not have a Tasks table.  Instead, a table (or
+ * other data structure) has an array of Tasks.
  */
-class Person {
+import { Draggable } from './constants';
+
+export class Task {
 
   /**
-   * Unique ID for a person
    * @type {string}
-   * @default ''
    */
-  _id = '';
+  taskTitle = '';
 
   /**
-   * Person's common name
+   * Array of strings, to be displayed on separate lines
+   * @type {string[]}
+   */
+  taskNotes = [];
+
+  /**
+   * The taskBox this Task appears in
+   * @type {TaskBox|string}
+   */
+  taskBox = '';
+
+  /**
+   * array of TaskBox keys the user is allowed to change this task to
+   * @type {TaskBox[]}
+   */
+  taskBoxOptions = [];
+
+  /**
+   * types of items that can be dropped on this task
+   * @type {Draggable[]}
+   */
+  droppableTypes = [Draggable.PI_DRAGGABLE];
+
+  /**
+   * filenames (no path, but with extension) of photos associated with this task (user drags photo from pending media to the task).
+   * Photo files will be copied to media/photos when user adds them to the task.
+   * @type {string[]}
+   */
+  taskPhotos = [];
+
+  /**
+   * CLA File (CE/DRE) associated with this task (user drags CE/DRE from pending to the task).
    * @type {string}
-   * @default ''
    */
-  name = '';
+  taskClaFileId = '';
 
   /**
-   * Person's full name
-   * @type {string}
-   * @default ''
+   * type of record button to show on Mobile task detail screen, to launch the appropriate recorder.
+   * If recorderButtonType is empty string, do not show a record button.
+   * @type {RecorderType|string}
    */
-  fullName = '';
+  recorderButtonType = '';
 
   /**
-   * Description of the person
-   * @type {string}
-   * @default ''
+   * button to show on the Mobile task detail screen, to launch the appropriate player.
+   * If playerButtonType is empty string, do not show a play button.
+   * @type {PlayerType|string}
    */
-  description = '';
+  playerButtonType = '';
 
-  /**
-   * Person's birthday in format MM/DD
-   * @type {string}
-   * @default ''
-   */
-  birthday = '';
-
-  /**
-   * Person's sex
-   * @type {string}
-   * @default ''
-   */
-  sex = '';
-
-  /**
-   * Note about the person
-   * @type {string}
-   * @default ''
-   */
-  note = '';
-
-  /**
-   * ISO date (e.g., '2022-06-20T15:50:40.055Z'), when user on Mobile last edited this person or added this person to a CultureEvent
-   * @type {string}
-   * @default ''
-   */
-  dateLastUsedOnMobile = '';
-
-  /**
-   * True if the person is dead
-   * @type {boolean}
-   * @default ''
-   */
-  deceased = false;
-
-  /**
-   * Filename of a picture of the person (no path, but does include extension)
-   * @type {string}
-   * @default ''
-   */
-  photoFilename = '';
-
-  /**
-   * Creates a Person object
-   * @param {Object} data
-   */
   constructor(data = {}) {
-    for(const key of Object.keys(data)) {
-      this[key] = data[key];
-    }
+    Object.assign(this, data);
   }
 
-  /**
-   * Creates an updated Person object
-   * @param {Object} data
-   * @returns {Person}
-   */
   set(data) {
-    return new Person({
+    return new Task({
       ...this,
       ...data,
     });
@@ -125,7 +103,7 @@ class Person {
 
 }
 
-module.exports = Person;
+module.exports = Task;
 </code></pre>
         </article>
     </section>

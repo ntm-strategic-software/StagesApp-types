@@ -27,6 +27,50 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/**
+ * Enum of TaskBoxes
+ * @readonly
+ * @enum {string}
+ */
+const TaskBox = {
+  PLAN: 'PLAN',
+  PROCESS: 'PROCESS',
+  COMMUNITY: 'COMMUNITY',
+  HELPER: 'HELPER',
+  PLAYlIST: 'PLAYLIST',
+};
+
+/**
+ * Enum of Draggable type
+ * @readonly
+ * @enum {string}
+ */const Draggable = {
+  PI_DRAGGABLE: 'PI_DRAGGABLE', // Pending Investigation
+  PHOTO_DRAGGABLE: 'PHOTO_DRAGGABLE',
+  CE_DRAGGABLE: 'CE_DRAGGABLE',
+  DRE_DRAGGABLE: 'DRE_DRAGGABLE',
+  NOT_DRAGGABLE: 'NOT_DRAGGABLE', // Dragging not allowed
+};
+
+/**
+ * Enum of recorder types
+ * @readonly
+ * @enum {string}
+ */
+const RecorderType = {
+  GENERAL_RECORDER: 'GENERAL_RECORDER',
+  DUAL_RECORDER: 'DUAL_RECORDER',
+};
+
+/**
+ * Enum of player types
+ * @readonly
+ * @enum {string}
+ */
+const PlayerType = {
+  GENERAL_RECORDING_PLAYER: 'GENERAL_RECORDING_PLAYER',
+};
+
+/**
  * Enum for the CLA Stage that the user is in
  * @readonly
  * @enum {string}
@@ -43,7 +87,7 @@ const CLAStage = {
  * @enum {string}
  */
 const ClaFileType = {
-  CultureEvent: 'CultureEvent',
+  CULTURE_EVENT: 'CULTURE_EVENT',
   DRE: 'DRE',
 };
 
@@ -64,29 +108,29 @@ const AdvancedFilterType = {
  */
 const ActivityKey = {
   // Community Experience Activities
-  GetAcquainted: 'GetAcquainted',
-  ExperienceCultureEvents: 'ExperienceCultureEvents',
+  GET_ACQUAINTED: 'GET_ACQUAINTED',
+  EXPERIENCE_CULTURE_EVENTS: 'EXPERIENCE_CULTURE_EVENTS',
 
   // BASIC LEARNING ACTIVITIES
   // Listen and Do Activities
-  ListenAndDoSilent: 'ListenAndDoSilent',
-  ListenDoAndSpeak: 'ListenDoAndSpeak',
+  LISTEN_AND_DO_SILENT: 'LISTEN_AND_DO_SILENT',
+  LISTEN_DO_AND_SPEAK: 'LISTEN_DO_AND_SPEAK',
 
   // Focused Content Activities
-  PracticeDifficultGrammarFeatures: 'PracticeDifficultGrammarFeatures',
+  PRACTICE_DIFFICULT_GRAMMAR_FEATURES: 'PRACTICE_DIFFICULT_GRAMMAR_FEATURES',
 
 
 
-  ListenModelCompare: 'ListenModelCompare',
-  RecordClarifyExpand: 'RecordClarifyExpand',
-  InteractAboutScene: 'InteractAboutScene',
+  LISTEN_MODEL_COMPARE: 'LISTEN_MODEL_COMPARE',
+  RECORD_CLARIFY_EXPAND: 'RECORD_CLARIFY_EXPAND',
+  INTERACT_ABOUT_SCENE: 'INTERACT_ABOUT_SCENE',
 };
 
 const PendingFileType = {
-  GeneralRecorder: 'GeneralRecorder',
-  DualRecorder: 'DualRecorder',
-  QuickPhoto: 'QuickPhoto',
-  VoiceNote: 'VoiceNote',
+  GENERAL_RECORDER: 'GENERAL_RECORDER',
+  DUAL_RECORDER: 'DUAL_RECORDER',
+  QUICK_PHOTO: 'QUICK_PHOTO',
+  VOICE_NOTE: 'VOICE_NOTE',
 };
 
 /**
@@ -144,6 +188,10 @@ const mobileTablesToSendToDesktop = [
   TableNames.TASK_BOX_SORT_ORDER,
 ];
 
+module.exports.TaskBox = TaskBox;
+module.exports.Draggable = Draggable;
+module.exports.RecorderType = RecorderType;
+module.exports.PlayerType = PlayerType;
 module.exports.CLAStage = CLAStage;
 module.exports.ClaFileType = ClaFileType;
 module.exports.AdvancedFilterType = AdvancedFilterType;
@@ -184,13 +232,13 @@ module.exports.socketEndpoints = {
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="ActivityPlan.html">ActivityPlan</a></li><li><a href="AdvancedFilter.html">AdvancedFilter</a></li><li><a href="CLAFile.html">CLAFile</a></li><li><a href="CultureEvent.html">CultureEvent</a></li><li><a href="DeletedItem.html">DeletedItem</a></li><li><a href="DRE.html">DRE</a></li><li><a href="GeneralPhoto.html">GeneralPhoto</a></li><li><a href="GeneralQuestion.html">GeneralQuestion</a></li><li><a href="GeneralRecording.html">GeneralRecording</a></li><li><a href="Marker.html">Marker</a></li><li><a href="Observation.html">Observation</a></li><li><a href="PendingInvestigation.html">PendingInvestigation</a></li><li><a href="PendingMedia.html">PendingMedia</a></li><li><a href="Person.html">Person</a></li><li><a href="PlaylistItem.html">PlaylistItem</a></li><li><a href="SALocation.html">SALocation</a></li><li><a href="SearchWord.html">SearchWord</a></li><li><a href="Tag.html">Tag</a></li><li><a href="TaskBoxSortOrder.html">TaskBoxSortOrder</a></li><li><a href="Transcription.html">Transcription</a></li><li><a href="User.html">User</a></li></ul><h3>Global</h3><ul><li><a href="global.html#ActivityKey">ActivityKey</a></li><li><a href="global.html#AdvancedFilterType">AdvancedFilterType</a></li><li><a href="global.html#ClaFileType">ClaFileType</a></li><li><a href="global.html#CLAStage">CLAStage</a></li><li><a href="global.html#DataTransferType">DataTransferType</a></li><li><a href="global.html#mobileTablesToSendToDesktop">mobileTablesToSendToDesktop</a></li><li><a href="global.html#TableNames">TableNames</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="ActivityPlan.html">ActivityPlan</a></li><li><a href="AdvancedFilter.html">AdvancedFilter</a></li><li><a href="CLAFile.html">CLAFile</a></li><li><a href="CultureEvent.html">CultureEvent</a></li><li><a href="DeletedItem.html">DeletedItem</a></li><li><a href="DRE.html">DRE</a></li><li><a href="GeneralPhoto.html">GeneralPhoto</a></li><li><a href="GeneralQuestion.html">GeneralQuestion</a></li><li><a href="GeneralRecording.html">GeneralRecording</a></li><li><a href="Marker.html">Marker</a></li><li><a href="Observation.html">Observation</a></li><li><a href="PendingInvestigation.html">PendingInvestigation</a></li><li><a href="PendingMedia.html">PendingMedia</a></li><li><a href="Person.html">Person</a></li><li><a href="PlaylistItem.html">PlaylistItem</a></li><li><a href="SALocation.html">SALocation</a></li><li><a href="SearchWord.html">SearchWord</a></li><li><a href="Tag.html">Tag</a></li><li><a href="TaskBoxSortOrder.html">TaskBoxSortOrder</a></li><li><a href="Transcription.html">Transcription</a></li><li><a href="User.html">User</a></li></ul><h3>Global</h3><ul><li><a href="global.html#ActivityKey">ActivityKey</a></li><li><a href="global.html#AdvancedFilterType">AdvancedFilterType</a></li><li><a href="global.html#ClaFileType">ClaFileType</a></li><li><a href="global.html#CLAStage">CLAStage</a></li><li><a href="global.html#DataTransferType">DataTransferType</a></li><li><a href="global.html#Draggable">Draggable</a></li><li><a href="global.html#mobileTablesToSendToDesktop">mobileTablesToSendToDesktop</a></li><li><a href="global.html#PlayerType">PlayerType</a></li><li><a href="global.html#RecorderType">RecorderType</a></li><li><a href="global.html#TableNames">TableNames</a></li><li><a href="global.html#TaskBox">TaskBox</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.10</a> on Thu Jul 07 2022 23:55:10 GMT-0400 (Eastern Daylight Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.10</a> on Fri Jul 08 2022 16:18:17 GMT-0400 (Eastern Daylight Time)
 </footer>
 
 <script> prettyPrint(); </script>
