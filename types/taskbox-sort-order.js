@@ -9,23 +9,10 @@
  * This works because an activity plan can never have more than one next task, so an activity plan can only
  * exist once in this table.  When the final task for an activity plan is completed, the activity plan id is
  * removed from this table.
+ *
+ * TaskBox names are all caps to match the TaskBox enum.
  */
 class TaskBoxSortOrder {
-  // /**
-  //  * Key of the taskBox.  E.g, 'Plan', 'Process', 'Community', or 'Helper'.  (Playlist sort order is handled differently.)
-  //  * @type {string}
-  //  * @default ''
-  //  */
-  // taskBoxKey = '';
-  //
-  // /**
-  //  * Array of IDs of ActivityPlans, in the sorted order.
-  //  * For each ActivityPlanId, show that ActivityPlan's next task (the task indicated by activityPlan.nextTaskIndex).
-  //  * @type {string[]}
-  //  * @default []
-  //  */
-  // activityPlanIds = [];
-
   /**
    * Unique ID.  There will be only one record, but I include the _id for convenience when using methods that require an _id.
    * @type {string}
@@ -39,7 +26,7 @@ class TaskBoxSortOrder {
    * @type {string[]}
    * @default []
    */
-  Plan = [];
+  PLAN = [];
 
   /**
    * Process sort order:  array of IDs of ActivityPlans, in the sorted order.
@@ -47,7 +34,7 @@ class TaskBoxSortOrder {
    * @type {string[]}
    * @default []
    */
-  Process = [];
+  PROCESS = [];
 
   /**
    * Community sort order:  array of IDs of ActivityPlans, in the sorted order.
@@ -55,7 +42,7 @@ class TaskBoxSortOrder {
    * @type {string[]}
    * @default []
    */
-  Community = [];
+  COMMUNITY = [];
 
   /**
    * Helper sort order:  array of IDs of ActivityPlans, in the sorted order.
@@ -63,7 +50,7 @@ class TaskBoxSortOrder {
    * @type {string[]}
    * @default []
    */
-  Helper = [];
+  HELPER = [];
 
   /**
    * Creates a TaskBoxSortOrder object
