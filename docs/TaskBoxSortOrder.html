@@ -30,7 +30,18 @@
     
         <h2><span class="attribs"><span class="type-signature"></span></span>TaskBoxSortOrder<span class="signature">(data)</span><span class="type-signature"></span></h2>
         
-            <div class="class-description">Class representing the order tasks should be displayed in all TaskBoxes.  Since completing a Task causesthe associated ActivityPlan._id to be removed from one TaskBox and added to another TaskBox, it seems bestto keep all TaskBoxes together in a single doc, to prevent TaskBoxes from getting out of sync.So, the table represented by this class will have only one row.Each Task Box has an array of activityPlanId's, in the order to display the activityPlan's next task.This works because an activity plan can never have more than one next task, so an activity plan can onlyexist once in this table.  When the final task for an activity plan is completed, the activity plan id isremoved from this table.</div>
+            <div class="class-description">Class representing the order tasks should be displayed in all TaskBoxes.  Since completing a Task causes
+the associated ActivityPlan._id to be removed from one TaskBox and added to another TaskBox, it seems best
+to keep all TaskBoxes together in a single doc, to prevent TaskBoxes from getting out of sync.
+
+So, the table represented by this class will have only one row.
+
+Each Task Box has an array of activityPlanId's, in the order to display the activityPlan's next task.
+This works because an activity plan can never have more than one next task, so an activity plan can only
+exist once in this table.  When the final task for an activity plan is completed, the activity plan id is
+removed from this table.
+
+TaskBox names are all caps to match the TaskBox enum.</div>
         
     
 </header>
@@ -146,7 +157,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="taskbox-sort-order.js.html">taskbox-sort-order.js</a>, <a href="taskbox-sort-order.js.html#line13">line 13</a>
+        <a href="taskbox-sort-order.js.html">taskbox-sort-order.js</a>, <a href="taskbox-sort-order.js.html#line15">line 15</a>
     </li></ul></dd>
     
 
@@ -255,7 +266,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="taskbox-sort-order.js.html">taskbox-sort-order.js</a>, <a href="taskbox-sort-order.js.html#line34">line 34</a>
+        <a href="taskbox-sort-order.js.html">taskbox-sort-order.js</a>, <a href="taskbox-sort-order.js.html#line21">line 21</a>
     </li></ul></dd>
     
 
@@ -273,13 +284,14 @@
 
         
             
-<h4 class="name" id="Community"><span class="type-signature"></span>Community<span class="type-signature"> :Array.&lt;string></span></h4>
+<h4 class="name" id="COMMUNITY"><span class="type-signature"></span>COMMUNITY<span class="type-signature"> :Array.&lt;string></span></h4>
 
 
 
 
 <div class="description">
-    Community sort order:  array of IDs of ActivityPlans, in the sorted order.For each ActivityPlanId, show that ActivityPlan's next task (the task indicated by activityPlan.nextTaskIndex).
+    Community sort order:  array of IDs of ActivityPlans, in the sorted order.
+For each ActivityPlanId, show that ActivityPlan's next task (the task indicated by activityPlan.nextTaskIndex).
 </div>
 
 
@@ -332,7 +344,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="taskbox-sort-order.js.html">taskbox-sort-order.js</a>, <a href="taskbox-sort-order.js.html#line58">line 58</a>
+        <a href="taskbox-sort-order.js.html">taskbox-sort-order.js</a>, <a href="taskbox-sort-order.js.html#line45">line 45</a>
     </li></ul></dd>
     
 
@@ -350,13 +362,14 @@
 
         
             
-<h4 class="name" id="Helper"><span class="type-signature"></span>Helper<span class="type-signature"> :Array.&lt;string></span></h4>
+<h4 class="name" id="HELPER"><span class="type-signature"></span>HELPER<span class="type-signature"> :Array.&lt;string></span></h4>
 
 
 
 
 <div class="description">
-    Helper sort order:  array of IDs of ActivityPlans, in the sorted order.For each ActivityPlanId, show that ActivityPlan's next task (the task indicated by activityPlan.nextTaskIndex).
+    Helper sort order:  array of IDs of ActivityPlans, in the sorted order.
+For each ActivityPlanId, show that ActivityPlan's next task (the task indicated by activityPlan.nextTaskIndex).
 </div>
 
 
@@ -409,7 +422,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="taskbox-sort-order.js.html">taskbox-sort-order.js</a>, <a href="taskbox-sort-order.js.html#line66">line 66</a>
+        <a href="taskbox-sort-order.js.html">taskbox-sort-order.js</a>, <a href="taskbox-sort-order.js.html#line53">line 53</a>
     </li></ul></dd>
     
 
@@ -427,13 +440,14 @@
 
         
             
-<h4 class="name" id="Plan"><span class="type-signature"></span>Plan<span class="type-signature"> :Array.&lt;string></span></h4>
+<h4 class="name" id="PLAN"><span class="type-signature"></span>PLAN<span class="type-signature"> :Array.&lt;string></span></h4>
 
 
 
 
 <div class="description">
-    Plan sort order:  array of IDs of ActivityPlans, in the sorted order.For each ActivityPlanId, show that ActivityPlan's next task (the task indicated by activityPlan.nextTaskIndex).
+    Plan sort order:  array of IDs of ActivityPlans, in the sorted order.
+For each ActivityPlanId, show that ActivityPlan's next task (the task indicated by activityPlan.nextTaskIndex).
 </div>
 
 
@@ -486,7 +500,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="taskbox-sort-order.js.html">taskbox-sort-order.js</a>, <a href="taskbox-sort-order.js.html#line42">line 42</a>
+        <a href="taskbox-sort-order.js.html">taskbox-sort-order.js</a>, <a href="taskbox-sort-order.js.html#line29">line 29</a>
     </li></ul></dd>
     
 
@@ -504,13 +518,14 @@
 
         
             
-<h4 class="name" id="Process"><span class="type-signature"></span>Process<span class="type-signature"> :Array.&lt;string></span></h4>
+<h4 class="name" id="PROCESS"><span class="type-signature"></span>PROCESS<span class="type-signature"> :Array.&lt;string></span></h4>
 
 
 
 
 <div class="description">
-    Process sort order:  array of IDs of ActivityPlans, in the sorted order.For each ActivityPlanId, show that ActivityPlan's next task (the task indicated by activityPlan.nextTaskIndex).
+    Process sort order:  array of IDs of ActivityPlans, in the sorted order.
+For each ActivityPlanId, show that ActivityPlan's next task (the task indicated by activityPlan.nextTaskIndex).
 </div>
 
 
@@ -563,7 +578,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="taskbox-sort-order.js.html">taskbox-sort-order.js</a>, <a href="taskbox-sort-order.js.html#line50">line 50</a>
+        <a href="taskbox-sort-order.js.html">taskbox-sort-order.js</a>, <a href="taskbox-sort-order.js.html#line37">line 37</a>
     </li></ul></dd>
     
 
@@ -692,7 +707,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="taskbox-sort-order.js.html">taskbox-sort-order.js</a>, <a href="taskbox-sort-order.js.html#line83">line 83</a>
+        <a href="taskbox-sort-order.js.html">taskbox-sort-order.js</a>, <a href="taskbox-sort-order.js.html#line70">line 70</a>
     </li></ul></dd>
     
 
@@ -762,7 +777,7 @@
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.10</a> on Fri Jul 08 2022 17:37:01 GMT-0400 (Eastern Daylight Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.10</a> on Fri Jul 08 2022 20:44:00 GMT-0400 (Eastern Daylight Time)
 </footer>
 
 <script> prettyPrint(); </script>
