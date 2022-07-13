@@ -75,7 +75,7 @@ class Person {
 
   /**
    * Creates a Person object
-   * @param {Object} data
+   * @param {Person|Object} data
    */
   constructor(data = {}) {
     for(const key of Object.keys(data)) {
@@ -85,7 +85,7 @@ class Person {
 
   /**
    * Creates an updated Person object
-   * @param {Object} data
+   * @param {Person|Object} data
    * @returns {Person}
    */
   set(data) {

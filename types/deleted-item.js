@@ -26,7 +26,7 @@ class DeletedItem {
 
   /**
    * Creates a DeletedItem object
-   * @param {Object} data
+   * @param {DeletedItem|Object} data
    */
   constructor(data = {}) {
     for(const key of Object.keys(data)) {
@@ -36,7 +36,7 @@ class DeletedItem {
 
   /**
    * Creates an updated DeletedItem object
-   * @param {Object} data
+   * @param {DeletedItem|Object} data
    * @returns {DeletedItem}
    */
   set(data) {

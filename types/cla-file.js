@@ -37,7 +37,7 @@ class CLAFile {
 
   /**
    * constructs a CLAFile instance
-   * @param {Object} data
+   * @param {CLAFile|Object} data
    * @param {number} data.fileNumber
    * @param {boolean} data.imported
    * @param {boolean} data.readOnly

@@ -79,7 +79,7 @@ class Transcription {
 
   /**
    * Constructs a Transcription object
-   * @param {Object} data
+   * @param {Transcription|Object} data
    */
   constructor(data = {}) {
     for(const key of Object.keys(data)) {
@@ -89,7 +89,7 @@ class Transcription {
 
   /**
    * Creates an updated Transcription object
-   * @param {Object} data
+   * @param {Transcription|Object} data
    * @returns {Transcription}
    */
   set(data) {

@@ -37,7 +37,7 @@ class GeneralPhoto {
 
   /**
    * Creates a GeneralPhoto object
-   * @param {Object} data
+   * @param {GeneralPhoto|Object} data
    */
   constructor(data = {}) {
     for(const key of Object.keys(data)) {
@@ -47,7 +47,7 @@ class GeneralPhoto {
 
   /**
    * Creates an updated GeneralPhoto object
-   * @param {Object} data
+   * @param {GeneralPhoto|Object} data
    * @returns {GeneralPhoto}
    */
   set(data = {}) {

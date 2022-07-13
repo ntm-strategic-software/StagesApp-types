@@ -40,7 +40,7 @@ class Observation {
 
   /**
    * Creates an Observation object
-   * @param {Object} data
+   * @param {Observation|Object} data
    */
   constructor(data = {}) {
     for(const key of Object.keys(data)) {
@@ -50,7 +50,7 @@ class Observation {
 
   /**
    * Creates an updated Observation object
-   * @param {Object} data
+   * @param {Observation|Object} data
    * @returns {Observation}
    */
   set(data = {}) {

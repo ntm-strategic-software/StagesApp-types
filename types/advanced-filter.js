@@ -33,7 +33,7 @@ class AdvancedFilter {
 
   /**
    * Constructs an AdvancedFilter object
-   * @param {Object} data
+   * @param {AdvancedFilter|Object} data
    */
   constructor(data = {}) {
     for(const key of Object.keys(data)) {
@@ -43,7 +43,7 @@ class AdvancedFilter {
 
   /**
    * Creates an updated AdvancedFilter object
-   * @param {Object} data
+   * @param {AdvancedFilter|Object} data
    * @returns {AdvancedFilter}
    */
   set(data) {

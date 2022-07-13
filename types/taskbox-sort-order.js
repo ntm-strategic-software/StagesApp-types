@@ -54,7 +54,7 @@ class TaskBoxSortOrder {
 
   /**
    * Creates a TaskBoxSortOrder object
-   * @param {Object} data
+   * @param {TaskBoxSortOrder|Object} data
    */
   constructor(data = {}) {
     for(const key of Object.keys(data)) {
@@ -64,7 +64,7 @@ class TaskBoxSortOrder {
 
   /**
    * Creates an updated TaskBoxSortOrder object
-   * @param {Object} data
+   * @param {TaskBoxSortOrder|Object} data
    * @returns {TaskBoxSortOrder}
    */
   set(data) {

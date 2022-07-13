@@ -62,10 +62,19 @@ class Task {
    */
   playerButtonType = '';
 
+  /**
+   * Creates a Task object
+   * @param {Task|Object} data
+   */
   constructor(data = {}) {
     Object.assign(this, data);
   }
 
+  /**
+   * Creates an updated Task object
+   * @param {Task|Object} data
+   * @returns {Task}
+   */
   set(data) {
     return new Task({
       ...this,

@@ -26,7 +26,7 @@ class PendingInvestigation {
 
   /**
    * Creates a PendingInvestigation object
-   * @param {Object} data
+   * @param {PendingInvestigation|Object} data
    */
   constructor(data = {}) {
     for(const key of Object.keys(data)) {
@@ -36,7 +36,7 @@ class PendingInvestigation {
 
   /**
    * Creates an updated PendingInvestigation object
-   * @param {Object} data
+   * @param {PendingInvestigation|Object} data
    * @returns {PendingInvestigation}
    */
   set(data = {}) {

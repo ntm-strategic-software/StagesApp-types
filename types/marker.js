@@ -43,7 +43,7 @@ class Marker {
 
   /**
    * Creates a Marker object
-   * @param {Object} data
+   * @param {Marker|Object} data
    */
   constructor(data = {}) {
     for(const key of Object.keys(data)) {
@@ -53,7 +53,7 @@ class Marker {
 
   /**
    * Creates an updated Marker object
-   * @param {Object} data
+   * @param {Marker|Object} data
    * @returns {Marker}
    */
   set(data) {

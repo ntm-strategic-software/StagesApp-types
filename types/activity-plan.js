@@ -51,7 +51,7 @@ class ActivityPlan {
 
   /**
    * Constructs an ActivityPlan object
-   * @param {Object} data
+   * @param {ActivityPlan|Object} data
    */
   constructor(data = {}) {
     for(const key of Object.keys(data)) {
@@ -61,7 +61,7 @@ class ActivityPlan {
 
   /**
    * Creates an updated ActivityPlan object
-   * @param {Object} data
+   * @param {ActivityPlan|Object} data
    * @returns {ActivityPlan}
    */
   set(data) {

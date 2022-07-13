@@ -56,7 +56,7 @@ class GeneralRecording {
 
   /**
    * Creates a GeneralRecording object
-   * @param {Object} data
+   * @param {GeneralRecording|Object} data
    */
   constructor(data = {}) {
     for(const key of Object.keys(data)) {
@@ -66,7 +66,7 @@ class GeneralRecording {
 
   /**
    * Creates an updated GeneralRecording object
-   * @param {Object} data
+   * @param {GeneralRecording|Object} data
    * @returns {GeneralRecording}
    */
   set(data) {

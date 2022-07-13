@@ -46,7 +46,7 @@ class GeneralQuestion {
 
   /**
    * Creates a GeneralQuestion object
-   * @param {Object} data
+   * @param {GeneralQuestion|Object} data
    */
   constructor(data = {}) {
     for(const key of Object.keys(data)) {
@@ -56,7 +56,7 @@ class GeneralQuestion {
 
   /**
    * Creates an updated GeneralQuestion object
-   * @param {Object} data
+   * @param {GeneralQuestion|Object} data
    * @returns {GeneralQuestion}
    */
   set(data = {}) {

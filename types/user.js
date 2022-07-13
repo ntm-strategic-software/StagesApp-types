@@ -60,7 +60,7 @@ class User {
 
   /**
    * Creates a user object
-   * @param {Object} data
+   * @param {User|Object} data
    */
   constructor(data = {}) {
     for(const key of Object.keys(data)) {
@@ -70,7 +70,7 @@ class User {
 
   /**
    * Creates an updated user object
-   * @param {Object} data
+   * @param {User|Object} data
    * @returns {User}
    */
   set(data) {

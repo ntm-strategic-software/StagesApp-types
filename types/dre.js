@@ -129,7 +129,7 @@ class DRE extends CLAFile {
 
   /**
    * Creates a DRE object
-   * @param {Object} data
+   * @param {DRE|Object} data
    */
   constructor(data = {}) {
     super(data);
@@ -140,7 +140,7 @@ class DRE extends CLAFile {
 
   /**
    * Creates an updated DRE object
-   * @param {Object} data
+   * @param {DRE|Object} data
    * @returns {DRE}
    */
   set(data = {}) {

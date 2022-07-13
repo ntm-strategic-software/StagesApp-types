@@ -15,7 +15,7 @@ class Tag {
 
   /**
    * Creates a Tag object
-   * @param {Object} data
+   * @param {Tag|Object} data
    */
   constructor(data = {}) {
     for(const key of Object.keys(data)) {
@@ -25,7 +25,7 @@ class Tag {
 
   /**
    * Creates an updated Tag object
-   * @param {Object} data
+   * @param {Tag|Object} data
    * @returns {Tag}
    */
   set(data) {

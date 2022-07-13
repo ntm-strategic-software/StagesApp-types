@@ -33,7 +33,7 @@ class SALocation {
 
   /**
    * Creates an SALocation object
-   * @param {Object} data
+   * @param {SALocation|Object} data
    */
   constructor(data = {}) {
     for(const key of Object.keys(data)) {
@@ -43,7 +43,7 @@ class SALocation {
 
   /**
    * Creates an updated SALocation object
-   * @param {Object} data
+   * @param {SALocation|Object} data
    * @returns {SALocation}
    */
   set(data) {

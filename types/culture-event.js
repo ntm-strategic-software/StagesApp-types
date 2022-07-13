@@ -118,7 +118,7 @@ class CultureEvent extends CLAFile {
 
   /**
    * Creates a CultureEvent object
-   * @param {Object} data
+   * @param {CultureEvent|Object} data
    */
   constructor(data = {}) {
     super(data);
@@ -129,7 +129,7 @@ class CultureEvent extends CLAFile {
 
   /**
    * Creates an updated CultureEvent object
-   * @param {Object} data
+   * @param {CultureEvent|Object} data
    * @returns {CultureEvent}
    */
   set(data = {}) {

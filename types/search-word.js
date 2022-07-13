@@ -19,7 +19,7 @@ class SearchWord {
 
   /**
    * Creates a SearchWord object
-   * @param {Object} data
+   * @param {SearchWord|Object} data
    */
   constructor(data = {}) {
     for(const key of Object.keys(data)) {
@@ -29,7 +29,7 @@ class SearchWord {
 
   /**
    * Creates an updated SearchWord object
-   * @param {Object} data
+   * @param {SearchWord|Object} data
    * @returns {SearchWord}
    */
   set(data) {

@@ -33,7 +33,7 @@ class PendingMedia {
 
   /**
    * Constructs an PendingMedia object
-   * @param {Object} data
+   * @param {PendingMedia|Object} data
    */
   constructor(data = {}) {
     for(const key of Object.keys(data)) {
@@ -43,7 +43,7 @@ class PendingMedia {
 
   /**
    * Creates an updated PendingMedia object
-   * @param {Object} data
+   * @param {PendingMedia|Object} data
    * @returns {PendingMedia}
    */
   set(data) {
