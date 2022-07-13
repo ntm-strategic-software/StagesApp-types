@@ -31,6 +31,7 @@ const TaskBox = {
 const RecorderType = {
   GENERAL_RECORDER: 'GENERAL_RECORDER',
   DUAL_RECORDER: 'DUAL_RECORDER',
+  PE_RECORDER: 'PE_RECORDER',
 };
 
 /**
