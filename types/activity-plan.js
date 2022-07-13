@@ -62,7 +62,7 @@ class ActivityPlan {
    * @default null
    */
   unitCompleted = null;
-  
+
   /**
    * Constructs an ActivityPlan object
    * @param {ActivityPlan|Object} data
