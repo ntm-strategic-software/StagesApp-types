@@ -41,7 +41,7 @@ class User {
   claStage = CLAStage.STAGE_1;
 
   /**
-   * User's current overall unit in CLA.  There are 25 total units.
+   * User's current overall unit in CLA.  There are 26 total units, including Unit 1 (Warmup) and Unit 26 (Wrapup).
    * @type {number}
    * @default 1
    */

@@ -50,6 +50,20 @@ class ActivityPlan {
   nextTaskIndex = 0;
 
   /**
+   * The overall CLA unit the user was in when he created this ActivityPlan (see User.claUnit)
+   * @type {number|null}
+   * @default null
+   */
+  unitCreated = null;
+
+  /**
+   * The overall CLA unit the user was in when he completed this ActivityPlan (see User.claUnit)
+   * @type {number|null}
+   * @default null
+   */
+  unitCompleted = null;
+  
+  /**
    * Constructs an ActivityPlan object
    * @param {ActivityPlan|Object} data
    */
