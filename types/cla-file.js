@@ -50,12 +50,14 @@ class CLAFile {
    * @param {boolean} data.imported
    * @param {boolean} data.readOnly
    * @param {string[]} data.linkedFiles
+   * @param {string} data.activityPlanId
    */
   constructor(data) {
     this.fileNumber = data.fileNumber || this.fileNumber;
     this.imported = data.imported || this.imported;
     this.readOnly = data.readOnly || this.readOnly;
     this.linkedFiles = data.linkedFiles || this.linkedFiles;
+    this.activityPlanId = data.activityPlanId || this.activityPlanId;
   }
 
   /**
