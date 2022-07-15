@@ -17,6 +17,14 @@ class CLAFile {
   fileNumber = 0;
 
   /**
+   * _id of the ActivityPlan this CLA File was created through.  If blank, this CLA File is in PendingMedia.
+   *  To find the specific task that created this CLA File, search through the ActivityPlan's tasks for this
+   *  CLA File's _id in taskClaFileId.
+   * @type {string}
+   */
+  activityPlanId = '';
+
+  /**
    * Array of file numbers (not _id's)
    * @type {string[]}
    * @default []

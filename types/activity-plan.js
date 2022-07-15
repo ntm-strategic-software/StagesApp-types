@@ -39,7 +39,7 @@ class ActivityPlan {
   /**
    * The sequence of steps to follow to complete this Activity Plan.  Initially, these tasks will be created from
    * the Activity corresponding to activityKey.  The user may add, delete, or edit this list of tasks for this Activity Plan.
-   * @type {Array}
+   * @type {Task[]}
    */
   tasks = [];
 
