@@ -90,6 +90,17 @@ class User {
   }
 
   /**
+   * convert a stage enum and unit within that stage to the overall claUnit
+   * @param {CLAStage|string} stageEnum
+   * @param {number} stageUnit
+   * @returns {number}
+   */
+  static getOverallClaUnit(stageEnum, stageUnit) {
+    const stageNumber = this.getClaStageNumber(stageEnum);
+    return stageNumber === 0 ? stageUnit : this.lastUnits[stageNumber - 1] + stageUnit;
+  }
+
+  /**
    * Given a claUnit (overall unit number), computes:
    * - the unit within the stage.  This number resets to 1 when a user moves to a new stage.
    * - the stage number
