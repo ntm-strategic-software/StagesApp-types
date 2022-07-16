@@ -87,18 +87,11 @@ class CultureEvent extends CLAFile {
   generalRecordings = [];
 
   /**
-   * CLAStage ID of User's CLA stage at the time of the event
-   * @type {string}
-   * @default ''
-   */
-  userCLAStage = '';
-
-  /**
-   * What unit is this user in for his current stage?  This number starts over at 1 when a user moves to the next stage.
+   * What overall CLA unit is this user in?
    * @type {number}
    * @default 1
    */
-  userStageUnit = 1;
+  claUnit = 1;
 
   /**
    * Event notes
