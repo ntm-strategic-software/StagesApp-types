@@ -118,12 +118,15 @@ class User {
   }
 
   /**
-   * Gets the last unit for the stage specified by the enum
+   * Gets the maximum stage unit (not the overall cla unit) for the stage specified by the enum.  The minimum is always 1 for every stage.
    * @param {CLAStage|string} stageEnum
    * @returns {number}
    */
-  static getStageLastUnit(stageEnum) {
-    return this.lastUnits[this.getClaStageNumber(stageEnum)];
+  static getMaxStageUnit(stageEnum) {
+    const stageNumber = this.getClaStageNumber(stageEnum);
+    const prevStageMaxClaUnit = stageEnum === CLAStage.WARMUP ? 0 : this.lastUnits[stageNumber - 1];
+    const maxClaUnit = this.lastUnits[stageNumber];
+    return maxClaUnit - prevStageMaxClaUnit;
   }
 
   /**
