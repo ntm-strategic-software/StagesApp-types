@@ -18,6 +18,12 @@ class PendingMedia {
   fileType = '';
 
   /**
+   * Do not show this item in Pending until User.getClaStageNumber() of the user's CLA Stage is at least this number.
+   * @type {number}
+   */
+  deferToStage = 0;
+
+  /**
    * Title of the PendingMedia file.  Empty string for CEs and DREs:  we get their titles from the CE or DRE record itself.
    * @type {string}
    * @default ''
