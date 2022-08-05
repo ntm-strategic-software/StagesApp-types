@@ -4,7 +4,7 @@
  */
 class PendingMedia {
   /**
-   * Unique ID for the PendingMedia
+   * Unique ID for the PendingMedia.  For CLA Files, this is the CLA File's _id
    * @type {string}
    * @default ''
    */
@@ -36,6 +36,12 @@ class PendingMedia {
    * @default ''
    */
   filename = '';
+
+  /**
+   * True if the user has indicated this should show in All Media instead of Unprocessed Media in the Planner's Media tab
+   * @type {boolean}
+   */
+  isProcessed = false;
 
   /**
    * Constructs an PendingMedia object
