@@ -50,6 +50,12 @@ class ActivityPlan {
   nextTaskIndex = 0;
 
   /**
+   * index of the last completed task that was synced.  When syncing, syncedTaskIndex is set to nextTaskIndex - 1.
+   * @type {number}
+   */
+  syncedTaskIndex = -1;
+
+  /**
    * The overall CLA unit the user was in when he created this ActivityPlan (see User.claUnit)
    * @type {number|null}
    * @default null

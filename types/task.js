@@ -18,6 +18,14 @@ class Task {
   taskNotes = [];
 
   /**
+   * taskText is empty for tasks in an Activity.  When an ActivityPlan is created, each task in the underlying activity
+   * is added to the ActivityPlan, and for each task in the ActivityPlan, taskText is set to taskTitle followed by taskNotes, joined with a newline character.
+   * In a task in an ActivityPlan, taskText can be edited by the user.
+   * @type {string}
+   */
+  taskText = '';
+
+  /**
    * The taskBox this Task appears in
    * @type {TaskBox|string}
    */
