@@ -18,11 +18,11 @@ class Observation {
   title = '';
 
   /**
-   * User's overall CLA unit at the time of the observation (we store the key of the appropriate CLAStage enum)
-   * @type {string}
-   * @default ''
+   * User's overall CLA unit at the time of the observation.  Updated when the observation is edited.
+   * @type {number}
+   * @default 1
    */
-  claUnit = '';
+  claUnit = 1;
 
   /**
    * Date/time the Observation was created, as an ISO Date string (e.g., '2022-06-20T15:50:40.055Z')
