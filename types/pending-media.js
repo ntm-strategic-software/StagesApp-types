@@ -1,4 +1,5 @@
 /**
+ * OBSOLETE, BUT I'M LEAVING IT FOR NOW FOR REFERENCE IN CASE WE WANT TO GO BACK TO SOMETHING LIKE THIS.
  * Class representing an item of type PendingFileType.  This is a file created on Mobile but not through a Task, so the file is not linked to an ActivityPlan.
  * I.e., a quick photo, a voice note, or a CE or DRE created by the user going straight to the recorder instead of through a Task.
  */

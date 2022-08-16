@@ -174,8 +174,10 @@ const TableNames = {
   OBSERVATIONS: 'Observations',
   TAGS: 'Tags',
   ACTIVITY_PLANS: 'ActivityPlans',
-  PENDING_MEDIA: 'PendingMedia',
+  // PENDING_MEDIA: 'PendingMedia',
   TASK_BOX_SORT_ORDER: 'TaskBoxSortOrder',
+  PHOTO_GROUPS: 'PhotoGroups',
+  VOICE_NOTES: 'VoiceNotes',
 };
 
 /**
