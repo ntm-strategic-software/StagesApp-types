@@ -17,7 +17,7 @@ class CLAFile {
   fileNumber = 0;
 
   /**
-   * _id of the ActivityPlan this CLA File was created through.  If blank, this CLA File is in PendingMedia.
+   * _id of the ActivityPlan this CLA File was created through.  If blank, this CLA File was created without an ActivityPlan.
    *  To find the specific task that created this CLA File, search through the ActivityPlan's tasks for this
    *  CLA File's _id in taskClaFileId.
    * @type {string}
@@ -42,6 +42,18 @@ class CLAFile {
    * @type {boolean}
    */
   readOnly = false;
+
+  /**
+   * Do not show this item in Pending until User.getClaStageNumber() of the user's CLA Stage is at least this number.
+   * @type {number}
+   */
+  deferToStage = 0;
+
+  /**
+   * if true, show this item in Pending (unless deferToStage prevents it)
+   * @type {boolean}
+   */
+  canLinkToTask = false;
 
   /**
    * constructs a CLAFile instance
