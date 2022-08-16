@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: sa-location.js</title>
+    <title>JSDoc: Source: voice-note.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: sa-location.js</h1>
+    <h1 class="page-title">Source: voice-note.js</h1>
 
     
 
@@ -27,41 +27,39 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/**
- * Class representing a StagesApp location (not to be confused with the `Location` global object in browsers and Electron)
+ * Class representing a Quick Voice Note.  This audio file is recorded on Mobile using the Quick Voice Note recorder.
  */
-class SALocation {
-
+class VoiceNote {
   /**
-   * Unique ID for the location
+   * Unique ID for the VoiceNote.
    * @type {string}
    * @default ''
    */
-  _id ='';
+  _id = '';
 
   /**
-   * Name of the location
+   * Title of the VoiceNote file.
    * @type {string}
    * @default ''
    */
-  name = '';
+  title = '';
 
   /**
-   * Any notes about the location
+   * Filename of this Voice Note (no path, but does include extension).
    * @type {string}
    * @default ''
    */
-  note = '';
+  filename = '';
 
   /**
-   * ISO date string (e.g., '2022-06-20T15:50:40.055Z'), when user on Mobile last edited this location or added this location to a CultureEvent
-   * @type {string}
-   * @default ''
+   * True if the user has archived this Voice Note.
+   * @type {boolean}
    */
-  dateLastUsedOnMobile = '';
+  isArchived = false;
 
   /**
-   * Creates an SALocation object
-   * @param {SALocation|Object} data
+   * Constructs an VoiceNote object
+   * @param {VoiceNote|Object} data
    */
   constructor(data = {}) {
     for(const key of Object.keys(data)) {
@@ -70,12 +68,12 @@ class SALocation {
   }
 
   /**
-   * Creates an updated SALocation object
-   * @param {SALocation|Object} data
-   * @returns {SALocation}
+   * Creates an updated VoiceNote object
+   * @param {VoiceNote|Object} data
+   * @returns {VoiceNote}
    */
   set(data) {
-    return new SALocation({
+    return new VoiceNote({
       ...this,
       ...data,
     });
@@ -83,7 +81,7 @@ class SALocation {
 
 }
 
-module.exports = SALocation;
+module.exports = VoiceNote;
 </code></pre>
         </article>
     </section>

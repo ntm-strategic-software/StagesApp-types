@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: sa-location.js</title>
+    <title>JSDoc: Source: photo-group.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: sa-location.js</h1>
+    <h1 class="page-title">Source: photo-group.js</h1>
 
     
 
@@ -27,41 +27,33 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/**
- * Class representing a StagesApp location (not to be confused with the `Location` global object in browsers and Electron)
+ * Class representing a group (0 or more) photos.
  */
-class SALocation {
-
+class PhotoGroup {
   /**
-   * Unique ID for the location
+   * Unique ID for the PhotoGroup.
    * @type {string}
    * @default ''
    */
-  _id ='';
+  _id = '';
 
   /**
-   * Name of the location
+   * Title of the PhotoGroup.
    * @type {string}
    * @default ''
    */
-  name = '';
+  title = '';
 
   /**
-   * Any notes about the location
-   * @type {string}
+   * Filenames, in order to display, of the photos in this PhotoGroup (no path, but does include extension).
+   * @type {string[]}
    * @default ''
    */
-  note = '';
+  filenames = [];
 
   /**
-   * ISO date string (e.g., '2022-06-20T15:50:40.055Z'), when user on Mobile last edited this location or added this location to a CultureEvent
-   * @type {string}
-   * @default ''
-   */
-  dateLastUsedOnMobile = '';
-
-  /**
-   * Creates an SALocation object
-   * @param {SALocation|Object} data
+   * Constructs an PhotoGroup object
+   * @param {PhotoGroup|Object} data
    */
   constructor(data = {}) {
     for(const key of Object.keys(data)) {
@@ -70,12 +62,12 @@ class SALocation {
   }
 
   /**
-   * Creates an updated SALocation object
-   * @param {SALocation|Object} data
-   * @returns {SALocation}
+   * Creates an updated PhotoGroup object
+   * @param {PhotoGroup|Object} data
+   * @returns {PhotoGroup}
    */
   set(data) {
-    return new SALocation({
+    return new PhotoGroup({
       ...this,
       ...data,
     });
@@ -83,7 +75,7 @@ class SALocation {
 
 }
 
-module.exports = SALocation;
+module.exports = PhotoGroup;
 </code></pre>
         </article>
     </section>

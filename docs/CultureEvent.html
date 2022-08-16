@@ -303,9 +303,7 @@ So a CultureEvent is a creation of the General Recorder, and includes:
 
 
 <div class="description">
-    _id of the ActivityPlan this CLA File was created through.  If blank, this CLA File is in PendingMedia.
- To find the specific task that created this CLA File, search through the ActivityPlan's tasks for this
- CLA File's _id in taskClaFileId.
+    _id of the ActivityPlan this CLA File was created through.  If blank, this CLA File was created without an ActivityPlan. To find the specific task that created this CLA File, search through the ActivityPlan's tasks for this CLA File's _id in taskClaFileId.
 </div>
 
 
@@ -436,6 +434,83 @@ So a CultureEvent is a creation of the General Recorder, and includes:
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
         <a href="culture-event.js.html">culture-event.js</a>, <a href="culture-event.js.html#line70">line 70</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="canLinkToTask"><span class="type-signature"></span>canLinkToTask<span class="type-signature"> :boolean</span></h4>
+
+
+
+
+<div class="description">
+    if true, show this item in Pending (unless deferToStage prevents it)
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">boolean</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="CLAFile.html#canLinkToTask">CLAFile#canLinkToTask</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="cla-file.js.html">cla-file.js</a>, <a href="cla-file.js.html#line56">line 56</a>
     </li></ul></dd>
     
 
@@ -590,6 +665,83 @@ So a CultureEvent is a creation of the General Recorder, and includes:
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
         <a href="culture-event.js.html">culture-event.js</a>, <a href="culture-event.js.html#line49">line 49</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="deferToStage"><span class="type-signature"></span>deferToStage<span class="type-signature"> :number</span></h4>
+
+
+
+
+<div class="description">
+    Do not show this item in Pending until User.getClaStageNumber() of the user's CLA Stage is at least this number.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">number</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="CLAFile.html#deferToStage">CLAFile#deferToStage</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="cla-file.js.html">cla-file.js</a>, <a href="cla-file.js.html#line50">line 50</a>
     </li></ul></dd>
     
 
@@ -1553,8 +1705,7 @@ like we do with the orthographic text.  Phonetic text for a CultureEvent is stor
 
 
 <div class="description">
-    The type of CLA File this is (e.g., CultureEvent, DRE)
-This method must be overridden in any class that extends CLAFile
+    The type of CLA File this is (e.g., CultureEvent, DRE)This method must be overridden in any class that extends CLAFile
 </div>
 
 
@@ -1696,7 +1847,7 @@ This method must be overridden in any class that extends CLAFile
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="cla-file.js.html">cla-file.js</a>, <a href="cla-file.js.html#line67">line 67</a>
+        <a href="cla-file.js.html">cla-file.js</a>, <a href="cla-file.js.html#line79">line 79</a>
     </li></ul></dd>
     
 
@@ -1807,7 +1958,7 @@ This method must be overridden in any class that extends CLAFile
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="cla-file.js.html">cla-file.js</a>, <a href="cla-file.js.html#line75">line 75</a>
+        <a href="cla-file.js.html">cla-file.js</a>, <a href="cla-file.js.html#line87">line 87</a>
     </li></ul></dd>
     
 
@@ -2029,13 +2180,13 @@ This method must be overridden in any class that extends CLAFile
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="ActivityPlan.html">ActivityPlan</a></li><li><a href="AdvancedFilter.html">AdvancedFilter</a></li><li><a href="CLAFile.html">CLAFile</a></li><li><a href="CultureEvent.html">CultureEvent</a></li><li><a href="DeletedItem.html">DeletedItem</a></li><li><a href="DRE.html">DRE</a></li><li><a href="GeneralPhoto.html">GeneralPhoto</a></li><li><a href="GeneralQuestion.html">GeneralQuestion</a></li><li><a href="GeneralRecording.html">GeneralRecording</a></li><li><a href="Marker.html">Marker</a></li><li><a href="Observation.html">Observation</a></li><li><a href="PendingInvestigation.html">PendingInvestigation</a></li><li><a href="PendingMedia.html">PendingMedia</a></li><li><a href="Person.html">Person</a></li><li><a href="PlaylistItem.html">PlaylistItem</a></li><li><a href="SALocation.html">SALocation</a></li><li><a href="SearchWord.html">SearchWord</a></li><li><a href="Tag.html">Tag</a></li><li><a href="Task.html">Task</a></li><li><a href="TaskBoxSortOrder.html">TaskBoxSortOrder</a></li><li><a href="Transcription.html">Transcription</a></li><li><a href="User.html">User</a></li></ul><h3>Global</h3><ul><li><a href="global.html#ActivityKey">ActivityKey</a></li><li><a href="global.html#AdvancedFilterType">AdvancedFilterType</a></li><li><a href="global.html#ClaFileType">ClaFileType</a></li><li><a href="global.html#CLAStage">CLAStage</a></li><li><a href="global.html#DataTransferType">DataTransferType</a></li><li><a href="global.html#Draggable">Draggable</a></li><li><a href="global.html#mobileTablesToSendToDesktop">mobileTablesToSendToDesktop</a></li><li><a href="global.html#PlayerType">PlayerType</a></li><li><a href="global.html#RecorderType">RecorderType</a></li><li><a href="global.html#TableNames">TableNames</a></li><li><a href="global.html#TaskBox">TaskBox</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="ActivityPlan.html">ActivityPlan</a></li><li><a href="AdvancedFilter.html">AdvancedFilter</a></li><li><a href="CLAFile.html">CLAFile</a></li><li><a href="CultureEvent.html">CultureEvent</a></li><li><a href="DeletedItem.html">DeletedItem</a></li><li><a href="DRE.html">DRE</a></li><li><a href="GeneralPhoto.html">GeneralPhoto</a></li><li><a href="GeneralQuestion.html">GeneralQuestion</a></li><li><a href="GeneralRecording.html">GeneralRecording</a></li><li><a href="Marker.html">Marker</a></li><li><a href="Observation.html">Observation</a></li><li><a href="PendingInvestigation.html">PendingInvestigation</a></li><li><a href="PendingMedia.html">PendingMedia</a></li><li><a href="Person.html">Person</a></li><li><a href="PhotoGroup.html">PhotoGroup</a></li><li><a href="PlaylistItem.html">PlaylistItem</a></li><li><a href="SALocation.html">SALocation</a></li><li><a href="SearchWord.html">SearchWord</a></li><li><a href="Tag.html">Tag</a></li><li><a href="Task.html">Task</a></li><li><a href="TaskBoxSortOrder.html">TaskBoxSortOrder</a></li><li><a href="Transcription.html">Transcription</a></li><li><a href="User.html">User</a></li><li><a href="VoiceNote.html">VoiceNote</a></li></ul><h3>Global</h3><ul><li><a href="global.html#ActivityKey">ActivityKey</a></li><li><a href="global.html#AdvancedFilterType">AdvancedFilterType</a></li><li><a href="global.html#ClaFileType">ClaFileType</a></li><li><a href="global.html#CLAStage">CLAStage</a></li><li><a href="global.html#DataTransferType">DataTransferType</a></li><li><a href="global.html#Draggable">Draggable</a></li><li><a href="global.html#mobileTablesToSendToDesktop">mobileTablesToSendToDesktop</a></li><li><a href="global.html#PlayerType">PlayerType</a></li><li><a href="global.html#RecorderType">RecorderType</a></li><li><a href="global.html#TableNames">TableNames</a></li><li><a href="global.html#TaskBox">TaskBox</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.10</a> on Fri Aug 12 2022 16:03:16 GMT-0400 (Eastern Daylight Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.10</a> on Tue Aug 16 2022 17:04:27 GMT-0400 (Eastern Daylight Time)
 </footer>
 
 <script> prettyPrint(); </script>

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Class: GeneralRecording</title>
+    <title>JSDoc: Class: VoiceNote</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Class: GeneralRecording</h1>
+    <h1 class="page-title">Class: VoiceNote</h1>
 
     
 
@@ -28,16 +28,9 @@
 
 <header>
     
-        <h2><span class="attribs"><span class="type-signature"></span></span>GeneralRecording<span class="signature">(data)</span><span class="type-signature"></span></h2>
+        <h2><span class="attribs"><span class="type-signature"></span></span>VoiceNote<span class="signature">(data)</span><span class="type-signature"></span></h2>
         
-            <div class="class-description">Class representing a General Recording.
-
-The General Recorder in the mobile app creates a new GeneralRecording item when the user switches between audio,
-video, or takes a picture while recording is paused.  All of these GeneralRecordings are then associated with
-a single CultureEvent object when the user taps Done in the General Recorder, enters metadata, and saves.
-
-Note:  If a picture is taken while recording is paused, a few-second silent audio GeneralRecording is created that
-the photo is linked to.</div>
+            <div class="class-description">Class representing a Quick Voice Note.  This audio file is recorded on Mobile using the Quick Voice Note recorder.</div>
         
     
 </header>
@@ -52,7 +45,7 @@ the photo is linked to.</div>
     
 
     
-    <h4 class="name" id="GeneralRecording"><span class="type-signature"></span>new GeneralRecording<span class="signature">(data)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="VoiceNote"><span class="type-signature"></span>new VoiceNote<span class="signature">(data)</span><span class="type-signature"></span></h4>
     
 
     
@@ -60,7 +53,7 @@ the photo is linked to.</div>
 
 
 <div class="description">
-    Creates a GeneralRecording object
+    Constructs an VoiceNote object
 </div>
 
 
@@ -102,7 +95,7 @@ the photo is linked to.</div>
             <td class="type">
             
                 
-<span class="param-type"><a href="GeneralRecording.html">GeneralRecording</a></span>
+<span class="param-type"><a href="VoiceNote.html">VoiceNote</a></span>
 |
 
 <span class="param-type">Object</span>
@@ -156,7 +149,7 @@ the photo is linked to.</div>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="general-recording.js.html">general-recording.js</a>, <a href="general-recording.js.html#line11">line 11</a>
+        <a href="voice-note.js.html">voice-note.js</a>, <a href="voice-note.js.html#line4">line 4</a>
     </li></ul></dd>
     
 
@@ -212,7 +205,7 @@ the photo is linked to.</div>
 
 
 <div class="description">
-    Unique ID for the recording
+    Unique ID for the VoiceNote.
 </div>
 
 
@@ -265,7 +258,7 @@ the photo is linked to.</div>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="general-recording.js.html">general-recording.js</a>, <a href="general-recording.js.html#line18">line 18</a>
+        <a href="voice-note.js.html">voice-note.js</a>, <a href="voice-note.js.html#line10">line 10</a>
     </li></ul></dd>
     
 
@@ -289,7 +282,7 @@ the photo is linked to.</div>
 
 
 <div class="description">
-    Filename of the recording (no path, but does include extension)
+    Filename of this Voice Note (no path, but does include extension).
 </div>
 
 
@@ -342,7 +335,7 @@ the photo is linked to.</div>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="general-recording.js.html">general-recording.js</a>, <a href="general-recording.js.html#line32">line 32</a>
+        <a href="voice-note.js.html">voice-note.js</a>, <a href="voice-note.js.html#line24">line 24</a>
     </li></ul></dd>
     
 
@@ -360,13 +353,13 @@ the photo is linked to.</div>
 
         
             
-<h4 class="name" id="isVideo"><span class="type-signature"></span>isVideo<span class="type-signature"> :boolean</span></h4>
+<h4 class="name" id="isArchived"><span class="type-signature"></span>isArchived<span class="type-signature"> :boolean</span></h4>
 
 
 
 
 <div class="description">
-    true if it is a video recording; false if it is an audio recording.
+    True if the user has archived this Voice Note.
 </div>
 
 
@@ -410,16 +403,11 @@ the photo is linked to.</div>
     
 
     
-    <dt class="tag-default">Default Value:</dt>
-    <dd class="tag-default"><ul class="dummy">
-            <li>false</li>
-        </ul></dd>
-    
 
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="general-recording.js.html">general-recording.js</a>, <a href="general-recording.js.html#line25">line 25</a>
+        <a href="voice-note.js.html">voice-note.js</a>, <a href="voice-note.js.html#line30">line 30</a>
     </li></ul></dd>
     
 
@@ -437,15 +425,13 @@ the photo is linked to.</div>
 
         
             
-<h4 class="name" id="markers"><span class="type-signature"></span>markers<span class="type-signature"> :Array.&lt;string></span></h4>
+<h4 class="name" id="title"><span class="type-signature"></span>title<span class="type-signature"> :string</span></h4>
 
 
 
 
 <div class="description">
-    Array of IDs of markers from the recording.
-Currently, our mobile code is commented out for full Marker support, but we still create a marker at the
-beginning of a GeneralRecording.  The functionality is very similar to GeneralQuestions.
+    Title of the VoiceNote file.
 </div>
 
 
@@ -454,7 +440,7 @@ beginning of a GeneralRecording.  The functionality is very similar to GeneralQu
     <ul>
         <li>
             
-<span class="param-type">Array.&lt;string></span>
+<span class="param-type">string</span>
 
 
         </li>
@@ -491,168 +477,14 @@ beginning of a GeneralRecording.  The functionality is very similar to GeneralQu
     
     <dt class="tag-default">Default Value:</dt>
     <dd class="tag-default"><ul class="dummy">
-            <li>[]</li>
+            <li>''</li>
         </ul></dd>
     
 
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="general-recording.js.html">general-recording.js</a>, <a href="general-recording.js.html#line41">line 41</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-        
-            
-<h4 class="name" id="photos"><span class="type-signature"></span>photos<span class="type-signature"> :Array.&lt;string></span></h4>
-
-
-
-
-<div class="description">
-    Array of GeneralPhotos IDs from the recording
-</div>
-
-
-
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">Array.&lt;string></span>
-
-
-        </li>
-    </ul>
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-default">Default Value:</dt>
-    <dd class="tag-default"><ul class="dummy">
-            <li>[]</li>
-        </ul></dd>
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="general-recording.js.html">general-recording.js</a>, <a href="general-recording.js.html#line55">line 55</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-        
-            
-<h4 class="name" id="questions"><span class="type-signature"></span>questions<span class="type-signature"> :Array.&lt;string></span></h4>
-
-
-
-
-<div class="description">
-    Array of GeneralQuestions ids from the recording
-</div>
-
-
-
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">Array.&lt;string></span>
-
-
-        </li>
-    </ul>
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-default">Default Value:</dt>
-    <dd class="tag-default"><ul class="dummy">
-            <li>[]</li>
-        </ul></dd>
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="general-recording.js.html">general-recording.js</a>, <a href="general-recording.js.html#line48">line 48</a>
+        <a href="voice-note.js.html">voice-note.js</a>, <a href="voice-note.js.html#line17">line 17</a>
     </li></ul></dd>
     
 
@@ -680,7 +512,7 @@ beginning of a GeneralRecording.  The functionality is very similar to GeneralQu
     
 
     
-    <h4 class="name" id="set"><span class="type-signature"></span>set<span class="signature">(data)</span><span class="type-signature"> &rarr; {<a href="GeneralRecording.html">GeneralRecording</a>}</span></h4>
+    <h4 class="name" id="set"><span class="type-signature"></span>set<span class="signature">(data)</span><span class="type-signature"> &rarr; {<a href="VoiceNote.html">VoiceNote</a>}</span></h4>
     
 
     
@@ -688,7 +520,7 @@ beginning of a GeneralRecording.  The functionality is very similar to GeneralQu
 
 
 <div class="description">
-    Creates an updated GeneralRecording object
+    Creates an updated VoiceNote object
 </div>
 
 
@@ -730,7 +562,7 @@ beginning of a GeneralRecording.  The functionality is very similar to GeneralQu
             <td class="type">
             
                 
-<span class="param-type"><a href="GeneralRecording.html">GeneralRecording</a></span>
+<span class="param-type"><a href="VoiceNote.html">VoiceNote</a></span>
 |
 
 <span class="param-type">Object</span>
@@ -784,7 +616,7 @@ beginning of a GeneralRecording.  The functionality is very similar to GeneralQu
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="general-recording.js.html">general-recording.js</a>, <a href="general-recording.js.html#line72">line 72</a>
+        <a href="voice-note.js.html">voice-note.js</a>, <a href="voice-note.js.html#line47">line 47</a>
     </li></ul></dd>
     
 
@@ -820,7 +652,7 @@ beginning of a GeneralRecording.  The functionality is very similar to GeneralQu
     </dt>
     <dd>
         
-<span class="param-type"><a href="GeneralRecording.html">GeneralRecording</a></span>
+<span class="param-type"><a href="VoiceNote.html">VoiceNote</a></span>
 
 
     </dd>
