@@ -44,11 +44,11 @@ class Task {
   droppableTypes = [Draggable.PI_DRAGGABLE];
 
   /**
-   * PhotoGroup _id's associated with this task.
+   * filenames of photos associated with this task (no path, but does include extension).
    * Files in a PhotoGroup will be copied to media/photos when user adds a PhotoGroup to a task.
    * @type {string[]}
    */
-  taskPhotoGroups = [];
+  taskPhotos = [];
 
   /**
    * CLA File (CE/DRE) associated with this task.
