@@ -28,9 +28,10 @@ const TaskBox = {
  * @readonly
  * @enum {string}
  */
-const RecorderType = {
+const RecorderButtonType = {
   GENERAL_RECORDER: 'GENERAL_RECORDER',
-  DUAL_RECORDER: 'DUAL_RECORDER',
+  DUAL_RECORDER1: 'DUAL_RECORDER1',
+  DUAL_RECORDER2: 'DUAL_RECORDER2',
   PE_RECORDER: 'PE_RECORDER',
 };
 
@@ -204,7 +205,7 @@ const mobileTablesToSendToDesktop = [
 
 module.exports.TaskBox = TaskBox;
 module.exports.Draggable = Draggable;
-module.exports.RecorderType = RecorderType;
+module.exports.RecorderButtonType = RecorderButtonType;
 module.exports.PlayerType = PlayerType;
 module.exports.CLAStage = CLAStage;
 module.exports.ClaFileType = ClaFileType;
