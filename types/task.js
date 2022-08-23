@@ -59,7 +59,7 @@ class Task {
   /**
    * type of record button to show on Mobile task detail screen, to launch the appropriate recorder.
    * If recorderButtonType is empty string, do not show a record button.
-   * @type {RecorderType|string}
+   * @type {RecorderButtonType|string}
    */
   recorderButtonType = '';
 
