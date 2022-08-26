@@ -15,9 +15,11 @@ const TaskBox = {
  * Enum of Draggable type
  * @readonly
  * @enum {string}
- */const Draggable = {
+ */
+const Draggable = {
   PI_DRAGGABLE: 'PI_DRAGGABLE', // Pending Investigation
   PHOTO_DRAGGABLE: 'PHOTO_DRAGGABLE',
+  PHOTO_GROUP_DRAGGABLE: 'PHOTO_GROUP_DRAGGABLE',
   CE_DRAGGABLE: 'CE_DRAGGABLE',
   DRE_DRAGGABLE: 'DRE_DRAGGABLE',
   NOT_DRAGGABLE: 'NOT_DRAGGABLE', // Dragging not allowed
