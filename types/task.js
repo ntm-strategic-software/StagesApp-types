@@ -71,6 +71,14 @@ class Task {
   playerButtonType = '';
 
   /**
+   * true if the next task should be done in the same session as this one.  I.e., if you are working with a helper,
+   * false if it's ok to stop after this task and pick up with the next task the next time you get together with that helper;
+   * true if you really should do the next task immediately.
+   * @type {boolean}
+   */
+  nextTaskSameSession = false;
+
+  /**
    * Creates a Task object
    * @param {Task|Object} data
    */
