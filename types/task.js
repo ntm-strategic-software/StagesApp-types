@@ -77,7 +77,7 @@ class Task {
    * @type {boolean}
    */
   nextTaskSameSession = false;
-  
+
   /**
    * Creates a Task object
    * @param {Task|Object} data
