@@ -41,7 +41,7 @@ class Task {
    * types of items that can be dropped on this task
    * @type {Draggable[]}
    */
-  droppableTypes = [Draggable.PI_DRAGGABLE];
+  droppableTypes = [Draggable.PI_TEXT_ONLY_DRAGGABLE];
 
   /**
    * filenames of photos associated with this task (no path, but does include extension).

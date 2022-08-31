@@ -17,7 +17,9 @@ const TaskBox = {
  * @enum {string}
  */
 const Draggable = {
-  PI_DRAGGABLE: 'PI_DRAGGABLE', // Pending Investigation
+  PI_TEXT_ONLY_DRAGGABLE: 'PI_TEXT_ONLY_DRAGGABLE', // Pending Investigation
+  PI_CE_DRAGGABLE: 'PI_CE_DRAGGABLE', // Pending Investigation with a CE
+  PI_DRE_DRAGGABLE: 'PI_DRE_DRAGGABLE', // Pending Investigation with a DRE
   PHOTO_DRAGGABLE: 'PHOTO_DRAGGABLE',
   PHOTO_GROUP_DRAGGABLE: 'PHOTO_GROUP_DRAGGABLE',
   CE_DRAGGABLE: 'CE_DRAGGABLE',

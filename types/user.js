@@ -43,7 +43,7 @@ class User {
   /**
    * Array of the last overall claUnit for each stage, from warmup (index 0) through the end of CLA
    */
-  static lastUnits = [1, 5, 10, 17, 25, 26];
+  static lastUnits = [1, 5, 11, 17, 25, 26];
 
   /**
    * converts a CLA stage number, which is its index into this.lastUnits, to its CLAStage enum value
