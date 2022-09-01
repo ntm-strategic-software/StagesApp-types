@@ -46,6 +46,7 @@ const RecorderButtonType = {
  */
 const PlayerType = {
   GENERAL_RECORDING_PLAYER: 'GENERAL_RECORDING_PLAYER',
+  DUAL_RECORDER: 'DUAL_RECORDER',
 };
 
 /**
