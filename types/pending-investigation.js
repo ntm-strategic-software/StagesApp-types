@@ -18,7 +18,7 @@ class PendingInvestigation {
   text = '';
 
   /**
-   * ID of linked CLAFile
+   * fileNumber of linked CLAFile, as a string
    * @type {string}
    * @default ''
    */

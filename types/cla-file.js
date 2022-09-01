@@ -17,12 +17,16 @@ class CLAFile {
   fileNumber = 0;
 
   /**
-   * _id of the ActivityPlan this CLA File was created through.  If blank, this CLA File was created without an ActivityPlan.
-   *  To find the specific task that created this CLA File, search through the ActivityPlan's tasks for this
+   * _id's of the ActivityPlans this CLA File is linked to.  If empty array, this CLA File was created without an ActivityPlan.
+   *  To find a specific task in an ActivityPlan that is linked to this CLA File, search through the ActivityPlan's tasks for this
    *  CLA File's _id in taskClaFileId.
-   * @type {string}
+   *  _id's are appended to the end of the list when this CLA File is linked to an ActivityPlan.  So, the first
+   *  ActivityPlan in the list is the one this CLA File was created through (or if the CLA File was not created
+   *  through an Activity Plan, the first ActivityPlan this CLA File was linked to), unless the user explicitly
+   *  disassociates this CLA File from that original ActivityPlan.
+   * @type {string[]}
    */
-  activityPlanId = '';
+  activityPlanIds = [];
 
   /**
    * Array of file numbers (not _id's)
