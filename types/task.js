@@ -32,6 +32,14 @@ class Task {
   taskBox = '';
 
   /**
+   * All tasks that must have the same taskBox will have the same taskBoxGroup > 0.  So, when taskBox changes for a task
+   * that has taskBoxGroup > 0, all tasks in the ActivityPlan that have the same taskBoxGroup will also have their
+   * taskBoxes changed.
+   * @type {number}
+   */
+  taskBoxGroup = 0;
+
+  /**
    * array of TaskBox keys the user is allowed to change this task to
    * @type {TaskBox[]}
    */
