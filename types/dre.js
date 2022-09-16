@@ -48,6 +48,18 @@ class DRE extends CLAFile {
   recording2 = '';
 
   /**
+   * the speaker in recording1
+   * @type {string}
+   */
+  speaker1 = '';
+
+  /**
+   * the speaker in recording2
+   * @type {string}
+   */
+  speaker2 = '';
+
+  /**
    * Transcription 1 plain text
    * @type {string}
    */

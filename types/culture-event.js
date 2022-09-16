@@ -17,8 +17,16 @@ const { ClaFileType } = require('./constants');
  */
 class CultureEvent extends CLAFile {
   claFileType() {
-    return ClaFileType.CultureEvent;
+    return this._isPE ? ClaFileType.PE : ClaFileType.CultureEvent;
   }
+
+  /**
+   * a PE (Practical Expression) is a type of CultureEvent.  Both are created with the General Recorder.
+   * But we use _isPE (referenced in claFile.isPE()) to distinguish between PE's and CultureEvents.
+   * @type {boolean}
+   * @private
+   */
+  _isPE = false;
 
   /**
    * Unique ID for the Culture Event

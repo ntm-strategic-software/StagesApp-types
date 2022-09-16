@@ -70,6 +70,7 @@ const CLAStage = {
 const ClaFileType = {
   CULTURE_EVENT: 'CULTURE_EVENT',
   DRE: 'DRE',
+  PE: 'PE',
 };
 
 /**

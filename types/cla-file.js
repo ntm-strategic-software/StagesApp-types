@@ -91,6 +91,14 @@ class CLAFile {
   isDRE() {
     return this.claFileType() === ClaFileType.DRE;
   }
+
+  /**
+   * returns true if this CLAFile is a PE
+   * @returns {boolean}
+   */
+  isPE() {
+    return this.claFileType() === ClaFileType.PE;
+  }
 }
 
 module.exports = CLAFile;
