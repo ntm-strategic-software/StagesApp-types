@@ -220,6 +220,8 @@ const mobileTablesToSendToDesktop = [
   TableNames.TASK_BOX_SORT_ORDER,
 ];
 
+const MOBILE_ALL_CLA_FILE_IDS = 'MOBILE_ALL_CLA_FILE_IDS';
+
 module.exports.TaskBox = TaskBox;
 module.exports.Draggable = Draggable;
 module.exports.RecorderButtonType = RecorderButtonType;
