@@ -233,6 +233,7 @@ module.exports.ActivityKey = ActivityKey;
 module.exports.PendingFileType = PendingFileType;
 module.exports.TableNames = TableNames;
 module.exports.mobileTablesToSendToDesktop = mobileTablesToSendToDesktop;
+module.exports.MOBILE_ALL_CLA_FILE_IDS = MOBILE_ALL_CLA_FILE_IDS;
 
 /**
  * Enum of the possible types of data transfers between mobile and desktop
