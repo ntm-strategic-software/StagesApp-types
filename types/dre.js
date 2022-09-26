@@ -48,13 +48,13 @@ class DRE extends CLAFile {
   recording2 = '';
 
   /**
-   * the speaker in recording1
+   * the speaker in recording1 (_id of the speaker in the Person table)
    * @type {string}
    */
   speaker1 = '';
 
   /**
-   * the speaker in recording2
+   * the speaker in recording2 (_id of the speaker in the Person table)
    * @type {string}
    */
   speaker2 = '';
