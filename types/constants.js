@@ -169,7 +169,7 @@ const PendingFileType = {
 
 /**
  * Error types that we want to handle specially
- * 
+ *
  * @readonly
  * @enum {string} */
 const ErrorType = {
