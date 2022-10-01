@@ -168,6 +168,15 @@ const PendingFileType = {
 };
 
 /**
+ * Error types that we want to handle specially
+ * 
+ * @readonly
+ * @enum {string} */
+const ErrorType = {
+  NO_DESKTOP_USER: 'NO_DESKTOP_USER',
+};
+
+/**
  * Enum for table names
  *
  * NOTE:  all tables include properties createdAt and updatedAt, which are ISO date strings (e.g., '2022-06-20T15:50:40.055Z')
@@ -234,6 +243,7 @@ module.exports.CLAStage = CLAStage;
 module.exports.ClaFileType = ClaFileType;
 module.exports.AdvancedFilterType = AdvancedFilterType;
 module.exports.ActivityKey = ActivityKey;
+module.exports.ErrorType = ErrorType;
 module.exports.PendingFileType = PendingFileType;
 module.exports.TableNames = TableNames;
 module.exports.mobileTablesToSendToDesktop = mobileTablesToSendToDesktop;
