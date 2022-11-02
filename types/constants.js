@@ -234,6 +234,7 @@ const mobileTablesToSendToDesktop = [
 ];
 
 const MOBILE_ALL_CLA_FILE_IDS = 'MOBILE_ALL_CLA_FILE_IDS';
+const MOBILE_ALL_ACTIVITY_PLAN_IDS = 'MOBILE_ALL_ACTIVITY_PLAN_IDS';
 
 module.exports.TaskBox = TaskBox;
 module.exports.Draggable = Draggable;
@@ -248,6 +249,7 @@ module.exports.PendingFileType = PendingFileType;
 module.exports.TableNames = TableNames;
 module.exports.mobileTablesToSendToDesktop = mobileTablesToSendToDesktop;
 module.exports.MOBILE_ALL_CLA_FILE_IDS = MOBILE_ALL_CLA_FILE_IDS;
+module.exports.MOBILE_ALL_ACTIVITY_PLAN_IDS = MOBILE_ALL_ACTIVITY_PLAN_IDS;
 
 /**
  * Enum of the possible types of data transfers between mobile and desktop
