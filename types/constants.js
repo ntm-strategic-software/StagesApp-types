@@ -238,6 +238,8 @@ const MOBILE_ALL_ACTIVITY_PLAN_IDS = 'MOBILE_ALL_ACTIVITY_PLAN_IDS';
 const REQUESTED_CLA_FILE_IDS = 'REQUESTED_CLA_FILE_IDS';
 const REQUESTED_ACTIVITY_PLAN_IDS = 'REQUESTED_ACTIVITY_PLAN_IDS';
 
+const TASK_BOX_SORT_ORDER_ID = '8cf436a9-c7a2-4222-bf4f-3b047b93116a';
+
 module.exports.TaskBox = TaskBox;
 module.exports.Draggable = Draggable;
 module.exports.RecorderButtonType = RecorderButtonType;
@@ -254,6 +256,7 @@ module.exports.MOBILE_ALL_CLA_FILE_IDS = MOBILE_ALL_CLA_FILE_IDS;
 module.exports.MOBILE_ALL_ACTIVITY_PLAN_IDS = MOBILE_ALL_ACTIVITY_PLAN_IDS;
 module.exports.REQUESTED_CLA_FILE_IDS = REQUESTED_CLA_FILE_IDS;
 module.exports.REQUESTED_ACTIVITY_PLAN_IDS = REQUESTED_ACTIVITY_PLAN_IDS;
+module.exports.TASK_BOX_SORT_ORDER_ID = TASK_BOX_SORT_ORDER_ID;
 
 /**
  * Enum of the possible types of data transfers between mobile and desktop
