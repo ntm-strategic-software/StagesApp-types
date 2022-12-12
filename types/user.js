@@ -46,6 +46,21 @@ class User {
   static lastUnits = [1, 5, 11, 17, 25, 26];
 
   /**
+   * for a given stage enum value, returns an array of all unit numbers in that stage
+   * @param {CLAStage} claStage
+   * @returns {number[]}
+   */
+  static unitsForStage(claStage) {
+    const stageNum = this.getClaStageNumber(claStage);
+
+    if (stageNum === 0) return [1]; // warm-up has only unit #1
+
+    const stageLastUnit = this.lastUnits[stageNum];
+    const prevStageLastUnit = this.lastUnits[stageNum - 1];
+    Array.from(Array(stageLastUnit - prevStageLastUnit).keys()).map(u => u + prevStageLastUnit + 1);
+  }
+
+  /**
    * converts a CLA stage number, which is its index into this.lastUnits, to its CLAStage enum value
    * @param {number} stageNum
    * @returns {CLAStage|string}
