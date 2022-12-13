@@ -57,7 +57,7 @@ class User {
 
     const stageLastUnit = this.lastUnits[stageNum];
     const prevStageLastUnit = this.lastUnits[stageNum - 1];
-    Array.from(Array(stageLastUnit - prevStageLastUnit).keys()).map(u => u + prevStageLastUnit + 1);
+    return Array.from(Array(stageLastUnit - prevStageLastUnit).keys(), u => u + prevStageLastUnit + 1);
   }
 
   /**
