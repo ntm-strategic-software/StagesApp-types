@@ -174,6 +174,7 @@ const PendingFileType = {
  * @enum {string} */
 const ErrorType = {
   OLD_MOBILE_VERSION: 'OLD_MOBILE_VERSION',
+  OLD_DESKTOP_VERSION: 'OLD_DESKTOP_VERSION',
   NO_DESKTOP_USER: 'NO_DESKTOP_USER',
 };
 
