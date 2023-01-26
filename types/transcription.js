@@ -66,18 +66,20 @@ class Transcription {
   idx = 0;
 
   /**
-   * starting time of the transcription, in seconds (with decimals), from the beginning of the CultureEvent.
+   * Starting time of the transcription, in seconds (with decimals), from the beginning of the CultureEvent.
    * If there are multiple GeneralRecordings in the CultureEvent, this is the time from the beginning of the first GeneralRecording.
    * @type {number}
    */
   transcriptionStartTime = 0;
 
-  // see gh216 in desktop.  Per Bill, we don't need this.
-  // /**
-  //  * Not sure we use this
-  //  * @type {number}
-  //  */
-  // endTime = 0;
+  /**
+   * see gh216 in desktop.  Per Bill, we don't need this, but since we were already calculating it, I'm leaving it in
+   *  just in case we want to use it later.
+   *  Ending time of the transcription, in seconds (with decimals), from the beginning of the CultureEvent.
+   *  Currently, this is the ending time of the last loop used when creating/editing the text of transcription.
+   * @type {number}
+   */
+  transcriptionEndTime = 0;
 
   /**
    * Constructs a Transcription object
