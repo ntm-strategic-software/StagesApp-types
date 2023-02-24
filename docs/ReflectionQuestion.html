@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Class: ActivityPlan</title>
+    <title>JSDoc: Class: ReflectionQuestion</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Class: ActivityPlan</h1>
+    <h1 class="page-title">Class: ReflectionQuestion</h1>
 
     
 
@@ -28,9 +28,9 @@
 
 <header>
     
-        <h2><span class="attribs"><span class="type-signature"></span></span>ActivityPlan<span class="signature">(data)</span><span class="type-signature"></span></h2>
+        <h2><span class="attribs"><span class="type-signature"></span></span>ReflectionQuestion<span class="signature">(data)</span><span class="type-signature"></span></h2>
         
-            <div class="class-description">Class representing doing an Activity:  a plan for executing an Activity to do something specific.</div>
+            <div class="class-description">Class representing a Reflection Question.</div>
         
     
 </header>
@@ -45,7 +45,7 @@
     
 
     
-    <h4 class="name" id="ActivityPlan"><span class="type-signature"></span>new ActivityPlan<span class="signature">(data)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="ReflectionQuestion"><span class="type-signature"></span>new ReflectionQuestion<span class="signature">(data)</span><span class="type-signature"></span></h4>
     
 
     
@@ -53,7 +53,7 @@
 
 
 <div class="description">
-    Constructs an ActivityPlan object
+    Constructs an ReflectionQuestion object
 </div>
 
 
@@ -95,7 +95,7 @@
             <td class="type">
             
                 
-<span class="param-type"><a href="ActivityPlan.html">ActivityPlan</a></span>
+<span class="param-type"><a href="ReflectionQuestion.html">ReflectionQuestion</a></span>
 |
 
 <span class="param-type">Object</span>
@@ -149,7 +149,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="activity-plan.js.html">activity-plan.js</a>, <a href="activity-plan.js.html#line4">line 4</a>
+        <a href="reflection-question.js.html">reflection-question.js</a>, <a href="reflection-question.js.html#line4">line 4</a>
     </li></ul></dd>
     
 
@@ -205,7 +205,7 @@
 
 
 <div class="description">
-    Unique ID for the Activity Plan
+    Unique ID for the ReflectionQuestion.
 </div>
 
 
@@ -258,7 +258,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="activity-plan.js.html">activity-plan.js</a>, <a href="activity-plan.js.html#line10">line 10</a>
+        <a href="reflection-question.js.html">reflection-question.js</a>, <a href="reflection-question.js.html#line10">line 10</a>
     </li></ul></dd>
     
 
@@ -276,13 +276,13 @@
 
         
             
-<h4 class="name" id="activityKey"><span class="type-signature"></span>activityKey<span class="type-signature"> :<a href="global.html#ActivityKey">ActivityKey</a>|string</span></h4>
+<h4 class="name" id="answer"><span class="type-signature"></span>answer<span class="type-signature"> :string</span></h4>
 
 
 
 
 <div class="description">
-    Key of the Activity that this Activity Plan is a plan for
+    User's answer to the question.  This is a string, but how to display it depends on the answerType.
 </div>
 
 
@@ -291,7 +291,79 @@
     <ul>
         <li>
             
-<span class="param-type"><a href="global.html#ActivityKey">ActivityKey</a></span>
+<span class="param-type">string</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="reflection-question.js.html">reflection-question.js</a>, <a href="reflection-question.js.html#line48">line 48</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="answerType"><span class="type-signature"></span>answerType<span class="type-signature"> :<a href="global.html#AnswerTypes">AnswerTypes</a>|string</span></h4>
+
+
+
+
+<div class="description">
+    Type of answer expected.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type"><a href="global.html#AnswerTypes">AnswerTypes</a></span>
 |
 
 <span class="param-type">string</span>
@@ -329,16 +401,11 @@
     
 
     
-    <dt class="tag-default">Default Value:</dt>
-    <dd class="tag-default"><ul class="dummy">
-            <li>''</li>
-        </ul></dd>
-    
 
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="activity-plan.js.html">activity-plan.js</a>, <a href="activity-plan.js.html#line37">line 37</a>
+        <a href="reflection-question.js.html">reflection-question.js</a>, <a href="reflection-question.js.html#line42">line 42</a>
     </li></ul></dd>
     
 
@@ -356,13 +423,13 @@
 
         
             
-<h4 class="name" id="activityPlanNumber"><span class="type-signature"></span>activityPlanNumber<span class="type-signature"> :number</span></h4>
+<h4 class="name" id="claUnit"><span class="type-signature"></span>claUnit<span class="type-signature"> :number</span></h4>
 
 
 
 
 <div class="description">
-    Number of this Activity Plan.  This number is unique for all users on a desktop installation.
+    claUnit of the question.  This is the overall unit in CLA, and is 1-based.
 </div>
 
 
@@ -410,7 +477,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="activity-plan.js.html">activity-plan.js</a>, <a href="activity-plan.js.html#line16">line 16</a>
+        <a href="reflection-question.js.html">reflection-question.js</a>, <a href="reflection-question.js.html#line23">line 23</a>
     </li></ul></dd>
     
 
@@ -428,13 +495,13 @@
 
         
             
-<h4 class="name" id="activityPlanTitle"><span class="type-signature"></span>activityPlanTitle<span class="type-signature"> :string</span></h4>
+<h4 class="name" id="key"><span class="type-signature"></span>key<span class="type-signature"> :string</span></h4>
 
 
 
 
 <div class="description">
-    Title of the Activity Plan
+    Key of the ReflectionQuestion.
 </div>
 
 
@@ -487,7 +554,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="activity-plan.js.html">activity-plan.js</a>, <a href="activity-plan.js.html#line23">line 23</a>
+        <a href="reflection-question.js.html">reflection-question.js</a>, <a href="reflection-question.js.html#line17">line 17</a>
     </li></ul></dd>
     
 
@@ -505,13 +572,13 @@
 
         
             
-<h4 class="name" id="nextTaskIndex"><span class="type-signature"></span>nextTaskIndex<span class="type-signature"> :number</span></h4>
+<h4 class="name" id="questionSet"><span class="type-signature"></span>questionSet<span class="type-signature"> :<a href="global.html#QuestionSets">QuestionSets</a>|string</span></h4>
 
 
 
 
 <div class="description">
-    index into this Activity Plan's 'tasks' array of the next task waiting to be done
+    Set of questions to which this question belongs.
 </div>
 
 
@@ -520,7 +587,10 @@
     <ul>
         <li>
             
-<span class="param-type">number</span>
+<span class="param-type"><a href="global.html#QuestionSets">QuestionSets</a></span>
+|
+
+<span class="param-type">string</span>
 
 
         </li>
@@ -559,7 +629,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="activity-plan.js.html">activity-plan.js</a>, <a href="activity-plan.js.html#line50">line 50</a>
+        <a href="reflection-question.js.html">reflection-question.js</a>, <a href="reflection-question.js.html#line29">line 29</a>
     </li></ul></dd>
     
 
@@ -577,13 +647,13 @@
 
         
             
-<h4 class="name" id="notes"><span class="type-signature"></span>notes<span class="type-signature"> :string</span></h4>
+<h4 class="name" id="questionText"><span class="type-signature"></span>questionText<span class="type-signature"> :string</span></h4>
 
 
 
 
 <div class="description">
-    Notes for this Activity Plan
+    Text of the question.
 </div>
 
 
@@ -636,312 +706,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="activity-plan.js.html">activity-plan.js</a>, <a href="activity-plan.js.html#line30">line 30</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-        
-            
-<h4 class="name" id="syncedTaskIndex"><span class="type-signature"></span>syncedTaskIndex<span class="type-signature"> :number</span></h4>
-
-
-
-
-<div class="description">
-    index of the last completed task that was synced.  When syncing, syncedTaskIndex is set to nextTaskIndex - 1.
-</div>
-
-
-
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">number</span>
-
-
-        </li>
-    </ul>
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="activity-plan.js.html">activity-plan.js</a>, <a href="activity-plan.js.html#line56">line 56</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-        
-            
-<h4 class="name" id="tasks"><span class="type-signature"></span>tasks<span class="type-signature"> :Array.&lt;<a href="Task.html">Task</a>></span></h4>
-
-
-
-
-<div class="description">
-    The sequence of steps to follow to complete this Activity Plan.  Initially, these tasks will be created from
-the Activity corresponding to activityKey.  The user may add, delete, or edit this list of tasks for this Activity Plan.
-</div>
-
-
-
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">Array.&lt;<a href="Task.html">Task</a>></span>
-
-
-        </li>
-    </ul>
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="activity-plan.js.html">activity-plan.js</a>, <a href="activity-plan.js.html#line44">line 44</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-        
-            
-<h4 class="name" id="unitCompleted"><span class="type-signature"></span>unitCompleted<span class="type-signature"> :number|null</span></h4>
-
-
-
-
-<div class="description">
-    The overall CLA unit the user was in when he completed this ActivityPlan (see User.claUnit)
-</div>
-
-
-
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">number</span>
-|
-
-<span class="param-type">null</span>
-
-
-        </li>
-    </ul>
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-default">Default Value:</dt>
-    <dd class="tag-default"><ul class="dummy">
-            <li>null</li>
-        </ul></dd>
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="activity-plan.js.html">activity-plan.js</a>, <a href="activity-plan.js.html#line70">line 70</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-        
-            
-<h4 class="name" id="unitCreated"><span class="type-signature"></span>unitCreated<span class="type-signature"> :number|null</span></h4>
-
-
-
-
-<div class="description">
-    The overall CLA unit the user was in when he created this ActivityPlan (see User.claUnit)
-</div>
-
-
-
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">number</span>
-|
-
-<span class="param-type">null</span>
-
-
-        </li>
-    </ul>
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-default">Default Value:</dt>
-    <dd class="tag-default"><ul class="dummy">
-            <li>null</li>
-        </ul></dd>
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="activity-plan.js.html">activity-plan.js</a>, <a href="activity-plan.js.html#line63">line 63</a>
+        <a href="reflection-question.js.html">reflection-question.js</a>, <a href="reflection-question.js.html#line36">line 36</a>
     </li></ul></dd>
     
 
@@ -969,7 +734,7 @@ the Activity corresponding to activityKey.  The user may add, delete, or edit th
     
 
     
-    <h4 class="name" id="set"><span class="type-signature"></span>set<span class="signature">(data)</span><span class="type-signature"> &rarr; {<a href="ActivityPlan.html">ActivityPlan</a>}</span></h4>
+    <h4 class="name" id="set"><span class="type-signature"></span>set<span class="signature">(data)</span><span class="type-signature"> &rarr; {<a href="ReflectionQuestion.html">ReflectionQuestion</a>}</span></h4>
     
 
     
@@ -977,7 +742,7 @@ the Activity corresponding to activityKey.  The user may add, delete, or edit th
 
 
 <div class="description">
-    Creates an updated ActivityPlan object
+    Creates an updated ReflectionQuestion object
 </div>
 
 
@@ -1019,7 +784,7 @@ the Activity corresponding to activityKey.  The user may add, delete, or edit th
             <td class="type">
             
                 
-<span class="param-type"><a href="ActivityPlan.html">ActivityPlan</a></span>
+<span class="param-type"><a href="ReflectionQuestion.html">ReflectionQuestion</a></span>
 |
 
 <span class="param-type">Object</span>
@@ -1073,7 +838,7 @@ the Activity corresponding to activityKey.  The user may add, delete, or edit th
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="activity-plan.js.html">activity-plan.js</a>, <a href="activity-plan.js.html#line87">line 87</a>
+        <a href="reflection-question.js.html">reflection-question.js</a>, <a href="reflection-question.js.html#line65">line 65</a>
     </li></ul></dd>
     
 
@@ -1109,7 +874,7 @@ the Activity corresponding to activityKey.  The user may add, delete, or edit th
     </dt>
     <dd>
         
-<span class="param-type"><a href="ActivityPlan.html">ActivityPlan</a></span>
+<span class="param-type"><a href="ReflectionQuestion.html">ReflectionQuestion</a></span>
 
 
     </dd>
