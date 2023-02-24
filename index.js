@@ -22,3 +22,5 @@ module.exports.TaskBoxSortOrder = require('./types/taskbox-sort-order');
 module.exports.Task = require('./types/task');
 module.exports.PhotoGroup = require('./types/photo-group');
 module.exports.VoiceNote = require('./types/voice-note');
+module.exports.ReflectionQuestion = require('./types/reflection-question');
+module.exports.SelfEvaluationQuestion = require('./types/self-evaluation-question');

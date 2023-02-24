@@ -168,6 +168,30 @@ const PendingFileType = {
 };
 
 /**
+ * Enum for the different groups of questions
+ *
+ * @readonly
+ * @enum {string}
+ */
+export const QuestionSets = {
+  GENERAL: 'GENERAL',
+  TIME: 'TIME',
+  AM_I_DONE: 'AM_I_DONE',
+};
+
+/**
+ * Enum for the different types of answers
+ *
+ * @readonly
+ * @enum {string}
+ */
+export const AnswerTypes = {
+  YES_NO: 'YES_NO',
+  TEXT: 'TEXT',
+  NONE_TO_NATIVE: 'NONE_TO_NATIVE', // this is for multiple choice questions on a range from none to native
+};
+
+/**
  * Error types that we want to handle specially
  *
  * @readonly
@@ -211,6 +235,8 @@ const TableNames = {
   TASK_BOX_SORT_ORDER: 'TaskBoxSortOrder',
   PHOTO_GROUPS: 'PhotoGroups',
   VOICE_NOTES: 'VoiceNotes',
+  REFLECTION_QUESTIONS: 'ReflectionQuestions',
+  SELF_EVALUATION_QUESTIONS: 'SelfEvaluationQuestions',
 };
 
 /**
@@ -259,6 +285,8 @@ module.exports.MOBILE_ALL_ACTIVITY_PLAN_IDS = MOBILE_ALL_ACTIVITY_PLAN_IDS;
 module.exports.REQUESTED_CLA_FILE_IDS = REQUESTED_CLA_FILE_IDS;
 module.exports.REQUESTED_ACTIVITY_PLAN_IDS = REQUESTED_ACTIVITY_PLAN_IDS;
 module.exports.TASK_BOX_SORT_ORDER_ID = TASK_BOX_SORT_ORDER_ID;
+module.exports.QuestionSets = QuestionSets;
+module.exports.AnswerTypes = AnswerTypes;
 
 /**
  * Enum of the possible types of data transfers between mobile and desktop
