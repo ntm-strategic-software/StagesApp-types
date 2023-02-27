@@ -14,7 +14,7 @@ class ReflectionQuestion {
    * @type {string}
    * @default ''
    */
-  key = '';
+  questionKey = '';
 
   /**
    * claUnit of the question.  This is the overall unit in CLA, and is 1-based.
