@@ -173,7 +173,7 @@ const PendingFileType = {
  * @readonly
  * @enum {string}
  */
-export const QuestionSets = {
+const QuestionSets = {
   GENERAL: 'GENERAL',
   TIME: 'TIME',
   AM_I_DONE: 'AM_I_DONE',
@@ -185,7 +185,7 @@ export const QuestionSets = {
  * @readonly
  * @enum {string}
  */
-export const AnswerTypes = {
+const AnswerTypes = {
   YES_NO: 'YES_NO',
   TEXT: 'TEXT',
   NONE_TO_NATIVE: 'NONE_TO_NATIVE', // this is for multiple choice questions on a range from none to native
