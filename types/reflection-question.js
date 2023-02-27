@@ -29,6 +29,12 @@ class ReflectionQuestion {
   questionSet = '';
 
   /**
+   * Sort order of the question within the QuestionSet.
+   * @type {number}
+   */
+  sortOrder = 0;
+
+  /**
    * Text of the question.
    * @type {string}
    * @default ''
