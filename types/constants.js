@@ -168,12 +168,12 @@ const PendingFileType = {
 };
 
 /**
- * Enum for the different groups of questions
+ * Enum for the different groups of reflection questions
  *
  * @readonly
  * @enum {string}
  */
-const QuestionSets = {
+const ReflectionQuestionSets = {
   GENERAL: 'GENERAL',
   TIME: 'TIME',
   AM_I_DONE: 'AM_I_DONE',
@@ -285,7 +285,7 @@ module.exports.MOBILE_ALL_ACTIVITY_PLAN_IDS = MOBILE_ALL_ACTIVITY_PLAN_IDS;
 module.exports.REQUESTED_CLA_FILE_IDS = REQUESTED_CLA_FILE_IDS;
 module.exports.REQUESTED_ACTIVITY_PLAN_IDS = REQUESTED_ACTIVITY_PLAN_IDS;
 module.exports.TASK_BOX_SORT_ORDER_ID = TASK_BOX_SORT_ORDER_ID;
-module.exports.QuestionSets = QuestionSets;
+module.exports.ReflectionQuestionSets = ReflectionQuestionSets;
 module.exports.AnswerTypes = AnswerTypes;
 
 /**

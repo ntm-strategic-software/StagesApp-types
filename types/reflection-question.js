@@ -24,7 +24,7 @@ class ReflectionQuestion {
 
   /**
    * Set of questions to which this question belongs.
-   * @type {QuestionSets|string}
+   * @type {ReflectionQuestionSets|string}
    */
   questionSet = '';
 

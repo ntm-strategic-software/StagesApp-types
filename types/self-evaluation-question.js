@@ -14,13 +14,20 @@ class SelfEvaluationQuestion {
    * @type {string}
    * @default ''
    */
-  key = '';
+  questionKey = '';
 
   /**
    * claUnit of the question.  This is the overall unit in CLA, and is 1-based.
    * @type {number}
    */
   claUnit = 0;
+
+  /**
+   * Summary of the question.
+   * @type {string}
+   * @default ''
+   */
+  questionSummary = '';
 
   /**
    * Text of the question.
@@ -40,6 +47,12 @@ class SelfEvaluationQuestion {
    * @type {string}
    */
   answer = '';
+
+  /**
+   * Sort order of the question within the claUnit.
+   * @type {number}
+   */
+  sortOrder = 0;
 
   /**
    * Constructs a SelfEvaluationQuestion object
