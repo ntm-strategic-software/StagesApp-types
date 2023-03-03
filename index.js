@@ -24,3 +24,4 @@ module.exports.PhotoGroup = require('./types/photo-group');
 module.exports.VoiceNote = require('./types/voice-note');
 module.exports.ReflectionQuestion = require('./types/reflection-question');
 module.exports.SelfEvaluationQuestion = require('./types/self-evaluation-question');
+module.exports.ConsultantRecommendation = require('./types/consultant-recommendation');

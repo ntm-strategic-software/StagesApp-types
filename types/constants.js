@@ -237,6 +237,7 @@ const TableNames = {
   VOICE_NOTES: 'VoiceNotes',
   REFLECTION_QUESTIONS: 'ReflectionQuestions',
   SELF_EVALUATION_QUESTIONS: 'SelfEvaluationQuestions',
+  CONSULTANT_RECOMMENDATIONS: 'ConsultantRecommendations',
 };
 
 /**
