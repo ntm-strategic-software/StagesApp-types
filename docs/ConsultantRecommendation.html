@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Class: TaskBoxSortOrder</title>
+    <title>JSDoc: Class: ConsultantRecommendation</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Class: TaskBoxSortOrder</h1>
+    <h1 class="page-title">Class: ConsultantRecommendation</h1>
 
     
 
@@ -28,20 +28,9 @@
 
 <header>
     
-        <h2><span class="attribs"><span class="type-signature"></span></span>TaskBoxSortOrder<span class="signature">(data)</span><span class="type-signature"></span></h2>
+        <h2><span class="attribs"><span class="type-signature"></span></span>ConsultantRecommendation<span class="signature">(data)</span><span class="type-signature"></span></h2>
         
-            <div class="class-description">Class representing the order tasks should be displayed in all TaskBoxes.  Since completing a Task causes
-the associated ActivityPlan._id to be removed from one TaskBox and added to another TaskBox, it seems best
-to keep all TaskBoxes together in a single doc, to prevent TaskBoxes from getting out of sync.
-
-So, the table represented by this class will have only one row.
-
-Each Task Box has an array of activityPlanId's, in the order to display the activityPlan's next task.
-This works because an activity plan can never have more than one next task, so an activity plan can only
-exist once in this table.  When the final task for an activity plan is completed, the activity plan id is
-removed from this table.
-
-TaskBox names are all caps to match the TaskBox enum.</div>
+            <div class="class-description">Class representing a Consultant Recommendation.</div>
         
     
 </header>
@@ -56,7 +45,7 @@ TaskBox names are all caps to match the TaskBox enum.</div>
     
 
     
-    <h4 class="name" id="TaskBoxSortOrder"><span class="type-signature"></span>new TaskBoxSortOrder<span class="signature">(data)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="ConsultantRecommendation"><span class="type-signature"></span>new ConsultantRecommendation<span class="signature">(data)</span><span class="type-signature"></span></h4>
     
 
     
@@ -64,7 +53,7 @@ TaskBox names are all caps to match the TaskBox enum.</div>
 
 
 <div class="description">
-    Creates a TaskBoxSortOrder object
+    Constructs a ConsultantRecommendation object
 </div>
 
 
@@ -106,7 +95,7 @@ TaskBox names are all caps to match the TaskBox enum.</div>
             <td class="type">
             
                 
-<span class="param-type"><a href="TaskBoxSortOrder.html">TaskBoxSortOrder</a></span>
+<span class="param-type"><a href="ConsultantRecommendation.html">ConsultantRecommendation</a></span>
 |
 
 <span class="param-type">Object</span>
@@ -160,7 +149,7 @@ TaskBox names are all caps to match the TaskBox enum.</div>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="taskbox-sort-order.js.html">taskbox-sort-order.js</a>, <a href="taskbox-sort-order.js.html#line15">line 15</a>
+        <a href="consultant-recommendation.js.html">consultant-recommendation.js</a>, <a href="consultant-recommendation.js.html#line4">line 4</a>
     </li></ul></dd>
     
 
@@ -216,7 +205,7 @@ TaskBox names are all caps to match the TaskBox enum.</div>
 
 
 <div class="description">
-    Unique ID.  There will be only one record, but I include the _id for convenience when using methods that require an _id.
+    Unique ID for the ConsultantRecommendation.
 </div>
 
 
@@ -269,7 +258,7 @@ TaskBox names are all caps to match the TaskBox enum.</div>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="taskbox-sort-order.js.html">taskbox-sort-order.js</a>, <a href="taskbox-sort-order.js.html#line21">line 21</a>
+        <a href="consultant-recommendation.js.html">consultant-recommendation.js</a>, <a href="consultant-recommendation.js.html#line10">line 10</a>
     </li></ul></dd>
     
 
@@ -287,14 +276,13 @@ TaskBox names are all caps to match the TaskBox enum.</div>
 
         
             
-<h4 class="name" id="COMMUNITY"><span class="type-signature"></span>COMMUNITY<span class="type-signature"> :Array.&lt;string></span></h4>
+<h4 class="name" id="claUnit"><span class="type-signature"></span>claUnit<span class="type-signature"> :number</span></h4>
 
 
 
 
 <div class="description">
-    Community sort order:  array of IDs of ActivityPlans, in the sorted order.
-For each ActivityPlanId, show that ActivityPlan's next task (the task indicated by activityPlan.nextTaskIndex).
+    claUnit of the recommendation.  This is the overall unit in CLA, and is 1-based.
 </div>
 
 
@@ -303,7 +291,151 @@ For each ActivityPlanId, show that ActivityPlan's next task (the task indicated 
     <ul>
         <li>
             
-<span class="param-type">Array.&lt;string></span>
+<span class="param-type">number</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="consultant-recommendation.js.html">consultant-recommendation.js</a>, <a href="consultant-recommendation.js.html#line16">line 16</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="okToAdvance"><span class="type-signature"></span>okToAdvance<span class="type-signature"> :boolean</span></h4>
+
+
+
+
+<div class="description">
+    whether the consultant recommends the user to advance to the next unit
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">boolean</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="consultant-recommendation.js.html">consultant-recommendation.js</a>, <a href="consultant-recommendation.js.html#line29">line 29</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="recommendationText"><span class="type-signature"></span>recommendationText<span class="type-signature"> :string</span></h4>
+
+
+
+
+<div class="description">
+    Text of the recommendation.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">string</span>
 
 
         </li>
@@ -340,248 +472,14 @@ For each ActivityPlanId, show that ActivityPlan's next task (the task indicated 
     
     <dt class="tag-default">Default Value:</dt>
     <dd class="tag-default"><ul class="dummy">
-            <li>[]</li>
+            <li>''</li>
         </ul></dd>
     
 
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="taskbox-sort-order.js.html">taskbox-sort-order.js</a>, <a href="taskbox-sort-order.js.html#line45">line 45</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-        
-            
-<h4 class="name" id="HELPER"><span class="type-signature"></span>HELPER<span class="type-signature"> :Array.&lt;string></span></h4>
-
-
-
-
-<div class="description">
-    Helper sort order:  array of IDs of ActivityPlans, in the sorted order.
-For each ActivityPlanId, show that ActivityPlan's next task (the task indicated by activityPlan.nextTaskIndex).
-</div>
-
-
-
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">Array.&lt;string></span>
-
-
-        </li>
-    </ul>
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-default">Default Value:</dt>
-    <dd class="tag-default"><ul class="dummy">
-            <li>[]</li>
-        </ul></dd>
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="taskbox-sort-order.js.html">taskbox-sort-order.js</a>, <a href="taskbox-sort-order.js.html#line53">line 53</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-        
-            
-<h4 class="name" id="PLAN"><span class="type-signature"></span>PLAN<span class="type-signature"> :Array.&lt;string></span></h4>
-
-
-
-
-<div class="description">
-    Plan sort order:  array of IDs of ActivityPlans, in the sorted order.
-For each ActivityPlanId, show that ActivityPlan's next task (the task indicated by activityPlan.nextTaskIndex).
-</div>
-
-
-
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">Array.&lt;string></span>
-
-
-        </li>
-    </ul>
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-default">Default Value:</dt>
-    <dd class="tag-default"><ul class="dummy">
-            <li>[]</li>
-        </ul></dd>
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="taskbox-sort-order.js.html">taskbox-sort-order.js</a>, <a href="taskbox-sort-order.js.html#line29">line 29</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-        
-            
-<h4 class="name" id="PROCESS"><span class="type-signature"></span>PROCESS<span class="type-signature"> :Array.&lt;string></span></h4>
-
-
-
-
-<div class="description">
-    Process sort order:  array of IDs of ActivityPlans, in the sorted order.
-For each ActivityPlanId, show that ActivityPlan's next task (the task indicated by activityPlan.nextTaskIndex).
-</div>
-
-
-
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">Array.&lt;string></span>
-
-
-        </li>
-    </ul>
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-default">Default Value:</dt>
-    <dd class="tag-default"><ul class="dummy">
-            <li>[]</li>
-        </ul></dd>
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="taskbox-sort-order.js.html">taskbox-sort-order.js</a>, <a href="taskbox-sort-order.js.html#line37">line 37</a>
+        <a href="consultant-recommendation.js.html">consultant-recommendation.js</a>, <a href="consultant-recommendation.js.html#line23">line 23</a>
     </li></ul></dd>
     
 
@@ -609,7 +507,7 @@ For each ActivityPlanId, show that ActivityPlan's next task (the task indicated 
     
 
     
-    <h4 class="name" id="set"><span class="type-signature"></span>set<span class="signature">(data)</span><span class="type-signature"> &rarr; {<a href="TaskBoxSortOrder.html">TaskBoxSortOrder</a>}</span></h4>
+    <h4 class="name" id="set"><span class="type-signature"></span>set<span class="signature">(data)</span><span class="type-signature"> &rarr; {<a href="ConsultantRecommendation.html">ConsultantRecommendation</a>}</span></h4>
     
 
     
@@ -617,7 +515,7 @@ For each ActivityPlanId, show that ActivityPlan's next task (the task indicated 
 
 
 <div class="description">
-    Creates an updated TaskBoxSortOrder object
+    Creates an updated ConsultantRecommendation object
 </div>
 
 
@@ -659,7 +557,7 @@ For each ActivityPlanId, show that ActivityPlan's next task (the task indicated 
             <td class="type">
             
                 
-<span class="param-type"><a href="TaskBoxSortOrder.html">TaskBoxSortOrder</a></span>
+<span class="param-type"><a href="ConsultantRecommendation.html">ConsultantRecommendation</a></span>
 |
 
 <span class="param-type">Object</span>
@@ -713,7 +611,7 @@ For each ActivityPlanId, show that ActivityPlan's next task (the task indicated 
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="taskbox-sort-order.js.html">taskbox-sort-order.js</a>, <a href="taskbox-sort-order.js.html#line70">line 70</a>
+        <a href="consultant-recommendation.js.html">consultant-recommendation.js</a>, <a href="consultant-recommendation.js.html#line46">line 46</a>
     </li></ul></dd>
     
 
@@ -749,7 +647,7 @@ For each ActivityPlanId, show that ActivityPlan's next task (the task indicated 
     </dt>
     <dd>
         
-<span class="param-type"><a href="TaskBoxSortOrder.html">TaskBoxSortOrder</a></span>
+<span class="param-type"><a href="ConsultantRecommendation.html">ConsultantRecommendation</a></span>
 
 
     </dd>
@@ -783,7 +681,7 @@ For each ActivityPlanId, show that ActivityPlan's next task (the task indicated 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.10</a> on Fri Mar 03 2023 13:15:30 GMT-0500 (Eastern Standard Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.10</a> on Fri Mar 03 2023 13:15:29 GMT-0500 (Eastern Standard Time)
 </footer>
 
 <script> prettyPrint(); </script>
