@@ -238,6 +238,7 @@ const TableNames = {
   REFLECTION_QUESTIONS: 'ReflectionQuestions',
   SELF_EVALUATION_QUESTIONS: 'SelfEvaluationQuestions',
   CONSULTANT_RECOMMENDATIONS: 'ConsultantRecommendations',
+  TIMESHEET: 'Timesheet',
 };
 
 /**
@@ -260,6 +261,7 @@ const mobileTablesToSendToDesktop = [
   TableNames.PLAYLIST_ITEMS,
   TableNames.ACTIVITY_PLANS,
   TableNames.TASK_BOX_SORT_ORDER,
+  TableNames.TIMESHEET,
 ];
 
 const MOBILE_ALL_CLA_FILE_IDS = 'MOBILE_ALL_CLA_FILE_IDS';
