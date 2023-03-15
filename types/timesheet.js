@@ -28,14 +28,14 @@ class Timesheet {
    * @type {string}
    * @default ''
    */
-  datetimeStart = '';
+  startTime = '';
 
   /**
    * The datetime this timesheet entry was completed, representing the end of time spent in taskBox.  In ISO format (e.g., '2022-06-20T15:50:40.055Z')
    * @type {string}
    * @default ''
    */
-  datetimeEnd = '';
+  endTime = '';
 
 
   /**
