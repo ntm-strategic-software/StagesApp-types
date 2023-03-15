@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: marker.js</title>
+    <title>JSDoc: Source: timesheet.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: marker.js</h1>
+    <h1 class="page-title">Source: timesheet.js</h1>
 
     
 
@@ -27,51 +27,48 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/**
- * Class representing a point in time in a GeneralRecording, with metadata that applies to the audio/video beginning at that point.
- *
- * The code is commented out for full Marker support, but we can add it in again whenever we want.  The current use is
- * just to mark the beginning of a GeneralRecording.  Markers are displayed visually, and clicking one jumps to that point in the recording.
+ * Class representing time a user has spent in each TaskBox, for each unit.
  */
-class Marker {
+class Timesheet {
 
   /**
-   * Unique ID for the marker
+   * Unique ID for the timesheet entry
    * @type {string}
    * @default ''
    */
   _id = '';
 
   /**
-   * ID of the CultureEvent that the GeneralRecording belongs to, that this Marker is in (see GeneralRecording.markers)
+   * The overall CLA unit the user was in when he created this timesheet entry (see User.claUnit)
+   * @type {number|null}
+   * @default null
+   */
+  claUnit = null;
+
+  /**
+   * TaskBox for this timesheet entry
+   * @type {TaskBox|string}
+   */
+  taskBox = '';
+
+  /**
+   * The datetime this timesheet entry was created, representing the start of time spent in taskBox.  In ISO format (e.g., '2022-06-20T15:50:40.055Z')
    * @type {string}
    * @default ''
    */
-  cultureEvent = '';
+  datetimeStart = '';
 
   /**
-   * The time (in seconds with decimals) from the beginning of the GeneralRecording, where the marker is
-   * @type {number}
-   * @default 0
-   */
-  startTime = 0;
-
-  /**
-   * Note that pertains to the part of the audio/video in the GeneralRecording that begins at startTime
+   * The datetime this timesheet entry was completed, representing the end of time spent in taskBox.  In ISO format (e.g., '2022-06-20T15:50:40.055Z')
    * @type {string}
    * @default ''
    */
-  note = '';
+  datetimeEnd = '';
+
 
   /**
-   * Array of IDs of search words that pertain to the part of the audio/video in the GeneralRecording that begins at startTime
-   * @type {string[]}
-   * @default []
-   */
-  searchWords = [];
-
-  /**
-   * Creates a Marker object
-   * @param {Marker|Object} data
+   * Creates a timesheet entry object
+   * @param {Timesheet|Object} data
    */
   constructor(data = {}) {
     for(const key of Object.keys(data)) {
@@ -80,20 +77,19 @@ class Marker {
   }
 
   /**
-   * Creates an updated Marker object
-   * @param {Marker|Object} data
-   * @returns {Marker}
+   * Creates an updated timesheet entry object
+   * @param {Timesheet|Object} data
+   * @returns {Timesheet}
    */
   set(data) {
-    return new Marker({
+    return new Timesheet({
       ...this,
       ...data,
     });
   }
-
 }
 
-module.exports = Marker;
+module.exports = Timesheet;
 </code></pre>
         </article>
     </section>
