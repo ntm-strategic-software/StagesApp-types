@@ -37,6 +37,14 @@ class Timesheet {
    */
   endTime = '';
 
+  /**
+   * localStartDate is the date this timesheet entry was created, in the user's local time zone.  It is in the format 'YYYY-MM-DD'.
+   *   We use this to group timesheet entries by day.
+   * @type {string}
+   * @default ''
+   */
+  localStartDate = '';
+
 
   /**
    * Creates a timesheet entry object
