@@ -3,7 +3,7 @@
  * @readonly
  * @enum {string}
  */
-const TaskBox = {
+export const TaskBox = {
   PLAN: 'PLAN',
   PROCESS: 'PROCESS',
   COMMUNITY: 'COMMUNITY',
@@ -17,7 +17,7 @@ const TaskBox = {
  * @readonly
  * @enum {string}
  */
-const Draggable = {
+export const Draggable = {
   PI_TEXT_ONLY_DRAGGABLE: 'PI_TEXT_ONLY_DRAGGABLE', // Pending Investigation
   PI_CE_DRAGGABLE: 'PI_CE_DRAGGABLE', // Pending Investigation with a CE
   PI_PE_DRAGGABLE: 'PI_PE_DRAGGABLE', // Pending Investigation with a PE
@@ -36,7 +36,7 @@ const Draggable = {
  * @readonly
  * @enum {string}
  */
-const RecorderButtonType = {
+export const RecorderButtonType = {
   GENERAL_RECORDER: 'GENERAL_RECORDER',
   DUAL_RECORDER1: 'DUAL_RECORDER1',
   DUAL_RECORDER2: 'DUAL_RECORDER2',
@@ -48,7 +48,7 @@ const RecorderButtonType = {
  * @readonly
  * @enum {string}
  */
-const PlayerType = {
+export const PlayerType = {
   GENERAL_RECORDING_PLAYER: 'GENERAL_RECORDING_PLAYER',
 };
 
@@ -57,7 +57,7 @@ const PlayerType = {
  * @readonly
  * @enum {string}
  */
-const CLAStage = {
+export const CLAStage = {
   WARMUP: 'WARMUP',
   STAGE_1: 'STAGE_1',
   STAGE_2: 'STAGE_2',
@@ -70,7 +70,7 @@ const CLAStage = {
  * Enum of the possible types of a CLA File
  * @enum {string}
  */
-const ClaFileType = {
+export const ClaFileType = {
   CULTURE_EVENT: 'CULTURE_EVENT',
   DRE: 'DRE',
   PE: 'PE',
@@ -81,7 +81,7 @@ const ClaFileType = {
  * @readonly
  * @enum {string}
  */
-const AdvancedFilterType = {
+export const AdvancedFilterType = {
   NORMAL_FILTER: 'NORMAL_FILTER',
   TRANSCRIPTION_FILTER: 'TRANSCRIPTION_FILTER',
 };
@@ -91,7 +91,7 @@ const AdvancedFilterType = {
  * @readonly
  * @enum {string}
  */
-const ActivityKey = {
+export const ActivityKey = {
   // COMMUNITY EXPERIENCE ACTIVITIES
   GET_ACQUAINTED: 'GET_ACQUAINTED',
   EXPERIENCE_CULTURE_EVENT: 'EXPERIENCE_CULTURE_EVENT',
@@ -159,7 +159,7 @@ const ActivityKey = {
   INTERACT_ABOUT_SCENE: 'INTERACT_ABOUT_SCENE',
 };
 
-const PendingFileType = {
+export const PendingFileType = {
   GENERAL_RECORDER: 'GENERAL_RECORDER',
   PE_RECORDER: 'PE_RECORDER',
   DUAL_RECORDER: 'DUAL_RECORDER',
@@ -173,7 +173,7 @@ const PendingFileType = {
  * @readonly
  * @enum {string}
  */
-const ReflectionQuestionSets = {
+export const ReflectionQuestionSets = {
   GENERAL: 'GENERAL',
   TIME: 'TIME',
   AM_I_DONE: 'AM_I_DONE',
@@ -185,7 +185,7 @@ const ReflectionQuestionSets = {
  * @readonly
  * @enum {string}
  */
-const AnswerTypes = {
+export const AnswerTypes = {
   YES_NO: 'YES_NO',
   TEXT: 'TEXT',
   NONE_TO_NATIVE: 'NONE_TO_NATIVE', // this is for multiple choice questions on a range from none to native
@@ -196,7 +196,7 @@ const AnswerTypes = {
  *
  * @readonly
  * @enum {string} */
-const ErrorType = {
+export const ErrorType = {
   OLD_MOBILE_VERSION: 'OLD_MOBILE_VERSION',
   OLD_DESKTOP_VERSION: 'OLD_DESKTOP_VERSION',
   NO_DESKTOP_USER: 'NO_DESKTOP_USER',
@@ -210,7 +210,7 @@ const ErrorType = {
  * @readonly
  * @enum {string}
  */
-const TableNames = {
+export const TableNames = {
   USERS: 'Users',
   CULTURE_EVENTS: 'CultureEvents',
   GENERAL_RECORDINGS: 'GeneralRecordings',
@@ -247,7 +247,7 @@ const TableNames = {
  * @readonly
  * @enum {string}
  */
-const mobileTablesToSendToDesktop = [
+export const mobileTablesToSendToDesktop = [
   TableNames.USERS,
   TableNames.CULTURE_EVENTS,
   TableNames.GENERAL_RECORDINGS,
@@ -264,43 +264,23 @@ const mobileTablesToSendToDesktop = [
   TableNames.TIMESHEET,
 ];
 
-const MOBILE_ALL_CLA_FILE_IDS = 'MOBILE_ALL_CLA_FILE_IDS';
-const MOBILE_ALL_ACTIVITY_PLAN_IDS = 'MOBILE_ALL_ACTIVITY_PLAN_IDS';
-const REQUESTED_CLA_FILE_IDS = 'REQUESTED_CLA_FILE_IDS';
-const REQUESTED_ACTIVITY_PLAN_IDS = 'REQUESTED_ACTIVITY_PLAN_IDS';
+export const MOBILE_ALL_CLA_FILE_IDS = 'MOBILE_ALL_CLA_FILE_IDS';
+export const MOBILE_ALL_ACTIVITY_PLAN_IDS = 'MOBILE_ALL_ACTIVITY_PLAN_IDS';
+export const REQUESTED_CLA_FILE_IDS = 'REQUESTED_CLA_FILE_IDS';
+export const REQUESTED_ACTIVITY_PLAN_IDS = 'REQUESTED_ACTIVITY_PLAN_IDS';
 
-const TASK_BOX_SORT_ORDER_ID = '8cf436a9-c7a2-4222-bf4f-3b047b93116a';
-
-module.exports.TaskBox = TaskBox;
-module.exports.Draggable = Draggable;
-module.exports.RecorderButtonType = RecorderButtonType;
-module.exports.PlayerType = PlayerType;
-module.exports.CLAStage = CLAStage;
-module.exports.ClaFileType = ClaFileType;
-module.exports.AdvancedFilterType = AdvancedFilterType;
-module.exports.ActivityKey = ActivityKey;
-module.exports.ErrorType = ErrorType;
-module.exports.PendingFileType = PendingFileType;
-module.exports.TableNames = TableNames;
-module.exports.mobileTablesToSendToDesktop = mobileTablesToSendToDesktop;
-module.exports.MOBILE_ALL_CLA_FILE_IDS = MOBILE_ALL_CLA_FILE_IDS;
-module.exports.MOBILE_ALL_ACTIVITY_PLAN_IDS = MOBILE_ALL_ACTIVITY_PLAN_IDS;
-module.exports.REQUESTED_CLA_FILE_IDS = REQUESTED_CLA_FILE_IDS;
-module.exports.REQUESTED_ACTIVITY_PLAN_IDS = REQUESTED_ACTIVITY_PLAN_IDS;
-module.exports.TASK_BOX_SORT_ORDER_ID = TASK_BOX_SORT_ORDER_ID;
-module.exports.ReflectionQuestionSets = ReflectionQuestionSets;
-module.exports.AnswerTypes = AnswerTypes;
+export const TASK_BOX_SORT_ORDER_ID = '8cf436a9-c7a2-4222-bf4f-3b047b93116a';
 
 /**
  * Enum of the possible types of data transfers between mobile and desktop
  * @enum {string}
  */
-module.exports.DataTransferType = {
+export const DataTransferType = {
   SYNC: 'SYNC',
   IMPORT_USER: 'IMPORT_USER',
 };
 
-module.exports.socketEndpoints = {
+export const socketEndpoints = {
   // used for sync
   GET_PUBLIC_KEY: 'GET_PUBLIC_KEY',
   KEY_CHALLENGE: 'KEY_CHALLENGE',
