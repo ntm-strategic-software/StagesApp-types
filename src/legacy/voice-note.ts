@@ -37,7 +37,7 @@ export class VoiceNote implements VoiceNoteInterface {
   /**
    * Creates an updated VoiceNote object
    */
-  set(data: any) {
+  set(data: Partial<VoiceNoteInterface>) {
     return new VoiceNote({
       ...this,
       ...data,

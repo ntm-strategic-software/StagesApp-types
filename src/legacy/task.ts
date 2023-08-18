@@ -96,7 +96,7 @@ export class Task implements Task {
   /**
    * Creates an updated Task object
    */
-  set(data: any) {
+  set(data: Partial<TaskInterface>) {
     return new Task({
       ...this,
       ...data,

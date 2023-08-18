@@ -71,7 +71,7 @@ export class PlaylistItem implements PlaylistItemInterface {
   /**
    * Creates an updated PlaylistItem object
    */
-  set(data: any) {
+  set(data: Partial<PlaylistItemInterface>) {
     return new PlaylistItem({
       ...this,
       ...data,

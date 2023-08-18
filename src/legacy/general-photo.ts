@@ -43,7 +43,7 @@ export class GeneralPhoto implements GeneralPhotoInterface {
   /**
    * Creates an updated GeneralPhoto object
    */
-  set(data: any ) {
+  set(data: Partial<GeneralPhotoInterface> ) {
     return new GeneralPhoto({
       ...this,
       ...data,

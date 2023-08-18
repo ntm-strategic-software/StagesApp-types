@@ -76,7 +76,7 @@ export class Person implements PersonInterface {
   /**
    * Creates an updated Person object
    */
-  set(data: any) {
+  set(data: Partial<PersonInterface>) {
     return new Person({
       ...this,
       ...data,

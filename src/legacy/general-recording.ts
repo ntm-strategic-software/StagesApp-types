@@ -60,7 +60,7 @@ export class GeneralRecording implements GeneralRecordingInterface {
   /**
    * Creates an updated GeneralRecording object
    */
-  set(data: any) {
+  set(data: Partial<GeneralRecordingInterface>) {
     return new GeneralRecording({
       ...this,
       ...data,

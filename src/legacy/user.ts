@@ -142,7 +142,7 @@ export class User implements UserInterface {
   /**
    * Creates an updated user object
    */
-  set(data: any) {
+  set(data: Partial<UserInterface>) {
     return new User({
       ...this,
       ...data,
