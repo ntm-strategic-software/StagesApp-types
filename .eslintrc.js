@@ -10,8 +10,8 @@ module.exports = {
   parserOptions: {},
   rules: {
     '@typescript-eslint/no-explicit-any': 0,
-    // "quotes": [1, "single", "avoid-escape"],
-    // "semi": 1,
+    'quotes': [1, "single", "avoid-escape"],
+    'semi': 1,
     // "no-console": 0,
     // "no-alert": 2,
     // "no-unused-vars": 1,

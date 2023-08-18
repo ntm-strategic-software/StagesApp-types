@@ -1,4 +1,5 @@
-const moment = require('moment');
+import dayjs from 'dayjs';
+import { PlaylistItem as PlaylistItemInterface, playlistItemDefaults } from '../playlist-item';
 
 /**
  * Class representing a PlaylistItem.
@@ -8,74 +9,69 @@ const moment = require('moment');
  * In our database design, these properties and methods could have been added to CultureEvent.
  * But since not all CultureEvents are in the Playlist, it's cleaner and more convenient to maintain a separate table for the Playlist.
  */
-class PlaylistItem {
+export class PlaylistItem implements PlaylistItemInterface {
 
   /**
    * ID of the item; matches a CultureEvent's ID
-   * @type {string}
    */
-  _id = '';
+  _id: string;
 
   /**
    * ISO dates of when listened to previously (e.g., '2022-06-20T15:50:40.055Z')
-   * @type {string[]}
    */
-  listenedToPrev = [];
+  listenedToPrev: string[];
 
   /**
    * 0-based order of this item in the playlist (the order in which items are displayed and played in the playlist)
-   * @type {number}
    */
-  order = 0;
+  order: number;
 
   /**
    * Audio recording file names (no path, but does include extension).  These are the filenames of all GeneralRecordings
    * for this CultureEvent that have isVideo===false
-   * @type {string[]}
    */
-  recordingsAudio = [];
+  recordingsAudio: string[];
 
   /**
    * Video recording file names (no path, but does include extension).  These are the filenames of all GeneralRecordings
    * for this CultureEvent that have isVideo===true
-   * @type {string[]}
    */
-  recordingsVideo = [];
+  recordingsVideo: string[];
 
   /**
    * each item in recordingsAudio and recordingsVideo is listed here, in the order they should be played.
-   * @type {string[]}
    */
-  recordingsOrder = [];
+  recordingsOrder: string[];
 
   /**
    * Title of the item; matches a CultureEvent's title.  We duplicate it from the CultureEvent for convenience.
-   * @type {string}
    */
-  title = '';
+  title: string;
 
   /**
    * ISO date string (e.g., '2022-06-20T15:50:40.055Z'), copied from CultureEvent.date
-   * @type {string}
    */
-  dateRecorded = '';
+  dateRecorded: string;
 
   /**
    * Creates a PlaylistItem object
-   * @param {{_id: string, listenedToPrev: string[], order: number, recordingsAudio: string[], recordingsVideo: string[], recordingsOrder: string[], title: string, dateRecorded: string}} data
    */
-  constructor(data = {}) {
-    for(const key of Object.keys(data)) {
-      this[key] = data[key];
-    }
+  constructor(data?: PlaylistItemInterface) {
+    const defaults = playlistItemDefaults();
+    this._id = data?._id || defaults._id;
+    this.listenedToPrev = data?.listenedToPrev || defaults.listenedToPrev;
+    this.order = data?.order || defaults.order;
+    this.recordingsAudio = data?.recordingsAudio || defaults.recordingsAudio;
+    this.recordingsVideo = data?.recordingsVideo || defaults.recordingsVideo;
+    this.recordingsOrder = data?.recordingsOrder || defaults.recordingsOrder;
+    this.title = data?.title || defaults.title;
+    this.dateRecorded = data?.dateRecorded || defaults.dateRecorded;
   }
 
   /**
    * Creates an updated PlaylistItem object
-   * @param {{_id: string, listenedToPrev: string[], order: number, recordingsAudio: string[], recordingsVideo: string[], recordingsOrder: string[], title: string, dateRecorded: string}} data
-   * @returns {PlaylistItem}
    */
-  set(data) {
+  set(data: any) {
     return new PlaylistItem({
       ...this,
       ...data,
@@ -84,42 +80,36 @@ class PlaylistItem {
 
   /**
    * Returns ISO strings of times listened to before today
-   * @returns {string[]}
    */
-  getPrev() {
-    const now = moment();
-    const today = moment(`${now.format('YYYY')}-${now.format('MM')}-${now.format('DD')}`, 'YYYY-MM-DD');
+  getPrev(): string[] {
+    const now = dayjs();
+    const today = dayjs(`${now.format('YYYY')}-${now.format('MM')}-${now.format('DD')}`, 'YYYY-MM-DD');
     return this.listenedToPrev
-      .filter(isoDate => moment(isoDate).isBefore(today));
+      .filter(isoDate => dayjs(isoDate).isBefore(today));
   }
 
   /**
    * Returns ISO strings of times listened to today
-   * @returns {string[]}
    */
-  getToday() {
-    const now = moment();
-    const today = moment(`${now.format('YYYY')}-${now.format('MM')}-${now.format('DD')}`, 'YYYY-MM-DD');
+  getToday(): string[] {
+    const now = dayjs();
+    const today = dayjs(`${now.format('YYYY')}-${now.format('MM')}-${now.format('DD')}`, 'YYYY-MM-DD');
     return this.listenedToPrev
-      .filter(isoDate => !moment(isoDate).isBefore(today));
+      .filter(isoDate => !dayjs(isoDate).isBefore(today));
   }
 
   /**
    * Returns if listened to before today
-   * @returns {boolean}
    */
-  prev() {
+  prev(): boolean {
     return this.getPrev().length > 0;
   }
 
   /**
    * Returns if listened to today
-   * @returns {boolean}
    */
-  today() {
+  today(): boolean {
     return this.getToday().length > 0;
   }
 
 }
-
-module.exports = PlaylistItem;
