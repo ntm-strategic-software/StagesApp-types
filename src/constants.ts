@@ -55,16 +55,15 @@ export const PlayerType = {
 /**
  * Enum for the CLA Stage that the user is in
  * @readonly
- * @enum {string}
  */
-export const CLAStage = {
-  WARMUP: 'WARMUP',
-  STAGE_1: 'STAGE_1',
-  STAGE_2: 'STAGE_2',
-  STAGE_3: 'STAGE_3',
-  STAGE_4: 'STAGE_4',
-  WRAPUP: 'WRAPUP',
-};
+export enum CLAStage {
+  WARMUP = 'WARMUP',
+  STAGE_1 = 'STAGE_1',
+  STAGE_2 = 'STAGE_2',
+  STAGE_3 = 'STAGE_3',
+  STAGE_4 = 'STAGE_4',
+  WRAPUP = 'WRAPUP',
+}
 
 /**
  * Enum of the possible types of a CLA File

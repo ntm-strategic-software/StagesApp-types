@@ -47,14 +47,14 @@ export class GeneralRecording implements GeneralRecordingInterface {
   /**
    * Creates a GeneralRecording object
    */
-  constructor(data: GeneralRecordingInterface) {
+  constructor(data?: GeneralRecordingInterface) {
     const defaults = generalRecordingDefaults();
-    this._id = data._id || defaults._id;
-    this.isVideo = data.isVideo || defaults.isVideo;
-    this.filename = data.filename || defaults.filename;
-    this.markers = data.markers || defaults.markers;
-    this.questions = data.questions || defaults.questions;
-    this.photos = data.photos || defaults.photos;
+    this._id = data?._id || defaults._id;
+    this.isVideo = data?.isVideo || defaults.isVideo;
+    this.filename = data?.filename || defaults.filename;
+    this.markers = data?.markers || defaults.markers;
+    this.questions = data?.questions || defaults.questions;
+    this.photos = data?.photos || defaults.photos;
   }
 
   /**

@@ -1,42 +1,33 @@
-const { CLAStage } = require('./constants');
+import { CLAStage } from '../constants';
+import { User as UserInterface, userDefaults } from '../user';
 
 /**
  * Class representing a user.  This is unrelated to the People table.
  */
-class User {
+export class User implements UserInterface {
 
   /**
    * Unique ID for the user
-   * @type {string}
-   * @default ''
    */
   _id = '';
 
   /**
    * User's common name
-   * @type {string}
-   * @default ''
    */
   name = '';
 
   /**
    * User's full name
-   * @type {string}
-   * @default ''
    */
   fullName = '';
 
   /**
    * Filename of a picture of the user
-   * @type {string}
-   * @default ''
    */
   photoFilename = '';
 
   /**
    * User's current overall unit in CLA (1-based).  There are 26 total units, including Unit 1 (Warmup) and Unit 26 (Wrapup).
-   * @type {number}
-   * @default 1
    */
   claUnit = 1;
 
@@ -47,13 +38,12 @@ class User {
 
   /**
    * for a given stage enum value, returns an array of all unit numbers in that stage
-   * @param {CLAStage} claStage
-   * @returns {number[]}
    */
-  static unitsForStage(claStage) {
+  static unitsForStage(claStage: CLAStage): number[] {
     const stageNum = this.getClaStageNumber(claStage);
-
-    if (stageNum === 0) return [1]; // warm-up has only unit #1
+    if(stageNum === 0) {
+      return [1]; // warm-up has only unit #1
+    }
 
     const stageLastUnit = this.lastUnits[stageNum];
     const prevStageLastUnit = this.lastUnits[stageNum - 1];
@@ -62,10 +52,8 @@ class User {
 
   /**
    * converts a CLA stage number, which is its index into this.lastUnits, to its CLAStage enum value
-   * @param {number} stageNum
-   * @returns {CLAStage|string}
    */
-  static getClaStageEnum(stageNum) {
+  static getClaStageEnum(stageNum: number): CLAStage {
     switch (stageNum) {
       case 0:
         return CLAStage.WARMUP;
@@ -79,38 +67,36 @@ class User {
         return CLAStage.STAGE_4;
       case 5:
         return CLAStage.WRAPUP;
+      default:
+        return CLAStage.WARMUP;
     }
   }
 
   /**
    * convert the CLAStage enum value to its stage number, which is its index into this.lastUnits
-   * @param {CLAStage} userClaStage
-   * @returns {number}
    */
-  static getClaStageNumber(userClaStage) {
-    switch (userClaStage) {
-      case CLAStage.WARMUP:
-        return 0;
-      case CLAStage.STAGE_1:
-        return 1;
-      case CLAStage.STAGE_2:
+  static getClaStageNumber(userClaStage: CLAStage): number {
+    if(userClaStage === CLAStage.WARMUP) {
+      return 0;
+    } else if(userClaStage === CLAStage.STAGE_1) {
+      return 1;
+    } else if(userClaStage === CLAStage.STAGE_2) {
         return 2;
-      case CLAStage.STAGE_3:
+    } else if(userClaStage === CLAStage.STAGE_3) {
         return 3;
-      case CLAStage.STAGE_4:
+    } else if(userClaStage === CLAStage.STAGE_4) {
         return 4;
-      case CLAStage.WRAPUP:
+    } else if(userClaStage === CLAStage.WRAPUP) {
         return 5;
+    } else {
+      return 0;
     }
   }
 
   /**
    * convert a stage enum and unit within that stage to the overall claUnit
-   * @param {CLAStage|string} stageEnum
-   * @param {number} stageUnit
-   * @returns {number}
    */
-  static getOverallClaUnit(stageEnum, stageUnit) {
+  static getOverallClaUnit(stageEnum: CLAStage, stageUnit: number): number {
     const stageNumber = this.getClaStageNumber(stageEnum);
     return stageNumber === 0 ? stageUnit : this.lastUnits[stageNumber - 1] + stageUnit;
   }
@@ -120,10 +106,8 @@ class User {
    * - the unit within the stage.  This number resets to 1 when a user moves to a new stage.
    * - the stage number
    * - the CLAStage enum string that corresponds to the stage number
-   * @param {number} claUnit
-   * @returns {{stageEnum: (CLAStage|string), stageNumber: number, stageUnit: number}}
    */
-  static getClaStage(claUnit) {
+  static getClaStage(claUnit: number): {stageEnum: CLAStage, stageNumber: number, stageUnit: number} {
     const stageNumber = this.lastUnits.findIndex(u => u >= claUnit);
     const stageEnum = this.getClaStageEnum(stageNumber);
     const prevStageLastUnit = stageNumber === 0 ? 0 : this.lastUnits[stageNumber - 1];
@@ -134,10 +118,8 @@ class User {
 
   /**
    * Gets the maximum stage unit (not the overall cla unit) for the stage specified by the enum.  The minimum is always 1 for every stage.
-   * @param {CLAStage|string} stageEnum
-   * @returns {number}
    */
-  static getMaxStageUnit(stageEnum) {
+  static getMaxStageUnit(stageEnum: CLAStage): number {
     const stageNumber = this.getClaStageNumber(stageEnum);
     const prevStageMaxClaUnit = stageEnum === CLAStage.WARMUP ? 0 : this.lastUnits[stageNumber - 1];
     const maxClaUnit = this.lastUnits[stageNumber];
@@ -148,23 +130,22 @@ class User {
    * Creates a user object
    * @param {User|Object} data
    */
-  constructor(data = {}) {
-    for(const key of Object.keys(data)) {
-      this[key] = data[key];
-    }
+  constructor(data?: UserInterface) {
+    const defaults = userDefaults();
+    this._id = data?._id || defaults._id;
+    this.name = data?.name || defaults.name;
+    this.fullName = data?.fullName || defaults.fullName;
+    this.photoFilename = data?.photoFilename || defaults.photoFilename;
+    this.claUnit = data?.claUnit || defaults.claUnit;
   }
 
   /**
    * Creates an updated user object
-   * @param {User|Object} data
-   * @returns {User}
    */
-  set(data) {
+  set(data: any) {
     return new User({
       ...this,
       ...data,
     });
   }
 }
-
-module.exports = User;
