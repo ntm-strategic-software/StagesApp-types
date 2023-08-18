@@ -1,3 +1,5 @@
+import { GeneralRecording as GeneralRecordingInterface, generalRecordingDefaults } from '../general-recording';
+
 /**
  * Class representing a General Recording.
  *
@@ -8,68 +10,57 @@
  * Note:  If a picture is taken while recording is paused, a few-second silent audio GeneralRecording is created that
  * the photo is linked to.
  */
-class GeneralRecording {
+export class GeneralRecording implements GeneralRecordingInterface {
 
   /**
    * Unique ID for the recording
-   * @type {string}
-   * @default ''
    */
-  _id = '';
+  _id: string
 
   /**
    * true if it is a video recording; false if it is an audio recording.
-   * @type {boolean}
-   * @default false
    */
-  isVideo = false;
+  isVideo: boolean
 
   /**
    * Filename of the recording (no path, but does include extension)
-   * @type {string}
-   * @default ''
    */
-  filename = '';
+  filename: string
 
   /**
    * Array of IDs of markers from the recording.
    * Currently, our mobile code is commented out for full Marker support, but we still create a marker at the
    * beginning of a GeneralRecording.  The functionality is very similar to GeneralQuestions.
-   * @type {string[]}
-   * @default []
    */
-  markers = [];
+  markers: string[]
 
   /**
    * Array of GeneralQuestions ids from the recording
-   * @type {string[]}
-   * @default []
    */
-  questions = []
+  questions: string[]
 
   /**
    * Array of GeneralPhotos IDs from the recording
-   * @type {string[]}
-   * @default []
    */
-  photos = [];
+  photos: string[]
 
   /**
    * Creates a GeneralRecording object
-   * @param {GeneralRecording|Object} data
    */
-  constructor(data = {}) {
-    for(const key of Object.keys(data)) {
-      this[key] = data[key];
-    }
+  constructor(data: GeneralRecordingInterface) {
+    const defaults = generalRecordingDefaults();
+    this._id = data._id || defaults._id;
+    this.isVideo = data.isVideo || defaults.isVideo;
+    this.filename = data.filename || defaults.filename;
+    this.markers = data.markers || defaults.markers;
+    this.questions = data.questions || defaults.questions;
+    this.photos = data.photos || defaults.photos;
   }
 
   /**
    * Creates an updated GeneralRecording object
-   * @param {GeneralRecording|Object} data
-   * @returns {GeneralRecording}
    */
-  set(data) {
+  set(data: any) {
     return new GeneralRecording({
       ...this,
       ...data,
@@ -77,5 +68,3 @@ class GeneralRecording {
   }
 
 }
-
-module.exports = GeneralRecording;

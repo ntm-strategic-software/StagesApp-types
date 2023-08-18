@@ -22,7 +22,8 @@
   "devDependencies": {
     "@types/lodash": "^4.14.195",
     "@types/uuid": "^9.0.2",
-    "babel-eslint": "^10.0.3",
+    "@typescript-eslint/eslint-plugin": "^6.4.0",
+    "@typescript-eslint/parser": "^6.4.0",
     "eslint": "^8.47.0",
     "eslint-config-prettier": "^8.3.0",
     "jsdoc": "^3.6.7",

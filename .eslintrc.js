@@ -1,14 +1,15 @@
 module.exports = {
   root: true,
-  extends: [
-    'eslint:recommended',
-    'prettier',
-  ],
+  extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended'],
+  parser: '@typescript-eslint/parser',
+  plugins: ['@typescript-eslint'],
   env: {
     browser: true,
     node: true,
   },
+  parserOptions: {},
   rules: {
+    '@typescript-eslint/no-explicit-any': 0,
     // "quotes": [1, "single", "avoid-escape"],
     // "semi": 1,
     // "no-console": 0,
@@ -34,11 +35,5 @@ module.exports = {
     // "prefer-const": [1, {"destructuring": "all"}],
     // "rest-spread-spacing": [2, "never"],
     // "yield-star-spacing": [2, "after"],
-  },
-  parserOptions: {
-    ecmaVersion: 'latest',
-    babelOptions: {
-      presets: [],
-    },
   },
 };
