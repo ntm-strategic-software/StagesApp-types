@@ -9,27 +9,27 @@ export class User implements UserInterface {
   /**
    * Unique ID for the user
    */
-  _id = '';
+  _id: string;
 
   /**
    * User's common name
    */
-  name = '';
+  name: string;
 
   /**
    * User's full name
    */
-  fullName = '';
+  fullName: string;
 
   /**
    * Filename of a picture of the user
    */
-  photoFilename = '';
+  photoFilename: string;
 
   /**
    * User's current overall unit in CLA (1-based).  There are 26 total units, including Unit 1 (Warmup) and Unit 26 (Wrapup).
    */
-  claUnit = 1;
+  claUnit: number;
 
   /**
    * Array of the last overall claUnit for each stage, from warmup (index 0) through the end of CLA

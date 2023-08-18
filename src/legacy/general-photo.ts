@@ -1,3 +1,5 @@
+import { GeneralPhoto as GeneralPhotoInterface, generalPhotoDefaults } from '../general-photo';
+
 /**
  * Class representing a photo taken as part of a General Recorder session.  The GeneralRecording that the photo
  * is attached to will have the GeneralPhoto's _id in its photos array.
@@ -5,57 +7,46 @@
  * For convenience, the id of the CultureEvent that the GeneralRecording is associated with is included in the GeneralPhoto,
  * so we don't have to trace back through the GeneralRecording to get to the CultureEvent.
  */
-class GeneralPhoto {
+export class GeneralPhoto implements GeneralPhotoInterface {
 
   /**
    * Unique ID for the General Photo
-   * @type {string}
-   * @default ''
    */
-  _id = '';
+  _id: string
 
   /**
    * ID of the culture event that this photo is associated with, for convenience
-   * @type {string}
-   * @default ''
    */
-  cultureEvent = '';
+  cultureEvent: string
 
   /**
    * Time (in seconds with decimals) from the beginning of the GeneralRecording, when this photo was taken
-   * @type {number}
-   * @default 0
    */
-  startTime = 0;
+  startTime: number
 
   /**
    * Filename of photo (no path, but does include extension)
-   * @type {string}
-   * @default ''
    */
-  filename = '';
+  filename: string
 
   /**
    * Creates a GeneralPhoto object
-   * @param {GeneralPhoto|Object} data
    */
-  constructor(data = {}) {
-    for(const key of Object.keys(data)) {
-      this[key] = data[key];
-    }
+  constructor(data?: GeneralPhotoInterface) {
+    const defaults = generalPhotoDefaults();
+    this._id = data?._id || defaults._id;
+    this.cultureEvent = data?.cultureEvent || defaults.cultureEvent;
+    this.startTime = data?.startTime || defaults.startTime;
+    this.filename = data?.filename || defaults.filename;
   }
 
   /**
    * Creates an updated GeneralPhoto object
-   * @param {GeneralPhoto|Object} data
-   * @returns {GeneralPhoto}
    */
-  set(data = {}) {
+  set(data: any ) {
     return new GeneralPhoto({
       ...this,
       ...data,
     });
   }
 }
-
-module.exports = GeneralPhoto;
