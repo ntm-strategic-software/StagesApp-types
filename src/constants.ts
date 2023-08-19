@@ -25,7 +25,7 @@ export enum Draggable {
   PE_DRAGGABLE = 'PE_DRAGGABLE',
   DRE_DRAGGABLE = 'DRE_DRAGGABLE',
   NOT_DRAGGABLE = 'NOT_DRAGGABLE', // Dragging not allowed
-};
+}
 
 /**
  * Enum of recorder types
@@ -63,13 +63,12 @@ export enum CLAStage {
 
 /**
  * Enum of the possible types of a CLA File
- * @enum {string}
  */
-export const ClaFileType = {
-  CULTURE_EVENT: 'CULTURE_EVENT',
-  DRE: 'DRE',
-  PE: 'PE',
-};
+export enum ClaFileType {
+  CULTURE_EVENT = 'CULTURE_EVENT',
+  DRE = 'DRE',
+  PE = 'PE',
+}
 
 /**
  * Enum of the possible types of an advanced filter

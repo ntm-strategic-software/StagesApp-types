@@ -1,20 +1,23 @@
-const { ClaFileType } = require('./constants');
+import { CLAFile as CLAFileInterface, claFileDefaults } from '../cla-file';
+import { ClaFileType } from '../constants';
 
 /**
  * Class representing a CLA File.  This class is only used as a base class (super class).
  */
-class CLAFile {
+export class CLAFile implements CLAFileInterface {
+
   /**
    * The type of CLA File this is (e.g., CultureEvent, DRE)
    * This method must be overridden in any class that extends CLAFile
    */
-  claFileType() {}
+  claFileType(): ClaFileType|undefined {
+    return;
+  }
 
   /**
    * file number
-   * @type {number}
    */
-  fileNumber = 0;
+  fileNumber: number;
 
   /**
    * _id's of the ActivityPlans this CLA File is linked to.  If empty array, this CLA File was created without an ActivityPlan.
@@ -24,81 +27,67 @@ class CLAFile {
    *  ActivityPlan in the list is the one this CLA File was created through (or if the CLA File was not created
    *  through an Activity Plan, the first ActivityPlan this CLA File was linked to), unless the user explicitly
    *  disassociates this CLA File from that original ActivityPlan.
-   * @type {string[]}
    */
-  activityPlanIds = [];
+  activityPlanIds: string[];
 
   /**
    * Array of file numbers (not _id's)
-   * @type {string[]}
-   * @default []
    */
-  linkedFiles = [];
+  linkedFiles: string[];
 
   /**
    * true if the file was imported from a previous export
-   * @type {boolean}
    */
-  imported = false;
+  imported: boolean;
 
   /**
    * true if we should prevent editing the file
-   * @type {boolean}
    */
-  readOnly = false;
+  readOnly: boolean;
 
   /**
    * Do not show this item in Pending until User.getClaStageNumber() of the user's CLA Stage is at least this number.
-   * @type {number}
    */
-  deferToStage = 0;
+  deferToStage: number;
 
   /**
    * if true, show this item in Pending (unless deferToStage prevents it)
-   * @type {boolean}
    */
-  canLinkToTask = false;
+  canLinkToTask: boolean;
 
   /**
    * constructs a CLAFile instance
-   * @param {CLAFile|Object} data
-   * @param {number} data.fileNumber
-   * @param {boolean} data.imported
-   * @param {boolean} data.readOnly
-   * @param {string[]} data.linkedFiles
-   * @param {string} data.activityPlanId
    */
-  constructor(data) {
-    this.fileNumber = data.fileNumber || this.fileNumber;
-    this.imported = data.imported || this.imported;
-    this.readOnly = data.readOnly || this.readOnly;
-    this.linkedFiles = data.linkedFiles || this.linkedFiles;
-    this.activityPlanId = data.activityPlanId || this.activityPlanId;
+  constructor(data?: CLAFileInterface) {
+    const defaults = claFileDefaults();
+    this.fileNumber = data?.fileNumber || defaults.fileNumber;
+    this.activityPlanIds = data?.activityPlanIds || defaults.activityPlanIds;
+    this.linkedFiles = data?.linkedFiles || defaults.linkedFiles;
+    this.imported = data?.imported || defaults.imported;
+    this.readOnly = data?.readOnly || defaults.readOnly;
+    this.deferToStage = data?.deferToStage || defaults.deferToStage;
+    this.canLinkToTask = data?.canLinkToTask || defaults.canLinkToTask;
   }
 
   /**
    * returns true if this CLAFile is a CultureEvent
-   * @returns {boolean}
    */
-  isCE() {
-    return this.claFileType() === ClaFileType.CultureEvent;
+  isCE(): boolean {
+    return this.claFileType() === ClaFileType.CULTURE_EVENT;
   }
 
   /**
    * returns true if this CLAFile is a DRE
-   * @returns {boolean}
    */
-  isDRE() {
+  isDRE(): boolean {
     return this.claFileType() === ClaFileType.DRE;
   }
 
   /**
    * returns true if this CLAFile is a PE
-   * @returns {boolean}
    */
-  isPE() {
+  isPE(): boolean {
     return this.claFileType() === ClaFileType.PE;
   }
-}
 
-module.exports = CLAFile;
+}

@@ -1,5 +1,6 @@
-const CLAFile = require('./cla-file');
-const { ClaFileType } = require('./constants');
+import { DRE as DREInterface, dreDefaults, SplitCompareText1, SplitTextColorDetails } from '../dre';
+import { ClaFileType } from '../constants';
+import { CLAFile } from './cla-file';
 
 /**
  * Class representing a Dual Recorder Event (our internal name.  In the UI and Engage, a Dual Recorder file.)
@@ -9,79 +10,74 @@ const { ClaFileType } = require('./constants');
  *
  * @extends CLAFile
  */
-class DRE extends CLAFile {
+export class DRE extends CLAFile implements DREInterface {
+
   claFileType() {
     return ClaFileType.DRE;
   }
 
+  fileNumber: number;
+  activityPlanIds: string[];
+  linkedFiles: string[];
+  imported: boolean;
+  readOnly: boolean;
+  deferToStage: number;
+  canLinkToTask: boolean;
+
   /**
    * Unique ID for the DRE
-   * @type {string}
-   * @default ''
    */
-  _id = '';
+  _id: string;
 
   /**
    * Title of the DRE
-   * @type {string}
-   * @default ''
    */
-  title = '';
+  title: string;
 
   /**
    * Any notes the user wants to make about the DRE.  Might be about the topic or genre or the helper used, the situation, etc.
-   * @type {string}
-   * @default ''
    */
-  note = '';
+  note: string;
 
   /**
    * Recording 1 file name (no path, but does include the extension)
-   * @type {string}
    */
-  recording1 = '';
+  recording1: string;
 
   /**
    * Recording 2 file name (no path, but does include the extension)
-   * @type {string}
    */
-  recording2 = '';
+  recording2: string;
 
   /**
    * the speaker in recording1 (_id of the speaker in the Person table)
-   * @type {string}
    */
-  speaker1 = '';
+  speaker1: string;
 
   /**
    * the speaker in recording2 (_id of the speaker in the Person table)
-   * @type {string}
    */
-  speaker2 = '';
+  speaker2: string;
 
   /**
    * Transcription 1 plain text
-   * @type {string}
    */
-  transcription1 = '';
+  transcription1: string;
 
   /**
    * Transcription 2 plain text
-   * @type {string}
    */
-  transcription2 = '';
+  transcription2: string;
 
   /**
    * transcription1, broken into sections by the user to match equivalent sections of transcription2
-   * @type {string[]}
    */
-  splitText1 = [];
+  splitText1: string[];
 
   /**
    * transcription2, broken into sections by the user to match equivalent sections of transcription1
-   * @type {string[]}
    */
-  splitText2 = [];
+  splitText2: string[];
 
   /**
    * Observations and Notes by color, for each row of this DRE.
@@ -103,7 +99,7 @@ class DRE extends CLAFile {
    *   {},
    * ]
    */
-  splitTextColorDetails = [];
+  splitTextColorDetails: SplitTextColorDetails;
 
   /**
    * Array of array of objects.  Each string in splitText1 is here broken into an array of objects of shape:
@@ -117,10 +113,8 @@ class DRE extends CLAFile {
    * If the text has been highlighted by the user on the Compare Transcriptions tab, className will be set to the highlight number, which corresponds to a color in the desktop app.
    *
    * If the text has not been highlighted, className will be an empty string.
-   *
-   * @type {object[][]}
    */
-  splitCompareText1 = [];
+  splitCompareText1: SplitCompareText1;
 
   /**
    * Array of array of objects.  Each string in splitText2 is here broken into an array of objects of shape:
@@ -134,33 +128,48 @@ class DRE extends CLAFile {
    * If the text has been highlighted by the user on the Compare Transcriptions tab, className will be set to the highlight number, which corresponds to a color in the desktop app.
    *
    * If the text has not been highlighted, className will be an empty string.
-   *
-   * @type {string[]}
    */
-  splitCompareText2 = [];
+  splitCompareText2: string[];
 
   /**
    * Creates a DRE object
-   * @param {DRE|Object} data
    */
-  constructor(data = {}) {
+  constructor(data?: DREInterface) {
     super(data);
-    for(const key of Object.keys(data)) {
-      this[key] = data[key];
-    }
+    const defaults = dreDefaults();
+
+    this.fileNumber = data?.fileNumber || defaults.fileNumber;
+    this.activityPlanIds = data?.activityPlanIds || defaults.activityPlanIds;
+    this.linkedFiles = data?.linkedFiles || defaults.linkedFiles;
+    this.imported = data?.imported || defaults.imported;
+    this.readOnly = data?.readOnly || defaults.readOnly;
+    this.deferToStage = data?.deferToStage || defaults.deferToStage;
+    this.canLinkToTask = data?.canLinkToTask || defaults.canLinkToTask;
+
+    this._id = data?._id || defaults._id;
+    this.title = data?.title || defaults.title;
+    this.note = data?.note || defaults.note;
+    this.recording1 = data?.recording1 || defaults.recording1;
+    this.recording2 = data?.recording2 || defaults.recording2;
+    this.speaker1 = data?.speaker1 || defaults.speaker1;
+    this.speaker2 = data?.speaker2 || defaults.speaker2;
+    this.transcription1 = data?.transcription1 || defaults.transcription1;
+    this.transcription2 = data?.transcription2 || defaults.transcription2;
+    this.splitText1 = data?.splitText1 || defaults.splitText1;
+    this.splitText2 = data?.splitText2 || defaults.splitText2;
+    this.splitTextColorDetails = data?.splitTextColorDetails || defaults.splitTextColorDetails;
+    this.splitCompareText1 = data?.splitCompareText1 || defaults.splitCompareText1;
+    this.splitCompareText2 = data?.splitCompareText2 || defaults.splitCompareText2;
   }
 
   /**
    * Creates an updated DRE object
-   * @param {DRE|Object} data
-   * @returns {DRE}
    */
-  set(data = {}) {
+  set(data: Partial<DREInterface>) {
     return new DRE({
       ...this,
       ...data,
     });
   }
-}
 
-module.exports = DRE;
+}
