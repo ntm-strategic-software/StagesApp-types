@@ -1,3 +1,5 @@
+import { Tag as TagInterface, tagDefaults } from '../tag';
+
 /**
  * Class representing a tag.  Tags are a plain text filing system the user can create if they want.
  * Users may prefix sets of tags with special characters, so groups of tags will appear together
@@ -5,30 +7,25 @@
  *
  * We may ship with some default tags, for example, a set of grammar tags
  */
-class Tag {
+export class Tag implements TagInterface {
 
   /**
    * Text of the tag
-   * @type {string}
    */
-  tagText = '';
+  tagText: string;
 
   /**
    * Creates a Tag object
-   * @param {Tag|Object} data
    */
-  constructor(data = {}) {
-    for(const key of Object.keys(data)) {
-      this[key] = data[key];
-    }
+  constructor(data?: TagInterface) {
+    const defaults = tagDefaults();
+    this.tagText = data?.tagText || defaults.tagText;
   }
 
   /**
    * Creates an updated Tag object
-   * @param {Tag|Object} data
-   * @returns {Tag}
    */
-  set(data) {
+  set(data: Partial<TagInterface>) {
     return new Tag({
       ...this,
       ...data,
@@ -36,5 +33,3 @@ class Tag {
   }
 
 }
-
-module.exports = Tag;
