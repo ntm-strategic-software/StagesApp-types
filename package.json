@@ -10,7 +10,8 @@
     "generate-docs": "jsdoc --destination docs ./types",
     "build": "tsc",
     "watch": "tsc -w",
-    "test": "ts-mocha -p ./tsconfig.json './src/**/*.spec.ts'"
+    "test": "ts-mocha -p ./tsconfig.json './src/**/*.spec.ts'",
+    "postinstall": "npm run build"
   },
   "repository": {
     "type": "git",
