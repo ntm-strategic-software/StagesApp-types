@@ -3,7 +3,7 @@ export interface PendingInvestigation {
   text: string
   linkedFile: string
 }
-export const pendingInterfaceDefaults = (): PendingInvestigation => ({
+export const pendingInvestigationDefaults = (): PendingInvestigation => ({
   _id: '',
   text: '',
   linkedFile: '',

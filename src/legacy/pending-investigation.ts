@@ -1,5 +1,5 @@
 import {
-  pendingInterfaceDefaults,
+  pendingInvestigationDefaults,
   PendingInvestigation as PendingInvestigationInterface
 } from '../pending-investigation';
 
@@ -27,7 +27,7 @@ export class PendingInvestigation implements PendingInvestigationInterface {
    * Creates a PendingInvestigation object
    */
   constructor(data?: PendingInvestigationInterface) {
-    const defaults = pendingInterfaceDefaults();
+    const defaults = pendingInvestigationDefaults();
     this._id = data?._id || defaults._id;
     this.text = data?.text || defaults.text;
     this.linkedFile = data?.linkedFile || defaults.linkedFile;

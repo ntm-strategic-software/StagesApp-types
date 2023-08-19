@@ -1,3 +1,5 @@
+import { TaskboxSortOrder as TaskboxSortOrderInterface, taskboxSortOrderDefaults } from '../taskbox-sort-order';
+
 /**
  * Class representing the order tasks should be displayed in all TaskBoxes.  Since completing a Task causes
  * the associated ActivityPlan._id to be removed from one TaskBox and added to another TaskBox, it seems best
@@ -12,62 +14,52 @@
  *
  * TaskBox names are all caps to match the TaskBox enum.
  */
-class TaskBoxSortOrder {
+export class TaskBoxSortOrder implements TaskboxSortOrderInterface {
   /**
    * Unique ID.  There will be only one record, but I include the _id for convenience when using methods that require an _id.
-   * @type {string}
-   * @default ''
    */
-  _id = '';
+  _id: string;
 
   /**
    * Plan sort order:  array of IDs of ActivityPlans, in the sorted order.
    * For each ActivityPlanId, show that ActivityPlan's next task (the task indicated by activityPlan.nextTaskIndex).
-   * @type {string[]}
-   * @default []
    */
-  PLAN = [];
+  PLAN: string[];
 
   /**
    * Process sort order:  array of IDs of ActivityPlans, in the sorted order.
    * For each ActivityPlanId, show that ActivityPlan's next task (the task indicated by activityPlan.nextTaskIndex).
-   * @type {string[]}
-   * @default []
    */
-  PROCESS = [];
+  PROCESS: string[];
 
   /**
    * Community sort order:  array of IDs of ActivityPlans, in the sorted order.
    * For each ActivityPlanId, show that ActivityPlan's next task (the task indicated by activityPlan.nextTaskIndex).
-   * @type {string[]}
-   * @default []
    */
-  COMMUNITY = [];
+  COMMUNITY: string[];
 
   /**
    * Helper sort order:  array of IDs of ActivityPlans, in the sorted order.
    * For each ActivityPlanId, show that ActivityPlan's next task (the task indicated by activityPlan.nextTaskIndex).
-   * @type {string[]}
-   * @default []
    */
-  HELPER = [];
+  HELPER: string[];
 
   /**
    * Creates a TaskBoxSortOrder object
-   * @param {TaskBoxSortOrder|Object} data
    */
-  constructor(data = {}) {
-    for(const key of Object.keys(data)) {
-      this[key] = data[key];
-    }
+  constructor(data?: TaskboxSortOrderInterface) {
+    const defaults = taskboxSortOrderDefaults();
+    this._id = data?._id || defaults._id;
+    this.PLAN = data?.PLAN || defaults.PLAN;
+    this.PROCESS = data?.PROCESS || defaults.PROCESS;
+    this.COMMUNITY = data?.COMMUNITY || defaults.COMMUNITY;
+    this.HELPER = data?.HELPER || defaults.HELPER;
   }
 
   /**
    * Creates an updated TaskBoxSortOrder object
-   * @param {TaskBoxSortOrder|Object} data
-   * @returns {TaskBoxSortOrder}
    */
-  set(data) {
+  set(data: Partial<TaskboxSortOrderInterface>) {
     return new TaskBoxSortOrder({
       ...this,
       ...data,
@@ -75,5 +67,3 @@ class TaskBoxSortOrder {
   }
 
 }
-
-module.exports = TaskBoxSortOrder;

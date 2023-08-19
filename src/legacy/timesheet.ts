@@ -46,11 +46,7 @@ export class Timesheet implements TimesheetInterface {
     const defaults = timesheetDefault();
     this._id = data?._id || defaults._id;
     const claUnit = data?.claUnit;
-    if(isNumber(claUnit)) {
-      this.claUnit = claUnit;
-    } else {
-      this.claUnit = defaults.claUnit;
-    }
+    this.claUnit = isNumber(claUnit) ? claUnit : defaults.claUnit;
     this.taskBox = data?.taskBox || defaults.taskBox;
     this.startTime = data?.startTime || defaults.startTime;
     this.endTime = data?.endTime || defaults.endTime;
