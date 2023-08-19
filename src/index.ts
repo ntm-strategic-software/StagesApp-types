@@ -1,3 +1,1 @@
-console.log('StagesApp-types');
-
-export {};
+export * as legacy from './legacy';
