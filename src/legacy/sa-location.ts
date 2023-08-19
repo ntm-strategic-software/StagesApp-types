@@ -1,52 +1,45 @@
+import { SALocation as SALocationInterface, saLocationDefaults } from '../sa-location';
+
 /**
  * Class representing a StagesApp location (not to be confused with the `Location` global object in browsers and Electron)
  */
-class SALocation {
+export class SALocation implements SALocationInterface {
 
   /**
    * Unique ID for the location
-   * @type {string}
-   * @default ''
    */
-  _id ='';
+  _id: string;
 
   /**
    * Name of the location
-   * @type {string}
-   * @default ''
    */
-  name = '';
+  name: string;
 
   /**
    * Any notes about the location
-   * @type {string}
-   * @default ''
    */
-  note = '';
+  note: string;
 
   /**
    * ISO date string (e.g., '2022-06-20T15:50:40.055Z'), when user on Mobile last edited this location or added this location to a CultureEvent
-   * @type {string}
-   * @default ''
    */
-  dateLastUsedOnMobile = '';
+  dateLastUsedOnMobile: string;
 
   /**
    * Creates an SALocation object
-   * @param {SALocation|Object} data
    */
-  constructor(data = {}) {
-    for(const key of Object.keys(data)) {
-      this[key] = data[key];
-    }
+  constructor(data?: SALocationInterface) {
+    const defaults = saLocationDefaults();
+    this._id = data?._id || defaults._id;
+    this.name = data?.name || defaults.name;
+    this.note = data?.note || defaults.note;
+    this.dateLastUsedOnMobile = data?.dateLastUsedOnMobile || defaults.dateLastUsedOnMobile;
   }
 
   /**
    * Creates an updated SALocation object
-   * @param {SALocation|Object} data
-   * @returns {SALocation}
    */
-  set(data) {
+  set(data: Partial<SALocationInterface>) {
     return new SALocation({
       ...this,
       ...data,
@@ -54,5 +47,3 @@ class SALocation {
   }
 
 }
-
-module.exports = SALocation;

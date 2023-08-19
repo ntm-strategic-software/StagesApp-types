@@ -1,38 +1,34 @@
+import { SearchWord as SearchWordInterface, searchWordDefaults } from '../search-word';
+
 /**
  * Class representing a search word, which is a word or phrase the user enters and links to something they want to find
  * by using that word or phrase
  */
-class SearchWord {
+export class SearchWord implements SearchWordInterface {
 
   /**
    * Unique ID for the search word
-   * @type {string}
-   * @default ''
    */
-  _id = '';
+  _id: string;
 
   /**
    * Text of the search word
-   * @type {string}
    */
-  word = '';
+  word: string;
 
   /**
    * Creates a SearchWord object
-   * @param {SearchWord|Object} data
    */
-  constructor(data = {}) {
-    for(const key of Object.keys(data)) {
-      this[key] = data[key];
-    }
+  constructor(data?: SearchWordInterface) {
+    const defaults = searchWordDefaults();
+    this._id = data?._id || defaults._id;
+    this.word = data?.word || defaults.word;
   }
 
   /**
    * Creates an updated SearchWord object
-   * @param {SearchWord|Object} data
-   * @returns {SearchWord}
    */
-  set(data) {
+  set(data: Partial<SearchWordInterface>) {
     return new SearchWord({
       ...this,
       ...data,
@@ -40,5 +36,3 @@ class SearchWord {
   }
 
 }
-
-module.exports = SearchWord;

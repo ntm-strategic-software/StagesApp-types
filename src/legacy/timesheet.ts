@@ -1,5 +1,6 @@
 import { Timesheet as TimesheetInterface, timesheetDefault } from '../timesheet';
 import { TaskBox } from '../constants';
+import isNumber from 'lodash/isNumber';
 
 /**
  * Class representing time a user has spent in each TaskBox, for each unit.
@@ -44,7 +45,12 @@ export class Timesheet implements TimesheetInterface {
   constructor(data?: TimesheetInterface) {
     const defaults = timesheetDefault();
     this._id = data?._id || defaults._id;
-    this.claUnit = data?.claUnit || defaults.claUnit;
+    const claUnit = data?.claUnit;
+    if(isNumber(claUnit)) {
+      this.claUnit = claUnit;
+    } else {
+      this.claUnit = defaults.claUnit;
+    }
     this.taskBox = data?.taskBox || defaults.taskBox;
     this.startTime = data?.startTime || defaults.startTime;
     this.endTime = data?.endTime || defaults.endTime;

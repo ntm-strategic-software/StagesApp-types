@@ -164,27 +164,21 @@ export const PendingFileType = {
 
 /**
  * Enum for the different groups of reflection questions
- *
- * @readonly
- * @enum {string}
  */
-export const ReflectionQuestionSets = {
-  GENERAL: 'GENERAL',
-  TIME: 'TIME',
-  AM_I_DONE: 'AM_I_DONE',
-};
+export enum ReflectionQuestionSets {
+  GENERAL = 'GENERAL',
+  TIME = 'TIME',
+  AM_I_DONE = 'AM_I_DONE',
+}
 
 /**
  * Enum for the different types of answers
- *
- * @readonly
- * @enum {string}
  */
-export const AnswerTypes = {
-  YES_NO: 'YES_NO',
-  TEXT: 'TEXT',
-  NONE_TO_NATIVE: 'NONE_TO_NATIVE', // this is for multiple choice questions on a range from none to native
-};
+export enum AnswerTypes {
+  YES_NO = 'YES_NO',
+  TEXT = 'TEXT',
+  NONE_TO_NATIVE = 'NONE_TO_NATIVE', // this is for multiple choice questions on a range from none to native
+}
 
 /**
  * Error types that we want to handle specially
