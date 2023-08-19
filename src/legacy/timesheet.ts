@@ -1,72 +1,63 @@
+import { Timesheet as TimesheetInterface, timesheetDefault } from '../timesheet';
+import { TaskBox } from '../constants';
+
 /**
  * Class representing time a user has spent in each TaskBox, for each unit.
  */
-class Timesheet {
+export class Timesheet implements TimesheetInterface {
 
   /**
    * Unique ID for the timesheet entry
-   * @type {string}
-   * @default ''
    */
-  _id = '';
+  _id: string;
 
   /**
    * The overall CLA unit the user was in when he created this timesheet entry (see User.claUnit)
-   * @type {number|null}
-   * @default null
    */
-  claUnit = null;
+  claUnit: number|null;
 
   /**
    * TaskBox for this timesheet entry
-   * @type {TaskBox|string}
    */
-  taskBox = '';
+  taskBox: TaskBox|'';
 
   /**
    * The datetime this timesheet entry was created, representing the start of time spent in taskBox.  In ISO format (e.g., '2022-06-20T15:50:40.055Z')
-   * @type {string}
-   * @default ''
    */
-  startTime = '';
+  startTime: string;
 
   /**
    * The datetime this timesheet entry was completed, representing the end of time spent in taskBox.  In ISO format (e.g., '2022-06-20T15:50:40.055Z')
-   * @type {string}
-   * @default ''
    */
-  endTime = '';
+  endTime: string;
 
   /**
    * localStartDate is the date this timesheet entry was created, in the user's local time zone.  It is in the format 'YYYY-MM-DD'.
    *   We use this to group timesheet entries by day.
-   * @type {string}
-   * @default ''
    */
-  localStartDate = '';
-
+  localStartDate: string;
 
   /**
    * Creates a timesheet entry object
    * @param {Timesheet|Object} data
    */
-  constructor(data = {}) {
-    for(const key of Object.keys(data)) {
-      this[key] = data[key];
-    }
+  constructor(data?: TimesheetInterface) {
+    const defaults = timesheetDefault();
+    this._id = data?._id || defaults._id;
+    this.claUnit = data?.claUnit || defaults.claUnit;
+    this.taskBox = data?.taskBox || defaults.taskBox;
+    this.startTime = data?.startTime || defaults.startTime;
+    this.endTime = data?.endTime || defaults.endTime;
+    this.localStartDate = data?.localStartDate || defaults.localStartDate;
   }
 
   /**
    * Creates an updated timesheet entry object
-   * @param {Timesheet|Object} data
-   * @returns {Timesheet}
    */
-  set(data) {
+  set(data: Partial<TimesheetInterface>) {
     return new Timesheet({
       ...this,
       ...data,
     });
   }
 }
-
-module.exports = Timesheet;
