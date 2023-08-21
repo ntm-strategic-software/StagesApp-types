@@ -1,0 +1,93 @@
+import { CLAFile as CLAFileInterface, claFileDefaults } from '../cla-file';
+import { ClaFileType } from '../constants';
+
+/**
+ * Class representing a CLA File.  This class is only used as a base class (super class).
+ */
+export class CLAFile implements CLAFileInterface {
+
+  /**
+   * The type of CLA File this is (e.g., CultureEvent, DRE)
+   * This method must be overridden in any class that extends CLAFile
+   */
+  claFileType(): ClaFileType|undefined {
+    return;
+  }
+
+  /**
+   * file number
+   */
+  fileNumber: number;
+
+  /**
+   * _id's of the ActivityPlans this CLA File is linked to.  If empty array, this CLA File was created without an ActivityPlan.
+   *  To find a specific task in an ActivityPlan that is linked to this CLA File, search through the ActivityPlan's tasks for this
+   *  CLA File's _id in taskClaFileId.
+   *  _id's are appended to the end of the list when this CLA File is linked to an ActivityPlan.  So, the first
+   *  ActivityPlan in the list is the one this CLA File was created through (or if the CLA File was not created
+   *  through an Activity Plan, the first ActivityPlan this CLA File was linked to), unless the user explicitly
+   *  disassociates this CLA File from that original ActivityPlan.
+   */
+  activityPlanIds: string[];
+
+  /**
+   * Array of file numbers (not _id's)
+   */
+  linkedFiles: string[];
+
+  /**
+   * true if the file was imported from a previous export
+   */
+  imported: boolean;
+
+  /**
+   * true if we should prevent editing the file
+   */
+  readOnly: boolean;
+
+  /**
+   * Do not show this item in Pending until User.getClaStageNumber() of the user's CLA Stage is at least this number.
+   */
+  deferToStage: number;
+
+  /**
+   * if true, show this item in Pending (unless deferToStage prevents it)
+   */
+  canLinkToTask: boolean;
+
+  /**
+   * constructs a CLAFile instance
+   */
+  constructor(data?: CLAFileInterface) {
+    const defaults = claFileDefaults();
+    this.fileNumber = data?.fileNumber || defaults.fileNumber;
+    this.activityPlanIds = data?.activityPlanIds || defaults.activityPlanIds;
+    this.linkedFiles = data?.linkedFiles || defaults.linkedFiles;
+    this.imported = data?.imported || defaults.imported;
+    this.readOnly = data?.readOnly || defaults.readOnly;
+    this.deferToStage = data?.deferToStage || defaults.deferToStage;
+    this.canLinkToTask = data?.canLinkToTask || defaults.canLinkToTask;
+  }
+
+  /**
+   * returns true if this CLAFile is a CultureEvent
+   */
+  isCE(): boolean {
+    return this.claFileType() === ClaFileType.CULTURE_EVENT;
+  }
+
+  /**
+   * returns true if this CLAFile is a DRE
+   */
+  isDRE(): boolean {
+    return this.claFileType() === ClaFileType.DRE;
+  }
+
+  /**
+   * returns true if this CLAFile is a PE
+   */
+  isPE(): boolean {
+    return this.claFileType() === ClaFileType.PE;
+  }
+
+}
