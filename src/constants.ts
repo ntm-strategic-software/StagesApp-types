@@ -29,8 +29,6 @@ export enum Draggable {
 
 /**
  * Enum of recorder types
- * @readonly
- * @enum {string}
  */
 export enum RecorderButtonType {
   GENERAL_RECORDER = 'GENERAL_RECORDER',
@@ -41,8 +39,6 @@ export enum RecorderButtonType {
 
 /**
  * Enum of player types
- * @readonly
- * @enum {string}
  */
 export enum PlayerType {
   GENERAL_RECORDING_PLAYER = 'GENERAL_RECORDING_PLAYER',
@@ -50,7 +46,6 @@ export enum PlayerType {
 
 /**
  * Enum for the CLA Stage that the user is in
- * @readonly
  */
 export enum CLAStage {
   WARMUP = 'WARMUP',
@@ -72,8 +67,6 @@ export enum ClaFileType {
 
 /**
  * Enum of the possible types of an advanced filter
- * @readonly
- * @enum {string}
  */
 export enum AdvancedFilterType {
   NORMAL_FILTER = 'NORMAL_FILTER',
@@ -82,8 +75,6 @@ export enum AdvancedFilterType {
 
 /**
  * Enum for Activities
- * @readonly
- * @enum {string}
  */
 export enum ActivityKey {
   // COMMUNITY EXPERIENCE ACTIVITIES
@@ -181,59 +172,52 @@ export enum AnswerTypes {
 
 /**
  * Error types that we want to handle specially
- *
- * @readonly
- * @enum {string} */
-export const ErrorType = {
-  OLD_MOBILE_VERSION: 'OLD_MOBILE_VERSION',
-  OLD_DESKTOP_VERSION: 'OLD_DESKTOP_VERSION',
-  NO_DESKTOP_USER: 'NO_DESKTOP_USER',
-};
+ */
+export enum ErrorType {
+  OLD_MOBILE_VERSION = 'OLD_MOBILE_VERSION',
+  OLD_DESKTOP_VERSION = 'OLD_DESKTOP_VERSION',
+  NO_DESKTOP_USER = 'NO_DESKTOP_USER',
+}
 
 /**
  * Enum for table names
  *
  * NOTE:  all tables include properties createdAt and updatedAt, which are ISO date strings (e.g., '2022-06-20T15:50:40.055Z')
- *
- * @readonly
- * @enum {string}
  */
-export const TableNames = {
-  USERS: 'Users',
-  CULTURE_EVENTS: 'CultureEvents',
-  GENERAL_RECORDINGS: 'GeneralRecordings',
-  GENERAL_PHOTOS: 'GeneralPhotos',
-  GENERAL_QUESTIONS: 'GeneralQuestions',
-  MARKERS: 'Markers',
-  PEOPLE: 'People',
-  LOCATIONS: 'Locations',
-  SEARCH_WORDS: 'SearchWords',
-  TRUSTED_MACHINES: 'TrustedMachines',
-  MOBILE_DEVICES: 'MobileDevices',
-  DELETED_ITEMS: 'DeletedItems',
-  TRANSCRIPTIONS: 'Transcriptions',
-  DRE: 'DRE',
-  ADVANCED_FILTERS: 'AdvancedFilters',
-  PLAYLIST_ITEMS: 'PlaylistItems',
-  PENDING_INVESTIGATIONS: 'PendingInvestigations',
-  OBSERVATIONS: 'Observations',
-  TAGS: 'Tags',
-  ACTIVITY_PLANS: 'ActivityPlans',
-  // PENDING_MEDIA: 'PendingMedia',
-  TASK_BOX_SORT_ORDER: 'TaskBoxSortOrder',
-  PHOTO_GROUPS: 'PhotoGroups',
-  VOICE_NOTES: 'VoiceNotes',
-  REFLECTION_QUESTIONS: 'ReflectionQuestions',
-  SELF_EVALUATION_QUESTIONS: 'SelfEvaluationQuestions',
-  CONSULTANT_RECOMMENDATIONS: 'ConsultantRecommendations',
-  TIMESHEET: 'Timesheet',
-};
+export enum TableNames {
+  USERS = 'Users',
+  CULTURE_EVENTS = 'CultureEvents',
+  GENERAL_RECORDINGS = 'GeneralRecordings',
+  GENERAL_PHOTOS = 'GeneralPhotos',
+  GENERAL_QUESTIONS = 'GeneralQuestions',
+  MARKERS = 'Markers',
+  PEOPLE = 'People',
+  LOCATIONS = 'Locations',
+  SEARCH_WORDS = 'SearchWords',
+  TRUSTED_MACHINES = 'TrustedMachines',
+  MOBILE_DEVICES = 'MobileDevices',
+  DELETED_ITEMS = 'DeletedItems',
+  TRANSCRIPTIONS = 'Transcriptions',
+  DRE = 'DRE',
+  ADVANCED_FILTERS = 'AdvancedFilters',
+  PLAYLIST_ITEMS = 'PlaylistItems',
+  PENDING_INVESTIGATIONS = 'PendingInvestigations',
+  OBSERVATIONS = 'Observations',
+  TAGS = 'Tags',
+  ACTIVITY_PLANS = 'ActivityPlans',
+  // PENDING_MEDIA = 'PendingMedia',
+  TASK_BOX_SORT_ORDER = 'TaskBoxSortOrder',
+  PHOTO_GROUPS = 'PhotoGroups',
+  VOICE_NOTES = 'VoiceNotes',
+  REFLECTION_QUESTIONS = 'ReflectionQuestions',
+  SELF_EVALUATION_QUESTIONS = 'SelfEvaluationQuestions',
+  CONSULTANT_RECOMMENDATIONS = 'ConsultantRecommendations',
+  TIMESHEET = 'Timesheet',
+}
 
 /**
  * Enum for table names to sync from mobile to desktop.
  * Tables that are synced from desktop to mobile are listed in StagesApp-desktop dbSchema.js desktopTablesToSendToMobile
- * @readonly
- * @enum {string}
  */
 export const mobileTablesToSendToDesktop = [
   TableNames.USERS,
@@ -261,22 +245,21 @@ export const TASK_BOX_SORT_ORDER_ID = '8cf436a9-c7a2-4222-bf4f-3b047b93116a';
 
 /**
  * Enum of the possible types of data transfers between mobile and desktop
- * @enum {string}
  */
-export const DataTransferType = {
-  SYNC: 'SYNC',
-  IMPORT_USER: 'IMPORT_USER',
-};
+export enum DataTransferType {
+  SYNC = 'SYNC',
+  IMPORT_USER = 'IMPORT_USER',
+}
 
-export const socketEndpoints = {
+export enum socketEndpoints {
   // used for sync
-  GET_PUBLIC_KEY: 'GET_PUBLIC_KEY',
-  KEY_CHALLENGE: 'KEY_CHALLENGE',
-  TRANSFER_TYPE: 'TRANSFER_TYPE',
-  GET_LAST_SYNC_TIME: 'GET_LAST_SYNC_TIME',
-  SEND_MOBILE_DATA: 'SEND_MOBILE_DATA',
-  GET_DESKTOP_PHOTO: 'GET_DESKTOP_PHOTO',
-  // GET_TABLE_ITEMS: 'GET_TABLE_ITEMS',  // Not currently used, but I'm leaving it here in case we ever want it.
-  SEND_EXTRA_MOBILE_DATA: 'SEND_EXTRA_MOBILE_DATA',
-  FINALIZE_DESKTOP: 'FINALIZE_DESKTOP',
-};
+  GET_PUBLIC_KEY = 'GET_PUBLIC_KEY',
+  KEY_CHALLENGE = 'KEY_CHALLENGE',
+  TRANSFER_TYPE = 'TRANSFER_TYPE',
+  GET_LAST_SYNC_TIME = 'GET_LAST_SYNC_TIME',
+  SEND_MOBILE_DATA = 'SEND_MOBILE_DATA',
+  GET_DESKTOP_PHOTO = 'GET_DESKTOP_PHOTO',
+  // GET_TABLE_ITEMS = 'GET_TABLE_ITEMS',  // Not currently used, but I'm leaving it here in case we ever want it.
+  SEND_EXTRA_MOBILE_DATA = 'SEND_EXTRA_MOBILE_DATA',
+  FINALIZE_DESKTOP = 'FINALIZE_DESKTOP',
+}
