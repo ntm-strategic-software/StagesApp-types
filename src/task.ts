@@ -13,6 +13,8 @@ export interface Task {
     recorderButtonType: RecorderButtonType|''
     playerButtonType: PlayerType|''
     nextTaskSameSession: boolean
+    createdAt?: string
+    updatedAt?: string
 }
 export const taskDefaults = (): Task => ({
   taskTitle: '',
@@ -29,4 +31,6 @@ export const taskDefaults = (): Task => ({
   recorderButtonType: '',
   playerButtonType: '',
   nextTaskSameSession: false,
+  createdAt: '',
+  updatedAt: '',
 });

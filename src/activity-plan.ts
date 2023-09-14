@@ -12,6 +12,8 @@ export interface ActivityPlan {
   syncedTaskIndex: number
   unitCreated: number|null
   unitCompleted: number|null
+  createdAt?: string
+  updatedAt?: string
 }
 export const activityPlanDefaults = (): ActivityPlan => ({
   _id: '',
@@ -24,4 +26,6 @@ export const activityPlanDefaults = (): ActivityPlan => ({
   syncedTaskIndex: -1,
   unitCreated: null,
   unitCompleted: null,
+  createdAt: '',
+  updatedAt: '',
 });

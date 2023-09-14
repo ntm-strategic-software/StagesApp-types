@@ -26,6 +26,16 @@ export class SALocation implements SALocationInterface {
   dateLastUsedOnMobile: string;
 
   /**
+   * ISO Date (e.g., '2022-06-20T15:50:40.055Z'), when the row was initially saved to the database
+   */
+  createdAt?: string;
+
+  /**
+   * ISO Date (e.g., '2022-06-20T15:50:40.055Z'), when the row was last updated in the database
+   */
+  updatedAt?: string;
+
+  /**
    * Creates an SALocation object
    */
   constructor(data?: SALocationInterface) {
@@ -34,6 +44,8 @@ export class SALocation implements SALocationInterface {
     this.name = data?.name || defaults.name;
     this.note = data?.note || defaults.note;
     this.dateLastUsedOnMobile = data?.dateLastUsedOnMobile || defaults.dateLastUsedOnMobile;
+    this.createdAt = data?.createdAt || defaults.createdAt;
+    this.updatedAt = data?.updatedAt || defaults.updatedAt;
   }
 
   /**

@@ -9,6 +9,8 @@ export interface SelfEvaluationQuestion {
   answerType: AnswerTypes|''
   answer: string
   sortOrder: number
+  createdAt?: string
+  updatedAt?: string
 }
 export const selfEvaluationQuestionDefaults = (): SelfEvaluationQuestion => ({
   _id: '',
@@ -19,4 +21,6 @@ export const selfEvaluationQuestionDefaults = (): SelfEvaluationQuestion => ({
   answerType: '',
   answer: '',
   sortOrder: 0,
+  createdAt: '',
+  updatedAt: '',
 });

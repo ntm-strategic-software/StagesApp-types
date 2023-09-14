@@ -4,6 +4,8 @@ export interface User {
   fullName: string
   photoFilename: string
   claUnit: number
+  createdAt?: string
+  updatedAt?: string
 }
 export const userDefaults = (): User => ({
   _id: '',
@@ -11,4 +13,6 @@ export const userDefaults = (): User => ({
   fullName: '',
   photoFilename: '',
   claUnit: 1,
+  createdAt: '',
+  updatedAt: '',
 });

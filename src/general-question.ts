@@ -4,6 +4,8 @@ export interface GeneralQuestion {
     startTime: number
     filename: string
     text: string
+    createdAt?: string
+    updatedAt?: string
 }
 export const generalQuestionDefaults = (): GeneralQuestion => ({
     _id: '',
@@ -11,4 +13,6 @@ export const generalQuestionDefaults = (): GeneralQuestion => ({
     startTime: 0,
     filename: '',
     text: '',
+    createdAt: '',
+    updatedAt: '',
 });

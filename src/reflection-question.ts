@@ -9,6 +9,8 @@ export interface ReflectionQuestion {
   questionText: string
   answerType: AnswerTypes|''
   answer: string
+  createdAt?: string
+  updatedAt?: string
 }
 export const reflectionQuestionDefaults = (): ReflectionQuestion => ({
   _id: '',
@@ -19,4 +21,6 @@ export const reflectionQuestionDefaults = (): ReflectionQuestion => ({
   questionText: '',
   answerType: '',
   answer: '',
+  createdAt: '',
+  updatedAt: '',
 });

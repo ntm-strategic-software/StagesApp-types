@@ -7,6 +7,8 @@ export interface PlaylistItem {
   recordingsOrder: string[]
   title: string
   dateRecorded: string
+  createdAt?: string
+  updatedAt?: string
 }
 export const playlistItemDefaults = (): PlaylistItem => ({
   _id: '',
@@ -17,4 +19,6 @@ export const playlistItemDefaults = (): PlaylistItem => ({
   recordingsOrder: [],
   title: '',
   dateRecorded: '',
+  createdAt: '',
+  updatedAt: '',
 });

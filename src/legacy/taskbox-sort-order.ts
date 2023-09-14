@@ -45,6 +45,16 @@ export class TaskBoxSortOrder implements TaskboxSortOrderInterface {
   HELPER: string[];
 
   /**
+   * ISO Date (e.g., '2022-06-20T15:50:40.055Z'), when the row was initially saved to the database
+   */
+  createdAt?: string;
+
+  /**
+   * ISO Date (e.g., '2022-06-20T15:50:40.055Z'), when the row was last updated in the database
+   */
+  updatedAt?: string;
+
+  /**
    * Creates a TaskBoxSortOrder object
    */
   constructor(data?: TaskboxSortOrderInterface) {
@@ -54,6 +64,8 @@ export class TaskBoxSortOrder implements TaskboxSortOrderInterface {
     this.PROCESS = data?.PROCESS || defaults.PROCESS;
     this.COMMUNITY = data?.COMMUNITY || defaults.COMMUNITY;
     this.HELPER = data?.HELPER || defaults.HELPER;
+    this.createdAt = data?.createdAt || defaults.createdAt;
+    this.updatedAt = data?.updatedAt || defaults.updatedAt;
   }
 
   /**

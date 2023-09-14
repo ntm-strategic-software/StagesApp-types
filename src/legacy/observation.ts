@@ -31,6 +31,16 @@ export class Observation implements ObservationInterface {
   text: string;
 
   /**
+   * ISO Date (e.g., '2022-06-20T15:50:40.055Z'), when the row was initially saved to the database
+   */
+  createdAt?: string;
+
+  /**
+   * ISO Date (e.g., '2022-06-20T15:50:40.055Z'), when the row was last updated in the database
+   */
+  updatedAt?: string;
+
+  /**
    * Creates an Observation object
    */
   constructor(data?: ObservationInterface) {
@@ -40,6 +50,8 @@ export class Observation implements ObservationInterface {
     this.claUnit = data?.claUnit || defaults.claUnit;
     this.date = data?.date || defaults.date;
     this.text = data?.text || defaults.text;
+    this.createdAt = data?.createdAt || defaults.createdAt;
+    this.updatedAt = data?.updatedAt || defaults.updatedAt;
   }
 
   /**

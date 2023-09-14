@@ -7,6 +7,8 @@ export interface PendingMedia {
   title: string
   filename: string
   isProcessed: boolean
+  createdAt?: string
+  updatedAt?: string
 }
 export const pendingMediaDefaults = (): PendingMedia => ({
   _id: '',
@@ -15,4 +17,6 @@ export const pendingMediaDefaults = (): PendingMedia => ({
   title: '',
   filename: '',
   isProcessed: false,
+  createdAt: '',
+  updatedAt: '',
 });

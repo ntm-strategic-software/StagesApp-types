@@ -9,6 +9,8 @@ export interface Person {
   dateLastUsedOnMobile: string
   deceased: boolean
   photoFilename: string
+  createdAt?: string
+  updatedAt?: string
 }
 export const personDefaults = (): Person => ({
   _id: '',
@@ -21,4 +23,6 @@ export const personDefaults = (): Person => ({
   dateLastUsedOnMobile: '',
   deceased: false,
   photoFilename: '',
+  createdAt: '',
+  updatedAt: '',
 });

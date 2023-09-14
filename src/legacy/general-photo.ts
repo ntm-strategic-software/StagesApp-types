@@ -30,6 +30,16 @@ export class GeneralPhoto implements GeneralPhotoInterface {
   filename: string
 
   /**
+   * ISO Date (e.g., '2022-06-20T15:50:40.055Z'), when the row was initially saved to the database
+   */
+  createdAt?: string;
+
+  /**
+   * ISO Date (e.g., '2022-06-20T15:50:40.055Z'), when the row was last updated in the database
+   */
+  updatedAt?: string;
+
+  /**
    * Creates a GeneralPhoto object
    */
   constructor(data?: GeneralPhotoInterface) {
@@ -38,6 +48,8 @@ export class GeneralPhoto implements GeneralPhotoInterface {
     this.cultureEvent = data?.cultureEvent || defaults.cultureEvent;
     this.startTime = data?.startTime || defaults.startTime;
     this.filename = data?.filename || defaults.filename;
+    this.createdAt = data?.createdAt || defaults.createdAt;
+    this.updatedAt = data?.updatedAt || defaults.updatedAt;
   }
 
   /**

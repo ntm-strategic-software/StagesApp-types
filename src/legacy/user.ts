@@ -32,6 +32,16 @@ export class User implements UserInterface {
   claUnit: number;
 
   /**
+   * ISO Date (e.g., '2022-06-20T15:50:40.055Z'), when the row was initially saved to the database
+   */
+  createdAt?: string;
+
+  /**
+   * ISO Date (e.g., '2022-06-20T15:50:40.055Z'), when the row was last updated in the database
+   */
+  updatedAt?: string;
+
+  /**
    * Array of the last overall claUnit for each stage, from warmup (index 0) through the end of CLA
    */
   static lastUnits = [1, 5, 11, 17, 25, 26];
@@ -137,6 +147,8 @@ export class User implements UserInterface {
     this.fullName = data?.fullName || defaults.fullName;
     this.photoFilename = data?.photoFilename || defaults.photoFilename;
     this.claUnit = data?.claUnit || defaults.claUnit;
+    this.createdAt = data?.createdAt || defaults.createdAt;
+    this.updatedAt = data?.updatedAt || defaults.updatedAt;
   }
 
   /**

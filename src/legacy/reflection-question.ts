@@ -46,6 +46,16 @@ export class ReflectionQuestion implements ReflectionQuestionInterface {
   answer: string;
 
   /**
+   * ISO Date (e.g., '2022-06-20T15:50:40.055Z'), when the row was initially saved to the database
+   */
+  createdAt?: string;
+
+  /**
+   * ISO Date (e.g., '2022-06-20T15:50:40.055Z'), when the row was last updated in the database
+   */
+  updatedAt?: string;
+
+  /**
    * Constructs an ReflectionQuestion object
    */
   constructor(data?: ReflectionQuestionInterface) {
@@ -58,6 +68,8 @@ export class ReflectionQuestion implements ReflectionQuestionInterface {
     this.questionText = data?.questionText || defaults.questionText;
     this.answerType = data?.answerType || defaults.answerType;
     this.answer = data?.answer || defaults.answer;
+    this.createdAt = data?.createdAt || defaults.createdAt;
+    this.updatedAt = data?.updatedAt || defaults.updatedAt;
   }
 
   /**

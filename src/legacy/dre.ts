@@ -23,6 +23,8 @@ export class DRE extends CLAFile implements DREInterface {
   readOnly: boolean;
   deferToStage: number;
   canLinkToTask: boolean;
+  createdAt?: string;
+  updatedAt?: string;
 
   /**
    * Unique ID for the DRE
@@ -145,6 +147,8 @@ export class DRE extends CLAFile implements DREInterface {
     this.readOnly = data?.readOnly || defaults.readOnly;
     this.deferToStage = data?.deferToStage || defaults.deferToStage;
     this.canLinkToTask = data?.canLinkToTask || defaults.canLinkToTask;
+    this.createdAt = data?.createdAt || defaults.createdAt;
+    this.updatedAt = data?.updatedAt || defaults.updatedAt;
 
     this._id = data?._id || defaults._id;
     this.title = data?.title || defaults.title;

@@ -50,6 +50,16 @@ export class SelfEvaluationQuestion implements SelfEvaluationQuestionInterface {
   sortOrder: number;
 
   /**
+   * ISO Date (e.g., '2022-06-20T15:50:40.055Z'), when the row was initially saved to the database
+   */
+  createdAt?: string;
+
+  /**
+   * ISO Date (e.g., '2022-06-20T15:50:40.055Z'), when the row was last updated in the database
+   */
+  updatedAt?: string;
+
+  /**
    * Constructs a SelfEvaluationQuestion object
    */
   constructor(data?: SelfEvaluationQuestionInterface) {
@@ -62,6 +72,8 @@ export class SelfEvaluationQuestion implements SelfEvaluationQuestionInterface {
     this.answerType = data?.answerType || defaults.answerType;
     this.answer = data?.answer || defaults.answer;
     this.sortOrder = data?.sortOrder || defaults.sortOrder;
+    this.createdAt = data?.createdAt || defaults.createdAt;
+    this.updatedAt = data?.updatedAt || defaults.updatedAt;
   }
 
   /**

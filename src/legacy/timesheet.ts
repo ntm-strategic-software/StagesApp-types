@@ -39,6 +39,16 @@ export class Timesheet implements TimesheetInterface {
   localStartDate: string;
 
   /**
+   * ISO Date (e.g., '2022-06-20T15:50:40.055Z'), when the row was initially saved to the database
+   */
+  createdAt?: string;
+
+  /**
+   * ISO Date (e.g., '2022-06-20T15:50:40.055Z'), when the row was last updated in the database
+   */
+  updatedAt?: string;
+
+  /**
    * Creates a timesheet entry object
    * @param {Timesheet|Object} data
    */
@@ -51,6 +61,8 @@ export class Timesheet implements TimesheetInterface {
     this.startTime = data?.startTime || defaults.startTime;
     this.endTime = data?.endTime || defaults.endTime;
     this.localStartDate = data?.localStartDate || defaults.localStartDate;
+    this.createdAt = data?.createdAt || defaults.createdAt;
+    this.updatedAt = data?.updatedAt || defaults.updatedAt;
   }
 
   /**
