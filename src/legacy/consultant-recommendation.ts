@@ -29,6 +29,16 @@ export class ConsultantRecommendation implements ConsultantRecommendationInterfa
   okToAdvance: boolean;
 
   /**
+   * ISO Date (e.g., '2022-06-20T15:50:40.055Z'), when the row was initially saved to the database
+   */
+  createdAt?: string;
+
+  /**
+   * ISO Date (e.g., '2022-06-20T15:50:40.055Z'), when the row was last updated in the database
+   */
+  updatedAt?: string;
+
+  /**
    * Constructs a ConsultantRecommendation object
    */
   constructor(data?: ConsultantRecommendationInterface) {
@@ -37,6 +47,8 @@ export class ConsultantRecommendation implements ConsultantRecommendationInterfa
     this.claUnit = data?.claUnit || defaults.claUnit;
     this.recommendationText = data?.recommendationText || defaults.recommendationText;
     this.okToAdvance = data?.okToAdvance || defaults.okToAdvance;
+    this.createdAt = data?.createdAt || defaults.createdAt;
+    this.updatedAt = data?.updatedAt || defaults.updatedAt;
   }
 
   /**

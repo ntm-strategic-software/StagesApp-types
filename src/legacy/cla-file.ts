@@ -56,6 +56,16 @@ export class CLAFile implements CLAFileInterface {
   canLinkToTask: boolean;
 
   /**
+   * ISO Date (e.g., '2022-06-20T15:50:40.055Z'), when the row was initially saved to the database
+   */
+  createdAt?: string;
+
+  /**
+   * ISO Date (e.g., '2022-06-20T15:50:40.055Z'), when the row was last updated in the database
+   */
+  updatedAt?: string;
+
+  /**
    * constructs a CLAFile instance
    */
   constructor(data?: CLAFileInterface) {
@@ -67,6 +77,8 @@ export class CLAFile implements CLAFileInterface {
     this.readOnly = data?.readOnly || defaults.readOnly;
     this.deferToStage = data?.deferToStage || defaults.deferToStage;
     this.canLinkToTask = data?.canLinkToTask || defaults.canLinkToTask;
+    this.createdAt = data?.createdAt || defaults.createdAt;
+    this.updatedAt = data?.updatedAt || defaults.updatedAt;
   }
 
   /**

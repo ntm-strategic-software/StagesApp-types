@@ -5,6 +5,8 @@ export interface GeneralRecording {
   markers: string[]
   questions: string[]
   photos: string[]
+  createdAt?: string
+  updatedAt?: string
 }
 
 export const generalRecordingDefaults = (): GeneralRecording => ({
@@ -14,4 +16,6 @@ export const generalRecordingDefaults = (): GeneralRecording => ({
   markers: [],
   questions: [],
   photos: [],
+  createdAt: '',
+  updatedAt: '',
 });

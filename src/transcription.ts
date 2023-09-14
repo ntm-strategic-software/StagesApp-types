@@ -11,6 +11,8 @@ export interface Transcription {
   idx: number
   transcriptionStartTime: number
   transcriptionEndTime: number
+  createdAt?: string
+  updatedAt?: string
 }
 export const transcriptionDefaults = (): Transcription => ({
   _id: '',
@@ -25,4 +27,6 @@ export const transcriptionDefaults = (): Transcription => ({
   idx: 0,
   transcriptionStartTime: 0,
   transcriptionEndTime: 0,
+  createdAt: '',
+  updatedAt: '',
 });

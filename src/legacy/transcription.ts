@@ -71,6 +71,16 @@ export class Transcription implements TranscriptionInterface {
   transcriptionEndTime: number;
 
   /**
+   * ISO Date (e.g., '2022-06-20T15:50:40.055Z'), when the row was initially saved to the database
+   */
+  createdAt?: string;
+
+  /**
+   * ISO Date (e.g., '2022-06-20T15:50:40.055Z'), when the row was last updated in the database
+   */
+  updatedAt?: string;
+
+  /**
    * Constructs a Transcription object
    */
   constructor(data?: TranscriptionInterface) {
@@ -87,6 +97,8 @@ export class Transcription implements TranscriptionInterface {
     this.idx = data?.idx || defaults.idx;
     this.transcriptionStartTime = data?.transcriptionStartTime || defaults.transcriptionStartTime;
     this.transcriptionEndTime = data?.transcriptionEndTime || defaults.transcriptionEndTime;
+    this.createdAt = data?.createdAt || defaults.createdAt;
+    this.updatedAt = data?.updatedAt || defaults.updatedAt;
   }
 
   /**

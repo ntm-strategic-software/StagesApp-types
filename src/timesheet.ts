@@ -7,6 +7,8 @@ export interface Timesheet {
   startTime: string
   endTime: string
   localStartDate: string
+  createdAt?: string
+  updatedAt?: string
 }
 export const timesheetDefault = (): Timesheet => ({
   _id: '',
@@ -15,4 +17,6 @@ export const timesheetDefault = (): Timesheet => ({
   startTime: '',
   endTime: '',
   localStartDate: '',
+  createdAt: '',
+  updatedAt: '',
 });

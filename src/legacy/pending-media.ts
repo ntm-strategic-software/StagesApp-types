@@ -39,6 +39,16 @@ export class PendingMedia implements PendingMediaInterface {
   isProcessed: boolean;
 
   /**
+   * ISO Date (e.g., '2022-06-20T15:50:40.055Z'), when the row was initially saved to the database
+   */
+  createdAt?: string;
+
+  /**
+   * ISO Date (e.g., '2022-06-20T15:50:40.055Z'), when the row was last updated in the database
+   */
+  updatedAt?: string;
+
+  /**
    * Constructs an PendingMedia object
    */
   constructor(data?: PendingMediaInterface) {
@@ -49,6 +59,8 @@ export class PendingMedia implements PendingMediaInterface {
     this.title = data?.title || defaults.title;
     this.filename = data?.filename || defaults.filename;
     this.isProcessed = data?.isProcessed || defaults.isProcessed;
+    this.createdAt = data?.createdAt || defaults.createdAt;
+    this.updatedAt = data?.updatedAt || defaults.updatedAt;
   }
 
   /**

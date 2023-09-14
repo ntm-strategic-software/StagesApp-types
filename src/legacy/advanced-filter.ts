@@ -27,6 +27,16 @@ export class AdvancedFilter implements AdvancedFilterInterface {
   selectedItemId: string;
 
   /**
+   * ISO Date (e.g., '2022-06-20T15:50:40.055Z'), when the row was initially saved to the database
+   */
+  createdAt?: string;
+
+  /**
+   * ISO Date (e.g., '2022-06-20T15:50:40.055Z'), when the row was last updated in the database
+   */
+  updatedAt?: string;
+
+  /**
    * Constructs an AdvancedFilter object
    */
   constructor(data?: AdvancedFilterInterface) {
@@ -35,6 +45,8 @@ export class AdvancedFilter implements AdvancedFilterInterface {
     this.filter = data?.filter || defaults.filter;
     this.filterType = data?.filterType || defaults.filterType;
     this.selectedItemId = data?.selectedItemId || defaults.selectedItemId;
+    this.createdAt = data?.createdAt || defaults.createdAt;
+    this.updatedAt = data?.updatedAt || defaults.updatedAt;
   }
 
   /**

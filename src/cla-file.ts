@@ -6,6 +6,8 @@ export interface CLAFile {
   readOnly: boolean
   deferToStage: number
   canLinkToTask: boolean
+  createdAt?: string
+  updatedAt?: string
 }
 export const claFileDefaults = (): CLAFile => ({
   fileNumber: 0,
@@ -15,4 +17,6 @@ export const claFileDefaults = (): CLAFile => ({
   readOnly: false,
   deferToStage: 0,
   canLinkToTask: false,
+  createdAt: '',
+  updatedAt: '',
 });

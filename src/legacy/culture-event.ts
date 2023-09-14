@@ -29,6 +29,8 @@ export class CultureEvent extends CLAFile implements CultureEventInterface {
   readOnly: boolean;
   deferToStage: number;
   canLinkToTask: boolean;
+  createdAt?: string;
+  updatedAt?: string;
 
   /**
    * a PE (Practical Expression) is a type of CultureEvent.  Both are created with the General Recorder.
@@ -114,6 +116,8 @@ export class CultureEvent extends CLAFile implements CultureEventInterface {
     this.readOnly = data?.readOnly || defaults.readOnly;
     this.deferToStage = data?.deferToStage || defaults.deferToStage;
     this.canLinkToTask = data?.canLinkToTask || defaults.canLinkToTask;
+    this.createdAt = data?.createdAt || defaults.createdAt;
+    this.updatedAt = data?.updatedAt || defaults.updatedAt;
 
     this._isPE = data?._isPE || defaults._isPE;
     this._id = data?._id || defaults._id;

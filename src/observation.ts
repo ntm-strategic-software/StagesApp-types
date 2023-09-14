@@ -4,6 +4,8 @@ export interface Observation {
     claUnit: number
     date: string
     text: string
+    createdAt?: string
+    updatedAt?: string
 }
 export const observationDefaults = (): Observation => ({
     _id: '',
@@ -11,4 +13,6 @@ export const observationDefaults = (): Observation => ({
     claUnit: 1,
     date: '',
     text: '',
+    createdAt: '',
+    updatedAt: '',
 });

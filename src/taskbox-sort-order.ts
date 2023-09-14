@@ -4,6 +4,8 @@ export interface TaskboxSortOrder {
   PROCESS: string[]
   COMMUNITY: string[]
   HELPER: string[]
+  createdAt?: string
+  updatedAt?: string
 }
 export const taskboxSortOrderDefaults = (): TaskboxSortOrder => ({
   _id: '',
@@ -11,4 +13,6 @@ export const taskboxSortOrderDefaults = (): TaskboxSortOrder => ({
   PROCESS: [],
   COMMUNITY: [],
   HELPER: [],
+  createdAt: '',
+  updatedAt: '',
 });

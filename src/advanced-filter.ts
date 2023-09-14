@@ -5,10 +5,14 @@ export interface AdvancedFilter {
   filter: string
   filterType: AdvancedFilterType
   selectedItemId: string
+  createdAt?: string
+  updatedAt?: string
 }
 export const advancedFilterDefaults = (): AdvancedFilter => ({
   _id: '',
   filter: '',
   filterType: AdvancedFilterType.NORMAL_FILTER,
   selectedItemId: '',
+  createdAt: '',
+  updatedAt: '',
 });
