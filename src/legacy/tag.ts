@@ -10,7 +10,7 @@ import { Tag as TagInterface, tagDefaults } from '../tag';
 export class Tag implements TagInterface {
 
   /**
-   * Text of the tag
+   * Text of the tag (unique key)
    */
   tagText: string;
 

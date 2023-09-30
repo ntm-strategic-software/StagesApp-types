@@ -186,6 +186,7 @@ export enum ErrorType {
  */
 export enum TableNames {
   USERS = 'Users',
+  DESKTOP_SETTINGS = 'DesktopSettings',
   CULTURE_EVENTS = 'CultureEvents',
   GENERAL_RECORDINGS = 'GeneralRecordings',
   GENERAL_PHOTOS = 'GeneralPhotos',

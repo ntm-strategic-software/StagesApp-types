@@ -4,6 +4,7 @@ export * from './cla-file';
 export * from './consultant-recommendation';
 export * from './culture-event';
 export * from './deleted-item';
+export * from './desktop-setting';
 export * from './dre';
 export * from './general-photo';
 export * from './general-question';
