@@ -1,5 +1,6 @@
 import { CLAFile as CLAFileInterface, claFileDefaults } from '../cla-file';
 import { ClaFileType } from '../constants';
+import isNumber from "lodash/isNumber";
 
 /**
  * Class representing a CLA File.  This class is only used as a base class (super class).
@@ -15,9 +16,30 @@ export class CLAFile implements CLAFileInterface {
   }
 
   /**
+   * Unique ID for the CLA File
+   */
+  _id: string;
+
+  /**
    * file number
    */
   fileNumber: number;
+
+  /**
+   * What overall CLA unit is this user in when this CLA File is created?
+   */
+  claUnit: number;
+
+  /**
+   * Title of the CLA File
+   */
+  title: string;
+
+  /**
+   * CLA File notes.  For a DRE, any notes the user wants to make about the DRE.  Might be about the topic or genre or the
+   * helper used, the situation, etc.
+   */
+  note: string;
 
   /**
    * _id's of the ActivityPlans this CLA File is linked to.  If empty array, this CLA File was created without an ActivityPlan.
@@ -70,7 +92,12 @@ export class CLAFile implements CLAFileInterface {
    */
   constructor(data?: CLAFileInterface) {
     const defaults = claFileDefaults();
+    this._id = data?._id || defaults._id;
     this.fileNumber = data?.fileNumber || defaults.fileNumber;
+    const claUnit = data?.claUnit;
+    this.claUnit = isNumber(claUnit) ? claUnit : defaults.claUnit;
+    this.title = data?.title || defaults.title;
+    this.note = data?.note || defaults.note;
     this.activityPlanIds = data?.activityPlanIds || defaults.activityPlanIds;
     this.linkedFiles = data?.linkedFiles || defaults.linkedFiles;
     this.imported = data?.imported || defaults.imported;

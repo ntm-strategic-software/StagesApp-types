@@ -2,8 +2,6 @@ import { CLAFile, claFileDefaults } from './cla-file';
 
 export interface CultureEvent extends CLAFile {
   _isPE: boolean
-  _id: string
-  title: string
   searchWords: string[]
   date: string
   speakers: string[]
@@ -11,15 +9,11 @@ export interface CultureEvent extends CLAFile {
   audience: string
   tags: string[]
   generalRecordings: string[]
-  claUnit: number
-  note: string
   phoneticTranscription: string
 }
 export const cultureEventDefaults = (): CultureEvent => ({
   ...claFileDefaults(),
   _isPE: false,
-  _id: '',
-  title: '',
   searchWords: [],
   date: '',
   speakers: [],
@@ -27,7 +21,5 @@ export const cultureEventDefaults = (): CultureEvent => ({
   audience: '',
   tags: [],
   generalRecordings: [],
-  claUnit: 1,
-  note: '',
   phoneticTranscription: '',
 });
