@@ -22,6 +22,10 @@ export class CultureEvent extends CLAFile implements CultureEventInterface {
     return this._isPE ? ClaFileType.PE : ClaFileType.CULTURE_EVENT;
   }
 
+  _id: string;
+  claUnit: number;
+  title: string;
+  note: string;
   fileNumber: number;
   activityPlanIds: string[];
   linkedFiles: string[];
@@ -37,16 +41,6 @@ export class CultureEvent extends CLAFile implements CultureEventInterface {
    * But we use _isPE (referenced in claFile.isPE()) to distinguish between PE's and CultureEvents.
    */
   _isPE: boolean;
-
-  /**
-   * Unique ID for the Culture Event
-   */
-  _id: string;
-
-  /**
-   * Title of the event
-   */
-  title: string;
 
   /**
    * Array of IDs of search words
@@ -87,16 +81,6 @@ export class CultureEvent extends CLAFile implements CultureEventInterface {
   generalRecordings: string[];
 
   /**
-   * What overall CLA unit is this user in?
-   */
-  claUnit: number;
-
-  /**
-   * Event notes
-   */
-  note: string;
-
-  /**
    * Phonetic Transcription in plain text.  Per Bill, we do not support splitting the phonetic text into sections
    * like we do with the orthographic text.  Phonetic text for a CultureEvent is stored all in one simple string.
    */
@@ -109,7 +93,12 @@ export class CultureEvent extends CLAFile implements CultureEventInterface {
     super(data);
     const defaults = cultureEventDefaults();
 
+    this._id = data?._id || defaults._id;
     this.fileNumber = data?.fileNumber || defaults.fileNumber;
+    const claUnit = data?.claUnit;
+    this.claUnit = isNumber(claUnit) ? claUnit : defaults.claUnit;
+    this.title = data?.title || defaults.title;
+    this.note = data?.note || defaults.note;
     this.activityPlanIds = data?.activityPlanIds || defaults.activityPlanIds;
     this.linkedFiles = data?.linkedFiles || defaults.linkedFiles;
     this.imported = data?.imported || defaults.imported;
@@ -120,8 +109,6 @@ export class CultureEvent extends CLAFile implements CultureEventInterface {
     this.updatedAt = data?.updatedAt || defaults.updatedAt;
 
     this._isPE = data?._isPE || defaults._isPE;
-    this._id = data?._id || defaults._id;
-    this.title = data?.title || defaults.title;
     this.searchWords = data?.searchWords || defaults.searchWords;
     this.date = data?.date || defaults.date;
     this.speakers = data?.speakers || defaults.speakers;
@@ -129,9 +116,6 @@ export class CultureEvent extends CLAFile implements CultureEventInterface {
     this.audience = data?.audience || defaults.audience;
     this.tags = data?.tags || defaults.tags;
     this.generalRecordings = data?.generalRecordings || defaults.generalRecordings;
-    const claUnit = data?.claUnit;
-    this.claUnit = isNumber(claUnit) ? claUnit : defaults.claUnit;
-    this.note = data?.note || defaults.note;
     this.phoneticTranscription = data?.phoneticTranscription || defaults.phoneticTranscription;
   }
 

@@ -1,6 +1,7 @@
 import { DRE as DREInterface, dreDefaults, SplitCompareText1, SplitTextColorDetails } from '../dre';
 import { ClaFileType } from '../constants';
 import { CLAFile } from './cla-file';
+import isNumber from 'lodash/isNumber';
 
 /**
  * Class representing a Dual Recorder Event (our internal name.  In the UI and Engage, a Dual Recorder file.)
@@ -16,6 +17,10 @@ export class DRE extends CLAFile implements DREInterface {
     return ClaFileType.DRE;
   }
 
+  _id: string;
+  claUnit: number;
+  title: string;
+  note: string;
   fileNumber: number;
   activityPlanIds: string[];
   linkedFiles: string[];
@@ -25,21 +30,6 @@ export class DRE extends CLAFile implements DREInterface {
   canLinkToTask: boolean;
   createdAt?: string;
   updatedAt?: string;
-
-  /**
-   * Unique ID for the DRE
-   */
-  _id: string;
-
-  /**
-   * Title of the DRE
-   */
-  title: string;
-
-  /**
-   * Any notes the user wants to make about the DRE.  Might be about the topic or genre or the helper used, the situation, etc.
-   */
-  note: string;
 
   /**
    * Recording 1 file name (no path, but does include the extension)
@@ -140,7 +130,12 @@ export class DRE extends CLAFile implements DREInterface {
     super(data);
     const defaults = dreDefaults();
 
+    this._id = data?._id || defaults._id;
     this.fileNumber = data?.fileNumber || defaults.fileNumber;
+    const claUnit = data?.claUnit;
+    this.claUnit = isNumber(claUnit) ? claUnit : defaults.claUnit;
+    this.title = data?.title || defaults.title;
+    this.note = data?.note || defaults.note;
     this.activityPlanIds = data?.activityPlanIds || defaults.activityPlanIds;
     this.linkedFiles = data?.linkedFiles || defaults.linkedFiles;
     this.imported = data?.imported || defaults.imported;
@@ -150,9 +145,6 @@ export class DRE extends CLAFile implements DREInterface {
     this.createdAt = data?.createdAt || defaults.createdAt;
     this.updatedAt = data?.updatedAt || defaults.updatedAt;
 
-    this._id = data?._id || defaults._id;
-    this.title = data?.title || defaults.title;
-    this.note = data?.note || defaults.note;
     this.recording1 = data?.recording1 || defaults.recording1;
     this.recording2 = data?.recording2 || defaults.recording2;
     this.speaker1 = data?.speaker1 || defaults.speaker1;
