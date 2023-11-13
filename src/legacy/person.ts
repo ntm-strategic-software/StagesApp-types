@@ -21,11 +21,6 @@ export class Person implements PersonInterface {
   fullName: string;
 
   /**
-   * Description of the person
-   */
-  description: string;
-
-  /**
    * Person's birthday in format MM/DD
    */
   birthday: string;
@@ -74,7 +69,6 @@ export class Person implements PersonInterface {
     this._id = data?._id || defaults._id;
     this.name = data?.name || defaults.name;
     this.fullName = data?.fullName || defaults.fullName;
-    this.description = data?.description || defaults.description;
     this.birthday = data?.birthday || defaults.birthday;
     this.sex = data?.sex || defaults.sex;
     this.note = data?.note || defaults.note;
