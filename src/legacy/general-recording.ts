@@ -28,6 +28,11 @@ export class GeneralRecording implements GeneralRecordingInterface {
   filename: string
 
   /**
+   * Duration of the recording in seconds
+   */
+  duration: number
+
+  /**
    * Array of IDs of markers from the recording.
    * Currently, our mobile code is commented out for full Marker support, but we still create a marker at the
    * beginning of a GeneralRecording.  The functionality is very similar to GeneralQuestions.
@@ -62,6 +67,7 @@ export class GeneralRecording implements GeneralRecordingInterface {
     this._id = data?._id || defaults._id;
     this.isVideo = data?.isVideo || defaults.isVideo;
     this.filename = data?.filename || defaults.filename;
+    this.duration = data?.duration || defaults.duration;
     this.markers = data?.markers || defaults.markers;
     this.questions = data?.questions || defaults.questions;
     this.photos = data?.photos || defaults.photos;
