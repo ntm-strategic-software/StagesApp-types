@@ -44,10 +44,13 @@ export class ActivityPlan implements ActivityPlanInterface {
    */
   nextTaskIndex: number;
 
-  /**
-   * index of the last completed task that was synced.  When syncing, syncedTaskIndex is set to nextTaskIndex - 1.
-   */
-  syncedTaskIndex: number;
+  // Apparently we never used this field, so I'm commenting it out for now.  I think the purpose was for mobile to know
+  //  which items have been completed since the last sync, so it can show them in the bottom section of the TaskBox screens.
+  //  It appears we use a mobile-only table ActivityPlanSyncIdx instead.
+  // /**
+  //  * index of the last completed task that was synced.  When syncing, syncedTaskIndex is set to nextTaskIndex - 1.
+  //  */
+  // syncedTaskIndex: number;
 
   /**
    * The overall CLA unit the user was in when he created this ActivityPlan (see User.claUnit)
@@ -81,8 +84,8 @@ export class ActivityPlan implements ActivityPlanInterface {
     this.activityKey = data?.activityKey || defaults.activityKey;
     this.tasks = data?.tasks || defaults.tasks;
     this.nextTaskIndex = data?.nextTaskIndex || defaults.nextTaskIndex;
-    const syncedTaskIndex = data?.syncedTaskIndex;
-    this.syncedTaskIndex = isNumber(syncedTaskIndex) ? syncedTaskIndex : defaults.syncedTaskIndex;
+    // const syncedTaskIndex = data?.syncedTaskIndex;
+    // this.syncedTaskIndex = isNumber(syncedTaskIndex) ? syncedTaskIndex : defaults.syncedTaskIndex;
     const unitCreated = data?.unitCreated;
     this.unitCreated = isNumber(unitCreated) ? unitCreated : defaults.unitCreated;
     const unitCompleted = data?.unitCompleted;

@@ -9,7 +9,7 @@ export interface ActivityPlan {
   activityKey: ActivityKey|''
   tasks: Task[]
   nextTaskIndex: number
-  syncedTaskIndex: number
+  // syncedTaskIndex: number
   unitCreated: number|null
   unitCompleted: number|null
   createdAt?: string
@@ -23,7 +23,7 @@ export const activityPlanDefaults = (): ActivityPlan => ({
   activityKey: '',
   tasks: [],
   nextTaskIndex: 0,
-  syncedTaskIndex: -1,
+  // syncedTaskIndex: -1,
   unitCreated: null,
   unitCompleted: null,
   createdAt: '',
