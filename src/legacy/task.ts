@@ -67,6 +67,11 @@ export class Task implements Task {
   playerButtonType: PlayerType|'';
 
   /**
+   * true if the Quick Capture buttons should be shown on the Mobile task detail screen
+   */
+  showQuickCaptureButtons: boolean;
+
+  /**
    * true if the next task should be done in the same session as this one.  I.e., if you are working with a helper,
    * false if it's ok to stop after this task and pick up with the next task the next time you get together with that helper;
    * true if you really should do the next task immediately.
@@ -100,6 +105,7 @@ export class Task implements Task {
     this.taskClaFileId = data?.taskClaFileId || defaults.taskClaFileId;
     this.recorderButtonType = data?.recorderButtonType || defaults.recorderButtonType;
     this.playerButtonType = data?.playerButtonType || defaults.playerButtonType;
+    this.showQuickCaptureButtons = data?.showQuickCaptureButtons || defaults.showQuickCaptureButtons;
     this.nextTaskSameSession = data?.nextTaskSameSession || defaults.nextTaskSameSession;
     this.createdAt = data?.createdAt || defaults.createdAt;
     this.updatedAt = data?.updatedAt || defaults.updatedAt;
