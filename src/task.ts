@@ -2,19 +2,20 @@ import { Draggable, PlayerType, RecorderButtonType, TaskBox } from './constants'
 
 export interface Task {
   taskTitle: string
-    taskNotes: string[]
-    taskText: string
-    taskBox: TaskBox|'',
-    taskBoxGroup: number
-    taskBoxOptions: TaskBox[]
-    droppableTypes: Draggable[]
-    taskPhotos: string[]
-    taskClaFileId: string
-    recorderButtonType: RecorderButtonType|''
-    playerButtonType: PlayerType|''
-    nextTaskSameSession: boolean
-    createdAt?: string
-    updatedAt?: string
+  taskNotes: string[]
+  taskText: string
+  taskBox: TaskBox|'',
+  taskBoxGroup: number
+  taskBoxOptions: TaskBox[]
+  droppableTypes: Draggable[]
+  taskPhotos: string[]
+  taskClaFileId: string
+  recorderButtonType: RecorderButtonType|''
+  playerButtonType: PlayerType|''
+  showQuickCaptureButtons: boolean
+  nextTaskSameSession: boolean
+  createdAt?: string
+  updatedAt?: string
 }
 export const taskDefaults = (): Task => ({
   taskTitle: '',
@@ -31,6 +32,7 @@ export const taskDefaults = (): Task => ({
   recorderButtonType: '',
   playerButtonType: '',
   nextTaskSameSession: false,
+  showQuickCaptureButtons: false,
   createdAt: '',
   updatedAt: '',
 });
