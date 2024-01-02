@@ -1,5 +1,5 @@
 import { Task as TaskInterface, taskDefaults } from '../task';
-import { Draggable, PlayerType, RecorderButtonType, TaskBox } from '../constants';
+import { Draggable, PlayerType, RecorderButtonType, TaskBox, JumpToView } from '../constants';
 
 /**
  * This represents a Task in an Activity or ActivityPlan.  We do not have a Tasks table.  Instead, a table (or
@@ -72,6 +72,11 @@ export class Task implements Task {
   showQuickCaptureButtons: boolean;
 
   /**
+   * On Desktop in the Planner..Tasks tab, clicking the lightning bolt for this task will jump the user to this view.
+   */
+  jumpToView: JumpToView|'';
+
+  /**
    * true if the next task should be done in the same session as this one.  I.e., if you are working with a helper,
    * false if it's ok to stop after this task and pick up with the next task the next time you get together with that helper;
    * true if you really should do the next task immediately.
@@ -106,6 +111,7 @@ export class Task implements Task {
     this.recorderButtonType = data?.recorderButtonType || defaults.recorderButtonType;
     this.playerButtonType = data?.playerButtonType || defaults.playerButtonType;
     this.showQuickCaptureButtons = data?.showQuickCaptureButtons || defaults.showQuickCaptureButtons;
+    this.jumpToView = data?.jumpToView || defaults.jumpToView;
     this.nextTaskSameSession = data?.nextTaskSameSession || defaults.nextTaskSameSession;
     this.createdAt = data?.createdAt || defaults.createdAt;
     this.updatedAt = data?.updatedAt || defaults.updatedAt;

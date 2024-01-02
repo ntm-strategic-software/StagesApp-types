@@ -1,4 +1,4 @@
-import { Draggable, PlayerType, RecorderButtonType, TaskBox } from './constants';
+import { Draggable, PlayerType, RecorderButtonType, TaskBox, JumpToView } from './constants';
 
 export interface Task {
   taskTitle: string
@@ -13,6 +13,7 @@ export interface Task {
   recorderButtonType: RecorderButtonType|''
   playerButtonType: PlayerType|''
   showQuickCaptureButtons: boolean
+  jumpToView: JumpToView|''
   nextTaskSameSession: boolean
   createdAt?: string
   updatedAt?: string
@@ -33,6 +34,7 @@ export const taskDefaults = (): Task => ({
   playerButtonType: '',
   nextTaskSameSession: false,
   showQuickCaptureButtons: false,
+  jumpToView: '',
   createdAt: '',
   updatedAt: '',
 });
