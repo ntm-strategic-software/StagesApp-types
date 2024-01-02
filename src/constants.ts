@@ -45,6 +45,20 @@ export enum PlayerType {
 }
 
 /**
+ * On Desktop in the Planner..Tasks tab, where clicking the lightning bolt for a task will jump the user to.
+ */
+export enum JumpToView {
+  HOME_REVIEW = 'HOME_REVIEW',
+  HOME_PROCESS = 'HOME_PROCESS',
+  HOME_OBSERVATIONS = 'HOME_OBSERVATIONS',
+  PLANNER_ACTIVITIES_TASK = 'PLANNER_ACTIVITIES_TASK',
+  PLANNER_UNIT = 'PLANNER_UNIT',
+  PLANNER_MEDIA = 'PLANNER_MEDIA',
+  PLANNER_REFLECTION = 'PLANNER_REFLECTION',
+  PLANNER_SELF_EVALUATION = 'PLANNER_SELF_EVALUATION',
+}
+
+/**
  * Enum for the CLA Stage that the user is in
  */
 export enum CLAStage {
