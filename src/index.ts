@@ -1,5 +1,6 @@
 export * as legacy from './legacy';
 export * as constants from './constants';
+export * from './constants';
 export * from './activity-plan';
 export * from './advanced-filter';
 export * from './cla-file';
