@@ -26,4 +26,4 @@ export * from './taskbox-sort-order';
 export * from './timesheet';
 export * from './transcription';
 export * from './user';
-export * from './voice-note';
+export * from './quick-note';

@@ -165,7 +165,7 @@ export enum PendingFileType {
   PE_RECORDER = 'PE_RECORDER',
   DUAL_RECORDER = 'DUAL_RECORDER',
   QUICK_PHOTO = 'QUICK_PHOTO',
-  VOICE_NOTE = 'VOICE_NOTE',
+  QUICK_NOTE = 'QUICK_NOTE',
 }
 
 /**
@@ -225,7 +225,7 @@ export enum TableNames {
   // PENDING_MEDIA = 'PendingMedia',
   TASK_BOX_SORT_ORDER = 'TaskBoxSortOrder',
   PHOTO_GROUPS = 'PhotoGroups',
-  VOICE_NOTES = 'VoiceNotes',
+  QUICK_NOTES = 'QuickNotes',
   REFLECTION_QUESTIONS = 'ReflectionQuestions',
   SELF_EVALUATION_QUESTIONS = 'SelfEvaluationQuestions',
   CONSULTANT_RECOMMENDATIONS = 'ConsultantRecommendations',
