@@ -1,15 +1,15 @@
-export interface VoiceNote {
+export interface QuickNote {
   _id: string
-  title: string
   filename: string
+  quickText: string
   isArchived: boolean
   createdAt?: string
   updatedAt?: string
 }
-export const voiceNoteDefaults = () => ({
+export const quickNoteDefaults = () => ({
   _id: '',
-  title: '',
   filename: '',
+  quickText: '',
   isArchived: false,
   createdAt: '',
   updatedAt: '',
