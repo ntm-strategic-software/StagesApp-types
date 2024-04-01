@@ -234,7 +234,7 @@ export enum TableNames {
 
 /**
  * Enum for table names to sync from mobile to desktop.
- * Tables that are synced from desktop to mobile are listed in StagesApp-desktop dbSchema.js desktopTablesToSendToMobile
+ * Tables that are synced from desktop to mobile are listed in StagesApp-desktop db-schema.js desktopTablesToSendToMobile
  */
 export const mobileTablesToSendToDesktop = [
   TableNames.USERS,
@@ -248,6 +248,7 @@ export const mobileTablesToSendToDesktop = [
   TableNames.SEARCH_WORDS,
   TableNames.DRE,
   TableNames.PLAYLIST_ITEMS,
+  TableNames.QUICK_NOTES,
   TableNames.ACTIVITY_PLANS,
   TableNames.TASK_BOX_SORT_ORDER,
   TableNames.TIMESHEET,
