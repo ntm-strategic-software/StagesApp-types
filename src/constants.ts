@@ -14,10 +14,10 @@ export enum TaskBox {
  * This enum is in StagesApp-Types because it is used in Task.droppableTypes.
  */
 export enum Draggable {
-  PI_TEXT_ONLY_DRAGGABLE = 'PI_TEXT_ONLY_DRAGGABLE', // Pending Investigation
-  PI_CE_DRAGGABLE = 'PI_CE_DRAGGABLE', // Pending Investigation with a CE
-  PI_PE_DRAGGABLE = 'PI_PE_DRAGGABLE', // Pending Investigation with a PE
-  PI_DRE_DRAGGABLE = 'PI_DRE_DRAGGABLE', // Pending Investigation with a DRE
+  PI_TEXT_ONLY_DRAGGABLE = 'PI_TEXT_ONLY_DRAGGABLE', // Pending Idea
+  PI_CE_DRAGGABLE = 'PI_CE_DRAGGABLE', // Pending Idea with a CE
+  PI_PE_DRAGGABLE = 'PI_PE_DRAGGABLE', // Pending Idea with a PE
+  PI_DRE_DRAGGABLE = 'PI_DRE_DRAGGABLE', // Pending Idea with a DRE
   PHOTO_DRAGGABLE = 'PHOTO_DRAGGABLE',
   NEW_PHOTO_DRAGGABLE = 'NEW_PHOTO_DRAGGABLE',
   PHOTO_GROUP_DRAGGABLE = 'PHOTO_GROUP_DRAGGABLE',
@@ -218,7 +218,7 @@ export enum TableNames {
   DRE = 'DRE',
   ADVANCED_FILTERS = 'AdvancedFilters',
   PLAYLIST_ITEMS = 'PlaylistItems',
-  PENDING_INVESTIGATIONS = 'PendingInvestigations',
+  PENDING_IDEAS = 'PendingIdeas',
   OBSERVATIONS = 'Observations',
   TAGS = 'Tags',
   ACTIVITY_PLANS = 'ActivityPlans',

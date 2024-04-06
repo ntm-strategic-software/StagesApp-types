@@ -1,15 +1,15 @@
 import {
-  pendingInvestigationDefaults,
-  PendingInvestigation as PendingInvestigationInterface
-} from '../pending-investigation';
+  pendingIdeaDefaults,
+  PendingIdea as pendingIdeaInterface
+} from '../pending-idea';
 
 /**
  * An idea or question the user has, optionally associated with a CLAFile
  */
-export class PendingInvestigation implements PendingInvestigationInterface {
+export class PendingIdea implements pendingIdeaInterface {
 
   /**
-   * Unique ID for the PendingInvestigation
+   * Unique ID for the PendingIdea
    */
   _id: string;
 
@@ -39,10 +39,10 @@ export class PendingInvestigation implements PendingInvestigationInterface {
   updatedAt?: string;
 
   /**
-   * Creates a PendingInvestigation object
+   * Creates a PendingIdea object
    */
-  constructor(data?: PendingInvestigationInterface) {
-    const defaults = pendingInvestigationDefaults();
+  constructor(data?: pendingIdeaInterface) {
+    const defaults = pendingIdeaDefaults();
     this._id = data?._id || defaults._id;
     this.text = data?.text || defaults.text;
     this.linkedFile = data?.linkedFile || defaults.linkedFile;
@@ -52,10 +52,10 @@ export class PendingInvestigation implements PendingInvestigationInterface {
   }
 
   /**
-   * Creates an updated PendingInvestigation object
+   * Creates an updated PendingIdea object
    */
-  set(data: Partial<PendingInvestigationInterface>) {
-    return new PendingInvestigation({
+  set(data: Partial<pendingIdeaInterface>) {
+    return new PendingIdea({
       ...this,
       ...data,
     });
