@@ -1,4 +1,4 @@
-export interface PendingInvestigation {
+export interface PendingIdea {
   _id: string
   text: string
   linkedFile: string
@@ -6,7 +6,7 @@ export interface PendingInvestigation {
   createdAt?: string
   updatedAt?: string
 }
-export const pendingInvestigationDefaults = (): PendingInvestigation => ({
+export const pendingIdeaDefaults = (): PendingIdea => ({
   _id: '',
   text: '',
   linkedFile: '',

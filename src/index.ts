@@ -13,7 +13,7 @@ export * from './general-question';
 export * from './general-recording';
 export * from './marker';
 export * from './observation';
-export * from './pending-investigation';
+export * from './pending-idea';
 export * from './pending-media';
 export * from './person';
 export * from './photo-group';
