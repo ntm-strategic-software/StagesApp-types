@@ -53,6 +53,20 @@ export class ActivityPlan implements ActivityPlanInterface {
   // syncedTaskIndex: number;
 
   /**
+   * The CLAFile._id of the prompt for this Activity Plan.  This CLA File is NOT processed during this ActivityPlan
+   *  (though it may have been processed in another ActivityPlan, if it was created as a main CLA File).  In this
+   *  ActivityPlan, it is merely used to provide background, context, etc. for the discussion that will result in the
+   *  main CLA File.
+   */
+  promptClaFileId: string;
+
+  /**
+   * The CLAFile._id of the main CLA File for this Activity Plan.  This is the CLA File that gets recorded during the
+   *  ActivityPlan and might be processed (if this ActivityPlan has a Task directing the user to process it).
+   */
+  mainClaFileId: string;
+
+  /**
    * The overall CLA unit the user was in when he created this ActivityPlan (see User.claUnit)
    */
   unitCreated: number|null;
@@ -86,6 +100,8 @@ export class ActivityPlan implements ActivityPlanInterface {
     this.nextTaskIndex = data?.nextTaskIndex || defaults.nextTaskIndex;
     // const syncedTaskIndex = data?.syncedTaskIndex;
     // this.syncedTaskIndex = isNumber(syncedTaskIndex) ? syncedTaskIndex : defaults.syncedTaskIndex;
+    this.promptClaFileId = data?.promptClaFileId || defaults.promptClaFileId;
+    this.mainClaFileId = data?.mainClaFileId || defaults.mainClaFileId;
     const unitCreated = data?.unitCreated;
     this.unitCreated = isNumber(unitCreated) ? unitCreated : defaults.unitCreated;
     const unitCompleted = data?.unitCompleted;
