@@ -9,7 +9,9 @@ export interface ActivityPlan {
   activityKey: ActivityKey|''
   tasks: Task[]
   nextTaskIndex: number
+  promptClaFileId: string,
   // syncedTaskIndex: number
+  mainClaFileId: string,
   unitCreated: number|null
   unitCompleted: number|null
   createdAt?: string
@@ -24,6 +26,8 @@ export const activityPlanDefaults = (): ActivityPlan => ({
   tasks: [],
   nextTaskIndex: 0,
   // syncedTaskIndex: -1,
+  promptClaFileId: '',
+  mainClaFileId: '',
   unitCreated: null,
   unitCompleted: null,
   createdAt: '',
