@@ -4,6 +4,7 @@ export type SplitTextColorDetails = ({[key: string]: {observations: string, note
 export type SplitCompareText1 = ({text: string, className: string}|object)[][];
 
 export interface DRE extends CLAFile {
+  _isSimple: boolean
   recording1: string
   recording2: string
   speaker1: string
@@ -18,6 +19,7 @@ export interface DRE extends CLAFile {
 }
 export const dreDefaults = (): DRE => ({
   ...claFileDefaults(),
+  _isSimple: false,
   recording1: '',
   recording2: '',
   speaker1: '',

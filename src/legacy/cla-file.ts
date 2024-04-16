@@ -129,4 +129,10 @@ export class CLAFile implements CLAFileInterface {
     return this.claFileType() === ClaFileType.PE;
   }
 
+  /**
+   * returns true if this CLAFile is a Simple DRE
+   */
+  isSimpleDRE(): boolean {
+    return this.claFileType() === ClaFileType.SIMPLE_DRE;
+  }
 }

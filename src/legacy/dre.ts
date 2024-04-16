@@ -14,7 +14,7 @@ import isNumber from 'lodash/isNumber';
 export class DRE extends CLAFile implements DREInterface {
 
   claFileType() {
-    return ClaFileType.DRE;
+    return this._isSimple ? ClaFileType.SIMPLE_DRE : ClaFileType.DRE;
   }
 
   _id: string;
@@ -30,6 +30,13 @@ export class DRE extends CLAFile implements DREInterface {
   canLinkToTask: boolean;
   createdAt?: string;
   updatedAt?: string;
+
+  /**
+   * a Simple DRE is a type of DRE where the user will only make notes, not transcribe, align, etc.
+   * Both are created with the Dual Recorder.
+   * We use _isSimple (referenced in claFile.isSimple()) to distinguish between Simple DREs and normal DREs.
+   */
+  _isSimple: boolean;
 
   /**
    * Recording 1 file name (no path, but does include the extension)
@@ -145,6 +152,7 @@ export class DRE extends CLAFile implements DREInterface {
     this.createdAt = data?.createdAt || defaults.createdAt;
     this.updatedAt = data?.updatedAt || defaults.updatedAt;
 
+    this._isSimple = data?._isSimple || defaults._isSimple;
     this.recording1 = data?.recording1 || defaults.recording1;
     this.recording2 = data?.recording2 || defaults.recording2;
     this.speaker1 = data?.speaker1 || defaults.speaker1;
