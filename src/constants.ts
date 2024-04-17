@@ -290,4 +290,6 @@ export enum socketEndpoints {
   // GET_TABLE_ITEMS = 'GET_TABLE_ITEMS',  // Not currently used, but I'm leaving it here in case we ever want it.
   SEND_EXTRA_MOBILE_DATA = 'SEND_EXTRA_MOBILE_DATA',
   FINALIZE_DESKTOP = 'FINALIZE_DESKTOP',
+  MOBILE_ERROR = 'MOBILE_ERROR',
+  DESKTOP_ERROR = 'DESKTOP_ERROR',
 }
