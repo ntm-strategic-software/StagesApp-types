@@ -1,5 +1,5 @@
 import { ReflectionQuestion as ReflectionQuestionInterface, reflectionQuestionDefaults } from '../reflection-question';
-import { AnswerTypes, ReflectionQuestionSets } from '../constants';
+import { ReflectionQuestionSets } from '../constants';
 
 /**
  * Class representing a Reflection Question.
@@ -21,6 +21,11 @@ export class ReflectionQuestion implements ReflectionQuestionInterface {
   claUnit: number;
 
   /**
+   * Week of the question.  This is the week within the unit, and is 1-based.
+   */
+  week: number;
+
+  /**
    * Set of questions to which this question belongs.
    */
   questionSet: ReflectionQuestionSets|'';
@@ -29,16 +34,6 @@ export class ReflectionQuestion implements ReflectionQuestionInterface {
    * Sort order of the question within the QuestionSet.
    */
   sortOrder: number;
-
-  /**
-   * Text of the question.
-   */
-  questionText: string;
-
-  /**
-   * Type of answer expected.
-   */
-  answerType: AnswerTypes|'';
 
   /**
    * User's answer to the question.  This is a string, but how to display it depends on the answerType.
@@ -63,10 +58,9 @@ export class ReflectionQuestion implements ReflectionQuestionInterface {
     this._id = data?._id || defaults._id;
     this.questionKey = data?.questionKey || defaults.questionKey;
     this.claUnit = data?.claUnit || defaults.claUnit;
+    this.week = data?.week || defaults.week;
     this.questionSet = data?.questionSet || defaults.questionSet;
     this.sortOrder = data?.sortOrder || defaults.sortOrder;
-    this.questionText = data?.questionText || defaults.questionText;
-    this.answerType = data?.answerType || defaults.answerType;
     this.answer = data?.answer || defaults.answer;
     this.createdAt = data?.createdAt || defaults.createdAt;
     this.updatedAt = data?.updatedAt || defaults.updatedAt;

@@ -182,18 +182,21 @@ export enum PendingFileType {
  * Enum for the different groups of reflection questions
  */
 export enum ReflectionQuestionSets {
-  GENERAL = 'GENERAL',
-  TIME = 'TIME',
-  AM_I_DONE = 'AM_I_DONE',
+  HOW_CLA_WENT = 'HOW_CLA_WENT',
+  OBSERVED = 'OBSERVED',
+  SCHEDULE = 'SCHEDULE',
+  HELP = 'HELP',
+  READY_FOR_NEXT_UNIT = 'READY_FOR_NEXT_UNIT',
 }
 
 /**
  * Enum for the different types of answers
  */
 export enum AnswerTypes {
-  YES_NO = 'YES_NO',
   TEXT = 'TEXT',
-  NONE_TO_NATIVE = 'NONE_TO_NATIVE', // this is for multiple choice questions on a range from none to native
+  MULTIPLE_CHOICE_ONE = 'MULTIPLE_CHOICE_ONE',  // allow user to select only one option
+  CHECKBOX = 'CHECKBOX',
+  NONE = 'NONE',  // no answer allowed.  This is for showing text only.
 }
 
 /**
