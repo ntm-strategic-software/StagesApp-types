@@ -25,5 +25,6 @@ export * from './task';
 export * from './taskbox-sort-order';
 export * from './timesheet';
 export * from './transcription';
+export * from './unit-week';
 export * from './user';
 export * from './quick-note';

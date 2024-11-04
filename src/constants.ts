@@ -243,6 +243,7 @@ export enum TableNames {
   SELF_EVALUATION_QUESTIONS = 'SelfEvaluationQuestions',
   CONSULTANT_RECOMMENDATIONS = 'ConsultantRecommendations',
   TIMESHEET = 'Timesheet',
+  UNIT_WEEKS = 'UnitWeeks',
 }
 
 /**
