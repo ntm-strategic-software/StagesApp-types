@@ -281,6 +281,8 @@ export const TASK_BOX_SORT_ORDER_ID = '8cf436a9-c7a2-4222-bf4f-3b047b93116a';
 export enum DataTransferType {
   SYNC = 'SYNC',
   IMPORT_USER = 'IMPORT_USER',
+  BACKUP_ALL_DATA = 'BACKUP_ALL_DATA',
+  RESTORE_ALL_DATA = 'RESTORE_ALL_DATA',
 }
 
 export enum socketEndpoints {
