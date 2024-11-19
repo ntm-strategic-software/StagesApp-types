@@ -299,3 +299,8 @@ export enum socketEndpoints {
   MOBILE_ERROR = 'MOBILE_ERROR',
   DESKTOP_ERROR = 'DESKTOP_ERROR',
 }
+
+export enum PostPaths {
+  UPLOAD_FILE = '/uploadfile',
+  UPLOAD_FILE_BACKUP = '/uploadfilebackup',
+}
