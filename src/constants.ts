@@ -275,6 +275,8 @@ export const REQUESTED_ACTIVITY_PLAN_IDS = 'REQUESTED_ACTIVITY_PLAN_IDS';
 
 export const TASK_BOX_SORT_ORDER_ID = '8cf436a9-c7a2-4222-bf4f-3b047b93116a';
 
+export const backupHostSuffix = '/backup';  // for restoring files to Mobile from a mobile backup (which is on Desktop)
+
 /**
  * Enum of the possible types of data transfers between mobile and desktop
  */
