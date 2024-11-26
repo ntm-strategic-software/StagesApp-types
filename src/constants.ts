@@ -197,6 +197,8 @@ export enum AnswerTypes {
   MULTIPLE_CHOICE_ONE = 'MULTIPLE_CHOICE_ONE',  // allow user to select only one option
   CHECKBOX = 'CHECKBOX',
   NONE = 'NONE',  // no answer allowed.  This is for showing text only.
+  PENDING_IDEAS = 'PENDING_IDEAS',
+  EXTRA_ACTIVITIES = 'EXTRA_ACTIVITIES',
 }
 
 /**
