@@ -200,6 +200,7 @@ export enum AnswerTypes {
   STATS = 'STATS',  // no answer allowed.  This is for showing the question text and statistics only.
   PENDING_IDEAS = 'PENDING_IDEAS',  // answer is a list of texts of Pending Ideas
   EXTRA_ACTIVITIES = 'EXTRA_ACTIVITIES',  // answer is a list of ActivityKeys with current created, completed, recommended, and extra user wants to do
+  NEW_ACTIVITIES = 'NEW_ACTIVITIES',  // answer is a list of ActivityKeys with true/false for each, plus a NONE option
 }
 
 /**
