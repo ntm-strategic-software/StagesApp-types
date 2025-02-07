@@ -6,7 +6,7 @@ export enum TaskBox {
   PROCESS = 'PROCESS',
   COMMUNITY = 'COMMUNITY',
   HELPER = 'HELPER',
-  PLAYlIST = 'PLAYLIST',
+  PLAYLIST = 'PLAYLIST',
 }
 
 /**
