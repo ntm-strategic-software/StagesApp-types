@@ -19,6 +19,17 @@ export const userDefaults = (): User => ({
   updatedAt: '',
 });
 
+// define the UserHelper interface so when we use userHelper, we get a clean list of options
+export interface UserHelper {
+  lastUnits: number[];
+  unitsForStage(claStage: CLAStage): number[];
+  getClaStageEnum(stageNum: number): CLAStage;
+  getClaStageNumber(userClaStage: CLAStage): number;
+  getOverallClaUnit(stageEnum: CLAStage, stageUnit: number): number;
+  getClaStage(claUnit: number): {stageEnum: CLAStage, stageNumber: number, stageUnit: number};
+  getMaxStageUnit(stageEnum: CLAStage): number;
+  set(user: User, data: Partial<User>): User;
+}
 export const userHelper = {
   /**
    * Array of the last overall claUnit for each stage, from warmup (index 0) through the end of CLA
