@@ -14,3 +14,18 @@ export const generalPhotoDefaults = (): GeneralPhoto => ({
   createdAt: '',
   updatedAt: '',
 });
+
+export interface GeneralPhotoHelper {
+  set(photo: GeneralPhoto, data: Partial<GeneralPhoto>): GeneralPhoto
+}
+export const generalPhotoHelper = {
+  /**
+   * Creates an updated GeneralPhoto object
+   */
+  set(photo: GeneralPhoto, data: Partial<GeneralPhoto>): GeneralPhoto {
+    return {
+      ...photo,
+      ...data,
+    };
+  },
+};

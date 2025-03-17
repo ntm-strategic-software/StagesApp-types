@@ -30,6 +30,7 @@ export interface PlaylistItemHelper {
   getToday(item: PlaylistItem): string[]
   prev(item: PlaylistItem): boolean
   today(item: PlaylistItem): boolean
+  set(item: PlaylistItem, data: Partial<PlaylistItem>): PlaylistItem
 }
 export const playlistItemHelper: PlaylistItemHelper = {
   /**
@@ -64,5 +65,15 @@ export const playlistItemHelper: PlaylistItemHelper = {
    */
   today(item: PlaylistItem): boolean {
     return this.getToday(item).length > 0;
+  },
+
+  /**
+   * Creates an updated PlaylistItem object
+   */
+  set(item: PlaylistItem, data: Partial<PlaylistItem>): PlaylistItem {
+    return {
+      ...item,
+      ...data,
+    };
   },
 };

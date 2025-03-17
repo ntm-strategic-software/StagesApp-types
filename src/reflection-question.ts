@@ -22,3 +22,18 @@ export const reflectionQuestionDefaults = (): ReflectionQuestion => ({
   createdAt: '',
   updatedAt: '',
 });
+
+export interface ReflectionQuestionHelper {
+  set(item: ReflectionQuestion, data: Partial<ReflectionQuestion>): ReflectionQuestion
+}
+export const reflectionQuestionHelper = {
+  /**
+   * Creates an updated ReflectionQuestion object
+   */
+  set(item: ReflectionQuestion, data: Partial<ReflectionQuestion>): ReflectionQuestion {
+    return {
+      ...item,
+      ...data,
+    };
+  },
+};

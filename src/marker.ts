@@ -16,3 +16,18 @@ export const markerDefaults = (): Marker => ({
     createdAt: '',
     updatedAt: '',
 });
+
+export interface MarkerHelper {
+  set(item: Marker, data: Partial<Marker>): Marker
+}
+export const markerHelper = {
+  /**
+   * Creates an updated Marker object
+   */
+  set(item: Marker, data: Partial<Marker>): Marker {
+    return {
+      ...item,
+      ...data,
+    };
+  },
+};

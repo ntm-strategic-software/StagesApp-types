@@ -21,3 +21,18 @@ export const generalRecordingDefaults = (): GeneralRecording => ({
   createdAt: '',
   updatedAt: '',
 });
+
+export interface GeneralRecordingHelper {
+  set(recording: GeneralRecording, data: Partial<GeneralRecording>): GeneralRecording
+}
+export const generalRecordingHelper = {
+  /**
+   * Creates an updated GeneralRecording object
+   */
+  set(recording: GeneralRecording, data: Partial<GeneralRecording>): GeneralRecording {
+    return {
+      ...recording,
+      ...data,
+    };
+  },
+};

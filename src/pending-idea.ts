@@ -14,3 +14,18 @@ export const pendingIdeaDefaults = (): PendingIdea => ({
   createdAt: '',
   updatedAt: '',
 });
+
+export interface PendingIdeaHelper {
+  set(item: PendingIdea, data: Partial<PendingIdea>): PendingIdea
+}
+export const pendingIdeaHelper = {
+  /**
+   * Creates an updated PendingIdea object
+   */
+  set(item: PendingIdea, data: Partial<PendingIdea>): PendingIdea {
+    return {
+      ...item,
+      ...data,
+    };
+  },
+};

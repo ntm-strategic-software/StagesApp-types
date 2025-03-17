@@ -31,14 +31,15 @@ export const claFileDefaults = (): CLAFile => ({
   updatedAt: '',
 });
 
-export interface ClaHelper {
+export interface ClaFileHelper {
   claFileType(claFile: CLAFile): ClaFileType;
   isCE(claFile: CLAFile): boolean;
   isDRE(claFile: CLAFile): boolean;
   isPE(claFile: CLAFile): boolean;
   isSimpleDRE(claFile: CLAFile): boolean;
+  set(claFile: CLAFile, data: Partial<CLAFile>): CLAFile;
 }
-export const claFileHelper: ClaHelper = {
+export const claFileHelper: ClaFileHelper = {
   /**
    * returns the ClaFileType of this CLAFile
    */
@@ -87,5 +88,15 @@ export const claFileHelper: ClaHelper = {
    */
   isSimpleDRE(claFile: CLAFile): boolean {
     return this.claFileType(claFile) === ClaFileType.SIMPLE_DRE;
+  },
+
+  /**
+   * Creates an updated CLAFile object
+   */
+  set(claFile: CLAFile, data: Partial<CLAFile>): CLAFile {
+    return {
+      ...claFile,
+      ...data,
+    };
   },
 };

@@ -33,3 +33,18 @@ export const activityPlanDefaults = (): ActivityPlan => ({
   createdAt: '',
   updatedAt: '',
 });
+
+export interface ActivityPlanHelper {
+  set(activityPlan: ActivityPlan, data: Partial<ActivityPlan>): ActivityPlan
+}
+export const activityPlanHelper = {
+  /**
+   * Creates an updated ActivityPlan object
+   */
+  set(activityPlan: ActivityPlan, data: Partial<ActivityPlan>): ActivityPlan {
+    return {
+      ...activityPlan,
+      ...data,
+    };
+  },
+};

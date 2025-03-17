@@ -30,3 +30,18 @@ export const transcriptionDefaults = (): Transcription => ({
   createdAt: '',
   updatedAt: '',
 });
+
+export interface TranscriptionHelper {
+  set(item: Transcription, data: Partial<Transcription>): Transcription
+}
+export const transcriptionHelper = {
+  /**
+   * Creates an updated Transcription object
+   */
+  set(item: Transcription, data: Partial<Transcription>): Transcription {
+    return {
+      ...item,
+      ...data,
+    };
+  },
+};

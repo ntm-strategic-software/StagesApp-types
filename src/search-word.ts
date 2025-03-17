@@ -10,3 +10,18 @@ export const searchWordDefaults = (): SearchWord => ({
   createdAt: '',
   updatedAt: '',
 });
+
+export interface SearchWordHelper {
+  set(word: SearchWord, data: Partial<SearchWord>): SearchWord
+}
+export const searchWordHelper = {
+  /**
+   * Creates an updated SearchWord object
+   */
+  set(word: SearchWord, data: Partial<SearchWord>): SearchWord {
+    return {
+      ...word,
+      ...data,
+    };
+  },
+};

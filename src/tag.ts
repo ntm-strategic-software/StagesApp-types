@@ -8,3 +8,18 @@ export const tagDefaults = (): Tag => ({
     createdAt: '',
     updatedAt: '',
 });
+
+export interface TagHelper {
+    set(tag: Tag, data: Partial<Tag>): Tag
+}
+export const tagHelper = {
+    /**
+     * Creates an updated Tag object
+     */
+    set(tag: Tag, data: Partial<Tag>): Tag {
+        return {
+            ...tag,
+            ...data,
+        };
+    },
+};

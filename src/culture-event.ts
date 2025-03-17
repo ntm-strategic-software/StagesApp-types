@@ -23,3 +23,18 @@ export const cultureEventDefaults = (): CultureEvent => ({
   generalRecordings: [],
   phoneticTranscription: '',
 });
+
+export interface CultureEventHelper {
+  set(ce: CultureEvent, data: Partial<CultureEvent>): CultureEvent
+}
+export const cultureEventHelper = {
+  /**
+   * Creates an updated CultureEvent object
+   */
+  set(ce: CultureEvent, data: Partial<CultureEvent>): CultureEvent {
+    return {
+      ...ce,
+      ...data,
+    };
+  },
+};

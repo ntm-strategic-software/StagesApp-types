@@ -14,3 +14,18 @@ export const quickNoteDefaults = () => ({
   createdAt: '',
   updatedAt: '',
 });
+
+export interface QuickNoteHelper {
+  set(quickNote: QuickNote, data: Partial<QuickNote>): QuickNote
+}
+export const quickNoteHelper = {
+  /**
+   * Creates an updated QuickNote object
+   */
+  set(quickNote: QuickNote, data: Partial<QuickNote>): QuickNote {
+    return {
+      ...quickNote,
+      ...data,
+    };
+  },
+};

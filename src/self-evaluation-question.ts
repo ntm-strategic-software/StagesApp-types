@@ -24,3 +24,18 @@ export const selfEvaluationQuestionDefaults = (): SelfEvaluationQuestion => ({
   createdAt: '',
   updatedAt: '',
 });
+
+export interface SelfEvaluationQuestionHelper {
+  set(item: SelfEvaluationQuestion, data: Partial<SelfEvaluationQuestion>): SelfEvaluationQuestion
+}
+export const selfEvaluationQuestionHelper = {
+  /**
+   * Creates an updated SelfEvaluationQuestion object
+   */
+  set(item: SelfEvaluationQuestion, data: Partial<SelfEvaluationQuestion>): SelfEvaluationQuestion {
+    return {
+      ...item,
+      ...data,
+    };
+  },
+};

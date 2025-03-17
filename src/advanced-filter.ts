@@ -16,3 +16,18 @@ export const advancedFilterDefaults = (): AdvancedFilter => ({
   createdAt: '',
   updatedAt: '',
 });
+
+export interface AdvancedFilterHelper {
+  set(advancedFilter: AdvancedFilter, data: Partial<AdvancedFilter>): AdvancedFilter
+}
+export const advancedFilterHelper = {
+  /**
+   * Creates an updated AdvancedFilter object
+   */
+  set(advancedFilter: AdvancedFilter, data: Partial<AdvancedFilter>): AdvancedFilter {
+    return {
+      ...advancedFilter,
+      ...data,
+    };
+  },
+};

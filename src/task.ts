@@ -38,3 +38,18 @@ export const taskDefaults = (): Task => ({
   createdAt: '',
   updatedAt: '',
 });
+
+export interface TaskHelper {
+  set(task: Task, data: Partial<Task>): Task
+}
+export const taskHelper = {
+  /**
+   * Creates an updated Task object
+   */
+  set(task: Task, data: Partial<Task>): Task {
+    return {
+      ...task,
+      ...data,
+    };
+  },
+};

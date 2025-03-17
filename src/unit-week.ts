@@ -12,3 +12,18 @@ export const unitWeekDefault = (): UnitWeek => ({
   createdAt: '',
   updatedAt: '',
 });
+
+export interface UnitWeekHelper {
+  set(item: UnitWeek, data: Partial<UnitWeek>): UnitWeek
+}
+export const unitWeekHelper = {
+  /**
+   * Creates an updated UnitWeek object
+   */
+  set(item: UnitWeek, data: Partial<UnitWeek>): UnitWeek {
+    return {
+      ...item,
+      ...data,
+    };
+  },
+};
