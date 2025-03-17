@@ -16,3 +16,18 @@ export const taskboxSortOrderDefaults = (): TaskboxSortOrder => ({
   createdAt: '',
   updatedAt: '',
 });
+
+export interface TaskboxSortOrderHelper {
+  set(tso: TaskboxSortOrder, data: Partial<TaskboxSortOrder>): TaskboxSortOrder
+}
+export const taskboxSortOrderHelper = {
+  /**
+   * Creates an updated TaskboxSortOrder object
+   */
+  set(tso: TaskboxSortOrder, data: Partial<TaskboxSortOrder>): TaskboxSortOrder {
+    return {
+      ...tso,
+      ...data,
+    };
+  },
+};

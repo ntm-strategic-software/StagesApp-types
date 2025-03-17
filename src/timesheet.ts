@@ -20,3 +20,18 @@ export const timesheetDefault = (): Timesheet => ({
   createdAt: '',
   updatedAt: '',
 });
+
+export interface TimesheetHelper {
+  set(timesheet: Timesheet, data: Partial<Timesheet>): Timesheet
+}
+export const timesheetHelper = {
+  /**
+   * Creates an updated Timesheet object
+   */
+  set(timesheet: Timesheet, data: Partial<Timesheet>): Timesheet {
+    return {
+      ...timesheet,
+      ...data,
+    };
+  },
+};

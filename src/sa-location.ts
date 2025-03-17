@@ -14,3 +14,18 @@ export const saLocationDefaults = (): SALocation => ({
   createdAt: '',
   updatedAt: '',
 });
+
+export interface SALocationHelper {
+  set(loc: SALocation, data: Partial<SALocation>): SALocation
+}
+export const saLocationHelper = {
+  /**
+   * Creates an updated SALocation object
+   */
+  set(loc: SALocation, data: Partial<SALocation>): SALocation {
+    return {
+      ...loc,
+      ...data,
+    };
+  },
+};

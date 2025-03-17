@@ -20,3 +20,18 @@ export const pendingMediaDefaults = (): PendingMedia => ({
   createdAt: '',
   updatedAt: '',
 });
+
+export interface PendingMediaHelper {
+  set(item: PendingMedia, data: Partial<PendingMedia>): PendingMedia
+}
+export const pendingMediaHelper = {
+  /**
+   * Creates an updated PendingMedia object
+   */
+  set(item: PendingMedia, data: Partial<PendingMedia>): PendingMedia {
+    return {
+      ...item,
+      ...data,
+    };
+  },
+};

@@ -16,3 +16,18 @@ export const generalQuestionDefaults = (): GeneralQuestion => ({
     createdAt: '',
     updatedAt: '',
 });
+
+export interface GeneralQuestionHelper {
+  set(question: GeneralQuestion, data: Partial<GeneralQuestion>): GeneralQuestion
+}
+export const generalQuestionHelper = {
+  /**
+   * Creates an updated GeneralQuestion object
+   */
+  set(question: GeneralQuestion, data: Partial<GeneralQuestion>): GeneralQuestion {
+    return {
+      ...question,
+      ...data,
+    };
+  },
+};

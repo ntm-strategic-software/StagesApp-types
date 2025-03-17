@@ -32,3 +32,18 @@ export const dreDefaults = (): DRE => ({
   splitCompareText1: [],
   splitCompareText2: [],
 });
+
+export interface DreHelper {
+  set(dre: DRE, data: Partial<DRE>): DRE
+}
+export const dreHelper = {
+  /**
+   * Creates an updated DRE object
+   */
+  set(dre: DRE, data: Partial<DRE>): DRE {
+    return {
+      ...dre,
+      ...data,
+    };
+  },
+};

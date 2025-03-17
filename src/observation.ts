@@ -16,3 +16,18 @@ export const observationDefaults = (): Observation => ({
     createdAt: '',
     updatedAt: '',
 });
+
+export interface ObservationHelper {
+  set(observation: Observation, data: Partial<Observation>): Observation
+}
+export const observationHelper = {
+  /**
+   * Creates an updated Observation object
+   */
+  set(observation: Observation, data: Partial<Observation>): Observation {
+    return {
+      ...observation,
+      ...data,
+    };
+  },
+};

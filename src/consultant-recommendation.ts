@@ -14,3 +14,18 @@ export const consultantRecommendationDefaults = (): ConsultantRecommendation => 
   createdAt: '',
   updatedAt: '',
 });
+
+export interface ConsultantRecommendationHelper {
+  set(rec: ConsultantRecommendation, data: Partial<ConsultantRecommendation>): ConsultantRecommendation
+}
+export const consultantRecommendationHelper = {
+  /**
+   * Creates an updated ConsultantRecommendation object
+   */
+  set(rec: ConsultantRecommendation, data: Partial<ConsultantRecommendation>): ConsultantRecommendation {
+    return {
+      ...rec,
+      ...data,
+    };
+  },
+};

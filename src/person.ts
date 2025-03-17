@@ -24,3 +24,18 @@ export const personDefaults = (): Person => ({
   createdAt: '',
   updatedAt: '',
 });
+
+export interface PersonHelper {
+  set(person: Person, data: Partial<Person>): Person
+}
+export const personHelper = {
+  /**
+   * Creates an updated Person object
+   */
+  set(person: Person, data: Partial<Person>): Person {
+    return {
+      ...person,
+      ...data,
+    };
+  },
+};

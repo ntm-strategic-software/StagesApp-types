@@ -12,3 +12,18 @@ export const deletedItemDefaults = (): DeletedItem => ({
   createdAt: '',
   updatedAt: '',
 });
+
+export interface DeletedItemHelper {
+  set(item: DeletedItem, data: Partial<DeletedItem>): DeletedItem
+}
+export const deletedItemHelper = {
+  /**
+   * Creates an updated DeletedItem object
+   */
+  set(item: DeletedItem, data: Partial<DeletedItem>): DeletedItem {
+    return {
+      ...item,
+      ...data,
+    };
+  },
+};
