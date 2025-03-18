@@ -53,7 +53,7 @@ export class Timesheet implements TimesheetInterface {
    * @param {Timesheet|Object} data
    */
   constructor(data?: TimesheetInterface) {
-    const defaults = timesheetDefault();
+    const defaults = timesheetDefaults();
     this._id = data?._id || defaults._id;
     const claUnit = data?.claUnit;
     this.claUnit = isNumber(claUnit) ? claUnit : defaults.claUnit;
