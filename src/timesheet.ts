@@ -10,7 +10,7 @@ export interface Timesheet {
   createdAt?: string
   updatedAt?: string
 }
-export const timesheetDefault = (): Timesheet => ({
+export const timesheetDefaults = (): Timesheet => ({
   _id: '',
   claUnit: null,
   taskBox: '',
