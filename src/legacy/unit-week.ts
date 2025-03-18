@@ -36,7 +36,7 @@ export class UnitWeek implements UnitWeekInterface {
    * @param {UnitWeek|Object} data
    */
   constructor(data?: UnitWeekInterface) {
-    const defaults = unitWeekDefault();
+    const defaults = unitWeekDefaults();
     this._id = data?._id || defaults._id;
     const claUnit = data?.claUnit;
     this.claUnit = isNumber(claUnit) ? claUnit : defaults.claUnit;
