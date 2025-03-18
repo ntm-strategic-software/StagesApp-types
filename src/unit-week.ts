@@ -5,7 +5,7 @@ export interface UnitWeek {
   createdAt?: string
   updatedAt?: string
 }
-export const unitWeekDefault = (): UnitWeek => ({
+export const unitWeekDefaults = (): UnitWeek => ({
   _id: '',
   claUnit: null,
   weekStart: '',
