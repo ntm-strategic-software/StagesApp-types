@@ -1,4 +1,4 @@
-import { UnitWeek as UnitWeekInterface, unitWeekDefault } from '../unit-week';
+import { UnitWeek as UnitWeekInterface, unitWeekDefaults } from '../unit-week';
 import isNumber from 'lodash/isNumber';
 
 /**
