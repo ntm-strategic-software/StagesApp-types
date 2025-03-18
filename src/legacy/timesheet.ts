@@ -1,4 +1,4 @@
-import { Timesheet as TimesheetInterface, timesheetDefault } from '../timesheet';
+import { Timesheet as TimesheetInterface, timesheetDefaults } from '../timesheet';
 import { TaskBox } from '../constants';
 import isNumber from 'lodash/isNumber';
 
