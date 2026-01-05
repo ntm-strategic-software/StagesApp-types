@@ -5,8 +5,8 @@ export type SplitCompareText1 = ({text: string, className: string}|object)[][];
 
 export interface DRE extends CLAFile {
   _isSimple: boolean
-  recording1: string
-  recording2: string
+  recording1: string[]
+  recording2: string[]
   speaker1: string
   speaker2: string
   transcription1: string
@@ -20,8 +20,8 @@ export interface DRE extends CLAFile {
 export const dreDefaults = (): DRE => ({
   ...claFileDefaults(),
   _isSimple: false,
-  recording1: '',
-  recording2: '',
+  recording1: [],
+  recording2: [],
   speaker1: '',
   speaker2: '',
   transcription1: '',
