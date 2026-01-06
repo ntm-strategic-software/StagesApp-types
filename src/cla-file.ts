@@ -37,8 +37,11 @@ export interface ClaFileHelper {
   isDRE(claFile: CLAFile): boolean;
   isPE(claFile: CLAFile): boolean;
   isSimpleDRE(claFile: CLAFile): boolean;
+  isAnyCE(claFile: CLAFile): boolean;
+  isAnyDRE(claFile: CLAFile): boolean;
   set(claFile: CLAFile, data: Partial<CLAFile>): CLAFile;
 }
+// noinspection JSUnusedGlobalSymbols
 export const claFileHelper: ClaFileHelper = {
   /**
    * returns the ClaFileType of this CLAFile
@@ -60,6 +63,14 @@ export const claFileHelper: ClaFileHelper = {
 
       return ClaFileType.CULTURE_EVENT;
     }
+  },
+
+  isAnyCE(claFile: CLAFile): boolean {
+    return [ClaFileType.CULTURE_EVENT, ClaFileType.PE].includes(this.claFileType(claFile));
+  },
+
+  isAnyDRE(claFile: CLAFile): boolean {
+    return [ClaFileType.DRE, ClaFileType.SIMPLE_DRE].includes(this.claFileType(claFile));
   },
 
   /**
