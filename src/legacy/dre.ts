@@ -41,12 +41,12 @@ export class DRE extends CLAFile implements DREInterface {
   /**
    * Recording 1 file name (no path, but does include the extension)
    */
-  recording1: string;
+  recording1: string[];
 
   /**
    * Recording 2 file name (no path, but does include the extension)
    */
-  recording2: string;
+  recording2: string[];
 
   /**
    * the speaker in recording1 (_id of the speaker in the Person table)
