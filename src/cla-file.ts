@@ -65,10 +65,16 @@ export const claFileHelper: ClaFileHelper = {
     }
   },
 
+  /**
+   * returns true if this CLAFile is a CultureEvent or a PE
+   */
   isAnyCE(claFile: CLAFile): boolean {
     return [ClaFileType.CULTURE_EVENT, ClaFileType.PE].includes(this.claFileType(claFile));
   },
 
+  /**
+   * returns true if this CLAFile is a DRE or a SimpleDRE
+   */
   isAnyDRE(claFile: CLAFile): boolean {
     return [ClaFileType.DRE, ClaFileType.SIMPLE_DRE].includes(this.claFileType(claFile));
   },
