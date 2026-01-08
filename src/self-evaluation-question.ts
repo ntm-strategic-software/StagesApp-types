@@ -9,9 +9,15 @@ export interface SelfEvaluationQuestion {
   answerType: AnswerTypes|''
   answer: string
   sortOrder: number
+  createdAt: string
+  updatedAt: string
+}
+
+export interface NewSelfEvaluationQuestion extends Omit<SelfEvaluationQuestion, 'createdAt' | 'updatedAt'> {
   createdAt?: string
   updatedAt?: string
 }
+
 export const selfEvaluationQuestionDefaults = (): SelfEvaluationQuestion => ({
   _id: '',
   questionKey: '',

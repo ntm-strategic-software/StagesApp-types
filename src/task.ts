@@ -15,9 +15,15 @@ export interface Task {
   showQuickCaptureButtons: boolean
   jumpToView: JumpToView|''
   nextTaskSameSession: boolean
+  createdAt: string
+  updatedAt: string
+}
+
+export interface NewTask extends Omit<Task, 'createdAt' | 'updatedAt'> {
   createdAt?: string
   updatedAt?: string
 }
+
 export const taskDefaults = (): Task => ({
   taskTitle: '',
   taskNotes: [],

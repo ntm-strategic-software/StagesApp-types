@@ -5,6 +5,11 @@ export interface AdvancedFilter {
   filter: string
   filterType: AdvancedFilterType
   selectedItemId: string
+  createdAt: string
+  updatedAt: string
+}
+
+export interface NewAdvancedFilter extends Omit<AdvancedFilter, 'createdAt' | 'updatedAt'> {
   createdAt?: string
   updatedAt?: string
 }

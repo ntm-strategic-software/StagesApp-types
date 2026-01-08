@@ -3,9 +3,15 @@ export interface QuickNote {
   filename: string
   quickText: string
   isArchived: boolean
+  createdAt: string
+  updatedAt: string
+}
+
+export interface NewQuickNote extends Omit<QuickNote, 'createdAt' | 'updatedAt'> {
   createdAt?: string
   updatedAt?: string
 }
+
 export const quickNoteDefaults = () => ({
   _id: '',
   filename: '',

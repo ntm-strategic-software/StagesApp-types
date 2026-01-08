@@ -11,9 +11,15 @@ export interface Transcription {
   idx: number
   transcriptionStartTime: number
   transcriptionEndTime: number
+  createdAt: string
+  updatedAt: string
+}
+
+export interface NewTranscription extends Omit<Transcription, 'createdAt' | 'updatedAt'> {
   createdAt?: string
   updatedAt?: string
 }
+
 export const transcriptionDefaults = (): Transcription => ({
   _id: '',
   title: '',

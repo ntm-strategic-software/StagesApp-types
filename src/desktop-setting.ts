@@ -1,9 +1,15 @@
 export interface DesktopSetting {
   settingKey: string
   settingValue: string
+  createdAt: string
+  updatedAt: string
+}
+
+export interface NewDesktopSetting extends Omit<DesktopSetting, 'createdAt' | 'updatedAt'> {
   createdAt?: string
   updatedAt?: string
 }
+
 export const desktopSettingsDefaults = (): DesktopSetting => ({
   settingKey: '',
   settingValue: '',

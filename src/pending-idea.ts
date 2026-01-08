@@ -3,9 +3,15 @@ export interface PendingIdea {
   text: string
   linkedFile: string
   deferToStage: number
+  createdAt: string
+  updatedAt: string
+}
+
+export interface NewPendingIdea extends Omit<PendingIdea, 'createdAt' | 'updatedAt'> {
   createdAt?: string
   updatedAt?: string
 }
+
 export const pendingIdeaDefaults = (): PendingIdea => ({
   _id: '',
   text: '',

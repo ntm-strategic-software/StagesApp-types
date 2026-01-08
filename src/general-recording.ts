@@ -6,6 +6,11 @@ export interface GeneralRecording {
   markers: string[]
   questions: string[]
   photos: string[]
+  createdAt: string
+  updatedAt: string
+}
+
+export interface NewGeneralRecording extends Omit<GeneralRecording, 'createdAt' | 'updatedAt'> {
   createdAt?: string
   updatedAt?: string
 }

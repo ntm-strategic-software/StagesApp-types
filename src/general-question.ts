@@ -4,9 +4,15 @@ export interface GeneralQuestion {
     startTime: number
     filename: string
     text: string
+    createdAt: string
+    updatedAt: string
+}
+
+export interface NewGeneralQuestion extends Omit<GeneralQuestion, 'createdAt' | 'updatedAt'> {
     createdAt?: string
     updatedAt?: string
 }
+
 export const generalQuestionDefaults = (): GeneralQuestion => ({
     _id: '',
     cultureEvent: '',

@@ -3,9 +3,15 @@ export interface GeneralPhoto {
   cultureEvent: string
   startTime: number
   filename: string
+  createdAt: string
+  updatedAt: string
+}
+
+export interface NewGeneralPhoto extends Omit<GeneralPhoto, 'createdAt' | 'updatedAt'> {
   createdAt?: string
   updatedAt?: string
 }
+
 export const generalPhotoDefaults = (): GeneralPhoto => ({
   _id: '',
   cultureEvent: '',

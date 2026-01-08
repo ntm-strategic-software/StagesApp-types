@@ -4,9 +4,15 @@ export interface Observation {
     claUnit: number
     date: string
     text: string
+    createdAt: string
+    updatedAt: string
+}
+
+export interface NewObservation extends Omit<Observation, 'createdAt' | 'updatedAt'> {
     createdAt?: string
     updatedAt?: string
 }
+
 export const observationDefaults = (): Observation => ({
     _id: '',
     title: '',

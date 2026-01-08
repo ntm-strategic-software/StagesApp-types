@@ -3,9 +3,15 @@ export interface SALocation {
   name: string
   note: string
   dateLastUsedOnMobile: string
+  createdAt: string
+  updatedAt: string
+}
+
+export interface NewSALocation extends Omit<SALocation, 'createdAt' | 'updatedAt'> {
   createdAt?: string
   updatedAt?: string
 }
+
 export const saLocationDefaults = (): SALocation => ({
   _id: '',
   name: '',

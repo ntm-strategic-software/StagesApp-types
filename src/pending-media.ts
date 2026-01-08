@@ -7,9 +7,15 @@ export interface PendingMedia {
   title: string
   filename: string
   isProcessed: boolean
+  createdAt: string
+  updatedAt: string
+}
+
+export interface NewPendingMedia extends Omit<PendingMedia, 'createdAt' | 'updatedAt'> {
   createdAt?: string
   updatedAt?: string
 }
+
 export const pendingMediaDefaults = (): PendingMedia => ({
   _id: '',
   fileType: '',

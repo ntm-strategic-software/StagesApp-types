@@ -4,9 +4,15 @@ export interface TaskboxSortOrder {
   PROCESS: string[]
   COMMUNITY: string[]
   HELPER: string[]
+  createdAt: string
+  updatedAt: string
+}
+
+export interface NewTaskboxSortOrder extends Omit<TaskboxSortOrder, 'createdAt' | 'updatedAt'> {
   createdAt?: string
   updatedAt?: string
 }
+
 export const taskboxSortOrderDefaults = (): TaskboxSortOrder => ({
   _id: '',
   PLAN: [],

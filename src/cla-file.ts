@@ -12,9 +12,15 @@ export interface CLAFile {
   readOnly: boolean
   deferToStage: number
   canLinkToTask: boolean
+  createdAt: string
+  updatedAt: string
+}
+
+export interface NewCLAFile extends Omit<CLAFile, 'createdAt' | 'updatedAt'> {
   createdAt?: string
   updatedAt?: string
 }
+
 export const claFileDefaults = (): CLAFile => ({
   _id: '',
   fileNumber: 0,

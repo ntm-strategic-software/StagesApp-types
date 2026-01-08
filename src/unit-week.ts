@@ -2,9 +2,15 @@ export interface UnitWeek {
   _id: string
   claUnit: number|null
   weekStart: string
+  createdAt: string
+  updatedAt: string
+}
+
+export interface NewUnitWeek extends Omit<UnitWeek, 'createdAt' | 'updatedAt'> {
   createdAt?: string
   updatedAt?: string
 }
+
 export const unitWeekDefaults = (): UnitWeek => ({
   _id: '',
   claUnit: null,

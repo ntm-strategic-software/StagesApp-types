@@ -3,9 +3,15 @@ export interface ConsultantRecommendation {
   claUnit: number
   recommendationText: string
   okToAdvance: boolean
+  createdAt: string
+  updatedAt: string
+}
+
+export interface NewConsultantRecommendation extends Omit<ConsultantRecommendation, 'createdAt' | 'updatedAt'> {
   createdAt?: string
   updatedAt?: string
 }
+
 export const consultantRecommendationDefaults = (): ConsultantRecommendation => ({
   _id: '',
   claUnit: 0,

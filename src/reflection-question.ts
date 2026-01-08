@@ -8,9 +8,15 @@ export interface ReflectionQuestion {
   questionSet: ReflectionQuestionSets|''
   sortOrder: number
   answer: string
+  createdAt: string
+  updatedAt: string
+}
+
+export interface NewReflectionQuestion extends Omit<ReflectionQuestion, 'createdAt' | 'updatedAt'> {
   createdAt?: string
   updatedAt?: string
 }
+
 export const reflectionQuestionDefaults = (): ReflectionQuestion => ({
   _id: '',
   questionKey: '',

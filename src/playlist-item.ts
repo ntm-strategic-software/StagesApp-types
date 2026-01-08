@@ -9,9 +9,15 @@ export interface PlaylistItem {
   recordingsOrder: string[]
   title: string
   dateRecorded: string
+  createdAt: string
+  updatedAt: string
+}
+
+export interface NewPlaylistItem extends Omit<PlaylistItem, 'createdAt' | 'updatedAt'> {
   createdAt?: string
   updatedAt?: string
 }
+
 export const playlistItemDefaults = (): PlaylistItem => ({
   _id: '',
   listenedToPrev: [],

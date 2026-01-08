@@ -2,9 +2,15 @@ export interface PhotoGroup {
   _id: string
   title: string
   filenames: string[]
+  createdAt: string
+  updatedAt: string
+}
+
+export interface NewPhotoGroup extends Omit<PhotoGroup, 'createdAt' | 'updatedAt'> {
   createdAt?: string
   updatedAt?: string
 }
+
 export const photoGroupDefaults = (): PhotoGroup => ({
   _id: '',
   title: '',

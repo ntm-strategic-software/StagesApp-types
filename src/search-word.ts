@@ -1,9 +1,15 @@
 export interface SearchWord {
   _id: string
   word: string
+  createdAt: string
+  updatedAt: string
+}
+
+export interface NewSearchWord extends Omit<SearchWord, 'createdAt' | 'updatedAt'> {
   createdAt?: string
   updatedAt?: string
 }
+
 export const searchWordDefaults = (): SearchWord => ({
   _id: '',
   word: '',

@@ -4,9 +4,15 @@ export interface Marker {
   startTime: number
   note: string
   searchWords: string[],
+  createdAt: string
+  updatedAt: string
+}
+
+export interface NewMarker extends Omit<Marker, 'createdAt' | 'updatedAt'> {
   createdAt?: string
   updatedAt?: string
 }
+
 export const markerDefaults = (): Marker => ({
     _id: '',
     cultureEvent: '',

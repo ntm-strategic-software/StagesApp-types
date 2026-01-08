@@ -8,9 +8,15 @@ export interface Person {
   dateLastUsedOnMobile: string
   deceased: boolean
   photoFilename: string
+  createdAt: string
+  updatedAt: string
+}
+
+export interface NewPerson extends Omit<Person, 'createdAt' | 'updatedAt'> {
   createdAt?: string
   updatedAt?: string
 }
+
 export const personDefaults = (): Person => ({
   _id: '',
   name: '',

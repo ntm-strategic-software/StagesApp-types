@@ -6,9 +6,15 @@ export interface User {
   fullName: string
   photoFilename: string
   claUnit: number
+  createdAt: string
+  updatedAt: string
+}
+
+export interface NewUser extends Omit<User, 'createdAt' | 'updatedAt'> {
   createdAt?: string
   updatedAt?: string
 }
+
 export const userDefaults = (): User => ({
   _id: '',
   name: '',

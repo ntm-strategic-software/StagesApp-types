@@ -7,9 +7,15 @@ export interface Timesheet {
   startTime: string
   endTime: string
   localStartDate: string
+  createdAt: string
+  updatedAt: string
+}
+
+export interface NewTimesheet extends Omit<Timesheet, 'createdAt' | 'updatedAt'> {
   createdAt?: string
   updatedAt?: string
 }
+
 export const timesheetDefaults = (): Timesheet => ({
   _id: '',
   claUnit: null,
