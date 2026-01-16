@@ -67,7 +67,7 @@ export interface SelfEvaluationQuestionHelper {
   set(item: SelfEvaluationQuestion, data: Partial<SelfEvaluationQuestion>): SelfEvaluationQuestion
 }
 /** Object with helper methods for SelfEvaluationQuestion */
-export const selfEvaluationQuestionHelper = {
+export const selfEvaluationQuestionHelper: SelfEvaluationQuestionHelper = {
   /** Creates an updated SelfEvaluationQuestion object by merging an existing SelfEvaluationQuestion object with new values */
   set(item: SelfEvaluationQuestion, data: Partial<SelfEvaluationQuestion>): SelfEvaluationQuestion {
     return {
