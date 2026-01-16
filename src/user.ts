@@ -1,20 +1,43 @@
 import { CLAStage } from './constants';
 
+/**
+ * Represents a user. This is unrelated to the People table.
+ */
 export interface User {
+  /** Unique ID for the user */
   _id: string
+  /** User's common name */
   name: string
+  /** User's full name */
   fullName: string
+  /** Filename of a picture of the user (no path, but does include extension) */
   photoFilename: string
+  /** User's current overall unit in CLA (1-based). There are 26 total units, including Unit 1 (Warmup) and Unit 26 (Wrapup). */
   claUnit: number
+  /** ISO Date (e.g., '2022-06-20T15:50:40.055Z'), when the row was initially saved to the database */
   createdAt: string
+  /** ISO Date (e.g., '2022-06-20T15:50:40.055Z'), when the row was last updated in the database */
   updatedAt: string
 }
 
+/**
+ * NewUser is User with createdAt and updatedAt optional.
+ * The intention is, If not provided, they will be set by the database when the row is created/updated in the database.
+ */
 export interface NewUser extends Omit<User, 'createdAt' | 'updatedAt'> {
+  /**
+   * ISO Date (e.g., '2022-06-20T15:50:40.055Z'), when the row was initially saved to the database.
+   * If not provided, it should be set when the row is created in the database.
+   */
   createdAt?: string
+  /**
+   * ISO Date (e.g., '2022-06-20T15:50:40.055Z'), when the row was last updated in the database.
+   * If not provided, it should be set when the row is updated in the database.
+   */
   updatedAt?: string
 }
 
+/** Returns a User object with default values */
 export const userDefaults = (): User => ({
   _id: '',
   name: '',
@@ -25,7 +48,7 @@ export const userDefaults = (): User => ({
   updatedAt: '',
 });
 
-// define the UserHelper interface so when we use userHelper, we get a clean list of options
+/** interface defining helper methods for User */
 export interface UserHelper {
   lastUnits: number[];
   unitsForStage(claStage: CLAStage): number[];
@@ -36,9 +59,10 @@ export interface UserHelper {
   getMaxStageUnit(stageEnum: CLAStage): number;
   set(user: User, data: Partial<User>): User;
 }
+/** Object with helper methods for User */
 export const userHelper = {
   /**
-   * Array of the last overall claUnit for each stage, from warmup (index 0) through the end of CLA
+   * Array of the last overall 1-based claUnit for each stage, from warmup (index 0), stage 1 (index 1), ..., to wrapup (index 5)
    */
   lastUnits: [1, 5, 11, 17, 25, 26],
 
@@ -57,7 +81,7 @@ export const userHelper = {
   },
 
   /**
-   * converts a CLA stage number, which is its index into this.lastUnits, to its CLAStage enum value
+   * converts a 0-based CLA stage number, which is its index into this.lastUnits, to its CLAStage enum value
    */
   getClaStageEnum(stageNum: number): CLAStage {
     switch (stageNum) {
@@ -79,7 +103,7 @@ export const userHelper = {
   },
 
   /**
-   * convert the CLAStage enum value to its stage number, which is its index into this.lastUnits
+   * convert the CLAStage enum value to its 0-based stage number, which is its index into this.lastUnits
    */
   getClaStageNumber(userClaStage: CLAStage): number {
     if(userClaStage === CLAStage.WARMUP) {
@@ -100,7 +124,7 @@ export const userHelper = {
   },
 
   /**
-   * convert a stage enum and unit within that stage to the overall claUnit
+   * convert a stage enum and 1-based unit within that stage to the overall 1-based claUnit
    */
   getOverallClaUnit(stageEnum: CLAStage, stageUnit: number): number {
     const stageNumber = this.getClaStageNumber(stageEnum);
@@ -108,9 +132,9 @@ export const userHelper = {
   },
 
   /**
-   * Given a claUnit (overall unit number), computes:
-   * - the unit within the stage.  This number resets to 1 when a user moves to a new stage.
-   * - the stage number
+   * Given a claUnit (overall 1-based unit number), computes:
+   * - the 1-based unit within the stage.  This number resets to 1 when a user moves to a new stage.
+   * - the 0-based stage number
    * - the CLAStage enum string that corresponds to the stage number
    */
   getClaStage(claUnit: number): {stageEnum: CLAStage, stageNumber: number, stageUnit: number} {
@@ -122,9 +146,7 @@ export const userHelper = {
     return { stageEnum, stageNumber, stageUnit };
   },
 
-  /**
-   * Gets the maximum stage unit (not the overall cla unit) for the stage specified by the enum.  The minimum is always 1 for every stage.
-   */
+  /** Gets the maximum 1-based stage unit (not the overall 1-based cla unit) for the stage specified by the enum. The minimum is always 1 for every stage. */
   getMaxStageUnit(stageEnum: CLAStage): number {
     const stageNumber = this.getClaStageNumber(stageEnum);
     const prevStageMaxClaUnit = stageEnum === CLAStage.WARMUP ? 0 : this.lastUnits[stageNumber - 1];
@@ -132,9 +154,7 @@ export const userHelper = {
     return maxClaUnit - prevStageMaxClaUnit;
   },
 
-  /**
-   * Creates an updated user object
-   */
+  /** Creates an updated User object by merging an existing User object with new values */
   set(user: User, data: Partial<User>): User {
     return {
       ...user,
