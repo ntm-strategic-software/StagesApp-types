@@ -69,7 +69,7 @@ export interface GeneralRecordingHelper {
   set(recording: GeneralRecording, data: Partial<GeneralRecording>): GeneralRecording
 }
 /** Object with helper methods for GeneralRecording */
-export const generalRecordingHelper = {
+export const generalRecordingHelper: GeneralRecordingHelper = {
   /** Creates an updated GeneralRecording object by merging an existing GeneralRecording object with new values */
   set(recording: GeneralRecording, data: Partial<GeneralRecording>): GeneralRecording {
     return {

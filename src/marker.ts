@@ -54,7 +54,7 @@ export interface MarkerHelper {
   set(item: Marker, data: Partial<Marker>): Marker
 }
 /** Object with helper methods for Marker */
-export const markerHelper = {
+export const markerHelper: MarkerHelper = {
   /** Creates an updated Marker object by merging an existing Marker object with new values */
   set(item: Marker, data: Partial<Marker>): Marker {
     return {

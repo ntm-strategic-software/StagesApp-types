@@ -65,7 +65,7 @@ export interface TimesheetHelper {
   set(timesheet: Timesheet, data: Partial<Timesheet>): Timesheet
 }
 /** Object with helper methods for Timesheet */
-export const timesheetHelper = {
+export const timesheetHelper: TimesheetHelper = {
   /** Creates an updated Timesheet object by merging an existing Timesheet object with new values */
   set(timesheet: Timesheet, data: Partial<Timesheet>): Timesheet {
     return {

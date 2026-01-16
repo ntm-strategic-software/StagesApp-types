@@ -60,7 +60,7 @@ export interface UserHelper {
   set(user: User, data: Partial<User>): User;
 }
 /** Object with helper methods for User */
-export const userHelper = {
+export const userHelper: UserHelper = {
   /**
    * Array of the last overall 1-based claUnit for each stage, from warmup (index 0), stage 1 (index 1), ..., to wrapup (index 5)
    */

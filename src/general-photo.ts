@@ -52,7 +52,7 @@ export interface GeneralPhotoHelper {
   set(photo: GeneralPhoto, data: Partial<GeneralPhoto>): GeneralPhoto
 }
 /** Object with helper methods for GeneralPhoto */
-export const generalPhotoHelper = {
+export const generalPhotoHelper: GeneralPhotoHelper = {
   /** Creates an updated GeneralPhoto object by merging an existing GeneralPhoto object with new values */
   set(photo: GeneralPhoto, data: Partial<GeneralPhoto>): GeneralPhoto {
     return {

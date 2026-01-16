@@ -63,7 +63,7 @@ export interface PersonHelper {
   set(person: Person, data: Partial<Person>): Person
 }
 /** Object with helper methods for Person */
-export const personHelper = {
+export const personHelper: PersonHelper = {
   /** Creates an updated Person object by merging an existing Person object with new values */
   set(person: Person, data: Partial<Person>): Person {
     return {

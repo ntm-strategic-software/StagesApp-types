@@ -58,7 +58,7 @@ export interface PendingMediaHelper {
   set(item: PendingMedia, data: Partial<PendingMedia>): PendingMedia
 }
 /** Object with helper methods for PendingMedia */
-export const pendingMediaHelper = {
+export const pendingMediaHelper: PendingMediaHelper = {
   /** Creates an updated PendingMedia object by merging an existing PendingMedia object with new values */
   set(item: PendingMedia, data: Partial<PendingMedia>): PendingMedia {
     return {

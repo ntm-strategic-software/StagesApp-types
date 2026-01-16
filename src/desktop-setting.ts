@@ -40,7 +40,7 @@ export interface DesktopSettingHelper {
   set(setting: DesktopSetting, data: Partial<DesktopSetting>): DesktopSetting
 }
 /** Object with helper methods for DesktopSetting */
-export const desktopSettingHelper = {
+export const desktopSettingHelper: DesktopSettingHelper = {
   /** Creates an updated DesktopSetting object by merging an existing DesktopSetting object with new values */
   set(setting: DesktopSetting, data: Partial<DesktopSetting>): DesktopSetting {
     return {

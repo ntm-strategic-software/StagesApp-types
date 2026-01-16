@@ -43,7 +43,7 @@ export interface DeletedItemHelper {
   set(item: DeletedItem, data: Partial<DeletedItem>): DeletedItem
 }
 /** Object with helper methods for DeletedItem */
-export const deletedItemHelper = {
+export const deletedItemHelper: DeletedItemHelper = {
   /** Creates an updated DeletedItem object by merging an existing DeletedItem object with new values */
   set(item: DeletedItem, data: Partial<DeletedItem>): DeletedItem {
     return {

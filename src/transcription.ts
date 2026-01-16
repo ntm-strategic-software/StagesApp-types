@@ -84,7 +84,7 @@ export interface TranscriptionHelper {
   set(item: Transcription, data: Partial<Transcription>): Transcription
 }
 /** Object with helper methods for Transcription */
-export const transcriptionHelper = {
+export const transcriptionHelper: TranscriptionHelper = {
   /** Creates an updated Transcription object by merging an existing Transcription object with new values */
   set(item: Transcription, data: Partial<Transcription>): Transcription {
     return {

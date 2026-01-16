@@ -62,7 +62,7 @@ export interface TaskboxSortOrderHelper {
   set(tso: TaskboxSortOrder, data: Partial<TaskboxSortOrder>): TaskboxSortOrder
 }
 /** Object with helper methods for TaskboxSortOrder */
-export const taskboxSortOrderHelper = {
+export const taskboxSortOrderHelper: TaskboxSortOrderHelper = {
   /** Creates an updated TaskboxSortOrder object by merging an existing TaskboxSortOrder object with new values */
   set(tso: TaskboxSortOrder, data: Partial<TaskboxSortOrder>): TaskboxSortOrder {
     return {

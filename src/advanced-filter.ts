@@ -48,7 +48,7 @@ export interface AdvancedFilterHelper {
   set(advancedFilter: AdvancedFilter, data: Partial<AdvancedFilter>): AdvancedFilter
 }
 /** Object with helper methods for AdvancedFilter */
-export const advancedFilterHelper = {
+export const advancedFilterHelper: AdvancedFilterHelper = {
   /**
    * Creates an updated AdvancedFilter object
    */

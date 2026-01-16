@@ -104,7 +104,7 @@ export interface DreHelper {
   set(dre: DRE, data: Partial<DRE>): DRE
 }
 /** Object with helper methods for DRE */
-export const dreHelper = {
+export const dreHelper: DreHelper = {
   /** Creates an updated DRE object by merging an existing DRE object with new values */
   set(dre: DRE, data: Partial<DRE>): DRE {
     return {

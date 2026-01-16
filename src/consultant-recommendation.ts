@@ -46,7 +46,7 @@ export interface ConsultantRecommendationHelper {
   set(rec: ConsultantRecommendation, data: Partial<ConsultantRecommendation>): ConsultantRecommendation
 }
 /** Object with helper methods for ConsultantRecommendation */
-export const consultantRecommendationHelper = {
+export const consultantRecommendationHelper: ConsultantRecommendationHelper = {
   /** Creates an updated ConsultantRecommendation object by merging an existing ConsultantRecommendation object with new values */
   set(rec: ConsultantRecommendation, data: Partial<ConsultantRecommendation>): ConsultantRecommendation {
     return {

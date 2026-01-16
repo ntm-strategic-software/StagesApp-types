@@ -49,7 +49,7 @@ export interface SALocationHelper {
   set(loc: SALocation, data: Partial<SALocation>): SALocation
 }
 /** Object with helper methods for SALocation */
-export const saLocationHelper = {
+export const saLocationHelper: SALocationHelper = {
   /** Creates an updated SALocation object by merging an existing SALocation object with new values */
   set(loc: SALocation, data: Partial<SALocation>): SALocation {
     return {

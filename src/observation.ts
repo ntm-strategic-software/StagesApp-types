@@ -51,7 +51,7 @@ export interface ObservationHelper {
   set(observation: Observation, data: Partial<Observation>): Observation
 }
 /** Object with helper methods for Observation */
-export const observationHelper = {
+export const observationHelper: ObservationHelper = {
   /** Creates an updated Observation object by merging an existing Observation object with new values */
   set(observation: Observation, data: Partial<Observation>): Observation {
     return {

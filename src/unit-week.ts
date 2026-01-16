@@ -45,7 +45,7 @@ export interface UnitWeekHelper {
   set(item: UnitWeek, data: Partial<UnitWeek>): UnitWeek
 }
 /** Object with helper methods for UnitWeek */
-export const unitWeekHelper = {
+export const unitWeekHelper: UnitWeekHelper = {
   /** Creates an updated UnitWeek object by merging an existing UnitWeek object with new values */
   set(item: UnitWeek, data: Partial<UnitWeek>): UnitWeek {
     return {

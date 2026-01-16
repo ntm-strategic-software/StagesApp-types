@@ -45,7 +45,7 @@ export interface PhotoGroupHelper {
   set(item: PhotoGroup, data: Partial<PhotoGroup>): PhotoGroup
 }
 /** Object with helper methods for PhotoGroup */
-export const photoGroupHelper = {
+export const photoGroupHelper: PhotoGroupHelper = {
   /** Creates an updated PhotoGroup object by merging an existing PhotoGroup object with new values */
   set(item: PhotoGroup, data: Partial<PhotoGroup>): PhotoGroup {
     return {

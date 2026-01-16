@@ -64,7 +64,7 @@ export interface CultureEventHelper {
   set(ce: CultureEvent, data: Partial<CultureEvent>): CultureEvent
 }
 /** Object with helper methods for CultureEvent */
-export const cultureEventHelper = {
+export const cultureEventHelper: CultureEventHelper = {
   /** Creates an updated CultureEvent object by merging an existing CultureEvent object with new values */
   set(ce: CultureEvent, data: Partial<CultureEvent>): CultureEvent {
     return {

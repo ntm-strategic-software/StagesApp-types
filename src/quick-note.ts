@@ -48,7 +48,7 @@ export interface QuickNoteHelper {
   set(quickNote: QuickNote, data: Partial<QuickNote>): QuickNote
 }
 /** Object with helper methods for QuickNote */
-export const quickNoteHelper = {
+export const quickNoteHelper: QuickNoteHelper = {
   /** Creates an updated QuickNote object by merging an existing QuickNote object with new values */
   set(quickNote: QuickNote, data: Partial<QuickNote>): QuickNote {
     return {

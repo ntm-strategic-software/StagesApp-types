@@ -43,7 +43,7 @@ export interface TagHelper {
     set(tag: Tag, data: Partial<Tag>): Tag
 }
 /** Object with helper methods for Tag */
-export const tagHelper = {
+export const tagHelper: TagHelper = {
     /** Creates an updated Tag object by merging an existing Tag object with new values */
     set(tag: Tag, data: Partial<Tag>): Tag {
         return {

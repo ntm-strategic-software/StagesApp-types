@@ -108,7 +108,7 @@ export interface TaskHelper {
   set(task: Task, data: Partial<Task>): Task
 }
 /** Object with helper methods for Task */
-export const taskHelper = {
+export const taskHelper: TaskHelper = {
   /** Creates an updated Task object by merging an existing Task object with new values */
   set(task: Task, data: Partial<Task>): Task {
     return {

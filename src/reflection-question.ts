@@ -67,7 +67,7 @@ export interface ReflectionQuestionHelper {
   set(item: ReflectionQuestion, data: Partial<ReflectionQuestion>): ReflectionQuestion
 }
 /** Object with helper methods for ReflectionQuestion */
-export const reflectionQuestionHelper = {
+export const reflectionQuestionHelper: ReflectionQuestionHelper = {
   /** Creates an updated ReflectionQuestion object by merging an existing ReflectionQuestion object with new values */
   set(item: ReflectionQuestion, data: Partial<ReflectionQuestion>): ReflectionQuestion {
     return {

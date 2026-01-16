@@ -48,7 +48,7 @@ export interface PendingIdeaHelper {
   set(item: PendingIdea, data: Partial<PendingIdea>): PendingIdea
 }
 /** Object with helper methods for PendingIdea */
-export const pendingIdeaHelper = {
+export const pendingIdeaHelper: PendingIdeaHelper = {
   /** Creates an updated PendingIdea object by merging an existing PendingIdea object with new values */
   set(item: PendingIdea, data: Partial<PendingIdea>): PendingIdea {
     return {

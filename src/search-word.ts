@@ -43,7 +43,7 @@ export interface SearchWordHelper {
   set(word: SearchWord, data: Partial<SearchWord>): SearchWord
 }
 /** Object with helper methods for SearchWord */
-export const searchWordHelper = {
+export const searchWordHelper: SearchWordHelper = {
   /** Creates an updated SearchWord object by merging an existing SearchWord object with new values */
   set(word: SearchWord, data: Partial<SearchWord>): SearchWord {
     return {
