@@ -1,6 +1,4 @@
-/**
- * Enum of TaskBoxes
- */
+/** Enum of TaskBoxes */
 export enum TaskBox {
   PLAN = 'PLAN',
   PROCESS = 'PROCESS',
@@ -11,7 +9,8 @@ export enum TaskBox {
 
 /**
  * Enum of Draggable type
- * This enum is in StagesApp-Types because it is used in Task.droppableTypes.
+ * This enum is in StagesApp-Types because it is used in Task.droppableTypes,
+ * and Task is used in both Desktop and Mobile apps.
  */
 export enum Draggable {
   PI_TEXT_ONLY_DRAGGABLE = 'PI_TEXT_ONLY_DRAGGABLE', // Pending Idea
@@ -29,9 +28,7 @@ export enum Draggable {
   NOT_DRAGGABLE = 'NOT_DRAGGABLE', // Dragging not allowed
 }
 
-/**
- * Enum of recorder types
- */
+/** Enum of recorder types */
 export enum RecorderButtonType {
   GENERAL_RECORDER_PROMPT = 'GENERAL_RECORDER_PROMPT',
   GENERAL_RECORDER_PROMPT_OPTIONAL = 'GENERAL_RECORDER_PROMPT_OPTIONAL',
@@ -44,16 +41,16 @@ export enum RecorderButtonType {
   PE_RECORDER = 'PE_RECORDER',  // this will result in a main (not prompt) CLA File
 }
 
-/**
- * Enum of player types
- */
+/** Enum of player types */
 export enum PlayerType {
   GENERAL_RECORDING_PROMPT_PLAYER = 'GENERAL_RECORDING_PROMPT_PLAYER',
   GENERAL_RECORDING_MAIN_PLAYER = 'GENERAL_RECORDING_MAIN_PLAYER',
 }
 
 /**
- * On Desktop in the Planner..Tasks tab, where clicking the lightning bolt for a task will jump the user to.
+ * Enum for Stages Desktop in the Planner..Tasks tab, where clicking the lightning bolt for a task will jump the user to.
+ * Since this is used in Task.jumpToView and Task is used in both Desktop and Mobile apps,
+ * this enum is in StagesApp-Types.
  */
 export enum JumpToView {
   HOME_REVIEW = 'HOME_REVIEW',
@@ -67,9 +64,7 @@ export enum JumpToView {
   PHOTO_VIEWER = 'PHOTO_VIEWER',
 }
 
-/**
- * Enum for the CLA Stage that the user is in
- */
+/** Enum for the CLA Stages that the user progresses through */
 export enum CLAStage {
   WARMUP = 'WARMUP',
   STAGE_1 = 'STAGE_1',
@@ -79,9 +74,7 @@ export enum CLAStage {
   WRAPUP = 'WRAPUP',
 }
 
-/**
- * Enum of the possible types of a CLA File
- */
+/** Enum of the possible types of a CLA File */
 export enum ClaFileType {
   CULTURE_EVENT = 'CULTURE_EVENT',
   DRE = 'DRE',
@@ -89,17 +82,13 @@ export enum ClaFileType {
   SIMPLE_DRE = 'SIMPLE_DRE',
 }
 
-/**
- * Enum of the possible types of an advanced filter
- */
+/** Enum of the possible types of an advanced filter */
 export enum AdvancedFilterType {
   NORMAL_FILTER = 'NORMAL_FILTER',
   TRANSCRIPTION_FILTER = 'TRANSCRIPTION_FILTER',
 }
 
-/**
- * Enum for Activities
- */
+/** Enum of all Activities */
 export enum ActivityKey {
   // COMMUNITY EXPERIENCE ACTIVITIES
   GET_ACQUAINTED = 'GET_ACQUAINTED',
@@ -169,6 +158,7 @@ export enum ActivityKey {
   INTERACT_ABOUT_SCENE = 'INTERACT_ABOUT_SCENE',
 }
 
+/** Enum for the different types of pending files */
 export enum PendingFileType {
   GENERAL_RECORDER = 'GENERAL_RECORDER',
   PE_RECORDER = 'PE_RECORDER',
@@ -178,9 +168,7 @@ export enum PendingFileType {
   QUICK_NOTE = 'QUICK_NOTE',
 }
 
-/**
- * Enum for the different groups of reflection questions
- */
+/** Enum for the different groups of reflection questions */
 export enum ReflectionQuestionSets {
   HOW_CLA_WENT = 'HOW_CLA_WENT',
   OBSERVED = 'OBSERVED',
@@ -189,23 +177,26 @@ export enum ReflectionQuestionSets {
   READY_FOR_NEXT_UNIT = 'READY_FOR_NEXT_UNIT',
 }
 
-/**
- * Enum for the different types of answers
- */
+/** Enum for the different types of answers */
 export enum AnswerTypes {
   TEXT = 'TEXT',
-  MULTIPLE_CHOICE_ONE = 'MULTIPLE_CHOICE_ONE',  // allow user to select only one option
+  /** Allow user to select only one option from a list of options */
+  MULTIPLE_CHOICE_ONE = 'MULTIPLE_CHOICE_ONE',
+  /** User answers the question by checking the box or not checking the box */
   CHECKBOX = 'CHECKBOX',
-  NONE = 'NONE',  // no answer allowed.  This is for showing text only.
-  STATS = 'STATS',  // no answer allowed.  This is for showing the question text and statistics only.
-  PENDING_IDEAS = 'PENDING_IDEAS',  // answer is a list of texts of Pending Ideas
-  EXTRA_ACTIVITIES = 'EXTRA_ACTIVITIES',  // answer is a list of ActivityKeys with current created, completed, recommended, and extra user wants to do
-  NEW_ACTIVITIES = 'NEW_ACTIVITIES',  // answer is a list of ActivityKeys with true/false for each, plus a NONE option
+  /** No answer allowed.  This is for showing text only. */
+  NONE = 'NONE',
+  /** No answer allowed.  This is for showing the question text and statistics only. */
+  STATS = 'STATS',
+  /** Answer is a list of texts of Pending Ideas */
+  PENDING_IDEAS = 'PENDING_IDEAS',
+  /** Answer is a list of ActivityKeys with current created, completed, recommended, and extra user wants to do */
+  EXTRA_ACTIVITIES = 'EXTRA_ACTIVITIES',
+  /** Answer is a list of ActivityKeys with true/false for each, plus a NONE option */
+  NEW_ACTIVITIES = 'NEW_ACTIVITIES',
 }
 
-/**
- * Error types that we want to handle specially
- */
+/** Error types that we want to handle specially */
 export enum ErrorType {
   OLD_MOBILE_VERSION = 'OLD_MOBILE_VERSION',
   OLD_DESKTOP_VERSION = 'OLD_DESKTOP_VERSION',
@@ -213,7 +204,8 @@ export enum ErrorType {
 }
 
 /**
- * Enum for table names
+ * Enum for table names of all tables in all databases in Stages Desktop.
+ * Stages Mobile has a subset of these tables, plus mobile-only tables (see localTableNames in StagesApp-mobile).
  *
  * NOTE:  all tables include properties createdAt and updatedAt, which are ISO date strings (e.g., '2022-06-20T15:50:40.055Z')
  */
@@ -272,18 +264,25 @@ export const mobileTablesToSendToDesktop = [
   TableNames.TIMESHEET,
 ];
 
+/** Key for storing _id's of all CLA Files on Mobile during sync */
 export const MOBILE_ALL_CLA_FILE_IDS = 'MOBILE_ALL_CLA_FILE_IDS';
+/** Key for storing _id's of all Activity Plans on Mobile during sync */
 export const MOBILE_ALL_ACTIVITY_PLAN_IDS = 'MOBILE_ALL_ACTIVITY_PLAN_IDS';
+/** Key for storing CLAFile _id's that Desktop is requesting from Mobile during sync */
 export const REQUESTED_CLA_FILE_IDS = 'REQUESTED_CLA_FILE_IDS';
+/** Key for storing ActivityPlan _id's that Desktop is requesting from Mobile during sync */
 export const REQUESTED_ACTIVITY_PLAN_IDS = 'REQUESTED_ACTIVITY_PLAN_IDS';
 
+/** _id for the single row in the TaskBoxSortOrder table */
 export const TASK_BOX_SORT_ORDER_ID = '8cf436a9-c7a2-4222-bf4f-3b047b93116a';
 
-export const backupHostSuffix = '/backup';  // for restoring files to Mobile from a mobile backup (which is on Desktop)
-
 /**
- * Enum of the possible types of data transfers between mobile and desktop
+ * For restoring files to Mobile from a mobile backup.
+ * Mobile backups are stored on Desktop.  Restoring a mobile backup involves transferring the backup from Desktop to Mobile.
  */
+export const backupHostSuffix = '/backup';
+
+/** Enum of the possible types of data transfers between mobile and desktop */
 export enum DataTransferType {
   SYNC = 'SYNC',
   IMPORT_USER = 'IMPORT_USER',
@@ -291,6 +290,7 @@ export enum DataTransferType {
   RESTORE_ALL_DATA = 'RESTORE_ALL_DATA',
 }
 
+/** Enum of socket endpoints used for communication between Mobile and Desktop during sync and data transfer */
 export enum socketEndpoints {
   // used for sync
   GET_PUBLIC_KEY = 'GET_PUBLIC_KEY',
@@ -306,6 +306,7 @@ export enum socketEndpoints {
   DESKTOP_ERROR = 'DESKTOP_ERROR',
 }
 
+/** Enum of POST paths used for uploading files from Mobile to Desktop during sync and data transfer */
 export enum PostPaths {
   UPLOAD_FILE = '/uploadfile',
   UPLOAD_FILE_BACKUP = '/uploadfilebackup',
