@@ -68,7 +68,7 @@ export const playlistItemDefaults = (): PlaylistItem => ({
   updatedAt: '',
 });
 
-/**  Interface defining helper methods for PlaylistItem */
+/** Interface defining helper methods for PlaylistItem */
 export interface PlaylistItemHelper {
   getPrev(item: PlaylistItem): string[]
   getToday(item: PlaylistItem): string[]
