@@ -45,6 +45,24 @@ export interface CultureEvent extends CLAFile {
    */
   phoneticTranscription: string
 }
+
+/**
+ * NewCultureEvent is CultureEvent with createdAt and updatedAt optional.
+ * The intention is, If not provided, they will be set by the database when the row is created/updated in the database.
+ */
+export interface NewCultureEvent extends Omit<CultureEvent, 'createdAt' | 'updatedAt'> {
+  /**
+   * ISO Date (e.g., '2022-06-20T15:50:40.055Z'), when the row was initially saved to the database.
+   * If not provided, it should be set when the row is created in the database.
+   */
+  createdAt?: string
+  /**
+   * ISO Date (e.g., '2022-06-20T15:50:40.055Z'), when the row was last updated in the database.
+   * If not provided, it should be set when the row is updated in the database.
+   */
+  updatedAt?: string
+}
+
 /** Returns a new CultureEvent object with default values */
 export const cultureEventDefaults = (): CultureEvent => ({
   ...claFileDefaults(),

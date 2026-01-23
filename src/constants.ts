@@ -220,7 +220,6 @@ export enum TableNames {
   PEOPLE = 'People',
   LOCATIONS = 'Locations',
   SEARCH_WORDS = 'SearchWords',
-  TRUSTED_MACHINES = 'TrustedMachines',
   MOBILE_DEVICES = 'MobileDevices',
   DELETED_ITEMS = 'DeletedItems',
   TRANSCRIPTIONS = 'Transcriptions',
