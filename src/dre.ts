@@ -3,7 +3,7 @@ import { CLAFile, claFileDefaults } from './cla-file';
 /** Object with details for each highlight color in splitText rows */
 export type SplitTextColorDetails = ({[key: string]: {observations: string, notes: string}} | object)[]
 /** Array of array of objects representing highlighted text segments */
-export type SplitCompareText = ({text: string, className: string} | object)[][];
+export type SplitCompareText = ({text: string, className: string})[][];
 
 /**
  * Represents a Dual Recorder Event (our internal name. In the UI and Engage, a Dual Recorder file).
