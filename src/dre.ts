@@ -3,7 +3,7 @@ import { CLAFile, claFileDefaults } from './cla-file';
 /** Object with details for each highlight color in splitText rows */
 export type SplitTextColorDetails = ({[key: string]: {observations: string, notes: string}} | object)[]
 /** Array of array of objects representing highlighted text segments */
-export type SplitCompareText1 = ({text: string, className: string} | object)[][];
+export type SplitCompareText = ({text: string, className: string} | object)[][];
 
 /**
  * Represents a Dual Recorder Event (our internal name. In the UI and Engage, a Dual Recorder file).
@@ -68,7 +68,7 @@ export interface DRE extends CLAFile {
    * @example
    * { text: 'The story begins like this', className: 'text-highlight-6' }
    */
-  splitCompareText1: SplitCompareText1
+  splitCompareText1: SplitCompareText
   /**
    * Array of array of objects. Each string in splitText2 is here broken into
    * an array of objects of shape: { text: string, className: string }.
@@ -80,7 +80,7 @@ export interface DRE extends CLAFile {
    * @example
    * { text: 'Here is how the story begins', className: 'text-highlight-6' }
    */
-  splitCompareText2: string[]
+  splitCompareText2: SplitCompareText
 }
 
 /**
