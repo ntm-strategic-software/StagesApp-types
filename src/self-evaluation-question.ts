@@ -32,10 +32,12 @@ export interface SelfEvaluationQuestion {
 }
 
 /**
- * NewSelfEvaluationQuestion is SelfEvaluationQuestion with createdAt and updatedAt optional.
+ * NewSelfEvaluationQuestion is SelfEvaluationQuestion with _id, createdAt, and updatedAt optional.
  * The intention is, If not provided, they will be set by the database when the row is created/updated in the database.
  */
-export interface NewSelfEvaluationQuestion extends Omit<SelfEvaluationQuestion, 'createdAt' | 'updatedAt'> {
+export interface NewSelfEvaluationQuestion extends Omit<SelfEvaluationQuestion, '_id' | 'createdAt' | 'updatedAt'> {
+  /** Unique ID for the SelfEvaluationQuestion */
+  _id?: string
   /**
    * ISO Date (e.g., '2022-06-20T15:50:40.055Z'), when the row was initially saved to the database.
    * If not provided, it should be set when the row is created in the database.

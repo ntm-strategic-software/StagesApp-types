@@ -47,10 +47,12 @@ export interface CultureEvent extends CLAFile {
 }
 
 /**
- * NewCultureEvent is CultureEvent with createdAt and updatedAt optional.
+ * NewCultureEvent is CultureEvent with _id, createdAt, and updatedAt optional.
  * The intention is, If not provided, they will be set by the database when the row is created/updated in the database.
  */
-export interface NewCultureEvent extends Omit<CultureEvent, 'createdAt' | 'updatedAt'> {
+export interface NewCultureEvent extends Omit<CultureEvent, '_id' | 'createdAt' | 'updatedAt'> {
+  /** Unique identifier for the CultureEvent */
+  _id?: string
   /**
    * ISO Date (e.g., '2022-06-20T15:50:40.055Z'), when the row was initially saved to the database.
    * If not provided, it should be set when the row is created in the database.
