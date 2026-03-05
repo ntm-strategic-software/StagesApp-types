@@ -17,10 +17,12 @@ export interface PendingIdea {
 }
 
 /**
- * NewPendingIdea is PendingIdea with createdAt and updatedAt optional.
+ * NewPendingIdea is PendingIdea with _id, createdAt, and updatedAt optional.
  * The intention is, If not provided, they will be set by the database when the row is created/updated in the database.
  */
-export interface NewPendingIdea extends Omit<PendingIdea, 'createdAt' | 'updatedAt'> {
+export interface NewPendingIdea extends Omit<PendingIdea, '_id' | 'createdAt' | 'updatedAt'> {
+  /** Unique ID for the PendingIdea */
+  _id?: string
   /**
    * ISO Date (e.g., '2022-06-20T15:50:40.055Z'), when the row was initially saved to the database.
    * If not provided, it should be set when the row is created in the database.

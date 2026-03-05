@@ -21,10 +21,12 @@ export interface GeneralPhoto {
 }
 
 /**
- * NewGeneralPhoto is GeneralPhoto with createdAt and updatedAt optional.
+ * NewGeneralPhoto is GeneralPhoto with _id, createdAt, and updatedAt optional.
  * The intention is, If not provided, they will be set by the database when the row is created/updated in the database.
  */
-export interface NewGeneralPhoto extends Omit<GeneralPhoto, 'createdAt' | 'updatedAt'> {
+export interface NewGeneralPhoto extends Omit<GeneralPhoto, '_id' | 'createdAt' | 'updatedAt'> {
+  /** Unique identifier for the GeneralPhoto */
+  _id?: string
   /**
    * ISO Date (e.g., '2022-06-20T15:50:40.055Z'), when the row was initially saved to the database.
    * If not provided, it should be set when the row is created in the database.
