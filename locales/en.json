@@ -1,0 +1,231 @@
+{
+  "locale": "en",
+	"GET_ACQUAINTED": {
+		"Activity": {
+			"val": "Get Acquainted",
+			"note": ""
+		}
+	},
+	"EXPERIENCE_CULTURE_EVENT": {
+		"Activity": {
+			"val": "Experience a Culture Event",
+			"note": ""
+		}
+	},
+	"VISIT_IN_COMMUNITY": {
+		"Activity": {
+			"val": "Visit People",
+			"note": ""
+		}
+	},
+	"HOST_VISITORS": {
+		"Activity": {
+			"val": "Host Visitors",
+			"note": ""
+		}
+	},
+	"JOIN_COMMUNITY_GROUP": {
+		"Activity": {
+			"val": "Join a Group",
+			"note": ""
+		}
+	},
+	"LISTEN_AND_DO_SILENT": {
+		"Activity": {
+			"val": "Listen and Do (Silent)",
+			"note": ""
+		}
+	},
+	"LISTEN_DO_AND_SPEAK": {
+		"Activity": {
+			"val": "Listen and Do",
+			"note": ""
+		}
+	},
+	"PRACTICE_DIFFICULT_SOUNDS": {
+		"Activity": {
+			"val": "Learn Sounds",
+			"note": ""
+		}
+	},
+	"PRACTICE_DIFFICULT_GRAMMAR_FEATURES": {
+		"Activity": {
+			"val": "Learn Grammar",
+			"note": ""
+		}
+	},
+	"ELICIT_GRAMMAR_FEATURES": {
+		"Activity": {
+			"val": "Discover Grammar",
+			"note": ""
+		}
+	},
+	"COMMENT_ON_PHOTO_ANSWER_QUESTIONS": {
+		"Activity": {
+			"val": "Comment on a Photo",
+			"note": ""
+		}
+	},
+	"TALK_ABOUT_PHOTO_ASK_QUESTIONS": {
+		"Activity": {
+			"val": "Describe a Photo",
+			"note": ""
+		}
+	},
+	"ELICIT_PRACTICAL_EXPRESSIONS": {
+		"Activity": {
+			"val": "Learn a Useful Phrase",
+			"note": ""
+		}
+	},
+	"ACT_OUT_ROLE_PLAY": {
+		"Activity": {
+			"val": "Learn a Role Play",
+			"note": ""
+		}
+	},
+	"RECORD_LISTEN_PROCESS_1": {
+		"Activity": {
+			"val": "Record a Native Speaker (Stage 2)",
+			"note": ""
+		}
+	},
+	"RECORD_LISTEN_PROCESS_2": {
+		"Activity": {
+			"val": "Record a Native Speaker (Stages 3-4)",
+			"note": ""
+		}
+	},
+	"INTERVIEW_NATIVE_SPEAKER": {
+		"Activity": {
+			"val": "Interview a Native Speaker",
+			"note": ""
+		}
+	},
+	"RECORD_NATIVE_SPEAKER_INTERACTION": {
+		"Activity": {
+			"val": "Record Native Conversation",
+			"note": ""
+		}
+	},
+	"RECORD_LISTEN_RETELL": {
+		"Activity": {
+			"val": "Listen and Retell",
+			"note": ""
+		}
+	},
+	"RECORD_SELF_FOR_FEEDBACK": {
+		"Activity": {
+			"val": "Record for Feedback",
+			"note": ""
+		}
+	},
+	"LISTEN_MODEL_COMPARE": {
+		"Activity": {
+			"val": "Model and Compare",
+			"note": ""
+		}
+	},
+	"REVIEW_VOCABULARY": {
+		"Activity": {
+			"val": "Practice Vocabulary",
+			"note": ""
+		}
+	},
+	"HAVE_PREPLANNED_CONVERSATION": {
+		"Activity": {
+			"val": "Have a Conversation",
+			"note": ""
+		}
+	},
+	"DESCRIBE_OBJECT_EVENT_ROUTINE": {
+		"Activity": {
+			"val": "Describe Something",
+			"note": ""
+		}
+	},
+	"TELL_STORY": {
+		"Activity": {
+			"val": "Tell a Story",
+			"note": ""
+		}
+	},
+	"CONTRAST_COMPARE": {
+		"Activity": {
+			"val": "Contrast and Compare",
+			"note": ""
+		}
+	},
+	"DISCUSS_UNKNOWN_TOPICS": {
+		"Activity": {
+			"val": "Discuss an Unknown Topic",
+			"note": ""
+		}
+	},
+	"PRODUCE_HIGH_LEVEL_GENRES": {
+		"Activity": {
+			"val": "Practice Extended Discourse",
+			"note": ""
+		}
+	},
+	"PLAN_NEXT_DAY": {
+		"Activity": {
+			"val": "Plan Next Day's Tasks",
+			"note": ""
+		}
+	},
+	"PLAN_NEW_ACTIVITIES": {
+		"Activity": {
+			"val": "Plan New Activities",
+			"note": ""
+		}
+	},
+	"PLAN_NEXT_UNIT": {
+		"Activity": {
+			"val": "Plan Next Unit",
+			"note": ""
+		}
+	},
+	"PROCESS_PENDING_MEDIA": {
+		"Activity": {
+			"val": "Process Media",
+			"note": ""
+		}
+	},
+	"PROCESS_QUICK_NOTES": {
+		"Activity": {
+			"val": "Process New Notes",
+			"note": ""
+		}
+	},
+	"REFLECT_ON_PROGRESS": {
+		"Activity": {
+			"val": "Reflect on Progress",
+			"note": ""
+		}
+	},
+	"EVALUATE_PROGRESS": {
+		"Activity": {
+			"val": "Evaluate Progress",
+			"note": ""
+		}
+	},
+	"REFLECT": {
+		"Activity": {
+			"val": "Reflect on Data",
+			"note": ""
+		}
+	},
+	"ANALYZE": {
+		"Activity": {
+			"val": "Analyze Data",
+			"note": ""
+		}
+	},
+	"FINALIZE_CONCLUSIONS": {
+		"Activity": {
+			"val": "Finalize Conclusions",
+			"note": ""
+		}
+	}
+}

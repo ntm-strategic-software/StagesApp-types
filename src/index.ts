@@ -1,4 +1,5 @@
 export * as constants from './constants';
+export * from './activity-utils';
 export * from './activity-plan';
 export * from './advanced-filter';
 export * from './cla-file';
