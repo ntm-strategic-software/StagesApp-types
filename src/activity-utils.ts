@@ -16,7 +16,7 @@ type LocaleData = Record<string, Record<string, LocaleEntry>>;
  */
 export function getActivityDisplayName(
   activityKey: ActivityKey,
-  locale: string,
+  locale: Intl.LocalesArgument & string,
   context: string,
 ): string {
   // eslint-disable-next-line @typescript-eslint/no-var-requires
