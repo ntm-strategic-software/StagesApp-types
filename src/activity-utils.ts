@@ -20,6 +20,7 @@ export function getActivityDisplayName(
   context: string,
 ): string {
   // eslint-disable-next-line @typescript-eslint/no-var-requires
-  const localeData: LocaleData = require(`../locales/${locale}.json`);
+  // Fallback to English if locale file not found
+  const localeData: LocaleData = require(`../locales/${locale}.json`) || require('../locales/en.json');
   return localeData[activityKey]?.[context]?.val ?? String(activityKey);
 }
