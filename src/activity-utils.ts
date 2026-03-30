@@ -17,7 +17,12 @@ export function getActivityDisplayName(
   activityKey: ActivityKey,
   locale: Intl.LocalesArgument & string,
 ): string {
-  // Fallback to English if locale file not found
-  const localeData: LocaleData = require(`../locales/${locale}.json`) || require('../locales/en.json');
+  let localeData: LocaleData;
+  try {
+    localeData = require(`../locales/${locale}.json`);
+  } catch {
+    // Fallback to English if the specified locale file is not found
+    localeData = require('../locales/en.json');
+  }
   return localeData[activityKey]?.['Activity']?.val ?? String(activityKey);
 }
