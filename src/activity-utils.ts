@@ -19,7 +19,6 @@ export function getActivityDisplayName(
   locale: Intl.LocalesArgument & string,
   context: string,
 ): string {
-  // eslint-disable-next-line @typescript-eslint/no-var-requires
   // Fallback to English if locale file not found
   const localeData: LocaleData = require(`../locales/${locale}.json`) || require('../locales/en.json');
   return localeData[activityKey]?.[context]?.val ?? String(activityKey);
