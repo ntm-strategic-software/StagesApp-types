@@ -14,6 +14,8 @@ export interface User {
   photoFilename: string
   /** User's current overall unit in CLA (1-based). There are 26 total units, including Unit 1 (Warmup) and Unit 26 (Wrapup). */
   claUnit: number
+  /** Unique ID for the linked person/speaker */
+  personId: string
   /** ISO Date (e.g., '2022-06-20T15:50:40.055Z'), when the row was initially saved to the database */
   createdAt: string
   /** ISO Date (e.g., '2022-06-20T15:50:40.055Z'), when the row was last updated in the database */
