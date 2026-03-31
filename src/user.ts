@@ -48,6 +48,7 @@ export const userDefaults = (): User => ({
   fullName: '',
   photoFilename: '',
   claUnit: 1,
+  personId: '',
   createdAt: '',
   updatedAt: '',
 });
