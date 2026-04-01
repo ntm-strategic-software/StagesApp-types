@@ -45,7 +45,7 @@
       "val": "Descreva uma Foto"
     }
   },
-  "Learn a Practical Expression": {
+  "Learn a Useful Phrase": {
     "Activity": {
       "val": "Aprenda uma Frase Útil"
     }
@@ -135,7 +135,7 @@
       "val": "Descubra Gramática"
     }
   },
-  "Plan Next Day\\'s Tasks": {
+  "Plan Next Day's Tasks": {
     "Activity": {
       "val": "Planeje as Tarefas do Próximo Dia"
     }
@@ -190,7 +190,7 @@
   },
   "Reflect on Data": {
     "Activity": {
-      "val": "Refita nos Dados"
+      "val": "Reflita nos Dados"
     }
   },
   "Analyze Data": {
