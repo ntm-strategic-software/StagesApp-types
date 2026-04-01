@@ -1,0 +1,206 @@
+{
+  "locale": "es",
+  "Get Acquainted": {
+    "Activity": {
+      "val": "Familiarícese"
+    }
+  },
+  "Experience a Culture Event": {
+    "Activity": {
+      "val": "Experimentar un Evento Cultural"
+    }
+  },
+  "Visit People": {
+    "Activity": {
+      "val": "Visite a la gente"
+    }
+  },
+  "Host Visitors": {
+    "Activity": {
+      "val": "Reciba visitantes"
+    }
+  },
+  "Join a Group": {
+    "Activity": {
+      "val": "Incorpórese a un grupo"
+    }
+  },
+  "Listen and Do (Silent)": {
+    "Activity": {
+      "val": "Escuche y haga (en silencio)"
+    }
+  },
+  "Listen and Do": {
+    "Activity": {
+      "val": "Escuche y haga"
+    }
+  },
+  "Comment on a Photo": {
+    "Activity": {
+      "val": "Haga comentarios sobre una foto"
+    }
+  },
+  "Describe a Photo": {
+    "Activity": {
+      "val": "Describir una foto"
+    }
+  },
+  "Learn a Useful Phrase": {
+    "Activity": {
+      "val": "Aprenda una Frase Útil"
+    }
+  },
+  "Learn a Role Play": {
+    "Activity": {
+      "val": "Aprenda una Representación"
+    }
+  },
+  "Record a Native Speaker (Stage 2)": {
+    "Activity": {
+      "val": "Grabe a un Hablante Nativo (Etapa 2)"
+    }
+  },
+  "Record a Native Speaker (Stages 3-4)": {
+    "Activity": {
+      "val": "Grabe a un Hablante Nativo (Etapas 3-4)"
+    }
+  },
+  "Interview a Native Speaker": {
+    "Activity": {
+      "val": "Entreviste a un hablante nativo"
+    }
+  },
+  "Record Native Conversation": {
+    "Activity": {
+      "val": "Grabe una conversación de nativos"
+    }
+  },
+  "Listen and Retell": {
+    "Activity": {
+      "val": "Escuche y Recuente"
+    }
+  },
+  "Record for Feedback": {
+    "Activity": {
+      "val": "Grabe para buscar opiniones"
+    }
+  },
+  "Model and Compare": {
+    "Activity": {
+      "val": "Conformar el Habla y Comparar"
+    }
+  },
+  "Practice Vocabulary": {
+    "Activity": {
+      "val": "Practique el vocabulario"
+    }
+  },
+  "Have a Conversation": {
+    "Activity": {
+      "val": "Entable una conversación"
+    }
+  },
+  "Describe Something": {
+    "Activity": {
+      "val": "Describir algo"
+    }
+  },
+  "Tell a Story": {
+    "Activity": {
+      "val": "Cuente una historia"
+    }
+  },
+  "Contrast and Compare": {
+    "Activity": {
+      "val": "Contrastar y Comparar"
+    }
+  },
+  "Discuss an Unknown Topic": {
+    "Activity": {
+      "val": "Hablar sobre un tema desconocido"
+    }
+  },
+  "Learn Sounds": {
+    "Activity": {
+      "val": "Aprenda sonidos"
+    }
+  },
+  "Learn Grammar": {
+    "Activity": {
+      "val": "Aprenda gramática"
+    }
+  },
+  "Discover Grammar": {
+    "Activity": {
+      "val": "Descubrir gramática"
+    }
+  },
+  "Plan Next Day's Tasks": {
+    "Activity": {
+      "val": "Planificar las Tareas del Día Siguiente"
+    }
+  },
+  "Plan New Activities": {
+    "Planner-UnitsTab": {
+      "val": "Planificar Nuevas Actividades"
+    },
+    "Activity": {
+      "val": "Planificar Nuevas Actividades"
+    },
+    "Planner-SelfEvalTab": {
+      "val": "Planifique Nuevas Actividades"
+    },
+    "Planner-ReflectionTab": {
+      "val": "Planifique Nuevas Actividades"
+    }
+  },
+  "Plan Next Unit": {
+    "Activity": {
+      "val": "Planificar la Siguiente Unidad"
+    },
+    "Planner-SelfEvalTab": {
+      "val": "Planifique la Siguiente Unidad"
+    }
+  },
+  "Process Media": {
+    "Activity": {
+      "val": "Procesar Recursos Audiovisuales"
+    }
+  },
+  "Process New Notes": {
+    "Activity": {
+      "val": "Procesar Nuevas Notas"
+    },
+    "Planner-ActivityPlan": {
+      "val": "Procesar Nuevas Notas"
+    }
+  },
+  "Reflect on Progress": {
+    "Activity": {
+      "val": "Reflexionar sobre el Progreso"
+    }
+  },
+  "Evaluate Progress": {
+    "Activity": {
+      "val": "Evaluar el Progreso"
+    },
+    "Planner-ReflectionTab": {
+      "val": "Evaluar el Progreso"
+    }
+  },
+  "Reflect on Data": {
+    "Activity": {
+      "val": "Reflexionar sobre los datos"
+    }
+  },
+  "Analyze Data": {
+    "Activity": {
+      "val": "Analice los Datos"
+    }
+  },
+  "Finalize Conclusions": {
+    "Activity": {
+      "val": "Finalice las Conclusiones"
+    }
+  }
+}
