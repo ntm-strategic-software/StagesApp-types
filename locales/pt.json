@@ -1,0 +1,206 @@
+{
+  "locale": "pt",
+  "Get Acquainted": {
+    "Activity": {
+      "val": "Familiarize-se"
+    }
+  },
+  "Experience a Culture Event": {
+    "Activity": {
+      "val": "Participe de um Evento Cultural"
+    }
+  },
+  "Visit People": {
+    "Activity": {
+      "val": "Faça Visitas às Pessoas"
+    }
+  },
+  "Host Visitors": {
+    "Activity": {
+      "val": "Receba Visitantes"
+    }
+  },
+  "Join a Group": {
+    "Activity": {
+      "val": "Junte-se a um Grupo"
+    }
+  },
+  "Listen and Do (Silent)": {
+    "Activity": {
+      "val": "Ouça e Faça (em silêncio)"
+    }
+  },
+  "Listen and Do": {
+    "Activity": {
+      "val": "Ouça e Faça"
+    }
+  },
+  "Comment on a Photo": {
+    "Activity": {
+      "val": "Comente Sobre uma Foto"
+    }
+  },
+  "Describe a Photo": {
+    "Activity": {
+      "val": "Descreva uma Foto"
+    }
+  },
+  "Learn a Practical Expression": {
+    "Activity": {
+      "val": "Aprenda uma Frase Útil"
+    }
+  },
+  "Learn a Role Play": {
+    "Activity": {
+      "val": "Aprenda uma Dramatização"
+    }
+  },
+  "Record a Native Speaker (Stage 2)": {
+    "Activity": {
+      "val": "Grave um Falante Nativo (Etapa 2)"
+    }
+  },
+  "Record a Native Speaker (Stages 3-4)": {
+    "Activity": {
+      "val": "Grave um Falante Nativo (Etapas 3-4)"
+    }
+  },
+  "Interview a Native Speaker": {
+    "Activity": {
+      "val": "Entreviste um Falante Nativo"
+    }
+  },
+  "Record Native Conversation": {
+    "Activity": {
+      "val": "Grave Conversação Nativa"
+    }
+  },
+  "Listen and Retell": {
+    "Activity": {
+      "val": "Ouça e Reconte"
+    }
+  },
+  "Record for Feedback": {
+    "Activity": {
+      "val": "Grave para Obter Feedback"
+    }
+  },
+  "Model and Compare": {
+    "Activity": {
+      "val": "Reproduza e Compare"
+    }
+  },
+  "Practice Vocabulary": {
+    "Activity": {
+      "val": "Pratique Vocabulário"
+    }
+  },
+  "Have a Conversation": {
+    "Activity": {
+      "val": "Converse"
+    }
+  },
+  "Describe Something": {
+    "Activity": {
+      "val": "Descreva Alguma Coisa"
+    }
+  },
+  "Tell a Story": {
+    "Activity": {
+      "val": "Conte uma História"
+    }
+  },
+  "Contrast and Compare": {
+    "Activity": {
+      "val": "Contraste e Compare"
+    }
+  },
+  "Discuss an Unknown Topic": {
+    "Activity": {
+      "val": "Discuta um Tópico Desconhecido"
+    }
+  },
+  "Learn Sounds": {
+    "Activity": {
+      "val": "Aprenda Sons"
+    }
+  },
+  "Learn Grammar": {
+    "Activity": {
+      "val": "Aprenda gramática"
+    }
+  },
+  "Discover Grammar": {
+    "Activity": {
+      "val": "Descubra Gramática"
+    }
+  },
+  "Plan Next Day\\'s Tasks": {
+    "Activity": {
+      "val": "Planeje as Tarefas do Próximo Dia"
+    }
+  },
+  "Plan New Activities": {
+    "Activity": {
+      "val": "Planeje Novas Atividades"
+    },
+    "Planner-ReflectionTab": {
+      "val": "Planeje Novas Atividades"
+    },
+    "Planner-UnitsTab": {
+      "val": "Planeje Novas Atividades"
+    },
+    "Planner-SelfEvalTab": {
+      "val": "Planeje Novas Atividades"
+    }
+  },
+  "Plan Next Unit": {
+    "Activity": {
+      "val": "Planeje a Próxima Unidade"
+    },
+    "Planner-SelfEvalTab": {
+      "val": "Planeje a Próxima Unidade"
+    }
+  },
+  "Process Media": {
+    "Activity": {
+      "val": "Processe Mídia"
+    }
+  },
+  "Process New Notes": {
+    "Activity": {
+      "val": "Processe Novas Anotações"
+    },
+    "Planner-ActivityPlan": {
+      "val": "Processar Novas Anotações"
+    }
+  },
+  "Reflect on Progress": {
+    "Activity": {
+      "val": "Reflita no Progresso"
+    }
+  },
+  "Evaluate Progress": {
+    "Activity": {
+      "val": "Avalie Progresso"
+    },
+    "Planner-ReflectionTab": {
+      "val": "Avalie o Progresso"
+    }
+  },
+  "Reflect on Data": {
+    "Activity": {
+      "val": "Refita nos Dados"
+    }
+  },
+  "Analyze Data": {
+    "Activity": {
+      "val": "Analise Dados"
+    }
+  },
+  "Finalize Conclusions": {
+    "Activity": {
+      "val": "Finalize Conclusões"
+    }
+  }
+}
