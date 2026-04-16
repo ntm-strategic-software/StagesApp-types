@@ -201,6 +201,7 @@ export enum ErrorType {
   OLD_MOBILE_VERSION = 'OLD_MOBILE_VERSION',
   OLD_DESKTOP_VERSION = 'OLD_DESKTOP_VERSION',
   NO_DESKTOP_USER = 'NO_DESKTOP_USER',
+  INSUFFICIENT_DISK_SPACE = 'INSUFFICIENT_DISK_SPACE',
 }
 
 /**
@@ -295,6 +296,8 @@ export enum socketEndpoints {
   GET_PUBLIC_KEY = 'GET_PUBLIC_KEY',
   KEY_CHALLENGE = 'KEY_CHALLENGE',
   TRANSFER_TYPE = 'TRANSFER_TYPE',
+  /** Mobile sends its estimated outbound data size so Desktop can verify it has enough disk space before data transfer begins */
+  SEND_DATA_SIZE = 'SEND_DATA_SIZE',
   GET_LAST_SYNC_TIME = 'GET_LAST_SYNC_TIME',
   SEND_MOBILE_DATA = 'SEND_MOBILE_DATA',
   GET_DESKTOP_PHOTO = 'GET_DESKTOP_PHOTO',
