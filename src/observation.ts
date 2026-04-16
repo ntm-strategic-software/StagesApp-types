@@ -1,3 +1,5 @@
+// noinspection JSUnusedGlobalSymbols
+
 /**
  * Plain text notes that a user wants to make about anything. These are not connected to anything else in the app.
  */

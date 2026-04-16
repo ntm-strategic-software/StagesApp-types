@@ -1,3 +1,5 @@
+// noinspection JSUnusedGlobalSymbols
+
 import { CLAStage } from './constants';
 
 /**

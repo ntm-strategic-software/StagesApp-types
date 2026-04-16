@@ -1,3 +1,5 @@
+// noinspection JSUnusedGlobalSymbols
+
 import { CLAFile, claFileDefaults } from './cla-file';
 
 /** Object with details for each highlight color in splitText rows */
@@ -51,8 +53,8 @@ export interface DRE extends CLAFile {
    * and the second and third rows have some highlighting:
    * @example
    * [ {},
-   *   { 'text-highlight-7': { observations: 'I used na before every paragraph, but he used na, da, dyadi, and tebes.', notes: '' }, { 'text-highlight-3': { observations: '', notes: '' } },
-   *   { 'text-highlight-3': { observations: 'why did he add -em?', notes: 'he said that suffix is used on verbs when children perform the action' } },
+   *   { 'text-highlight-7': { observations: 'I used na before every paragraph, but he used na, da, dyadi, and tebes.', note: '' }, 'text-highlight-3': { observations: '', note: '' } },
+   *   { 'text-highlight-3': { observations: 'why did he add -em?', note: 'he said that suffix is used on verbs when children perform the action' } },
    *   {},
    * ]
    */

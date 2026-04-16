@@ -1,3 +1,5 @@
+// noinspection JSUnusedGlobalSymbols
+
 /**
  * Represents the order tasks should be displayed in all TaskBoxes. Since completing a Task causes
  * the associated ActivityPlan._id to be removed from one TaskBox and added to another TaskBox, it seems best

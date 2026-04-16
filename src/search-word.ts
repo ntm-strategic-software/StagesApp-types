@@ -1,3 +1,5 @@
+// noinspection JSUnusedGlobalSymbols
+
 /**
  * Represents a search word, which is a word or phrase the user enters and links to something they want to find
  * by using that word or phrase

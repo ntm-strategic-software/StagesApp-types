@@ -1,3 +1,5 @@
+// noinspection JSUnusedGlobalSymbols
+
 /**
  * An idea or question the user has, optionally associated with a CLAFile.  Something they want to investigate..
  */

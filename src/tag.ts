@@ -1,3 +1,5 @@
+// noinspection JSUnusedGlobalSymbols
+
 /**
  * Represents a tag. Tags are a plain text filing system the user can create if they want.
  * Users may prefix sets of tags with special characters, so groups of tags will appear together

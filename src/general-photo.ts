@@ -1,3 +1,5 @@
+// noinspection JSUnusedGlobalSymbols
+
 /**
  * Represents a photo taken as part of a General Recorder session. The GeneralRecording that the photo
  * is attached to will have the GeneralPhoto's _id in its photos array.
