@@ -1,3 +1,5 @@
+// noinspection JSUnusedGlobalSymbols
+
 /** Represents a setting on Stages Desktop */
 export interface DesktopSetting {
   /** Unique key for this setting */

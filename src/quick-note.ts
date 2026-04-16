@@ -1,3 +1,5 @@
+// noinspection JSUnusedGlobalSymbols
+
 /**
  * Represents an audio or text Quick Note. It is recorded or typed on Mobile using the Quick Note recorder.
  */

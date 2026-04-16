@@ -1,3 +1,5 @@
+// noinspection JSUnusedGlobalSymbols
+
 /**
  * A GeneralQuestion is associated with a GeneralRecording, and is created when the user:
  * - Mobile:  taps the GeneralQuestion button while recording a GeneralRecording

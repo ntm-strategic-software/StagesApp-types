@@ -1,3 +1,5 @@
+// noinspection JSUnusedGlobalSymbols
+
 /**
  * Represents when a user began a week of CLA for a specific unit
  */

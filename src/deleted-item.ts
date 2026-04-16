@@ -1,3 +1,5 @@
+// noinspection JSUnusedGlobalSymbols
+
 /** Represents a deleted item, so when mobile and desktop sync the right thing will happen */
 export interface DeletedItem {
   /** ID of the deleted item */

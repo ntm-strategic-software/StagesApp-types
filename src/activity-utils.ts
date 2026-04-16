@@ -1,3 +1,5 @@
+// noinspection JSUnusedGlobalSymbols
+
 import { ActivityKey } from './constants';
 
 type LocaleEntry = {

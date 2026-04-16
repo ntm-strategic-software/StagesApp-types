@@ -1,3 +1,5 @@
+// noinspection JSUnusedGlobalSymbols
+
 /**
  * Represents a StagesApp location.  We prefix with 'SA' (for Stages App) to distinguish it
  * from the `Location` global object in browsers and Electron.

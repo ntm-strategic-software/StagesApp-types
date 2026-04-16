@@ -1,3 +1,5 @@
+// noinspection JSUnusedGlobalSymbols
+
 /** Enum of TaskBoxes */
 export enum TaskBox {
   PLAN = 'PLAN',
@@ -6,6 +8,7 @@ export enum TaskBox {
   HELPER = 'HELPER',
   PLAYLIST = 'PLAYLIST',
 }
+export type TaskBoxEnum = typeof TaskBox[keyof typeof TaskBox];
 
 /**
  * Enum of Draggable type
@@ -27,6 +30,7 @@ export enum Draggable {
   DRE_SIMPLE_DRAGGABLE = 'DRE_SIMPLE_DRAGGABLE',
   NOT_DRAGGABLE = 'NOT_DRAGGABLE', // Dragging not allowed
 }
+export type DraggableEnum = typeof Draggable[keyof typeof Draggable];
 
 /** Enum of recorder types */
 export enum RecorderButtonType {
@@ -40,12 +44,14 @@ export enum RecorderButtonType {
   DUAL_RECORDER2_SIMPLE_OPTIONAL = 'DUAL_RECORDER2_SIMPLE_OPTIONAL',
   PE_RECORDER = 'PE_RECORDER',  // this will result in a main (not prompt) CLA File
 }
+export type RecorderButtonTypeEnum = typeof RecorderButtonType[keyof typeof RecorderButtonType];
 
 /** Enum of player types */
 export enum PlayerType {
   GENERAL_RECORDING_PROMPT_PLAYER = 'GENERAL_RECORDING_PROMPT_PLAYER',
   GENERAL_RECORDING_MAIN_PLAYER = 'GENERAL_RECORDING_MAIN_PLAYER',
 }
+export type PlayerTypeEnum = typeof PlayerType[keyof typeof PlayerType];
 
 /**
  * Enum for Stages Desktop in the Planner..Tasks tab, where clicking the lightning bolt for a task will jump the user to.
@@ -63,6 +69,7 @@ export enum JumpToView {
   PLANNER_SELF_EVALUATION = 'PLANNER_SELF_EVALUATION',
   PHOTO_VIEWER = 'PHOTO_VIEWER',
 }
+export type JumpToViewEnum = typeof JumpToView[keyof typeof JumpToView];
 
 /** Enum for the CLA Stages that the user progresses through */
 export enum CLAStage {
@@ -73,6 +80,7 @@ export enum CLAStage {
   STAGE_4 = 'STAGE_4',
   WRAPUP = 'WRAPUP',
 }
+export type CLAStageEnum = typeof CLAStage[keyof typeof CLAStage];
 
 /** Enum of the possible types of a CLA File */
 export enum ClaFileType {
@@ -81,12 +89,14 @@ export enum ClaFileType {
   PE = 'PE',
   SIMPLE_DRE = 'SIMPLE_DRE',
 }
+export type ClaFileTypeEnum = typeof ClaFileType[keyof typeof ClaFileType];
 
 /** Enum of the possible types of an advanced filter */
 export enum AdvancedFilterType {
   NORMAL_FILTER = 'NORMAL_FILTER',
   TRANSCRIPTION_FILTER = 'TRANSCRIPTION_FILTER',
 }
+export type AdvancedFilterTypeEnum = typeof AdvancedFilterType[keyof typeof AdvancedFilterType];
 
 /** Enum of all Activities */
 export enum ActivityKey {
@@ -97,7 +107,7 @@ export enum ActivityKey {
   HOST_VISITORS = 'HOST_VISITORS',
   JOIN_COMMUNITY_GROUP = 'JOIN_COMMUNITY_GROUP',
 
-  // BASIC LEARNING ACTIVITIES - not sure this is still a category
+  // BASIC LEARNING ACTIVITIES - not sure whether this is still a category
   // Listen and Do Activities
   LISTEN_AND_DO_SILENT = 'LISTEN_AND_DO_SILENT',
   LISTEN_DO_AND_SPEAK = 'LISTEN_DO_AND_SPEAK',
@@ -132,7 +142,7 @@ export enum ActivityKey {
   PRODUCE_HIGH_LEVEL_GENRES = 'PRODUCE_HIGH_LEVEL_GENRES',
 
   // SOUND AND GRAMMAR ACTIVITIES
-  // Focused Content Activities - not sure this is still a category
+  // Focused Content Activities - not sure whether this is still a category
   PRACTICE_DIFFICULT_SOUNDS = 'PRACTICE_DIFFICULT_SOUNDS',
   PRACTICE_DIFFICULT_GRAMMAR_FEATURES = 'PRACTICE_DIFFICULT_GRAMMAR_FEATURES',
   ELICIT_GRAMMAR_FEATURES = 'ELICIT_GRAMMAR_FEATURES',
@@ -157,6 +167,7 @@ export enum ActivityKey {
   RECORD_CLARIFY_EXPAND = 'RECORD_CLARIFY_EXPAND',
   INTERACT_ABOUT_SCENE = 'INTERACT_ABOUT_SCENE',
 }
+export type ActivityKeyEnum = typeof ActivityKey[keyof typeof ActivityKey];
 
 /** Enum for the different types of pending files */
 export enum PendingFileType {
@@ -167,6 +178,7 @@ export enum PendingFileType {
   QUICK_PHOTO = 'QUICK_PHOTO',
   QUICK_NOTE = 'QUICK_NOTE',
 }
+export type PendingFileTypeEnum = typeof PendingFileType[keyof typeof PendingFileType];
 
 /** Enum for the different groups of reflection questions */
 export enum ReflectionQuestionSets {
@@ -176,6 +188,7 @@ export enum ReflectionQuestionSets {
   HELP = 'HELP',
   READY_FOR_NEXT_UNIT = 'READY_FOR_NEXT_UNIT',
 }
+export type ReflectionQuestionSetsEnum = typeof ReflectionQuestionSets[keyof typeof ReflectionQuestionSets];
 
 /** Enum for the different types of answers */
 export enum AnswerTypes {
@@ -195,6 +208,7 @@ export enum AnswerTypes {
   /** Answer is a list of ActivityKeys with true/false for each, plus a NONE option */
   NEW_ACTIVITIES = 'NEW_ACTIVITIES',
 }
+export type AnswerTypesEnum = typeof AnswerTypes[keyof typeof AnswerTypes];
 
 /** Error types that we want to handle specially */
 export enum ErrorType {
@@ -203,6 +217,7 @@ export enum ErrorType {
   NO_DESKTOP_USER = 'NO_DESKTOP_USER',
   INSUFFICIENT_DISK_SPACE = 'INSUFFICIENT_DISK_SPACE',
 }
+export type ErrorTypeEnum = typeof ErrorType[keyof typeof ErrorType];
 
 /**
  * Enum for table names of all tables in all databases in Stages Desktop.
@@ -241,6 +256,7 @@ export enum TableNames {
   TIMESHEET = 'Timesheet',
   UNIT_WEEKS = 'UnitWeeks',
 }
+export type TableNamesEnum = typeof TableNames[keyof typeof TableNames];
 
 /**
  * Enum for table names to sync from mobile to desktop.
@@ -289,6 +305,7 @@ export enum DataTransferType {
   BACKUP_ALL_DATA = 'BACKUP_ALL_DATA',
   RESTORE_ALL_DATA = 'RESTORE_ALL_DATA',
 }
+export type DataTransferTypeEnum = typeof DataTransferType[keyof typeof DataTransferType];
 
 /** Enum of socket endpoints used for communication between Mobile and Desktop during sync and data transfer */
 export enum socketEndpoints {
@@ -307,9 +324,11 @@ export enum socketEndpoints {
   MOBILE_ERROR = 'MOBILE_ERROR',
   DESKTOP_ERROR = 'DESKTOP_ERROR',
 }
+export type socketEndpointsEnum = typeof socketEndpoints[keyof typeof socketEndpoints];
 
 /** Enum of POST paths used for uploading files from Mobile to Desktop during sync and data transfer */
 export enum PostPaths {
   UPLOAD_FILE = '/uploadfile',
   UPLOAD_FILE_BACKUP = '/uploadfilebackup',
 }
+export type PostPathsEnum = typeof PostPaths[keyof typeof PostPaths];

@@ -1,3 +1,5 @@
+// noinspection JSUnusedGlobalSymbols
+
 /**
  * Represents a point in time in a GeneralRecording, with metadata that applies to the audio/video beginning at that point.
  *

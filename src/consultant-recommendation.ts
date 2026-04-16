@@ -1,3 +1,5 @@
+// noinspection JSUnusedGlobalSymbols
+
 /** A consultant's recommendation after reviewing a user's progress in a CLA unit */
 export interface ConsultantRecommendation {
   /** Unique identifier for the ConsultantRecommendation */

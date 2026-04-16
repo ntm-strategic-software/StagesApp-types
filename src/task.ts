@@ -1,3 +1,5 @@
+// noinspection JSUnusedGlobalSymbols
+
 import { Draggable, PlayerType, RecorderButtonType, TaskBox, JumpToView } from './constants';
 
 /**

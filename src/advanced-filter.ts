@@ -1,3 +1,5 @@
+// noinspection JSUnusedGlobalSymbols
+
 import { AdvancedFilterType } from './constants';
 
 /** structure of an advanced filter that is saved to the database */

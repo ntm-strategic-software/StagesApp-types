@@ -1,3 +1,5 @@
+// noinspection JSUnusedGlobalSymbols
+
 import { TaskBox } from './constants';
 
 /**

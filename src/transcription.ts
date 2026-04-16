@@ -1,3 +1,5 @@
+// noinspection JSUnusedGlobalSymbols
+
 /**
  * Represents the transcription of a section of a CultureEvent. A single Transcription may cross GeneralRecording boundaries.
  * Translation and metadata can be associated with the transcription.
