@@ -216,6 +216,7 @@ export enum ErrorType {
   OLD_DESKTOP_VERSION = 'OLD_DESKTOP_VERSION',
   NO_DESKTOP_USER = 'NO_DESKTOP_USER',
   INSUFFICIENT_DISK_SPACE = 'INSUFFICIENT_DISK_SPACE',
+  USER_CANCELLED = 'USER_CANCELLED',
 }
 export type ErrorTypeEnum = typeof ErrorType[keyof typeof ErrorType];
 
