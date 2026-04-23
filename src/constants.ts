@@ -287,6 +287,7 @@ export enum DataTransferType {
   IMPORT_USER = 'IMPORT_USER',
   BACKUP_ALL_DATA = 'BACKUP_ALL_DATA',
   RESTORE_ALL_DATA = 'RESTORE_ALL_DATA',
+  DOWNLOAD_LOCALES = 'DOWNLOAD_LOCALES',
 }
 
 /** Enum of socket endpoints used for communication between Mobile and Desktop during sync and data transfer */
@@ -303,6 +304,7 @@ export enum socketEndpoints {
   FINALIZE_DESKTOP = 'FINALIZE_DESKTOP',
   MOBILE_ERROR = 'MOBILE_ERROR',
   DESKTOP_ERROR = 'DESKTOP_ERROR',
+  SEND_LOCALE_FILE = 'SEND_LOCALE_FILE',
 }
 
 /** Enum of POST paths used for uploading files from Mobile to Desktop during sync and data transfer */
