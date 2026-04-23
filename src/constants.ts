@@ -306,6 +306,7 @@ export enum DataTransferType {
   IMPORT_USER = 'IMPORT_USER',
   BACKUP_ALL_DATA = 'BACKUP_ALL_DATA',
   RESTORE_ALL_DATA = 'RESTORE_ALL_DATA',
+  DOWNLOAD_LOCALES = 'DOWNLOAD_LOCALES',
 }
 export type DataTransferTypeEnum = typeof DataTransferType[keyof typeof DataTransferType];
 
@@ -325,6 +326,7 @@ export enum socketEndpoints {
   FINALIZE_DESKTOP = 'FINALIZE_DESKTOP',
   MOBILE_ERROR = 'MOBILE_ERROR',
   DESKTOP_ERROR = 'DESKTOP_ERROR',
+  SEND_LOCALE_FILE = 'SEND_LOCALE_FILE',
 }
 export type socketEndpointsEnum = typeof socketEndpoints[keyof typeof socketEndpoints];
 
