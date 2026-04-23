@@ -311,5 +311,4 @@ export enum socketEndpoints {
 export enum PostPaths {
   UPLOAD_FILE = '/uploadfile',
   UPLOAD_FILE_BACKUP = '/uploadfilebackup',
-  SEND_LOCALE_FILE = 'SEND_LOCALE_FILE',
 }
