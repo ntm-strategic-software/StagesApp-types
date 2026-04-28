@@ -6,6 +6,7 @@ export * from './advanced-filter';
 export * from './cla-file';
 export * from './consultant-recommendation';
 export * from './culture-event';
+export * from './daily-reflection-question';
 export * from './deleted-item';
 export * from './desktop-setting';
 export * from './dre';
