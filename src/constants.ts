@@ -253,6 +253,7 @@ export enum TableNames {
   PHOTO_GROUPS = 'PhotoGroups',
   QUICK_NOTES = 'QuickNotes',
   REFLECTION_QUESTIONS = 'ReflectionQuestions',
+  DAILY_REFLECTION_QUESTIONS = 'DailyReflectionQuestions',
   SELF_EVALUATION_QUESTIONS = 'SelfEvaluationQuestions',
   CONSULTANT_RECOMMENDATIONS = 'ConsultantRecommendations',
   TIMESHEET = 'Timesheet',
