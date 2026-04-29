@@ -338,3 +338,61 @@ export enum PostPaths {
   UPLOAD_FILE_BACKUP = '/uploadfilebackup',
 }
 export type PostPathsEnum = typeof PostPaths[keyof typeof PostPaths];
+
+// ********************************************************************************************************************
+// Sync protocol constants — shared between Mobile and Desktop to ensure protocol agreement
+// ********************************************************************************************************************
+
+/** Socket event name: desktop emits public key immediately on connect (skips GET_PUBLIC_KEY round trip) */
+export const DESKTOP_PUBLIC_KEY_EVENT = 'desktopPublicKey';
+
+/** Field name in TRANSFER_TYPE payload: base64-encoded AES-256 session key from mobile */
+export const AES_SESSION_KEY_FIELD = 'aesSessionKey';
+
+/** Field name in TRANSFER_TYPE payload: mobile user ID for inline lastSyncTime resolution */
+export const MOBILE_USER_ID_FIELD = 'mobileUserId';
+
+/** Field name in SEND_MOBILE_DATA payload: estimated outbound data size (replaces SEND_MOBILE_DATA_SIZE round trip) */
+export const ESTIMATED_SIZE_FIELD = 'estimatedSize';
+
+/** Field name used in compressed payload wrapper: contains base64-encoded gzipped data */
+export const COMPRESSED_FIELD = 'compressed';
+
+/** HTTP route path for downloading desktop photos via HTTP instead of socket.io */
+export const PHOTO_ROUTE_PATH = '/photo';
+
+/** Max socket.io HTTP buffer size in bytes — must match on both mobile and desktop */
+export const MAX_HTTP_BUFFER_SIZE = 200 * 1024 * 1024; // 200 MB
+
+/** AES-256-GCM key length in bytes */
+export const AES_KEY_LENGTH = 32;
+
+/** AES-GCM initialization vector length in bytes */
+export const AES_IV_LENGTH = 12;
+
+/** Capabilities that mobile and desktop negotiate during TRANSFER_TYPE to enable sync optimizations */
+export interface SyncCapabilities {
+  /** Whether gzip compression is supported for SEND_MOBILE_DATA / SEND_EXTRA_MOBILE_DATA payloads */
+  compression: boolean;
+  /** Whether HTTP GET /photo/:filename is supported for downloading desktop photos */
+  httpPhotos: boolean;
+  /** Number of concurrent photo downloads allowed (default 1) */
+  parallelUploads: number;
+  /** Whether AES-256-GCM session encryption is supported (replaces RSA after TRANSFER_TYPE) */
+  aesSession: boolean;
+}
+
+/** The wrapper format for encrypted socket responses */
+export interface EncryptedSocketResponse {
+  encrypted: string;
+}
+
+/** The JSON format for AES-256-GCM encrypted messages exchanged between mobile and desktop */
+export interface AesEncryptedMessage {
+  /** Base64-encoded 12-byte initialization vector */
+  iv: string;
+  /** Base64-encoded ciphertext */
+  ct: string;
+  /** Base64-encoded 16-byte GCM authentication tag */
+  tag: string;
+}
