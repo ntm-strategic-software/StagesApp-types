@@ -1,5 +1,7 @@
 //import { playlistListenForEntries } from './playlist-listen-for-data';
 
+import { playlistListenForEntries } from './playlist-listen-for-data';
+
 /**
  * Returns the "What to Listen For" content for the given CLA unit.
  * Finds the entry with the greatest unit number that is <= the given unit.
@@ -7,14 +9,14 @@
  * @returns The content string, or empty string if no match
  * applies to gh541, work in progress, references untracked file
  */
-/*
+
 export function playlistListenFor(unit: number): string {
   if (unit < 1) return '';
   // Entries are sorted descending by unit number
   const entry = playlistListenForEntries.find(e => e.unit <= unit);
   return entry ? entry.content : '';
 }
-*/
+
 /**
  * FNV-1a 32-bit hash — used to compare locale file content across sync.
  * The desktop must use the same algorithm so hashes match.
