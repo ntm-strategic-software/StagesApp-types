@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(wc -l /c/Users/sburs/WebstormProjects/stagesapp-mobile/src/**/*.tsx /c/Users/sburs/WebstormProjects/stagesapp-mobile/src/**/*.ts)",
+      "mcp__ide__getDiagnostics"
+    ]
+  }
+}

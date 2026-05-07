@@ -1,0 +1,14 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo 'AUTO-START: Run /watch-issues now to begin monitoring GitHub issues.'"
+          }
+        ]
+      }
+    ]
+  }
+}
