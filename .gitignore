@@ -65,3 +65,5 @@ package-lock.json
 
 /lib
 /dist
+
+settings.local.json
