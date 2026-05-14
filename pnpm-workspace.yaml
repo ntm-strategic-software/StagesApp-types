@@ -1,4 +1,4 @@
-# minimumReleaseAge is the number of minutes old that a version must be for pnpm to install it.allowedDeprecatedVersions.
+# minimumReleaseAge is the number of minutes old that a version must be for pnpm to install it..
 # pnpm's default is 1 day (1440).  We set it to 10080 for 7 days, per https://daniakash.com/posts/simplest-supply-chain-defense/?ck_subscriber_id=2951733167
 # If we need to allow a newer version for a specific package, see https://pnpm.io/settings#minimumreleaseageexclude
 minimumReleaseAge: 10080
