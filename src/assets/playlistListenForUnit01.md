@@ -1,5 +1,3 @@
-<!-- Source of truth is src/playlist-listen-for-data.ts — update there first, then sync this file -->
-
 # What to Listen For
 
 As you listen to your playlist recordings, pay attention to the following aspects of how people communicate. These are based on the "10 Things People Do When They Talk."
