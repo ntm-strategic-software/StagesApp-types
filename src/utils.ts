@@ -5,7 +5,6 @@ import { playlistListenForEntries } from './playlist-listen-for-data';
  * Finds the entry with the greatest unit number that is <= the given unit.
  * @param unit - The user's current CLA unit (1-based)
  * @returns The content string, or empty string if no match
- * applies to gh541, work in progress, references untracked file
  */
 
 export function playlistListenFor(unit: number): string {
