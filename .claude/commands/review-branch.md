@@ -1,6 +1,6 @@
 ---
 description: Thorough code review of branch changes, with proposed CLAUDE.md updates when new conventions are inferred
-allowed-tools: Bash(git diff:*), Bash(git log:*), Bash(git status:*), Bash(git merge-base:*), Bash(git show:*), Bash(git branch:*), Bash(git rev-parse:*), Bash(wc:*), Bash(ls:*), Bash(cd:*), Bash(gh issue comment:*), Bash(gh issue list:*), Read, Grep, Glob, AskUserQuestion
+allowed-tools: Bash(git diff:*), Bash(git log:*), Bash(git status:*), Bash(git merge-base:*), Bash(git show:*), Bash(git branch:*), Bash(git rev-parse:*), Bash(wc:*), Bash(ls:*), Bash(cd:*), Bash(gh issue comment:*), Bash(gh issue list:*), Bash(gh issue view:*), Read, Grep, Glob, AskUserQuestion
 ---
 
 You are performing a thorough code review of all changes in the current branch compared to the base branch. Act as a senior engineer reviewing a teammate's PR. Be direct and specific - flag real issues, don't pad with praise.
@@ -44,7 +44,24 @@ Run `git diff <base>...HEAD --stat` and evaluate:
 
 The commit messages describe intent, but verify the actual changes match. If the diff includes unrelated changes not mentioned in any commit message, flag that as scope creep in the review.
 
-## Step 5: Cross-repo context gathering and coordinated analysis
+## Step 5: Verify against GitHub issue requirements
+
+Determine the related GitHub issue:
+1. Try to infer the issue number from the branch name (e.g., `gh527` → issue #527, `feature-123` → issue #123).
+2. If the issue number cannot be determined from the branch name, use AskUserQuestion to ask the user for the issue number. Offer "Skip — no related issue" as an option.
+
+If an issue number is identified:
+1. Fetch the issue details: `gh issue view <number>`
+2. Read the issue title, body, and any acceptance criteria or checklist items.
+3. Compare what the issue asks for against what the diff actually implements.
+4. In the review output, add an **Issue coverage** section (after Summary) that lists:
+   - Each requirement or ask from the issue
+   - Whether the diff addresses it (✅), partially addresses it (⚠️), or doesn't address it (❌)
+   - If anything is missing or only partially done, flag it as a blocking or non-blocking issue as appropriate.
+
+If the issue cannot be fetched (e.g., permissions, wrong repo), note that in the review and proceed without this check.
+
+## Step 6: Cross-repo context gathering and coordinated analysis
 
 This is a shared types library consumed by two sibling repos. Before reviewing, understand how the changed types are actually used by looking at the consumer codebases for context. **Never suggest changes to or modify files in sibling repos — they are read-only context.**
 
@@ -82,7 +99,7 @@ Include a **Cross-repo context** subsection in the Coverage section noting which
 
 **Reminder: This step is strictly read-only. Do not suggest changes to StagesApp-mobile or StagesApp-desktop. Only use them to inform your review of StagesApp-types.**
 
-## Step 6: Mandatory secret scan
+## Step 7: Mandatory secret scan
 
 Before any other review work, scan the diff for accidentally committed secrets. Look for:
 
@@ -96,7 +113,7 @@ Before any other review work, scan the diff for accidentally committed secrets. 
 
 False positives are acceptable - flagging a fake-looking string is fine. If anything is flagged, treat it as **automatically blocking** regardless of other findings, and put it at the top of the review.
 
-## Step 7: Review against these criteria
+## Step 8: Review against these criteria
 
 For each changed file, evaluate:
 
@@ -140,7 +157,7 @@ For each changed file, evaluate:
 - Dead code, commented-out blocks, debug statements left in?
 - TODOs or FIXMEs added without tracking?
 
-## Step 8: Self-check before writing the review
+## Step 9: Self-check before writing the review
 
 Before producing output, verify your own work:
 
@@ -150,7 +167,7 @@ Before producing output, verify your own work:
 - Am I flagging anything a linter would catch? Cut those unless they reveal a missing lint rule worth adding.
 - Am I treating commit message claims as proof? Verify against the diff.
 
-## Step 9: Write the review
+## Step 10: Write the review
 
 Use these exact section headers in this order. Mark empty sections with "None." Do not omit sections.
 
@@ -160,11 +177,14 @@ Brief: which files were reviewed thoroughly, which were skimmed, which were excl
 ### Summary
 2-3 sentences: what this branch does, overall assessment, recommendation (approve / approve with minor changes / needs work / blocked on major issues).
 
+### Issue coverage
+From step 5. List each requirement from the GitHub issue and whether the diff addresses it. Omit this section if no issue was checked.
+
 ### Blocking issues
 Must-fix before merge. Format each as:
 - **File:line** - <problem>. <Suggested fix.>
 
-Secrets found in step 6 always go here.
+Secrets found in step 7 always go here.
 
 ### Non-blocking issues
 Worth addressing but not blockers. Same format.
@@ -175,7 +195,7 @@ Things you can't determine from the diff alone where the author's intent matters
 ### What's good
 Brief - genuinely well-done things. Skip if nothing stands out; do not manufacture praise.
 
-## Step 10: Look for new convention signals
+## Step 11: Look for new convention signals
 
 After completing the review, scan the diff one more time for **convention learning opportunities**. Look at lines that were *edited* (not added) for evidence of deliberate pattern choices.
 
@@ -201,7 +221,7 @@ Why I think this is a convention: <brief reasoning>
 
 If no new conventions are evident, omit this section entirely.
 
-## Step 11: Offer to post results to GitHub
+## Step 12: Offer to post results to GitHub
 
 After presenting the review, offer to post the results as a comment on the related GitHub issue. Use AskUserQuestion to ask:
 
