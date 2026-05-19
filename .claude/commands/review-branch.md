@@ -53,10 +53,10 @@ Determine the related GitHub issue:
 If an issue number is identified:
 1. Fetch the issue details: `gh issue view <number>`
 2. Read the issue title, body, and any acceptance criteria or checklist items.
-3. Compare what the issue asks for against what the diff actually implements.
+3. Compare what the issue asks for against what the diff actually implements. **Important:** before marking a requirement as unaddressed (❌), check the existing codebase — the feature may already be implemented and not need changes in this branch. Only flag genuinely missing functionality, not things the diff didn't touch because they already work.
 4. In the review output, add an **Issue coverage** section (after Summary) that lists:
    - Each requirement or ask from the issue
-   - Whether the diff addresses it (✅), partially addresses it (⚠️), or doesn't address it (❌)
+   - Whether the diff addresses it (✅), it was already implemented before this branch (✅ pre-existing), partially addresses it (⚠️), or doesn't address it (❌)
    - If anything is missing or only partially done, flag it as a blocking or non-blocking issue as appropriate.
 
 If the issue cannot be fetched (e.g., permissions, wrong repo), note that in the review and proceed without this check.
