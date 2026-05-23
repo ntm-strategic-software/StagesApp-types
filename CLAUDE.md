@@ -10,9 +10,9 @@ Shared TypeScript type library for the Stages language-learning application. Def
 
 ## Commands
 
-- `npm run build` — compile with `tsc`
-- `npm run watch` — compile in watch mode
-- `npm test` — run tests via `ts-mocha`
+- `pnpm run build` — compile with `tsc`
+- `pnpm run watch` — compile in watch mode
+- `pnpm test` — run tests via `ts-mocha`
 
 ## Code conventions
 
@@ -103,4 +103,4 @@ When an entity extends CLAFile (e.g., CultureEvent, DRE), its defaults factory u
 1. Create `src/{entity-name}.ts` following the domain entity pattern above (all 6 steps)
 2. Add `export * from './{entity-name}'` to `src/index.ts`
 3. If adding a new enum, add it to `constants.ts` with its companion `EnumNameEnum` type
-4. Run `npm run build` to verify compilation
+4. Run `pnpm run build` to verify compilation
