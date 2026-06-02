@@ -13,6 +13,8 @@ Shared TypeScript type library for the Stages language-learning application. Def
 - `pnpm run build` — compile with `tsc`
 - `pnpm run watch` — compile in watch mode
 - `pnpm test` — run tests via `ts-mocha`
+- `pnpm run generate-locale-data` — regenerate `locales/en.json` from the activity map (see Locales)
+- `pnpm run check-en-locale` — fail (exit 1) if `locales/en.json` is out of sync (for CI)
 
 ## Code conventions
 
@@ -83,6 +85,18 @@ When an entity extends CLAFile (e.g., CultureEvent, DRE), its defaults factory u
 - **Union operators:** spaces around `|` (e.g., `TaskBox | ''`, not `TaskBox|''`)
 - **`any` types:** allowed (ESLint rule disabled)
 - **Dead code:** remove commented-out imports and unused code rather than leaving them in
+
+## Locales
+
+Unlike StagesApp-desktop / -mobile (whose `locales/en.json` is built by `generate-locale-data` scanning source for `<Localize>` usages), this repo's `locales/en.json` holds **only** the activity display names, each under the `Activity` context. It is the English base data the Translator Helper uses to produce `es.json` / `pt.json`, and is read back at runtime by `getActivityDisplayName()`.
+
+The single source of truth is `activityKey2DisplayName` in `src/activity-utils.ts`. **`en.json` is generated from that map — never hand-edit it.** After changing the map (e.g., adding an `ActivityKey` or renaming a display name), run:
+
+```
+pnpm run generate-locale-data
+```
+
+and commit the updated `locales/en.json`. The generator (`generate-locale-data.js`) runs `tsc` first, then projects the compiled map into the locale shape. `pnpm run check-en-locale` verifies the two are in sync (EOL-agnostic) and is suitable for CI.
 
 ## TypeScript config
 

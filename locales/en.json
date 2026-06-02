@@ -204,6 +204,12 @@
 			"note": ""
 		}
 	},
+	"Daily Reflect on Progress": {
+		"Activity": {
+			"val": "Daily Reflect on Progress",
+			"note": ""
+		}
+	},
 	"Evaluate Progress": {
 		"Activity": {
 			"val": "Evaluate Progress",
@@ -225,6 +231,24 @@
 	"Finalize Conclusions": {
 		"Activity": {
 			"val": "Finalize Conclusions",
+			"note": ""
+		}
+	},
+	"Record native speaker discussion": {
+		"Activity": {
+			"val": "Record native speaker discussion",
+			"note": ""
+		}
+	},
+	"Record-Clarify-Expand": {
+		"Activity": {
+			"val": "Record-Clarify-Expand",
+			"note": ""
+		}
+	},
+	"Interact about a scene": {
+		"Activity": {
+			"val": "Interact about a scene",
 			"note": ""
 		}
 	}
