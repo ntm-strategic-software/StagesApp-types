@@ -65,7 +65,7 @@ export const activityKey2DisplayName: Record<ActivityKey, string> = {
  */
 export function getActivityDisplayName(
   activityKey: ActivityKey,
-  locale: Intl.LocalesArgument & string,
+  locale: string,
 ): string {
   let localeData: LocaleData;
   try {

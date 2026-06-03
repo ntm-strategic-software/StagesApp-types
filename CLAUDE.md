@@ -99,9 +99,9 @@ and commit the updated `locales/en.json`. The generator (`generate-locale-data.j
 
 ## TypeScript config
 
-- **Target:** ES2019
+- **Target:** floating (TS6.0)
 - **Module:** CommonJS
-- **Strict mode:** enabled
+- **Strict mode:** forced enabled (TS6.0)
 - **Declaration files and maps:** generated
 
 ## Testing
