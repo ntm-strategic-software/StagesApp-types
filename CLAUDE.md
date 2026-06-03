@@ -12,7 +12,6 @@ Shared TypeScript type library for the Stages language-learning application. Def
 
 - `pnpm run build` — compile with `tsc`
 - `pnpm run watch` — compile in watch mode
-- `pnpm test` — run tests via `ts-mocha`
 - `pnpm run generate-locale-data` — regenerate `locales/en.json` from the activity map (see Locales)
 - `pnpm run check-en-locale` — fail (exit 1) if `locales/en.json` is out of sync (for CI)
 
@@ -107,10 +106,7 @@ and commit the updated `locales/en.json`. The generator (`generate-locale-data.j
 
 ## Testing
 
-- Test files use `*.spec.ts` naming, co-located alongside source in `src/`
-- Runner: ts-mocha (`ts-mocha -p ./tsconfig.json './src/**/*.spec.ts'`)
-- Assertions: should.js
-- Spec files are excluded from the build tsconfig (never shipped in `dist/`)
+No automated test suite is configured for this package.
 
 ## Adding a new entity
 
