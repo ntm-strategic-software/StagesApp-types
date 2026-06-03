@@ -7,6 +7,7 @@
     "skipLibCheck": true, // true speeds up compilation, avoids flagging errors from node_modules
     "declaration": true, // generates .d.ts files for the project's API
     "declarationMap": true,
+    "types": ["node"],  // ts6 defaults types to an empty array
   },
   "exclude": [
     "./node_modules",
