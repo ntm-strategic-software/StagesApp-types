@@ -1,16 +1,12 @@
 {
   "compilerOptions": {
-    "target": "es2019",
     "module": "commonjs",
-    "sourceMap": true,
+    "sourceMap": true, // allows devTools to point back to original line numbers
     "rootDir": "./src",
     "outDir": "./dist",
-    "strict": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-    "declaration": true,
-    "declarationMap": true
+    "skipLibCheck": true, // true speeds up compilation, avoids flagging errors from node_modules
+    "declaration": true, // generates .d.ts files for the project's API
+    "declarationMap": true,
   },
   "exclude": [
     "./node_modules",
