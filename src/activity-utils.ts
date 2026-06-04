@@ -45,7 +45,7 @@ export const activityKey2DisplayName: Record<ActivityKey, string> = {
   [ActivityKey.PLAN_NEW_ACTIVITIES]: 'Plan New Activities',
   [ActivityKey.PLAN_NEXT_UNIT]: 'Plan Next Unit',
   [ActivityKey.PROCESS_PENDING_MEDIA]: 'Process Media',
-  [ActivityKey.PROCESS_QUICK_NOTES]: 'Process New Notes',
+  [ActivityKey.PROCESS_QUICK_NOTES]: 'Process Notes',
   [ActivityKey.REFLECT_ON_PROGRESS]: 'Reflect on Progress',
   [ActivityKey.DAILY_REFLECT_ON_PROGRESS]: 'Daily Reflect on Progress',
   [ActivityKey.EVALUATE_PROGRESS]: 'Evaluate Progress',
