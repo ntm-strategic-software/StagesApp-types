@@ -25,6 +25,13 @@ export interface ActivityPlan {
   tasks: Task[]
   /** Index of the next task to be done in the tasks array */
   nextTaskIndex: number
+  /**
+   * Desktop display preference: true to show the terse version of each task's notes
+   * (taskTextTerse) for this ActivityPlan, false to show the verbose version (taskText).
+   * Persisted per ActivityPlan; seeded from the user's global default when the plan is created.
+   * Mobile ignores this field (it always displays the verbose taskText).
+   */
+  showTerseTasks: boolean
   // Apparently we never used this field, so I'm commenting it out for now.  I think the purpose was for mobile to know
   //  which items have been completed since the last sync, so it can show them in the bottom section of the TaskBox screens.
   //  It appears we use a mobile-only table ActivityPlanSyncIdx instead.
@@ -83,6 +90,7 @@ export const activityPlanDefaults = (): ActivityPlan => ({
   activityKey: '',
   tasks: [],
   nextTaskIndex: 0,
+  showTerseTasks: false,
   // syncedTaskIndex: -1,
   promptClaFileId: '',
   mainClaFileId: '',

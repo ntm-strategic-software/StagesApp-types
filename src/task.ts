@@ -13,6 +13,17 @@ export interface Task {
   /** Array of strings, to be displayed on separate lines */
   taskNotes: string[]
   /**
+   * Terse counterpart of taskNotes: a shorter version of the notes, using the same line/prefix
+   * conventions. Used when the user has chosen to display terse task notes for an ActivityPlan.
+   *   - missing or [] (no terse notes): the task has no terse content, so terse display shows the title
+   *     only. We never fall back to the verbose taskNotes — terse mode must read as terse. (Optional
+   *     because tasks stored before this feature exist with no terse notes; they behave the same as [].)
+   *   - [...]: the terse notes to show.
+   * An ActivityPlan is only offered the terse view when at least one of its tasks has non-empty
+   * taskNotesTerse; otherwise the terse toggle is disabled (e.g. plans created before this feature).
+   */
+  taskNotesTerse?: string[]
+  /**
    * taskText is empty for tasks in an Activity.
    * When an ActivityPlan is created, each task in the underlying activity is added to the ActivityPlan,
    * and for each task in the ActivityPlan, taskText is set to taskTitle followed by taskNotes,
@@ -20,6 +31,13 @@ export interface Task {
    * In a task in an ActivityPlan, taskText can be edited by the user.
    */
   taskText: string
+  /**
+   * Terse counterpart of taskText, generated when the ActivityPlan is created (see taskNotesTerse):
+   *   - no terse notes (taskNotesTerse missing or []) -> taskTitle only.
+   *   - taskNotesTerse === [...] -> taskTitle followed by the taskNotesTerse rendering.
+   * Editable by the user independently of taskText.
+   */
+  taskTextTerse: string
   /** The taskBox this Task appears in */
   taskBox: TaskBox | '',
   /**
@@ -87,7 +105,11 @@ export interface NewTask extends Omit<Task, 'createdAt' | 'updatedAt'> {
 export const taskDefaults = (): Task => ({
   taskTitle: '',
   taskNotes: [],
+  // No terse notes by default. A missing value and [] are treated identically ("title only" in terse
+  //  mode), so we use the [] zero-value sentinel per convention rather than leaving it undefined.
+  taskNotesTerse: [],
   taskText: '',
+  taskTextTerse: '',
   taskBox: '',
   taskBoxGroup: 0,
   taskBoxOptions: [],
