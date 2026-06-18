@@ -15,14 +15,14 @@ export interface Task {
   /**
    * Terse counterpart of taskNotes: a shorter version of the notes, using the same line/prefix
    * conventions. Used when the user has chosen to display terse task notes for an ActivityPlan.
-   *   - missing or [] (no terse notes): the task has no terse content, so terse display shows the title
-   *     only. We never fall back to the verbose taskNotes — terse mode must read as terse. (Optional
-   *     because tasks stored before this feature exist with no terse notes; they behave the same as [].)
+   *   - [] (no terse notes): the task has no terse content, so terse display shows the title only. We
+   *     never fall back to the verbose taskNotes — terse mode must read as terse.
    *   - [...]: the terse notes to show.
    * An ActivityPlan is only offered the terse view when at least one of its tasks has non-empty
-   * taskNotesTerse; otherwise the terse toggle is disabled (e.g. plans created before this feature).
+   * taskNotesTerse; otherwise the terse toggle is disabled (e.g. plans created before this feature,
+   * whose tasks are normalized to [] by the Desktop v51 migration).
    */
-  taskNotesTerse?: string[]
+  taskNotesTerse: string[]
   /**
    * taskText is empty for tasks in an Activity.
    * When an ActivityPlan is created, each task in the underlying activity is added to the ActivityPlan,
@@ -105,8 +105,7 @@ export interface NewTask extends Omit<Task, 'createdAt' | 'updatedAt'> {
 export const taskDefaults = (): Task => ({
   taskTitle: '',
   taskNotes: [],
-  // No terse notes by default. A missing value and [] are treated identically ("title only" in terse
-  //  mode), so we use the [] zero-value sentinel per convention rather than leaving it undefined.
+  // No terse notes by default ([] = "title only" in terse mode; only a non-empty array makes a plan terse-capable).
   taskNotesTerse: [],
   taskText: '',
   taskTextTerse: '',
