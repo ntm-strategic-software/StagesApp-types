@@ -12,6 +12,7 @@
     "check-en-locale": "tsc && node generate-locale-data.js --check",
     "build": "tsc",
     "watch": "tsc -w",
+    "test": "jest",
     "postinstall": "npm run build"
   },
   "repository": {
@@ -24,14 +25,17 @@
   },
   "homepage": "https://github.com/ntm-strategic-software/StagesApp-types#readme",
   "devDependencies": {
+    "@types/jest": "^30.0.0",
     "@types/lodash": "^4.14.195",
     "@types/node": "^25.6.0",
     "@typescript-eslint/eslint-plugin": "^6.4.0",
     "@typescript-eslint/parser": "^6.4.0",
     "eslint": "^8.47.0",
     "eslint-config-prettier": "^8.3.0",
+    "jest": "^30.4.2",
     "jsdoc": "^3.6.7",
     "prettier": "^2.5.1",
+    "ts-jest": "^29.4.11",
     "typescript": "~6.0.3"
   },
   "dependencies": {
