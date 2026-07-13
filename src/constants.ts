@@ -355,6 +355,18 @@ export const MOBILE_USER_ID_FIELD = 'mobileUserId';
 /** Field name in SEND_MOBILE_DATA payload: estimated outbound data size (replaces SEND_MOBILE_DATA_SIZE round trip) */
 export const ESTIMATED_SIZE_FIELD = 'estimatedSize';
 
+/** Field name in SEND_MOBILE_DATA payload: mobile-reported mtime/size for DRE audio files in the payload */
+export const MOBILE_DRE_AUDIO_FILE_STATS = 'mobileDreAudioFileStats';
+
+/** Filesystem metadata for one DRE audio file, reported by mobile during sync */
+export interface DreAudioFileStat {
+  mtimeMs: number;
+  size: number;
+}
+
+/** Map of DRE audio filename -> filesystem metadata from mobile */
+export type DreAudioFileStatsMap = Record<string, DreAudioFileStat>;
+
 /** Field name used in compressed payload wrapper: contains base64-encoded gzipped data */
 export const COMPRESSED_FIELD = 'compressed';
 
