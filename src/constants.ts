@@ -216,9 +216,16 @@ export enum ErrorType {
   OLD_MOBILE_VERSION = 'OLD_MOBILE_VERSION',
   OLD_DESKTOP_VERSION = 'OLD_DESKTOP_VERSION',
   NO_DESKTOP_USER = 'NO_DESKTOP_USER',
+  /** Desktop disk cannot accept the incoming mobile payload */
   INSUFFICIENT_DISK_SPACE = 'INSUFFICIENT_DISK_SPACE',
+  /** Mobile disk cannot accept the incoming desktop payload */
+  MOBILE_INSUFFICIENT_DISK_SPACE = 'MOBILE_INSUFFICIENT_DISK_SPACE',
   DESKTOP_USER_CANCELLED = 'DESKTOP_USER_CANCELLED',
   MOBILE_USER_CANCELLED = 'MOBILE_USER_CANCELLED',
+  /** Unexpected socket disconnect mid-sync */
+  SYNC_PEER_DISCONNECTED = 'SYNC_PEER_DISCONNECTED',
+  /** Locale file failed JSON parse or shape validation during DOWNLOAD_LOCALES. */
+  INVALID_LOCALE_FILE = 'INVALID_LOCALE_FILE',
 }
 export type ErrorTypeEnum = typeof ErrorType[keyof typeof ErrorType];
 
