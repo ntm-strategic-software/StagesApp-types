@@ -359,6 +359,12 @@ export const AES_SESSION_KEY_FIELD = 'aesSessionKey';
 /** Field name in TRANSFER_TYPE payload: mobile user ID for inline lastSyncTime resolution */
 export const MOBILE_USER_ID_FIELD = 'mobileUserId';
 
+/**
+ * Field name in TRANSFER_TYPE response: opt-in error-report email from Desktop.
+ * Empty string means Desktop unchecked include / no email — Mobile should clear its stored copy.
+ */
+export const ERROR_REPORT_EMAIL_FIELD = 'errorReportEmail';
+
 /** Field name in SEND_MOBILE_DATA payload: estimated outbound data size (replaces SEND_MOBILE_DATA_SIZE round trip) */
 export const ESTIMATED_SIZE_FIELD = 'estimatedSize';
 
