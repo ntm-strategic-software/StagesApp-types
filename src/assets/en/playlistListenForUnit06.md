@@ -20,7 +20,7 @@ Listen for repetition, checking questions, or slowing down to help understanding
 
 ## Talk in chunks
 
-Listen for very short pieces of speech — often one idea at a time.
+Listen for very short pieces of speech—often one idea at a time.
 
 ## Glue thoughts together
 
@@ -36,7 +36,7 @@ Listen for names or nouns used instead of pronouns because people are visible.
 
 ## Make clear who said what
 
-Listen for simple quotes like "he said." or "she said."
+Listen for simple quotes like "he said..." or "she said..."
 
 ## Add spice
 
