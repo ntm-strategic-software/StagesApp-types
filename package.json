@@ -10,7 +10,9 @@
     "generate-docs": "jsdoc --destination docs ./types",
     "generate-locale-data": "tsc && node generate-locale-data.js",
     "check-en-locale": "tsc && node generate-locale-data.js --check",
-    "build": "tsc",
+    "generate-playlist-listen-for": "node generate-playlist-listen-for-data.js",
+    "check-playlist-listen-for": "node generate-playlist-listen-for-data.js --check",
+    "build": "node generate-playlist-listen-for-data.js && tsc",
     "watch": "tsc -w",
     "test": "jest",
     "postinstall": "npm run build"

@@ -1,97 +1,260 @@
 /**
- * Playlist "What to Listen For" content entries.
- * Each entry corresponds to a playlistListenForUnit*.md asset file.
- * Content is embedded here so it works in both Node and React Native environments.
- * Entries are sorted descending by unit number for efficient lookup.
+ * Playlist "What to Listen For" content entries by locale.
  *
- * To add content for a new unit range:
- * 1. Create the .md file in src/assets/ (e.g., playlistListenForUnit05.md)
- * 2. Add a new entry here with the matching unit number and content
+ * GENERATED FILE — do not edit by hand.
+ * Source of truth: src/assets/{locale}/playlistListenForUnitNN.md
+ * Regenerate: pnpm run generate-playlist-listen-for
+ * (Also runs automatically as part of pnpm run build / postinstall.)
+ *
+ * Content is embedded here so it works in both Node and React Native environments.
+ * Within each locale, entries are sorted descending by unit number for efficient lookup.
  */
-export const playlistListenForEntries: { unit: number; content: string }[] = [
-  // Sorted descending by unit number.
-  // playlistListenFor() returns the entry with the greatest unit <= the requested unit.
-  {
-    unit: 1,
-    content:
+export interface PlaylistListenForEntry {
+  unit: number;
+  content: string;
+}
+
+export const playlistListenForEntriesByLocale: Record<string, PlaylistListenForEntry[]> = {
+  en: [
+    {
+      unit: 22,
+      content:
 `# What to Listen For
 
-As you listen to your playlist recordings, pay attention to the following aspects of how people communicate. These are based on the "10 Things People Do When They Talk."
+As you listen to recordings in your Playlist, focus your attention on the language features being used by native speakers.
 
-## 1. Sounds
+## Adjust to the situation
 
-Listen for the distinct sounds of the language. Are there sounds that don't exist in your own language? Pay attention to:
-- Consonant sounds that seem unfamiliar
-- Vowel distinctions that are hard to hear
-- Tones or pitch patterns on words
+Listen for language shaped to the audience's beliefs or concerns.
 
-## 2. Words and Word Parts
+## Have a purpose
 
-Notice how words are formed. Are there prefixes, suffixes, or other parts attached to words?
-- Do words change form depending on how they are used?
-- Are there small words or particles that seem to appear frequently?
-- How do speakers form new words from existing ones?
+Listen for the speaker trying to convince, challenge, or motivate.
 
-## 3. Putting Words Together
+## Organize what they say
 
-Pay attention to the order of words in sentences.
-- Where does the verb go in a sentence?
-- How are questions formed?
-- Where do descriptive words go in relation to what they describe?
-- How do speakers express negation?
+Listen for arguments built step by step toward a conclusion.
 
-## 4. Using Language for Different Purposes
+## Monitor the hearer
 
-Notice the different things people do with language:
-- How do they greet each other?
-- How do they make requests?
-- How do they tell stories vs. give instructions?
-- How do they express emotions or opinions?
+Listen for softening language or responses to possible objections.
 
-## 5. Conversation Patterns
+## Talk in chunks
 
-Listen to how conversations flow:
-- How do speakers take turns?
-- How do they show they are listening?
-- How do they interrupt or change topics?
-- What happens when there is a misunderstanding?
+Listen for clear sections that match parts of the argument.
 
-## 6. Cultural References
+## Glue thoughts together
 
-Be alert to references that reflect cultural knowledge:
-- Proverbs or sayings
-- References to shared history or events
-- Metaphors drawn from local life
-- Humor and what makes people laugh
+Listen for strong logical links like reasons, results, and contrasts.
 
-## 7. Intonation and Rhythm
+## Mark what's important
 
-Pay attention to the "music" of the language:
-- Does the pitch rise or fall at the end of sentences?
-- Are certain words or syllables stressed more than others?
-- What is the overall rhythm — does it sound even or varied?
-- How does speed change during different parts of speech?
+Listen for main claims repeated and strongly emphasized.
 
-## 8. Repetition and Emphasis
+## Keep track of participants
 
-Notice how speakers emphasize or reinforce their message:
-- Do they repeat words or phrases?
-- Do they use special words for emphasis?
-- How do they signal that something is important?
+Listen for how "we," "you," and "they" are used on purpose.
 
-## 9. Connecting Ideas
+## Make clear who said what
 
-Listen for how speakers link thoughts together:
-- What words do they use to connect sentences?
-- How do they show cause and effect?
-- How do they sequence events in a narrative?
-- How do they contrast or compare ideas?
+Listen for appeals to authority, tradition, or shared knowledge.
 
-## 10. Non-verbal Communication
+## Add spice
 
-While listening, also consider:
-- Are there sounds (clicks, interjections) that carry meaning?
-- Do pauses or silence play a role in communication?
-- Are there vocal qualities (whispering, raised voice) that signal something?`,
-  },
-];
+Listen for emotional language, rhetorical questions, and strong emphasis.
+`,
+    },
+    {
+      unit: 18,
+      content:
+`# What to Listen For
+
+As you listen to recordings in your Playlist, focus your attention on the language features being used by native speakers.
+
+## Adjust to the situation
+
+Listen for speakers building context with words, not shared experience.
+
+## Have a purpose
+
+Listen for clear signals that the speaker is explaining ideas or possibilities.
+
+## Organize what they say
+
+Listen for ideas grouped under bigger ideas.
+
+## Monitor the hearer
+
+Listen for summaries, reminders, or "let's think about this" statements.
+
+## Talk in chunks
+
+Listen for large sections that are clearly marked and separated.
+
+## Glue thoughts together
+
+Listen for clear logical connections between ideas.
+
+## Mark what's important
+
+Listen for ideas that are highlighted as central or key.
+
+## Keep track of participants
+
+Listen for clear reference to abstract things, not just people.
+
+## Make clear who said what
+
+Listen for references to beliefs, traditions, or sources of ideas.
+
+## Add spice
+
+Listen for metaphors, vivid language, or creative expression.
+`,
+    },
+    {
+      unit: 14,
+      content:
+`# What to Listen For
+
+As you listen to recordings in your Playlist, focus your attention on the language features being used by native speakers.
+
+## Adjust to the situation
+
+Listen for speakers explaining background the listener may not know.
+
+## Have a purpose
+
+Listen for whether the speaker is explaining, comparing, or teaching something.
+
+## Organize what they say
+
+Listen for clear story parts: beginning, build-up, main event, ending.
+
+## Monitor the hearer
+
+Listen for pauses, explanations, or examples added to help understanding.
+
+## Talk in chunks
+
+Listen for clear paragraph-like sections in longer speech.
+
+## Glue thoughts together
+
+Listen for contrast words, reasons, and explanations that link ideas.
+
+## Mark what's important
+
+Listen for main events or ideas that stand out from background details.
+
+## Keep track of participants
+
+Listen for smooth tracking of people across long stories.
+
+## Make clear who said what
+
+Listen for clear signals when speech is quoted or reported.
+
+## Add spice
+
+Listen for emotion, evaluation, or expressive storytelling.
+`,
+    },
+    {
+      unit: 10,
+      content:
+`# What to Listen For
+
+As you listen to recordings in your Playlist, focus your attention on the language features being used by native speakers.
+
+## Adjust to the situation
+
+Listen for time words or setting clues since listeners may not have been there.
+
+## Have a purpose
+
+Listen for whether the speaker is telling what happened, what will happen, or what is planned.
+
+## Organize what they say
+
+Listen for a clear order of events (first → next → last).
+
+## Monitor the hearer
+
+Listen for added explanation when stories move into the past or future.
+
+## Talk in chunks
+
+Listen for small story sections, not just single sentences.
+
+## Glue thoughts together
+
+Listen for simple cause-and-effect or time links.
+
+## Mark what's important
+
+Listen for key events that get extra attention or repetition.
+
+## Keep track of participants
+
+Listen for pronouns starting to replace names, but with frequent reminders.
+
+## Make clear who said what
+
+Listen for basic quoted speech with clear speakers.
+
+## Add spice
+
+Listen for simple opinions like "it was good," "it was scary," or "I liked it."
+`,
+    },
+    {
+      unit: 6,
+      content:
+`# What to Listen For
+
+As you listen to recordings in your Playlist, focus your attention on the language features being used by native speakers.
+
+## Adjust to the situation
+
+Listen for how speakers rely on what everyone can see or is doing right now.
+
+## Have a purpose
+
+Listen for whether the speaker is trying to identify, describe, choose, or respond.
+
+## Organize what they say
+
+Listen for repeated sentence patterns or simple order (name → detail → detail).
+
+## Monitor the hearer
+
+Listen for repetition, checking questions, or slowing down to help understanding.
+
+## Talk in chunks
+
+Listen for very short pieces of speech — often one idea at a time.
+
+## Glue thoughts together
+
+Listen for simple linking like "and," "then," or just placing ideas next to each other.
+
+## Mark what's important
+
+Listen for repeated words, stronger voice, or saying something last.
+
+## Keep track of participants
+
+Listen for names or nouns used instead of pronouns because people are visible.
+
+## Make clear who said what
+
+Listen for simple quotes like "he said." or "she said."
+
+## Add spice
+
+Listen for tone, excitement, or small emotional clues rather than fancy language.
+`,
+    }
+  ],
+};
