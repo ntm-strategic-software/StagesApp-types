@@ -10,10 +10,12 @@ Shared TypeScript type library for the Stages language-learning application. Def
 
 ## Commands
 
-- `pnpm run build` — compile with `tsc`
+- `pnpm run build` — regenerate playlist listen-for data from markdown, then compile with `tsc`
 - `pnpm run watch` — compile in watch mode
 - `pnpm run generate-locale-data` — regenerate `locales/en.json` from the activity map (see Locales)
 - `pnpm run check-en-locale` — fail (exit 1) if `locales/en.json` is out of sync (for CI)
+- `pnpm run generate-playlist-listen-for` — regenerate `src/playlist-listen-for-data.ts` from `src/assets/{locale}/*.md`
+- `pnpm run check-playlist-listen-for` — fail (exit 1) if playlist listen-for data is out of sync (for CI)
 
 ## Code conventions
 
@@ -96,6 +98,16 @@ pnpm run generate-locale-data
 ```
 
 and commit the updated `locales/en.json`. The generator (`generate-locale-data.js`) runs `tsc` first, then projects the compiled map into the locale shape. `pnpm run check-en-locale` verifies the two are in sync (EOL-agnostic) and is suitable for CI.
+
+## Playlist "What to Listen For"
+
+Editable markdown lives in `src/assets/{locale}/playlistListenForUnitNN.md` (NN = overall CLA unit). **`src/playlist-listen-for-data.ts` is generated from those files — never hand-edit it.** Runtime lookup is `playlistListenFor(unit, locale)` in `src/utils.ts` (embedded strings so Node and React Native both work). Lookup uses the greatest entry unit `<=` the user's unit; Wrap-up (overall unit 26) always returns `''` so it does not inherit Stage 4 content. After adding or editing markdown:
+
+```
+pnpm run generate-playlist-listen-for
+```
+
+(or just `pnpm run build`, which regenerates then runs `tsc`). `pnpm run check-playlist-listen-for` verifies sync for CI.
 
 ## TypeScript config
 
