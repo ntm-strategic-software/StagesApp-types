@@ -424,3 +424,105 @@ export interface AesEncryptedMessage {
   /** Base64-encoded 16-byte GCM authentication tag */
   tag: string;
 }
+
+// ********************************************************************************************************************
+// Sync handshake v2 — X25519 key agreement + Ed25519 device identity, bound to a QR pairing secret.
+// Replaces the hybrid-crypto-js RSA handshake. See StagesApp-desktop/ai-docs/SYNC_HANDSHAKE_REDESIGN.md
+// for the protocol, the rationale, and the migration.
+//
+// Every value below is protocol-visible: changing one without changing the other side breaks the
+// handshake, so both apps read them from here rather than declaring their own.
+// ********************************************************************************************************************
+
+/** Bytes of pairing secret carried in the QR code. Regenerated for every sync window. */
+export const PAIRING_SECRET_LENGTH = 32;
+
+/** Field name in the QR payload holding the base64url pairing secret. */
+export const PAIRING_SECRET_FIELD = 'k';
+
+/** Raw byte length of an X25519 or Ed25519 public key. */
+export const CURVE25519_PUBLIC_KEY_LENGTH = 32;
+
+/** Raw byte length of an Ed25519 signature. */
+export const ED25519_SIGNATURE_LENGTH = 64;
+
+/**
+ * HMAC-SHA256 domain-separation labels for the pairing proofs. Distinct per direction so a proof
+ * captured in one direction cannot be replayed in the other.
+ */
+export const DESKTOP_HELLO_LABEL = 'stages-desktop-hello';
+export const MOBILE_HELLO_LABEL = 'stages-mobile-hello';
+
+/** HKDF info prefix. Bump the version suffix on any change to the key schedule. */
+export const SYNC_HKDF_INFO = 'stages-sync-v2';
+
+/** Handshake message field names. */
+export const IDENTITY_PUB_FIELD = 'identityPub';
+export const EPHEMERAL_PUB_FIELD = 'ephemeralPub';
+export const PAIRING_PROOF_FIELD = 'proof';
+export const IDENTITY_SIG_FIELD = 'sig';
+
+/** Desktop's hello, emitted on connect. Replaces the bare public-key string of handshake v1. */
+export interface DesktopHelloMessage {
+  /** Base64 Ed25519 device identity public key — the value stored in TRUSTED_MACHINES. */
+  [IDENTITY_PUB_FIELD]: string;
+  /** Base64 X25519 ephemeral public key, fresh per connection (this is what gives forward secrecy). */
+  [EPHEMERAL_PUB_FIELD]: string;
+  /** Base64 HMAC-SHA256(pairingSecret, DESKTOP_HELLO_LABEL || identityPub || ephemeralPub). */
+  [PAIRING_PROOF_FIELD]: string;
+}
+
+/** Mobile's hello, sent as KEY_CHALLENGE. */
+export interface MobileHelloMessage {
+  /** Base64 Ed25519 device identity public key — the value stored in MOBILE_DEVICES. */
+  [IDENTITY_PUB_FIELD]: string;
+  /** Base64 X25519 ephemeral public key, fresh per connection. */
+  [EPHEMERAL_PUB_FIELD]: string;
+  /**
+   * Base64 HMAC-SHA256(pairingSecret,
+   *   MOBILE_HELLO_LABEL || mobileIdentityPub || mobileEphemeralPub || desktopEphemeralPub).
+   * Desktop verifies this before anything else — it is what proves the caller scanned the QR.
+   */
+  [PAIRING_PROOF_FIELD]: string;
+  /** Base64 Ed25519 signature over the handshake transcript. */
+  [IDENTITY_SIG_FIELD]: string;
+}
+
+/** Desktop's KEY_CHALLENGE response: its signature over the same transcript. */
+export interface DesktopHelloResponse {
+  [IDENTITY_SIG_FIELD]: string;
+}
+
+// ********************************************************************************************************************
+// Encrypted media transport — chunked AES-256-GCM over the HTTP file routes.
+// TLS is not usable here: React Native cannot configure trust for a self-signed cert on a DHCP LAN
+// address, and its WebSocket layer ignores TLS options entirely. See the ADR for the full reasoning.
+// ********************************************************************************************************************
+
+/**
+ * Plaintext bytes per encrypted chunk. Fixed so a plaintext offset maps to a chunk index by
+ * arithmetic, which is what keeps ranged resume working. Chosen to keep the React Native JSI call
+ * count low (~800 calls per 200 MB) rather than for raw throughput.
+ *
+ * Must divide the ranged-download chunk size evenly so range boundaries land on chunk boundaries.
+ */
+export const MEDIA_CHUNK_PLAINTEXT_LENGTH = 256 * 1024;
+
+/** Bytes appended to each chunk: the GCM authentication tag. */
+export const MEDIA_CHUNK_TAG_LENGTH = 16;
+
+/** On-the-wire size of one full chunk. */
+export const MEDIA_CHUNK_WIRE_LENGTH = MEDIA_CHUNK_PLAINTEXT_LENGTH + MEDIA_CHUNK_TAG_LENGTH;
+
+/**
+ * Bytes of random nonce prefix sent once at the head of an encrypted media stream. Each chunk's
+ * 12-byte GCM nonce is `noncePrefix || uint64BE(chunkIndex)`, so nonces are unique per chunk and
+ * never repeat under one session key — the one failure that would catastrophically break GCM.
+ */
+export const MEDIA_NONCE_PREFIX_LENGTH = 4;
+
+/** Header sent by mobile / set by desktop to mark a file body as chunk-encrypted. */
+export const MEDIA_ENCRYPTION_HEADER = 'x-stages-media-encryption';
+
+/** Value of MEDIA_ENCRYPTION_HEADER for the scheme above. */
+export const MEDIA_ENCRYPTION_AES_GCM_CHUNKED = 'aes-256-gcm-chunked-v1';
