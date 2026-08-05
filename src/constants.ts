@@ -515,11 +515,22 @@ export const MEDIA_CHUNK_TAG_LENGTH = 16;
 export const MEDIA_CHUNK_WIRE_LENGTH = MEDIA_CHUNK_PLAINTEXT_LENGTH + MEDIA_CHUNK_TAG_LENGTH;
 
 /**
- * Bytes of random nonce prefix sent once at the head of an encrypted media stream. Each chunk's
- * 12-byte GCM nonce is `noncePrefix || uint64BE(chunkIndex)`, so nonces are unique per chunk and
- * never repeat under one session key — the one failure that would catastrophically break GCM.
+ * Bytes of random per-file nonce, sent once at the head of an encrypted media stream.
+ *
+ * Each file gets its own key:
+ *   fileKey = HKDF-SHA256(sessionKey, salt = fileNonce, info = MEDIA_HKDF_INFO, 32)
+ * and each chunk's 12-byte GCM nonce is uint96BE(chunkIndex), starting at zero.
+ *
+ * Deriving per file is what makes nonce reuse impossible rather than merely unlikely. Sharing one
+ * session key across files and distinguishing them by a short random prefix would only need two
+ * files to collide on that prefix — across a sync carrying thousands of files that is a real
+ * probability, and GCM nonce reuse is catastrophic: it leaks the authentication key, not just one
+ * plaintext. 16 bytes of random salt puts collision odds out of reach.
  */
-export const MEDIA_NONCE_PREFIX_LENGTH = 4;
+export const MEDIA_FILE_NONCE_LENGTH = 16;
+
+/** HKDF info for per-file media key derivation. Bump the suffix if the scheme changes. */
+export const MEDIA_HKDF_INFO = 'stages-media-v1';
 
 /** Header sent by mobile / set by desktop to mark a file body as chunk-encrypted. */
 export const MEDIA_ENCRYPTION_HEADER = 'x-stages-media-encryption';
