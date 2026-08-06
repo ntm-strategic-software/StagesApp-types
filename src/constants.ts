@@ -501,12 +501,18 @@ export interface DesktopHelloResponse {
 
 /**
  * Plaintext bytes per encrypted chunk. Fixed so a plaintext offset maps to a chunk index by
- * arithmetic, which is what keeps ranged resume working. Chosen to keep the React Native JSI call
- * count low (~800 calls per 200 MB) rather than for raw throughput.
+ * arithmetic, which is what keeps ranged resume working.
  *
- * Must divide the ranged-download chunk size evenly so range boundaries land on chunk boundaries.
+ * 1 MiB was chosen from on-device measurement (Aug 2026, 100 MB file, expo-file-system
+ * FileHandle byte I/O + react-native-quick-crypto): ~55 MB/s iOS / ~30 MB/s Android, versus
+ * 15 / 9.4 MB/s at the original 256 KiB. Mobile yields to the event loop between chunks so
+ * socket.io pings stay answered, and each yield costs ~8-12 ms — at 256 KiB those yields
+ * dominate the whole pass.
+ *
+ * Mobile must size ranged download requests as a multiple of MEDIA_CHUNK_WIRE_LENGTH so range
+ * boundaries land on chunk boundaries (see planMediaWireRange on desktop).
  */
-export const MEDIA_CHUNK_PLAINTEXT_LENGTH = 256 * 1024;
+export const MEDIA_CHUNK_PLAINTEXT_LENGTH = 1024 * 1024;
 
 /** Bytes appended to each chunk: the GCM authentication tag. */
 export const MEDIA_CHUNK_TAG_LENGTH = 16;
