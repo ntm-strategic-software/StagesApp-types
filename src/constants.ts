@@ -503,16 +503,17 @@ export interface DesktopHelloResponse {
  * Plaintext bytes per encrypted chunk. Fixed so a plaintext offset maps to a chunk index by
  * arithmetic, which is what keeps ranged resume working.
  *
- * 1 MiB was chosen from on-device measurement (Aug 2026, 100 MB file, expo-file-system
- * FileHandle byte I/O + react-native-quick-crypto): ~55 MB/s iOS / ~30 MB/s Android, versus
- * 15 / 9.4 MB/s at the original 256 KiB. Mobile yields to the event loop between chunks so
- * socket.io pings stay answered, and each yield costs ~8-12 ms — at 256 KiB those yields
- * dominate the whole pass.
+ * 8 MiB was chosen from on-device measurement (Aug 2026, 200 MB file, expo-file-system
+ * FileHandle byte I/O + react-native-quick-crypto), comparing 256 KiB / 1 MiB / 4 MiB / 8 MiB.
+ * Everything per-iteration on mobile is expensive — the event-loop yield that keeps socket.io
+ * pings answered (~8-12 ms), JSI crossings, and quick-crypto cipher setup — so larger chunks
+ * win, dramatically on Android: 75/62 MB/s encrypt/decrypt at 8 MiB vs 32/30 at 1 MiB vs
+ * 9.4 at 256 KiB. iOS is byte-cost-bound and roughly flat (59/53 at 8 MiB vs 51/53 at 1 MiB).
  *
  * Mobile must size ranged download requests as a multiple of MEDIA_CHUNK_WIRE_LENGTH so range
  * boundaries land on chunk boundaries (see planMediaWireRange on desktop).
  */
-export const MEDIA_CHUNK_PLAINTEXT_LENGTH = 1024 * 1024;
+export const MEDIA_CHUNK_PLAINTEXT_LENGTH = 8 * 1024 * 1024;
 
 /** Bytes appended to each chunk: the GCM authentication tag. */
 export const MEDIA_CHUNK_TAG_LENGTH = 16;
