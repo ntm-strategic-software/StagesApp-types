@@ -2,8 +2,10 @@
 
 import { CLAFile, claFileDefaults } from './cla-file';
 
+/** Observations and note for one highlight color in a compare row */
+export type SplitTextColorDetail = { observations: string; note: string }
 /** Object with details for each highlight color in splitText rows */
-export type SplitTextColorDetails = ({[key: string]: {observations: string, notes: string}} | object)[]
+export type SplitTextColorDetails = Record<string, SplitTextColorDetail>[];
 /** Array of array of objects representing highlighted text segments */
 export type SplitCompareText = ({text: string, className: string})[][];
 
