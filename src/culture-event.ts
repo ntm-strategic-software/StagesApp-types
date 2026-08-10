@@ -24,8 +24,6 @@ export interface CultureEvent extends CLAFile {
   _isPE: boolean
   /** Array of IDs of search words */
   searchWords: string[]
-  /** ISO Date (e.g., '2022-06-20T15:50:40.055Z'), when the CultureEvent was initially saved */
-  date: string
   /** Array of Person IDs of those who spoke in the generalRecordings of this CultureEvent */
   speakers: string[]
   /** Location ID of where the event took place */
@@ -72,7 +70,6 @@ export const cultureEventDefaults = (): CultureEvent => ({
   ...claFileDefaults(),
   _isPE: false,
   searchWords: [],
-  date: '',
   speakers: [],
   location: '',
   audience: '',

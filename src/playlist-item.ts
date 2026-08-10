@@ -31,7 +31,7 @@ export interface PlaylistItem {
   recordingsOrder: string[]
   /** Title of the item; matches a CultureEvent's title. We duplicate it from the CultureEvent for convenience. */
   title: string
-  /** ISO date string (e.g., '2022-06-20T15:50:40.055Z'), copied from CultureEvent.date */
+  /** ISO date string (e.g., '2022-06-20T15:50:40.055Z'), copied from CultureEvent.createdAt */
   dateRecorded: string
   /** ISO Date (e.g., '2022-06-20T15:50:40.055Z'), when the row was initially saved to the database */
   createdAt: string
