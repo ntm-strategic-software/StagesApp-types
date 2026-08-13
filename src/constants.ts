@@ -544,3 +544,23 @@ export const MEDIA_ENCRYPTION_HEADER = 'x-stages-media-encryption';
 
 /** Value of MEDIA_ENCRYPTION_HEADER for the scheme above. */
 export const MEDIA_ENCRYPTION_AES_GCM_CHUNKED = 'aes-256-gcm-chunked-v1';
+
+/**
+ * Approximate wire-byte budget per mobile ranged GET during media download (~256 MiB).
+ * Native code floors this to a whole number of MEDIA_CHUNK_WIRE_LENGTH chunks so every
+ * Range start lands on a chunk boundary (desktop 416s otherwise). Big enough to amortize
+ * request overhead, small enough that a mid-request failure retries cheaply and each
+ * response stays under OkHttp's ~2 GiB drain limit. Desktop ignores this — it only serves ranges.
+ * It's defined here in SA-Types so Mobile's generate-media-crypto-constants.js can look in one place
+ * for crypto constants.
+ * I tried increasing this value to 256MB, but did not see any change in sync speed. - JPB
+ */
+export const MEDIA_RANGED_REQUEST_TARGET_BYTES = 64 * 1024 * 1024;
+
+/**
+ * Per-range retry attempts for transient interruptions during mobile media download
+ * (in-session resume). Desktop does not use this.
+ * It's defined here in SA-Types so Mobile's generate-media-crypto-constants.js can look in one place
+ * for crypto constants.
+ */
+export const MEDIA_DOWNLOAD_CHUNK_RETRIES = 3;
