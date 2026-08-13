@@ -496,22 +496,39 @@ export interface DesktopHelloResponse {
 // ********************************************************************************************************************
 // Encrypted media transport — chunked AES-256-GCM over the HTTP file routes.
 // TLS is not usable here: React Native cannot configure trust for a self-signed cert on a DHCP LAN
-// address, and its WebSocket layer ignores TLS options entirely. See the ADR for the full reasoning.
+// address, and its WebSocket layer ignores TLS options entirely. See SYNC_HANDSHAKE_REDESIGN.md for the full reasoning.
 // ********************************************************************************************************************
+
+
+// Desktop -> Mobile (GET):
+//   Photos: one GET for the whole file. Audio/video: HTTP Range over the *encrypted* body.
+//   Mobile asks for about MEDIA_RANGED_REQUEST_TARGET_BYTES of wire; native code floors that
+//   to a whole number of MEDIA_CHUNK_WIRE_LENGTH records (first GET also includes the file
+//   nonce). Desktop maps that Range to plaintext, encrypts chunks of MEDIA_CHUNK_PLAINTEXT_LENGTH,
+//   and writes each encrypted chunk onto the HTTP response as soon as it is ready. Mobile decrypts
+//   each encrypted chunk as it arrives (so raising MEDIA_CHUNK_PLAINTEXT_LENGTH past a given value
+//   will increase RAM usage without increasing throughput). Ranging exists because Android/OkHttp is 
+//   capped at ~2 GiB; iOS uses the same Range protocol. MEDIA_RANGED_REQUEST_TARGET_BYTES must stay
+//   under that cap. Raising it toward 256 MiB did not improve sync speed. Shrinking it means more
+//   GETs and more request overhead.
+//
+// Mobile -> Desktop (POST):
+//   One POST for the whole file (uploads are streamed writes, so the OkHttp GET drain limit
+//   does not apply). Mobile still seals MEDIA_CHUNK_WIRE_LENGTH records and writes them onto
+//   the POST body as they are ready; desktop decrypts each as it arrives. If we want chunks
+//   to retry on failure (as downloads do), we may need to split the POST into multiple POSTs.
 
 /**
  * Plaintext bytes per encrypted chunk. Fixed so a plaintext offset maps to a chunk index by
  * arithmetic, which is what keeps ranged resume working.
  *
- * 8 MiB was chosen from on-device measurement (Aug 2026, 200 MB file, expo-file-system
- * FileHandle byte I/O + react-native-quick-crypto), comparing 256 KiB / 1 MiB / 4 MiB / 8 MiB.
- * Everything per-iteration on mobile is expensive — the event-loop yield that keeps socket.io
- * pings answered (~8-12 ms), JSI crossings, and quick-crypto cipher setup — so larger chunks
- * win, dramatically on Android: 75/62 MB/s encrypt/decrypt at 8 MiB vs 32/30 at 1 MiB vs
- * 9.4 at 256 KiB. iOS is byte-cost-bound and roughly flat (59/53 at 8 MiB vs 51/53 at 1 MiB).
+ * 8 MiB was first chosen from on-device measurement of the old JS crypto path (Aug 2026,
+ * 200 MB file, expo-file-system FileHandle + react-native-quick-crypto): 75/62 MB/s at 8 MiB
+ * vs 32/30 at 1 MiB vs 9.4 at 256 KiB on Android. Native encrypt/decrypt no longer pays that
+ * per-record JS cost; keep 8 MiB for RAM and resume granularity, not throughput.
  *
- * Mobile must size ranged download requests as a multiple of MEDIA_CHUNK_WIRE_LENGTH so range
- * boundaries land on chunk boundaries (see planMediaWireRange on desktop).
+ * Ranged download GETs must start on a MEDIA_CHUNK_WIRE_LENGTH boundary (see planMediaWireRange
+ * on desktop). Native code floors MEDIA_RANGED_REQUEST_TARGET_BYTES to whole wire records.
  */
 export const MEDIA_CHUNK_PLAINTEXT_LENGTH = 8 * 1024 * 1024;
 
@@ -546,14 +563,13 @@ export const MEDIA_ENCRYPTION_HEADER = 'x-stages-media-encryption';
 export const MEDIA_ENCRYPTION_AES_GCM_CHUNKED = 'aes-256-gcm-chunked-v1';
 
 /**
- * Approximate wire-byte budget per mobile ranged GET during media download (~256 MiB).
- * Native code floors this to a whole number of MEDIA_CHUNK_WIRE_LENGTH chunks so every
- * Range start lands on a chunk boundary (desktop 416s otherwise). Big enough to amortize
- * request overhead, small enough that a mid-request failure retries cheaply and each
- * response stays under OkHttp's ~2 GiB drain limit. Desktop ignores this — it only serves ranges.
- * It's defined here in SA-Types so Mobile's generate-media-crypto-constants.js can look in one place
- * for crypto constants.
- * I tried increasing this value to 256MB, but did not see any change in sync speed. - JPB
+ * Approximate wire-byte budget per mobile ranged GET (audio/video download). Native code
+ * floors this to a whole number of MEDIA_CHUNK_WIRE_LENGTH records so every Range start
+ * lands on a chunk boundary (desktop 416s otherwise). First GET also includes the file nonce.
+ * Photos use a single non-ranged GET. Desktop ignores this const — it only serves whatever Range
+ * mobile sends. Defined here so Mobile's generate-media-crypto-constants.js has one source. Must
+ * stay under the 2GB android limit.
+ * Raising this to 256 MiB did not change sync speed for me. - JPB
  */
 export const MEDIA_RANGED_REQUEST_TARGET_BYTES = 64 * 1024 * 1024;
 
