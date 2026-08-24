@@ -572,11 +572,3 @@ export const MEDIA_ENCRYPTION_AES_GCM_CHUNKED = 'aes-256-gcm-chunked-v1';
  * Raising this to 256 MiB did not change sync speed for me. - JPB
  */
 export const MEDIA_RANGED_REQUEST_TARGET_BYTES = 64 * 1024 * 1024;
-
-/**
- * Per-range retry attempts for transient interruptions during mobile media download
- * (in-session resume). Desktop does not use this.
- * It's defined here in SA-Types so Mobile's generate-media-crypto-constants.js can look in one place
- * for crypto constants.
- */
-export const MEDIA_DOWNLOAD_CHUNK_RETRIES = 3;

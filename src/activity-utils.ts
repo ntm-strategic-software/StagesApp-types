@@ -68,12 +68,14 @@ export function getActivityDisplayName(
   locale: string,
 ): string {
   let localeData: LocaleData;
+  /* eslint-disable @typescript-eslint/no-require-imports -- locale path is chosen at runtime */
   try {
     localeData = require(`../locales/${locale}.json`);
   } catch {
     // Fallback to English if the specified locale file is not found
     localeData = require('../locales/en.json');
   }
+  /* eslint-enable @typescript-eslint/no-require-imports */
 
   // locale/en.json is the base data for Stages Types in Translator Helper.
   const englishName = activityKey2DisplayName[activityKey];
