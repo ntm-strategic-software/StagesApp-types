@@ -7,7 +7,6 @@
   "types": "./dist/index.d.ts",
   "private": true,
   "scripts": {
-    "generate-docs": "jsdoc --destination docs ./types",
     "generate-locale-data": "tsc && node generate-locale-data.js",
     "check-en-locale": "tsc && node generate-locale-data.js --check",
     "generate-playlist-listen-for": "node generate-playlist-listen-for-data.js",
@@ -35,7 +34,6 @@
     "eslint": "^8.47.0",
     "eslint-config-prettier": "^8.3.0",
     "jest": "^30.4.2",
-    "jsdoc": "^3.6.7",
     "prettier": "^2.5.1",
     "ts-jest": "^29.4.11",
     "typescript": "~6.0.3"
