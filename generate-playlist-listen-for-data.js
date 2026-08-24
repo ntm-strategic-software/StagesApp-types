@@ -74,11 +74,11 @@ const buildSource = (byLocale) => {
       .map(({ unit, content }) => {
         const escaped = escapeForTemplateLiteral(content);
         return (
-          `    {\n` +
+          '    {\n' +
           `      unit: ${unit},\n` +
-          `      content:\n` +
+          '      content:\n' +
           `\`${escaped}\`,\n` +
-          `    }`
+          '    }'
         );
       })
       .join(',\n');
