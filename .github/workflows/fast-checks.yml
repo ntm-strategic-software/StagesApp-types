@@ -16,7 +16,7 @@ jobs:
       # Match the Node version used by StagesApp-desktop CI (the primary consumer)
       - uses: actions/setup-node@v4
         with:
-          node-version: 22.17.1
+          node-version: 24.18.1
           cache: pnpm
 
       # postinstall runs the tsc build, so this also verifies compilation
