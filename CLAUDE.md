@@ -7,6 +7,7 @@ Shared TypeScript type library for the Stages language-learning application. Def
 - **Entry point:** `src/index.ts` (barrel exports)
 - **Output:** `dist/` (CommonJS, declaration files, source maps)
 - **Not published to npm** — installed directly from the repository
+- **Node version:** >= 24.18.1 (CI pins `24.18.1`, matching StagesApp-desktop)
 
 ## Commands
 
