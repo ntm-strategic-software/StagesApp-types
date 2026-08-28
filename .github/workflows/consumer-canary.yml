@@ -1,0 +1,82 @@
+name: Consumer Canary
+
+# stagesapp-types is a commit-pinned dependency of BOTH apps — the one edge where a single
+# commit can break desktop and mobile at once, and today nothing tests a types change against
+# its consumers until each app bumps its pin (often much later, when the context is gone).
+#
+# This canary checks out both consumers, points their stagesapp-types dependency at THIS
+# checkout, and runs their fast suites — so a contract break is caught the week it lands,
+# not the month a pin moves.
+#
+# DISPATCH-ONLY until the org provides a token: GITHUB_TOKEN cannot read sibling private
+# repos, so checking out the consumers needs a fine-grained PAT (contents: read on
+# StagesApp-desktop + StagesApp-mobile) stored as the CONSUMER_CANARY_TOKEN secret.
+# Once the secret exists and a dispatch run is green, add the weekly cron:
+#   schedule:
+#     - cron: '0 5 * * 1'
+on:
+  workflow_dispatch:
+
+jobs:
+  canary:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - consumer: ntm-strategic-software/StagesApp-desktop
+            # Same suites the consumer's own PR gate runs; e2e/device suites stay out.
+            test: pnpm exec jest
+          - consumer: ntm-strategic-software/StagesApp-mobile
+            test: pnpm test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Require the canary token
+        env:
+          TOKEN: ${{ secrets.CONSUMER_CANARY_TOKEN }}
+        run: |
+          if [ -z "$TOKEN" ]; then
+            echo "::error::CONSUMER_CANARY_TOKEN secret is not set - a fine-grained PAT with contents:read on both StagesApp app repos is required to check the consumers out. See the header comment."
+            exit 1
+          fi
+
+      - name: Checkout types (this commit)
+        uses: actions/checkout@v5
+        with:
+          path: types
+
+      - name: Checkout consumer
+        uses: actions/checkout@v5
+        with:
+          repository: ${{ matrix.consumer }}
+          token: ${{ secrets.CONSUMER_CANARY_TOKEN }}
+          path: app
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          package_json_file: app/package.json
+
+      - name: Setup Node
+        uses: actions/setup-node@v5
+        with:
+          node-version: 22.17.1
+
+      - name: Install consumer deps
+        working-directory: app
+        run: pnpm install --frozen-lockfile
+
+      - name: Build types from this checkout
+        working-directory: types
+        run: |
+          pnpm install --frozen-lockfile
+          pnpm run build
+
+      - name: Point stagesapp-types at this checkout
+        working-directory: app
+        # file: replaces the commit-pinned github dep for THIS run only — the whole point
+        # of the canary is testing the consumer against types HEAD before any pin bump.
+        run: pnpm add "file:../types"
+
+      - name: Run the consumer's fast suite
+        working-directory: app
+        run: ${{ matrix.test }}
