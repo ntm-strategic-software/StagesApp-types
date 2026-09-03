@@ -9,7 +9,7 @@ export interface ConsultantRecommendation {
   /** Text of the recommendation */
   recommendationText: string
   /**
-   * Whether this checkpoint's self-evaluation is finished (unlocks Send as Email and Plan Next Unit).
+   * Whether this checkpoint's self-evaluation is finished (unlocks Plan Next Unit).
    * Field name is historical; the UI is consultant-neutral.
    */
   okToAdvance: boolean
