@@ -196,6 +196,8 @@ export enum AnswerTypes {
   TEXT = 'TEXT',
   /** Allow user to select only one option from a list of options */
   MULTIPLE_CHOICE_ONE = 'MULTIPLE_CHOICE_ONE',
+  /** Allow user to select any number of options from a list of options */
+  MULTIPLE_CHOICE_MANY = 'MULTIPLE_CHOICE_MANY',
   /** User answers the question by checking the box or not checking the box */
   CHECKBOX = 'CHECKBOX',
   /** No answer allowed.  This is for showing text only. */

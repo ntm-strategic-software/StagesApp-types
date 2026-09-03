@@ -1,29 +1,28 @@
 // noinspection JSUnusedGlobalSymbols
 
-import { AnswerTypes } from './constants';
-
 /**
  * Represents a Self-Evaluation Question.
  * At certain points in CLA, users are prompted to answer self-evaluation questions.
+ * Prompt text, answer type, and options live in the Stages Desktop template, not on this row —
+ * same pattern as ReflectionQuestion.
  */
 export interface SelfEvaluationQuestion {
   /** Unique ID for the SelfEvaluationQuestion */
   _id: string
   /**
    * Key of the SelfEvaluationQuestion.
-   * Many of the same questions are asked in each evaluation.  questionKey identifies
-   * which generic question this is, whereas _id indicates the specific instance of this generic question.
+   * questionKey identifies which template question this is (including version suffix);
+   * _id indicates the specific instance created for this user and checkpoint.
    */
   questionKey: string
   /** claUnit of the question. This is the overall unit in CLA, and is 1-based. */
   claUnit: number
-  /** Summary of the question */
-  questionSummary: string
-  /** Text of the question */
-  questionText: string
-  /** Type of answer expected */
-  answerType: AnswerTypes | ''
-  /** User's answer to the question. This is a string, but how to display it depends on the answerType. */
+  /**
+   * User's answer to the question. This is a string, but how to display it depends on the answerType
+   * in the template.
+   * See enum AnswerTypes and Stages Desktop self-eval-questions-template.ts (catalog in self-eval-content.ts)
+   * for more details.
+   */
   answer: string
   /** Sort order of the question within the claUnit */
   sortOrder: number
@@ -57,9 +56,6 @@ export const selfEvaluationQuestionDefaults = (): SelfEvaluationQuestion => ({
   _id: '',
   questionKey: '',
   claUnit: 0,
-  questionSummary: '',
-  questionText: '',
-  answerType: '',
   answer: '',
   sortOrder: 0,
   createdAt: '',

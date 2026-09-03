@@ -8,7 +8,10 @@ export interface ConsultantRecommendation {
   claUnit: number
   /** Text of the recommendation */
   recommendationText: string
-  /** Whether the consultant recommends the user to advance to the next unit */
+  /**
+   * Whether this checkpoint's self-evaluation is finished (unlocks Send as Email and Plan Next Unit).
+   * Field name is historical; the UI is consultant-neutral.
+   */
   okToAdvance: boolean
   /** ISO Date (e.g., '2022-06-20T15:50:40.055Z'), when the row was initially saved to the database */
   createdAt: string
