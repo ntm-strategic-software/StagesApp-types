@@ -3,8 +3,8 @@
 /**
  * Represents a Self-Evaluation Question.
  * At certain points in CLA, users are prompted to answer self-evaluation questions.
- * Prompt text, answer type, and checkbox options live in the desktop template
- * (current + obsolete catalogs), not on this row — same pattern as ReflectionQuestion.
+ * Prompt text, answer type, and options live in the Stages Desktop template, not on this row —
+ * same pattern as ReflectionQuestion.
  */
 export interface SelfEvaluationQuestion {
   /** Unique ID for the SelfEvaluationQuestion */
@@ -19,7 +19,9 @@ export interface SelfEvaluationQuestion {
   claUnit: number
   /**
    * User's answer to the question. This is a string, but how to display it depends on the answerType
-   * in the template. For MULTIPLE_CHOICE_MANY it is a JSON array of selected option values.
+   * in the template.
+   * See enum AnswerTypes and Stages Desktop self-eval-questions-template.ts (catalog in self-eval-content.ts)
+   * for more details.
    */
   answer: string
   /** Sort order of the question within the claUnit */
