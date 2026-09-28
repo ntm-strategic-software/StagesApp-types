@@ -217,9 +217,21 @@
 			"note": ""
 		}
 	},
-	"Reflect on Data": {
+	"Reflect on Data (Warm-up)": {
 		"Activity": {
-			"val": "Reflect on Data",
+			"val": "Reflect on Data (Warm-up)",
+			"note": ""
+		}
+	},
+	"Reflect on Data (Stages 1-2)": {
+		"Activity": {
+			"val": "Reflect on Data (Stages 1-2)",
+			"note": ""
+		}
+	},
+	"Reflect on Data (Stages 3-4)": {
+		"Activity": {
+			"val": "Reflect on Data (Stages 3-4)",
 			"note": ""
 		}
 	},
@@ -232,6 +244,12 @@
 	"Finalize Conclusions": {
 		"Activity": {
 			"val": "Finalize Conclusions",
+			"note": ""
+		}
+	},
+	"Reflect on Data": {
+		"Activity": {
+			"val": "Reflect on Data",
 			"note": ""
 		}
 	},
