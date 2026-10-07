@@ -1,6 +1,6 @@
 // noinspection JSUnusedGlobalSymbols
 
-import { ActivityKey } from './constants';
+import { ActivityKey, generatedActivityKeys } from './constants';
 
 type LocaleEntry = {
   val: string;
@@ -85,3 +85,7 @@ export function getActivityDisplayName(
   const fallback = englishName ?? String(activityKey);
   return localeData[englishName]?.['Activity']?.val ?? fallback;
 }
+
+/** True when `activityKey` is a system-generated activity plan key. */
+export const isGeneratedActivityKey = (activityKey: string): boolean =>
+  (generatedActivityKeys as readonly string[]).includes(activityKey);
