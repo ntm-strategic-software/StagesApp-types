@@ -199,7 +199,7 @@ export const generatedActivityKeys: readonly ActivityKey[] = [
   ActivityKey.PROCESS_PENDING_MEDIA,
   ...reflectOnDataKeys,
   // Legacy REFLECT is never generated any more, but users' existing REFLECT plans are still generated plans:
-  //  the planner treats them that way, and reconcile retires them because they are never required.
+  //  the planner treats them that way, and desktop reconcile retires them because they are never required.
   ActivityKey.REFLECT,
   ActivityKey.ANALYZE,
   ActivityKey.FINALIZE_CONCLUSIONS,
