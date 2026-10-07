@@ -174,6 +174,37 @@ export enum ActivityKey {
 }
 export type ActivityKeyEnum = typeof ActivityKey[keyof typeof ActivityKey];
 
+/**
+ * Reflect on Data activities, one per CLA phase (desktop gh895).
+ * They replace the single legacy REFLECT activity.
+ */
+export const reflectOnDataKeys: readonly ActivityKey[] = [
+  ActivityKey.REFLECT_ON_DATA_WARMUP,
+  ActivityKey.REFLECT_ON_DATA_STAGES_1_2,
+  ActivityKey.REFLECT_ON_DATA_STAGES_3_4,
+];
+
+/**
+ * Activity keys for system-generated activity plans (desktop reconcile + planner UI;
+ * mobile hides Complete Task and omits these plans on a first sync).
+ */
+export const generatedActivityKeys: readonly ActivityKey[] = [
+  ActivityKey.PLAN_NEXT_DAY,
+  ActivityKey.PLAN_NEXT_UNIT,
+  ActivityKey.REFLECT_ON_PROGRESS,
+  ActivityKey.DAILY_REFLECT_ON_PROGRESS,
+  ActivityKey.PLAN_NEW_ACTIVITIES,
+  ActivityKey.EVALUATE_PROGRESS,
+  ActivityKey.PROCESS_QUICK_NOTES,
+  ActivityKey.PROCESS_PENDING_MEDIA,
+  ...reflectOnDataKeys,
+  // Legacy REFLECT is never generated any more, but users' existing REFLECT plans are still generated plans:
+  //  the planner treats them that way, and reconcile retires them because they are never required.
+  ActivityKey.REFLECT,
+  ActivityKey.ANALYZE,
+  ActivityKey.FINALIZE_CONCLUSIONS,
+];
+
 /** Enum for the different types of pending files */
 export enum PendingFileType {
   GENERAL_RECORDER = 'GENERAL_RECORDER',

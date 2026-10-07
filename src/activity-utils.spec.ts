@@ -1,5 +1,5 @@
-import { ActivityKey } from './constants';
-import { activityKey2DisplayName, getActivityDisplayName } from './activity-utils';
+import { ActivityKey, generatedActivityKeys, reflectOnDataKeys } from './constants';
+import { activityKey2DisplayName, getActivityDisplayName, isGeneratedActivityKey } from './activity-utils';
 
 describe('getActivityDisplayName', () => {
   it('returns the localized value from the requested locale file', () => {
@@ -29,5 +29,38 @@ describe('getActivityDisplayName', () => {
       expect(name).toBe(activityKey2DisplayName[key]);
       expect(name.length).toBeGreaterThan(0);
     }
+  });
+});
+
+describe('generatedActivityKeys', () => {
+  const activityKeyValues = new Set<string>(Object.values(ActivityKey));
+
+  it('contains only ActivityKey enum members', () => {
+    for (const key of generatedActivityKeys) {
+      expect(activityKeyValues.has(key)).toBe(true);
+    }
+    for (const key of reflectOnDataKeys) {
+      expect(activityKeyValues.has(key)).toBe(true);
+    }
+  });
+
+  it('includes every reflectOnDataKeys entry', () => {
+    for (const key of reflectOnDataKeys) {
+      expect(generatedActivityKeys).toContain(key);
+    }
+  });
+});
+
+describe('isGeneratedActivityKey', () => {
+  it('returns true for every generatedActivityKeys member, including legacy REFLECT', () => {
+    expect(generatedActivityKeys).toContain(ActivityKey.REFLECT);
+    for (const key of generatedActivityKeys) {
+      expect(isGeneratedActivityKey(key)).toBe(true);
+    }
+  });
+
+  it('returns false for a user-created activity key and for an empty string', () => {
+    expect(isGeneratedActivityKey(ActivityKey.GET_ACQUAINTED)).toBe(false);
+    expect(isGeneratedActivityKey('')).toBe(false);
   });
 });
