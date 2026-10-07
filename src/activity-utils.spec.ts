@@ -49,6 +49,25 @@ describe('generatedActivityKeys', () => {
       expect(generatedActivityKeys).toContain(key);
     }
   });
+
+  it('has the expected membership', () => {
+    expect([...generatedActivityKeys].sort()).toEqual([
+      ActivityKey.ANALYZE,
+      ActivityKey.DAILY_REFLECT_ON_PROGRESS,
+      ActivityKey.EVALUATE_PROGRESS,
+      ActivityKey.FINALIZE_CONCLUSIONS,
+      ActivityKey.PLAN_NEW_ACTIVITIES,
+      ActivityKey.PLAN_NEXT_DAY,
+      ActivityKey.PLAN_NEXT_UNIT,
+      ActivityKey.PROCESS_PENDING_MEDIA,
+      ActivityKey.PROCESS_QUICK_NOTES,
+      ActivityKey.REFLECT,
+      ActivityKey.REFLECT_ON_DATA_STAGES_1_2,
+      ActivityKey.REFLECT_ON_DATA_STAGES_3_4,
+      ActivityKey.REFLECT_ON_DATA_WARMUP,
+      ActivityKey.REFLECT_ON_PROGRESS,
+    ].sort());
+  });
 });
 
 describe('isGeneratedActivityKey', () => {
