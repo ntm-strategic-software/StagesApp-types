@@ -1,6 +1,6 @@
 import { TableNames } from './constants';
 
-/** Kind of media file referenced by sync records (matches desktop generateFileLists). */
+/** Kind of media file referenced by sync records. */
 export type ReferencedMediaKind = 'audio' | 'video' | 'photo';
 
 /** One media file referenced by mobile (or desktop) sync table rows. */
@@ -46,9 +46,11 @@ const pushIfNamed = (
 };
 
 /**
- * Collects media filenames referenced by sync table rows.
- * Sources match desktop generateFileLists (activity-plan task photos, recordings,
- * questions, DRE audio, people/user photos, general photos). Empty names are skipped.
+ * Source of truth for which record fields name shared files/ media.
+ * Desktop generateFileLists (mobile→desktop request set) and mobile's inbound
+ * size map both call this — add a new media-bearing field here, do not duplicate
+ * the walk at either caller. Empty names are skipped. Desktop's outbound list
+ * (playlist items, etc.) is a different walk and stays in generateFileLists.
  */
 export const collectReferencedMediaFiles = (tables: ReferencedMediaTables): ReferencedMediaFile[] => {
   const files: ReferencedMediaFile[] = [];
