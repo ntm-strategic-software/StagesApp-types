@@ -405,6 +405,22 @@ export const ERROR_REPORT_EMAIL_FIELD = 'errorReportEmail';
 /** Field name in SEND_MOBILE_DATA payload: estimated outbound data size (replaces SEND_MOBILE_DATA_SIZE round trip) */
 export const ESTIMATED_SIZE_FIELD = 'estimatedSize';
 
+/**
+ * Field name in SEND_MOBILE_DATA / SEND_EXTRA_MOBILE_DATA: per-file sizes for shared media
+ * plus this user's quick media and audio notes folder totals (gh795).
+ */
+export const MOBILE_MEDIA_SIZES_FIELD = 'mobileMediaSizes';
+
+/**
+ * Sizes of media this sync may send from mobile to desktop.
+ * `files` is basename → bytes in the shared files/ folder; folder totals are this user only.
+ */
+export interface MobileMediaSizes {
+  files: Record<string, number>;
+  quickMedia: number;
+  audioNotes: number;
+}
+
 /** Field name in SEND_MOBILE_DATA payload: mobile-reported mtime/size for DRE audio files in the payload */
 export const MOBILE_DRE_AUDIO_FILE_STATS = 'mobileDreAudioFileStats';
 
