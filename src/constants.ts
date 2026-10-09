@@ -402,7 +402,10 @@ export const MOBILE_USER_ID_FIELD = 'mobileUserId';
  */
 export const ERROR_REPORT_EMAIL_FIELD = 'errorReportEmail';
 
-/** Field name in SEND_MOBILE_DATA payload: estimated outbound data size (replaces SEND_MOBILE_DATA_SIZE round trip) */
+/**
+ * Field name in SEND_MOBILE_DATA: whole-folder backup size (BACKUP_ALL_DATA only).
+ * SYNC uses {@link MOBILE_MEDIA_SIZES_FIELD} instead.
+ */
 export const ESTIMATED_SIZE_FIELD = 'estimatedSize';
 
 /**
