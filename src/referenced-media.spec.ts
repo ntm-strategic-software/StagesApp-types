@@ -1,5 +1,5 @@
 import { TableNames } from './constants';
-import { collectReferencedMediaFiles } from './referenced-media';
+import { collectReferencedMediaFiles } from './utils';
 
 describe('collectReferencedMediaFiles', () => {
   it('collects each source table and skips empty or missing filenames', () => {

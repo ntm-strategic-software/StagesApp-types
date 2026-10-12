@@ -32,4 +32,3 @@ export * from './transcription';
 export * from './unit-week';
 export * from './user';
 export * from './quick-note';
-export * from './referenced-media';

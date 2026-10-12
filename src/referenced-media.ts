@@ -1,5 +1,8 @@
 import { TableNames } from './constants';
 
+// Public API is saTypesUtils.collectReferencedMediaFiles (re-exported from
+// utils.ts). Do not export this module from index.ts.
+
 /** Kind of media file referenced by sync records. */
 export type ReferencedMediaKind = 'audio' | 'video' | 'photo';
 
