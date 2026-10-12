@@ -36,3 +36,10 @@ export const hashLocaleContent = (str: string): string => {
   }
   return (h >>> 0).toString(16);
 };
+
+export { collectReferencedMediaFiles } from './referenced-media';
+export type {
+  ReferencedMediaFile,
+  ReferencedMediaKind,
+  ReferencedMediaTables,
+} from './referenced-media';
