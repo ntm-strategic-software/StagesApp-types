@@ -383,6 +383,9 @@ export enum PostPaths {
 }
 export type PostPathsEnum = typeof PostPaths[keyof typeof PostPaths];
 
+/** Units are planned as four weeks; weekly playlist pace is the unit recommendation divided by this. gh1548 */
+export const WEEKS_PER_UNIT = 4;
+
 // ********************************************************************************************************************
 // Sync protocol constants — shared between Mobile and Desktop to ensure protocol agreement
 // ********************************************************************************************************************
@@ -426,6 +429,28 @@ export interface MobileMediaSizes {
 
 /** Field name in SEND_MOBILE_DATA payload: mobile-reported mtime/size for DRE audio files in the payload */
 export const MOBILE_DRE_AUDIO_FILE_STATS = 'mobileDreAudioFileStats';
+
+/**
+ * Sibling field on Desktop's SEND_MOBILE_DATA / SEND_EXTRA_MOBILE_DATA reply (not a table inside
+ * desktopData). Derived Playlist pace for the mobile user's current CLA unit (gh744 / desktop gh1548).
+ * Last-synced desktop is the timesheet authority — do not mesh Timesheet or UnitWeeks through the phone.
+ */
+export const PLAYLIST_PACE_SNAPSHOT = 'playlistPaceSnapshot';
+
+/**
+ * Desktop-computed Playlist week totals so Mobile can show the behind-pace badge without UnitWeeks
+ * or a full Timesheet history. playlistSecondsThisWeek already includes this sync's inbound phone rows.
+ */
+export interface PlaylistPaceSnapshot {
+  /** User.claUnit the snapshot was computed for */
+  claUnit: number;
+  /** Latest UnitWeek.weekStart for that unit, or '' when the unit has no UnitWeeks yet */
+  weekStart: string;
+  /** PLAYLIST overlap seconds in [weekStart, ∞) (unbounded when weekStart is '') */
+  playlistSecondsThisWeek: number;
+  /** Unit recommendation in hours (0 = warm-up / wrap-up; never highlight) */
+  recommendedPlaylistHoursForUnit: number;
+}
 
 /** Filesystem metadata for one DRE audio file, reported by mobile during sync */
 export interface DreAudioFileStat {
