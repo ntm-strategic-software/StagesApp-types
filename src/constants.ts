@@ -383,6 +383,9 @@ export enum PostPaths {
 }
 export type PostPathsEnum = typeof PostPaths[keyof typeof PostPaths];
 
+/** Units are planned as four weeks; weekly playlist pace is the unit recommendation divided by this. gh1548 */
+export const WEEKS_PER_UNIT = 4;
+
 // ********************************************************************************************************************
 // Sync protocol constants — shared between Mobile and Desktop to ensure protocol agreement
 // ********************************************************************************************************************
@@ -448,9 +451,6 @@ export interface PlaylistPaceSnapshot {
   /** Unit recommendation in hours (0 = warm-up / wrap-up; never highlight) */
   recommendedPlaylistHoursForUnit: number;
 }
-
-/** Units are planned as four weeks; weekly playlist pace is the unit recommendation divided by this. gh1548 */
-export const WEEKS_PER_UNIT = 4;
 
 /** Filesystem metadata for one DRE audio file, reported by mobile during sync */
 export interface DreAudioFileStat {
