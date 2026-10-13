@@ -24,10 +24,15 @@ export const weeklyRecommendedPlaylistHours = (
   recommendedPlaylistHoursForUnit: number,
 ): number => recommendedPlaylistHoursForUnit / WEEKS_PER_UNIT;
 
+/** Minimal Timesheet shape needed to total Playlist time; a full Timesheet row satisfies it */
 export interface PlaylistPaceSession {
+  /** Overall 1-based CLA unit the session was recorded in (see Timesheet.claUnit) */
   claUnit?: number | null;
+  /** TaskBox of the session; only TaskBox.PLAYLIST is counted */
   taskBox?: string;
+  /** ISO 8601 start time of the session */
   startTime?: string;
+  /** ISO 8601 end time; sessions without one are still open and are not counted */
   endTime?: string;
 }
 
@@ -62,6 +67,10 @@ export const playlistSecondsOverlappingWeek = (
   return total;
 };
 
+/**
+ * True when value is a complete PlaylistPaceSnapshot. Mobile uses this on the sync reply
+ * because a desktop that predates the snapshot does not send the field at all.
+ */
 export const isPlaylistPaceSnapshot = (value: unknown): value is PlaylistPaceSnapshot => {
   if (!value || typeof value !== 'object') {
     return false;
