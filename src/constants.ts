@@ -467,6 +467,21 @@ export const COMPRESSED_FIELD = 'compressed';
 /** HTTP route path for downloading desktop photos via HTTP instead of socket.io */
 export const PHOTO_ROUTE_PATH = '/photo';
 
+/**
+ * Max encoded photo width after EXIF auto-orientation. Desktop `encodeSyncPhotoJpeg`
+ * and mobile Smaller captures fit inside this × SYNC_PHOTO_MAX_HEIGHT so both sides
+ * deliver the same box. Changing one without the other drifts the copies.
+ */
+export const SYNC_PHOTO_MAX_WIDTH = 1280;
+
+/**
+ * Max encoded photo height after EXIF auto-orientation. Generous relative to a
+ * width-capped phone portrait (~1280×1707) so normal camera photos are
+ * width-limited; bounds long screenshots/scans so desktop toBuffer() cannot
+ * hold an arbitrarily tall JPEG (desktop gh1508).
+ */
+export const SYNC_PHOTO_MAX_HEIGHT = 4096;
+
 /** HTTP route path for downloading desktop audio/video files via HTTP during sync */
 export const MEDIA_ROUTE_PATH = '/media';
 
