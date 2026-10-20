@@ -470,7 +470,7 @@ export const PHOTO_ROUTE_PATH = '/photo';
 /**
  * Max encoded photo width after EXIF auto-orientation. Desktop `encodeSyncPhotoJpeg`
  * and mobile Smaller captures fit inside this × SYNC_PHOTO_MAX_HEIGHT so both sides
- * deliver the same box. Changing one without the other drifts the copies.
+ * deliver the same box. Both apps read these values from here; do not redeclare them locally.
  */
 export const SYNC_PHOTO_MAX_WIDTH = 1280;
 
